@@ -1,4 +1,11 @@
 # Home
 
-For full 111 documentation visit [mkdocs.org](https://www.mkdocs.org).
+Welcome to Eric's Scientific Computing Website
+
+
+## Social media accounts
+
+- [GitHub](https://github.com/eric2003/)
+- [Zhihu（知乎）](https://www.zhihu.com/people/jia-fei-miao-18-13/)
+
 

@@ -1,17 +1,3 @@
-# Welcome to MkDocs
+# Welcome to Eric's Scientific Computing Website
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+This is Eric's scientific computing website. There is a lot of scientific computing related information here, and it is still under construction. We know that the implementation of scientific computing often involves numerical simulation, which in turn requires the writing of computational code. But writing code is not an end in itself, but a means of doing it out of necessity. Scientific computing itself is also aimed at better revealing the laws of physics or mathematics, and better understanding the world. Further understanding the human self. It can also be said that this is a journey of finding oneself. Just like the finger pointing towards the moon, the moon is the destination we are looking for. The finger only points in this direction, it is just a means rather than an end. Scientific computing is also a powerful means of understanding the workings of the world, and through this means, people will ultimately gain dual freedom in both physical and mental aspects.
