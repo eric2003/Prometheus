@@ -160,19 +160,23 @@ nav:
     - CGNS: cfd/cgns.md
     - HDF5: hdf5/hdf5.md
     - METIS: metis/metis.md
-  - Command Prompts:
-    - powershell: powershell/powershell.md
+    - Scientific Computing: scientific/computing.md
+  - Shell:
+    - CMD: shell/cmd/cmd.md
+    - powershell: shell/powershell/powershell.md
   - GitHub:
     - GitHub Pages: github/github.md
+    - GitHub Actions: github/actions.md
     - codes: github/codes.md
-  - Mesh:
+  - Pre&Post:
     - GMesh: gmesh/gmesh.md
     - Netgen: netgen/netgen.md
     - Open CASCADE: occ/occ.md
     - OpenSceneGraph: osg/osg.md
     - ParaView: paraview/paraview.md
     - Tecplot: tecplot/tecplot.md
-    - VTK: vtk/vtk.md    
+    - VTK: vtk/vtk.md
+    - Scientific visualization: scientific/visualization.md
   - Parallel:
     - CUDA: cuda/cuda.md
     - MPI: mpi/mpi.md
@@ -181,12 +185,41 @@ nav:
   - Programming:
     - C++: 
       - Articles and Videos: cpp/videos.md
+    - Build System:
+      - Bazel: bazel/bazel.md
+      - CMake: cmake/cmake.md
     - Fortran: fortran/fortran.md
+    - Julia: julia/julia.md
+    - Makefile: makefile/makefile.md
     - Python: python/python.md
+    - Qt: qt/qt.md
+    - Taichi: taichi/taichi.md
+    - Script:
+      - Lua: script/lua/lua.md
+    - Data:
+      - Json: data/json/json.md
+  - Resources:
+    - People: people/people.md
   - Tools:
-    - vscode: tools/vscode.md
+    - Clang: clang/clang.md
+    - Environment Modules: modules/modules.md  
+    - GCC: gcc/gcc.md
+    - LLVM: llvm/llvm.md
+    - Lex and Yacc: lex/lex.md
+    - oneAPI: oneapi/oneapi.md
+    - Test: test/test.md
+    - Game Engine:
+      - Unreal Engine: game/unreal/ue5.md
+      - Unity: game/unity/unity.md
+      - Piccolo: game/piccolo/piccolo.md
+    - Package Manager:
+      - Chocolatey: package/chocolatey/chocolatey.md
+      - vcpkg: package/vcpkg/vcpkg.md
+    - Visual Studio: tools/visual-studio.md
   - Docs:
     - Markdown: markdown/markdown.md 
     - MkDocs: mkdocs/mkdocs.md 
-    - Read the Docs: readthedocs/readthedocs.md 
+    - Read the Docs: readthedocs/readthedocs.md
+    - Sphinx: sphinx/sphinx.md
+    
     

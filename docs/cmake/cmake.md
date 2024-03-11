@@ -1,0 +1,192 @@
+# CMake
+
+## Important
+-  [CMake info](https://eric2003.github.io/OneFLOW/cmake.html).
+
+## Article link
+
+-  [CMake official documentation](https://cmake.org/documentation/).
+-  [CMake official tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/).
+-  [CMake official GitHub repository](https://github.com/Kitware/CMake/).
+-  [Compilation of links related to CMake from beginner to expert series](https://zhuanlan.zhihu.com/p/393316878/).
+-  [CMake hands-on workshop](https://enccs.github.io/cmake-workshop/).
+-  [import CMake, CMake and C++20 Modules - Bill Hoffman - CppCon 2022](https://www.youtube.com/watch?v=5X803cXe02Y/).
+-  [import CMake: 2023 State of C++20 modules in CMake - Bill Hoffman - CppNow 2023](https://www.youtube.com/watch?v=c563KgO-uf4/).
+-  [So, You Want to Use C++ Modules … Cross-Platform? - Daniela Engert - C++ on Sea 2023](https://www.youtube.com/watch?v=DJTEUFRslbI/).
+-  [C++ Modules in 2023](https://www.youtube.com/watch?v=vAjEkIy43-c/).
+-  [C++ Features You Might Not Know - Jonathan Müller - C++ on Sea 2023](https://www.youtube.com/watch?v=zGWj7Qo_POY/).
+
+## CMake从入门到精通(1-100)
+
+-  [CMake从入门到精通（一）Hello World](https://zhuanlan.zhihu.com/p/392730984/).
+-  [CMake从入门到精通（二）静态库static library](https://zhuanlan.zhihu.com/p/392739176/).
+-  [CMake从入门到精通（三）动态库shared library（dynamic library）](https://zhuanlan.zhihu.com/p/392750572/).
+-  [CMake从入门到精通（四）同时生成动态库和静态库（shared lib，static lib）](https://zhuanlan.zhihu.com/p/392855873/).
+-  [CMake从入门到精通（五）相同的文件生成动态库和静态库（shared lib，static lib）](https://zhuanlan.zhihu.com/p/392894578/).
+-  [CMake从入门到精通（六）target_compile_definitions预处理器定义](https://zhuanlan.zhihu.com/p/392942067/).
+-  [CMake从入门到精通（七）list 使用](https://zhuanlan.zhihu.com/p/393009411/).
+-  [CMake从入门到精通（八）在多文件Hello World CMake工程中适用列表(list)](https://zhuanlan.zhihu.com/p/393020938/).
+-  [CMake从入门到精通（九）关于CMake set（PARENT_SCOPE）](https://zhuanlan.zhihu.com/p/393068090/).
+-  [CMake从入门到精通（十）关于function参数传值的问题](https://zhuanlan.zhihu.com/p/393109193/).
+-  [CMake从入门到精通（十一）使用cmake_parse_arguments](https://zhuanlan.zhihu.com/p/393112190/).
+-  [CMake从入门到精通（十二）从源代码目录自动构建解决方案](https://zhuanlan.zhihu.com/p/393284678/).
+-  [CMake从入门到精通（十三）CMake进阶的学习方法和对CMake的理解](https://zhuanlan.zhihu.com/p/393449831/).
+-  [CMake从入门到精通（十四）命令行生成项目构建系统（Generate a Project Buildsystem）](https://zhuanlan.zhihu.com/p/393578701/).
+-  [CMake从入门到精通（十五）命令行编译链接项目（Build a Project）](https://zhuanlan.zhihu.com/p/393604868/).
+-  [CMake从入门到精通（十六）命令行安装项目（Install a Project）](https://zhuanlan.zhihu.com/p/393691364/).
+-  [CMake从入门到精通（十七）CMake+vs2019+CUDA11.4构建CUDA工程](https://zhuanlan.zhihu.com/p/400150027/).
+-  [CMake从入门到精通（十八）通过CMake编译运行MPI+GPU示例代码simpleMPI](https://zhuanlan.zhihu.com/p/400150910/).
+-  [CMake从入门到精通（十九）get_target_property的使用测试](https://zhuanlan.zhihu.com/p/400515784/).
+-  [CMake从入门到精通（二十）通过list 进行set_target_property操作](https://zhuanlan.zhihu.com/p/400549051/).
+-  [CMake从入门到精通（二十一）CMake+vs2019+QT6.0生成最简单图形界面](https://zhuanlan.zhihu.com/p/400812498/).
+-  [CMake从入门到精通（二十二）通过add_subdirectory创建多个工程](https://zhuanlan.zhihu.com/p/400841685/).
+-  [CMake从入门到精通（二十三）通过CMake创建包含QT项目和常规C++项目的混合解决方案](https://zhuanlan.zhihu.com/p/400900832/).
+-  [CMake从入门到精通（二十四）通过在项目根目录下创建多层子工程项目目录](https://zhuanlan.zhihu.com/p/403825092/).
+-  [CMake从入门到精通（二十五）建立单一深层工程项目](https://zhuanlan.zhihu.com/p/403866788/).
+-  [CMake从入门到精通（二十六）CMake+CXX+VTK9.0.3绘制简单矩形测试](https://zhuanlan.zhihu.com/p/405516249/).
+-  [CMake从入门到精通（二十七）CMake+QT5.9+VTK9.0.3绘制简单立方体测试](https://zhuanlan.zhihu.com/p/405921252/).
+-  [CMake从入门到精通（二十八）CMake编译运行GPU矩阵加法CPU和GPU速度对比测试](https://zhuanlan.zhihu.com/p/406366778/).
+-  [CMake从入门到精通（二十九）CMake+vscode自动生成最简单c++代码](https://zhuanlan.zhihu.com/p/408958430/).
+-  [CMake从入门到精通（三十）cmake+vscode编译多个c++文件的源代码](https://zhuanlan.zhihu.com/p/409321091/).
+-  [CMake从入门到精通（三十一）cmake+vscode编译多个子目录c++文件的源代码](https://zhuanlan.zhihu.com/p/409339062/).
+-  [CMake从入门到精通（三十二）CMake+vcpkg编译简单Eigen3代码](https://zhuanlan.zhihu.com/p/410353438/).
+-  [CMake从入门到精通（三十三）Ubuntu21.04+CMake+Modules切换运行OpenMPI库和MPICH库](https://zhuanlan.zhihu.com/p/410715239/).
+-  [CMake从入门到精通（三十四）CMake输出不同系统下OpenMP信息](https://zhuanlan.zhihu.com/p/410867938/).
+-  [CMake从入门到精通（三十五）CMake输出target_compile_options的信息](https://zhuanlan.zhihu.com/p/410979446/).
+-  [CMake从入门到精通（三十六）CMake+OpenMP编译运行最简单的c++代码](https://zhuanlan.zhihu.com/p/411026668/).
+-  [CMake从入门到精通（三十七）CMake+CUDA+OpenMP编译运行CUDA Samples代码cudaOpenMP](https://zhuanlan.zhihu.com/p/411118177/).
+-  [CMake从入门到精通（三十八）CMake+CUDA+OpenMP编译运行.cpp和.cu混合代码](https://zhuanlan.zhihu.com/p/411157742/).
+-  [CMake从入门到精通（三十九）CMake+Hybrid CUDA, OpenMP, and MPI 编译运行.cpp和.cu混合代码](https://zhuanlan.zhihu.com/p/411358981/).
+-  [CMake从入门到精通（四十）CMake+OpenACC编译运行简单c++代码](https://zhuanlan.zhihu.com/p/412259752/).
+-  [CMake从入门到精通（四十一）CMake+OpenACC加编译选项运行简单c++代码](https://zhuanlan.zhihu.com/p/412506304/).
+-  [CMake从入门到精通（四十二）Ubuntu20.04+CMake+CUDA+OpenMP编译运行.cpp和.cu混合代码](https://zhuanlan.zhihu.com/p/412619839/).
+-  [CMake从入门到精通（四十三）Hybrid CUDA+OpenACC+OpenMP+MPI的编译测试（CMake，cpp，cu）](https://zhuanlan.zhihu.com/p/415995145/).
+-  [CMake从入门到精通（四十四）CMake编写install export](https://zhuanlan.zhihu.com/p/422919663/).
+-  [CMake从入门到精通（四十五）CMake同时生成动态库和静态库并提供install export](https://zhuanlan.zhihu.com/p/423826032/).
+-  [CMake从入门到精通（四十六）CMake 打印 generator expressions](https://zhuanlan.zhihu.com/p/423923982/).
+-  [CMake从入门到精通（四十七）CMake测试简单跨平台C++ Coroutine例子](https://zhuanlan.zhihu.com/p/449616329/).
+-  [CMake从入门到精通（四十八）CMake构建std::source_location测试](https://zhuanlan.zhihu.com/p/450201390/).
+-  [CMake从入门到精通（四十九）VS2019+CMake编译并运行简单CGNS代码](https://zhuanlan.zhihu.com/p/453425957/).
+-  [CMake从入门到精通（五十）Win11+vscode+CMake编译并运行简单CGNS代码](https://zhuanlan.zhihu.com/p/453546841/).
+-  [CMake从入门到精通（五十一）Win11+vscode+CMake编译国产CFD开源软件OneFLOW](https://zhuanlan.zhihu.com/p/454912332/).
+-  [CMake从入门到精通（五十二）Win11下+CMake+Catch2安装测试](https://zhuanlan.zhihu.com/p/455033727/).
+-  [CMake从入门到精通（五十三）Win11+CMake+doctest进行简单单元测试](https://zhuanlan.zhihu.com/p/455067640/).
+-  [CMake从入门到精通（五十四）CMake构建std::thread join测试](https://zhuanlan.zhihu.com/p/455538864/).
+-  [CMake从入门到精通（五十五）CMake设置vs2019启动项](https://zhuanlan.zhihu.com/p/459549472/).
+-  [CMake从入门到精通（五十六）Ubuntu+CMake+oneAPI+icpc编译简单helloworld代码](https://zhuanlan.zhihu.com/p/460518502/).
+-  [CMake从入门到精通（五十七）CMake输出CMAKE_CXX_COMPILER等信息](https://zhuanlan.zhihu.com/p/461718845/).
+-  [CMake从入门到精通（五十八）win11+CMake+oneAPI+icx编译简单helloworld代码](https://zhuanlan.zhihu.com/p/462576699/).
+-  [CMake从入门到精通（五十九）std::thread从入门到精通系列链接（均使用CMake构建）](https://zhuanlan.zhihu.com/p/463537452/).
+-  [CMake从入门到精通（六十）Win11+CMake+OneTBB进行tbb::task_group简单测试](https://zhuanlan.zhihu.com/p/465529602/).
+-  [CMake从入门到精通（六十一）oneTBB系列链接整理](https://zhuanlan.zhihu.com/p/465700130/).
+-  [CMake从入门到精通（六十二）Win11+CMake输出TBB的find_package路径](https://zhuanlan.zhihu.com/p/467816567/).
+-  [CMake从入门到精通（六十三）Win11+powershell+CMake message+加载OneAPI 环境输出TBB_VERSION](https://zhuanlan.zhihu.com/p/467868451/).
+-  [CMake从入门到精通（六十四）现代CMake高级教程](https://www.bilibili.com/video/BV16P4y1g7MH/).
+-  [CMake从入门到精通（六十五）CMake generator-expressions $<CONFIG>测试](https://zhuanlan.zhihu.com/p/477263088/).
+-  [CMake从入门到精通（六十六）CMake Generator-Expressions](https://zhuanlan.zhihu.com/p/477314958/).
+-  [CMake从入门到精通（六十七）CMake projects in Visual Studio](https://zhuanlan.zhihu.com/p/477346444/).
+-  [CMake从入门到精通（六十八）CMake Generator-Expressions $<AND:conditions>测试](https://zhuanlan.zhihu.com/p/477374448/).
+-  [CMake从入门到精通（六十九）cmake -E 参数信息](https://zhuanlan.zhihu.com/p/506873318/).
+-  [CMake从入门到精通（七十）windows11+icx+cmake+_mm512_add_ps简单测试](https://zhuanlan.zhihu.com/p/508021000/).
+-  [CMake从入门到精通（七十一）VS2022+CMake命令行编译安装网格分区软件Metis5.1.0](https://zhuanlan.zhihu.com/p/509032665/).
+-  [CMake从入门到精通（七十二）Windows11+oneAPI（icx）+CMake命令行编译安装Metis5.1.0](https://zhuanlan.zhihu.com/p/509057362/).
+-  [CMake从入门到精通（七十三）Win11+VS2022+CMake3.23.1+HDF51.12.2+CGNS4.3.0源码编译CGNSTOOLS](https://zhuanlan.zhihu.com/p/509174617/).
+-  [CMake从入门到精通（七十四）Win11+CMake+FindTCL输出TCLTK信息](https://zhuanlan.zhihu.com/p/513192084/).
+-  [CMake从入门到精通（七十五）CMake set_property GLOBAL简单测试](https://zhuanlan.zhihu.com/p/514372901/).
+-  [CMake从入门到精通（七十六）CMake 输出add_compile_definitions信息](https://zhuanlan.zhihu.com/p/514458170/).
+-  [CMake从入门到精通（七十七）CMake 输出add_compile_options信息](https://zhuanlan.zhihu.com/p/514468824/).
+-  [CMake从入门到精通（七十八）CMake 输出add_link_options信息](https://zhuanlan.zhihu.com/p/514471934/).
+-  [CMake从入门到精通（七十九）CMake+SUBSYSTEM:WINDOWS+生成WinMain可执行代码](https://zhuanlan.zhihu.com/p/514489801/).
+-  [CMake从入门到精通（八十）error C2664: cannot convert argument 1 from 'const char [5]' to 'char *'](https://zhuanlan.zhihu.com/p/514867497/).
+-  [CMake从入门到精通（八十一）CGNSView代码架构简化模拟系列链接](https://zhuanlan.zhihu.com/p/515987383/).
+-  [CMake从入门到精通（八十二）Windows11+oneAPI+CMake命令行编译安装Metis5.1.0动态库](https://zhuanlan.zhihu.com/p/519135208/).
+-  [CMake从入门到精通（八十三）CMake+MPI（Message Passing Interface）系列链接整理](https://zhuanlan.zhihu.com/p/521054318/).
+-  [CMake从入门到精通（八十四）Windows11+CMake+C++调用Python简单测试](https://zhuanlan.zhihu.com/p/526735778/).
+-  [CMake从入门到精通（八十五）CMake generator-expressions $<TARGET_LINKER_FILE>简单测试](https://zhuanlan.zhihu.com/p/527468509/).
+-  [CMake从入门到精通（八十六）C++调用matplotlib-cpp绘图简单测试](https://zhuanlan.zhihu.com/p/527655220/).
+-  [CMake从入门到精通（八十七）CMake+cmake_print_variables的使用测试](https://zhuanlan.zhihu.com/p/530729942/).
+-  [CMake从入门到精通（八十八）CMake+Boost1.79.0简单测试](https://zhuanlan.zhihu.com/p/530885166/).
+-  [CMake从入门到精通（八十九）CMake+VS2022+CGAL5.4.1+Triangulation_2简单测试](https://zhuanlan.zhihu.com/p/531073642/).
+-  [CMake从入门到精通（九十）CMake+set_property( GLOBAL APPEND)简单测试](https://zhuanlan.zhihu.com/p/531649063/).
+-  [CMake从入门到精通（九十一）CMake+打印include_directories简单测试](https://zhuanlan.zhihu.com/p/532027565/).
+-  [CMake从入门到精通（九十二）CMake+打印target_include_directories简单测试](https://zhuanlan.zhihu.com/p/532034212/).
+-  [CMake从入门到精通（九十三）CMake+打印target_link_libraries库信息简单测试](https://zhuanlan.zhihu.com/p/532068642/).
+-  [CMake从入门到精通（九十四）CMake+打印target_compile_features信息简单测试](https://zhuanlan.zhihu.com/p/532072082/).
+-  [CMake从入门到精通（九十五）CMake+cmake_print_properties打印信息简单测试](https://zhuanlan.zhihu.com/p/532137380/).
+-  [CMake从入门到精通（九十六）CMake+GNUInstallDirs Variable Built-In Default](https://zhuanlan.zhihu.com/p/533339844/).
+-  [CMake从入门到精通（九十七）CMake Install MyExe简单测试](https://zhuanlan.zhihu.com/p/533403422/).
+-  [CMake从入门到精通（九十八）CMake Install MathFunctions简单测试](https://zhuanlan.zhihu.com/p/533453756/).
+-  [CMake从入门到精通（九十九）CMake Downstream+MathFunctions简单测试](https://zhuanlan.zhihu.com/p/533461438/).
+-  [CMake从入门到精通（100）CMake Install MathFunctionsComponents简单测试](https://zhuanlan.zhihu.com/p/533469259/).
+
+## CMake从入门到精通(101-200)
+
+-  [CMake从入门到精通（101）CMake+DownstreamComponents+MathFunctionsComponents简单测试](https://zhuanlan.zhihu.com/p/533477361/).
+-  [CMake从入门到精通（102）CMake+importing-exporting系列链接整理](https://zhuanlan.zhihu.com/p/533480192/).
+-  [CMake从入门到精通（103）CMake 文件输出 generator expressions](https://zhuanlan.zhihu.com/p/535477840/).
+-  [CMake从入门到精通（104）CMake creating a header-only library](https://zhuanlan.zhihu.com/p/535673189/).
+-  [CMake从入门到精通（105）CMake+输出find_package详细路径并重定向至文件](https://zhuanlan.zhihu.com/p/536748374/).
+-  [CMake从入门到精通（106）CMake --help-property-list](https://zhuanlan.zhihu.com/p/536789898/).
+-  [CMake从入门到精通（107）CMake+execute_process+echo "hello world"简单测试](https://zhuanlan.zhihu.com/p/536794601/).
+-  [CMake从入门到精通（108）CMake+Vcpkg+pybind11简单测试](https://zhuanlan.zhihu.com/p/538539755/).
+-  [CMake从入门到精通（109）CMake+cmakedefine简单测试](https://zhuanlan.zhihu.com/p/544495116/).
+-  [CMake从入门到精通（110）CMake+Testing Dashboard简单测试](https://zhuanlan.zhihu.com/p/544636691/).
+-  [CMake从入门到精通（111）CMake+ file MAKE_DIRECTORY简单测试](https://zhuanlan.zhihu.com/p/547167521/).
+-  [CMake从入门到精通（112）CMake输出find_package(CUDAToolkit）预定义信息](https://zhuanlan.zhihu.com/p/550172209/).
+-  [CMake从入门到精通（113）CMake输出find_package(CUDAToolkit）Import Target信息](https://zhuanlan.zhihu.com/p/550186740/).
+-  [CMake从入门到精通（114）CMake打印 CMAKE_CUDA_KNOWN_FEATURES信息](https://zhuanlan.zhihu.com/p/550346850/).
+-  [CMake从入门到精通（115）CMake打印CUDA项目预定义变量信息](https://zhuanlan.zhihu.com/p/550383688/).
+-  [CMake从入门到精通（116）CMake打印CUDA项目预定义变量名字和对应变量值](https://zhuanlan.zhihu.com/p/550435510/).
+-  [CMake从入门到精通（117）CMake+CUDA+VecAdd多种计时器简单测试](https://zhuanlan.zhihu.com/p/550652812/).
+-  [CMake从入门到精通（118）CMake+VS2022+打印OpenMP项目预定义变量名字和对应变量值](https://zhuanlan.zhihu.com/p/550836655/).
+-  [CMake从入门到精通（119）CMake+oneAPI2022+打印OpenMP项目预定义变量名字和对应变量值](https://zhuanlan.zhihu.com/p/550839611/).
+-  [CMake从入门到精通（120）CMake+打印项目预定义属性（PROPERTY）列表](https://zhuanlan.zhihu.com/p/550870925/).
+-  [CMake从入门到精通（121）CMake+打印项目预定义CUDA属性（PROPERTY）列表](https://zhuanlan.zhihu.com/p/550878030/).
+-  [CMake从入门到精通（122）CMake+Hybrid+CUDA+OpenMP简单测试](https://zhuanlan.zhihu.com/p/551383170/).
+-  [CMake从入门到精通（123）CMake+Hybrid+CUDA+MPI简单测试](https://zhuanlan.zhihu.com/p/551781775/).
+-  [CMake从入门到精通（124）CMake+Hybrid+CUDA+MPI+OpenMP简单测试](https://zhuanlan.zhihu.com/p/551809707/).
+-  [CMake从入门到精通（125）CMake+Fortran90简单测试](https://zhuanlan.zhihu.com/p/558557779/).
+-  [CMake从入门到精通（126）CMake打印OpenCL信息简单测试](https://zhuanlan.zhihu.com/p/562321880/).
+-  [CMake从入门到精通（127）windows11+vcpkg+CMake+QT6+windeployqt部署安装程序](https://zhuanlan.zhihu.com/p/565057648/).
+-  [CMake从入门到精通（128）Qt6.3.2+CMake+VS2022+Debug+windeployqt简单测试](https://zhuanlan.zhihu.com/p/566777470/).
+-  [CMake从入门到精通（129）Qt6.3.2+CMake+VS2022+Release+windeployqt简单测试](https://zhuanlan.zhihu.com/p/566822126/).
+-  [CMake从入门到精通（130）Vcpkg+Qt6.3.1+CMake+VS2022+Release+windeployqt简单测试](https://zhuanlan.zhihu.com/p/566828832/).
+-  [CMake从入门到精通（131）cmake_language+CALL简单测试](https://zhuanlan.zhihu.com/p/567594865/).
+-  [CMake从入门到精通（132）CMake get_cmake_property简单测试](https://zhuanlan.zhihu.com/p/579728392/).
+-  [CMake从入门到精通（133）CMake+VS2022+打印FORTRAN项目预定义变量名字和对应变量值](https://zhuanlan.zhihu.com/p/665606697/).
+-  [CMake从入门到精通（134）CMake Generator-Expressions $<BOOL:string>简单测试](https://zhuanlan.zhihu.com/p/666019708/).
+-  [CMake从入门到精通（135）CMake+VS2022+打印FORTRAN项目预定义变量名字和对应变量值 v1](https://zhuanlan.zhihu.com/p/666710305/).
+-  [CMake从入门到精通（136）CMake+try_compile简单测试](https://zhuanlan.zhihu.com/p/666752106/).
+-  [CMake从入门到精通（137）CMake+try_compile+OUTPUT_VARIABLE简单测试](https://zhuanlan.zhihu.com/p/666835836/).
+-  [CMake从入门到精通（138）CMake+try_run+RUN_OUTPUT_VARIABLE简单测试](https://zhuanlan.zhihu.com/p/666839296/).
+-  [CMake从入门到精通（139）CMake+file+WRITE简单测试](https://zhuanlan.zhihu.com/p/666842258/).
+-  [CMake从入门到精通（140）CMake+file+APPEND简单测试](https://zhuanlan.zhihu.com/p/666845190/).
+-  [CMake从入门到精通（141）CMake+file+TOUCH简单测试](https://zhuanlan.zhihu.com/p/666847211/).
+-  [CMake从入门到精通（142）CMake+file+REMOVE简单测试](https://zhuanlan.zhihu.com/p/666852523/).
+-  [CMake从入门到精通（143）CMake+file+REAL_PATH简单测试](https://zhuanlan.zhihu.com/p/666935175/).
+-  [CMake从入门到精通（144）CMake+file+RELATIVE_PATH简单测试](https://zhuanlan.zhihu.com/p/666940405/).
+-  [CMake从入门到精通（145）CMake+file+TO_NATIVE_PATH简单测试](https://zhuanlan.zhihu.com/p/666942257/).
+-  [CMake从入门到精通（146）CMake+file+TO_CMAKE_PATH简单测试](https://zhuanlan.zhihu.com/p/666942870/).
+-  [CMake从入门到精通（147）CMake+file+DOWNLOAD简单测试](https://zhuanlan.zhihu.com/p/666949200/).
+-  [CMake从入门到精通（148）CMake+file+ARCHIVE_CREATE简单测试](https://zhuanlan.zhihu.com/p/666953747/).
+-  [CMake从入门到精通（149）CMake+file+ARCHIVE_EXTRACT简单测试](https://zhuanlan.zhihu.com/p/666966452/).
+-  [CMake从入门到精通（150）CMake+message+CHECK_START+CHECK_PASS简单测试](https://zhuanlan.zhihu.com/p/667077305/).
+-  [CMake从入门到精通（151）CMake+CMAKE_VERSION简单测试](https://zhuanlan.zhihu.com/p/667108318/).
+-  [CMake从入门到精通（152）CMake+CMAKE_COMMAND简单测试](https://zhuanlan.zhihu.com/p/667112180/).
+-  [CMake从入门到精通（153）CMake+CMAKE_GENERATOR简单测试](https://zhuanlan.zhihu.com/p/667246978/).
+-  [CMake从入门到精通（154）CMake+$ENV+ProgramFiles(x86)简单测试](https://zhuanlan.zhihu.com/p/667267910/).
+-  [CMake从入门到精通（155）CMake+cmake --trace .. >> output.txt 2>&1简单测试](https://zhuanlan.zhihu.com/p/667340951/).
+-  [CMake从入门到精通（156）CMake+CMAKE_SYSTEM简单测试](https://zhuanlan.zhihu.com/p/667527756/).
+-  [CMake从入门到精通（157）CMake+string+STRIP简单测试](https://zhuanlan.zhihu.com/p/667556067/).
+-  [CMake从入门到精通（158）CMake+string+REGEX REPLACE简单测试](https://zhuanlan.zhihu.com/p/667558511/).
+-  [CMake从入门到精通（159）CMake+separate_arguments简单测试](https://zhuanlan.zhihu.com/p/667565202/).
+-  [CMake从入门到精通（160）CMake+find_program简单测试](https://zhuanlan.zhihu.com/p/667587706/).
+-  [CMake从入门到精通（161）VS2022+CMake+Cpp+Modules简单测试](https://zhuanlan.zhihu.com/p/668242725/).
+-  [CMake从入门到精通（162）CMake+FetchContent_Declare简单测试](https://zhuanlan.zhihu.com/p/669198829/).
+-  [CMake从入门到精通（163）CMake+FetchContent_GetProperties简单测试](https://zhuanlan.zhihu.com/p/669222063/).
+-  [CMake从入门到精通（164）CMake+ExternalProject_Add+AddInt简单测试](https://zhuanlan.zhihu.com/p/669304109/).
+-  [CMake从入门到精通（165）CMake+FetchContent_Declare+AddInt简单测试](https://zhuanlan.zhihu.com/p/670588954/).
+-  [CMake从入门到精通（166）CMake+googletest+HelloTest简单测试](https://zhuanlan.zhihu.com/p/671487241/).
+-  [CMake从入门到精通（167）Ubuntu20.04+CMake+googletest+multiply简单测试](https://zhuanlan.zhihu.com/p/671812617/).
+-  [CMake从入门到精通（168）googletest系列链接整理](https://zhuanlan.zhihu.com/p/671487883/).
+
