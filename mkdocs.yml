@@ -164,24 +164,26 @@ nav:
   - Shell:
     - CMD: shell/cmd/cmd.md
     - powershell: shell/powershell/powershell.md
+  - FileFormat:
+    - File Format Docs: file-format/file-format.md
   - GitHub:
     - GitHub Pages: github/github.md
     - GitHub Actions: github/actions.md
     - codes: github/codes.md
   - Pre&Post:
-    - GMesh: gmesh/gmesh.md
-    - Netgen: netgen/netgen.md
-    - Open CASCADE: occ/occ.md
-    - OpenSceneGraph: osg/osg.md
-    - ParaView: paraview/paraview.md
-    - Tecplot: tecplot/tecplot.md
-    - VTK: vtk/vtk.md
+    - GMesh: prepost/gmesh/gmesh.md
+    - Netgen: prepost/netgen/netgen.md
+    - Open CASCADE: prepost/occ/occ.md
+    - OpenSceneGraph: prepost/osg/osg.md
+    - ParaView: prepost/paraview/paraview.md
+    - Tecplot: prepost/tecplot/tecplot.md
+    - VTK: prepost/vtk/vtk.md
     - Scientific visualization: scientific/visualization.md
   - Parallel:
-    - CUDA: cuda/cuda.md
-    - MPI: mpi/mpi.md
-    - OpenACC: openacc/openacc.md
-    - OpenMP: openmp/openmp.md
+    - CUDA: parallel/cuda/cuda.md
+    - MPI: parallel/mpi/mpi.md
+    - OpenACC: parallel/openacc/openacc.md
+    - OpenMP: parallel/openmp/openmp.md
   - Programming:
     - C++: 
       - Articles and Videos: cpp/videos.md
@@ -197,9 +199,15 @@ nav:
     - Script:
       - Lua: script/lua/lua.md
     - Data:
+      - CSV: data/csv/csv.md
       - Json: data/json/json.md
+      - XML: data/xml/xml.md
+  - HPC:
+    - Supercomputing Center: hpc/hpc.md
+    - Academic conferences: hpc/conferences.md
   - Resources:
-    - People: people/people.md
+    - People: resources/people/people.md
+    - Website: resources/website/website.md
   - Tools:
     - Clang: clang/clang.md
     - Environment Modules: modules/modules.md  
@@ -212,6 +220,11 @@ nav:
       - Unreal Engine: game/unreal/ue5.md
       - Unity: game/unity/unity.md
       - Piccolo: game/piccolo/piccolo.md
+    - Games:
+      - Games10x: games/games10x.md
+      - Games20x: games/games20x.md
+      - Games30x: games/games30x.md
+      - Games40x: games/games40x.md
     - Package Manager:
       - Chocolatey: package/chocolatey/chocolatey.md
       - vcpkg: package/vcpkg/vcpkg.md

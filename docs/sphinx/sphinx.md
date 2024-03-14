@@ -39,10 +39,6 @@ sphinx-build
 sphinx-build -b html ./ _build/html
 ```
 
-https://github.com/eric2003/Sphinx-Site
-https://eric2003.github.io/Sphinx-Site
-https://eric2003.github.io/Sphinx-Site-Test
-
 version 2
 ```
 sphinx-build -b html source/ build/html

@@ -7,6 +7,11 @@
 -  [Bazel编译工具【C++】【Java】【Google Test】](https://www.bilibili.com/video/BV14h411A7r6/).
 -  [How to Build Bazel on Windows](https://www.youtube.com/watch?v=cbJRapp_KFw/).
 -  [bazel系列链接整理](https://zhuanlan.zhihu.com/p/686281020/).
+-  [编译构建工具-bazel](https://zhulao.gitee.io/blog/2019/04/05/%E7%BC%96%E8%AF%91%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7-bazel/index.html).
+-  [Bazel学习笔记](https://blog.gmem.cc/bazel-study-note/).
+-  [[Bazel]自定义规则实现将多个静态库合并为一个动态库或静态库](https://zhuanlan.zhihu.com/p/202663666/).
+-  [Building with Bazel](https://www.kodeco.com/31558158-building-with-bazel/).
+
 
 ## bazel系列链接整理
 
@@ -14,6 +19,17 @@
 -  [windows11+bazel编译运行c++ helloworld stage2简单测试](https://zhuanlan.zhihu.com/p/686329154/).
 -  [windows11+bazel编译运行c++ helloworld stage3简单测试](https://zhuanlan.zhihu.com/p/686337470/).
 
+## bazel rules
+
+-  [November 2022: Writing Bazel Rules (Jay Conrod)](https://www.youtube.com/watch?v=2KUunGBZiiM/).
+-  [一步步学写Bazel lib&rules （2） - 写一个简单的 go rules](https://cloud.tencent.com/developer/article/2175870/).
+-  [Writing Bazel rules: repository rules](https://jayconrod.com/posts/110/writing-bazel-rules--repository-rules/).
+-  [November 2022: Writing Bazel Rules (Jay Conrod)](https://www.youtube.com/watch?v=2KUunGBZiiM/).
+
+
+## fortran.bzl
+
+-  [fortran.bzl](https://github.com/aburgm/openblas-bazel/blob/master/tools/fortran_rules/fortran.bzl).
 
 ## Install bazelisk
 
@@ -218,4 +234,15 @@ bazel build //main:testprj
 
 ```
 .\bazel-bin\main\testprj
+```
+
+bazel run //main:testprj
+
+```
+bazel run //main:testprj
+```
+
+bazel clean --expunge
+```
+bazel clean --expunge
 ```
