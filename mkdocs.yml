@@ -161,6 +161,9 @@ nav:
     - HDF5: hdf5/hdf5.md
     - METIS: metis/metis.md
     - Scientific Computing: scientific/computing.md
+    - CFD Open Source:
+      - FEniCS: cfd/fenics.md
+      - SU2: cfd//su2/su2.md
   - Shell:
     - CMD: shell/cmd/cmd.md
     - powershell: shell/powershell/powershell.md
@@ -171,14 +174,18 @@ nav:
     - GitHub Actions: github/actions.md
     - codes: github/codes.md
   - Pre&Post:
+    - Geometric: prepost/geometric/geometric.md
     - GMesh: prepost/gmesh/gmesh.md
+    - Manim: prepost/manim/manim.md
     - Netgen: prepost/netgen/netgen.md
     - Open CASCADE: prepost/occ/occ.md
     - OpenSceneGraph: prepost/osg/osg.md
     - ParaView: prepost/paraview/paraview.md
     - Tecplot: prepost/tecplot/tecplot.md
     - VTK: prepost/vtk/vtk.md
-    - Scientific visualization: scientific/visualization.md
+    - Scientific visualization: 
+      - Scientific: scientific/visualization.md
+      - Web-based: scientific/web.md
   - Parallel:
     - CUDA: parallel/cuda/cuda.md
     - MPI: parallel/mpi/mpi.md
@@ -187,14 +194,26 @@ nav:
   - Programming:
     - C++: 
       - Articles and Videos: cpp/videos.md
+      - Conference: 
+        - Advanced C++: cpp/conference/advanced_cpp.md
+        - CppCon: cpp/conference/cppcon.md
+        - Meeting C++: cpp/conference/meeting_cpp.md
+      - MultiThread: cpp/multithread.md
     - Build System:
       - Bazel: bazel/bazel.md
       - CMake: cmake/cmake.md
     - Fortran: fortran/fortran.md
     - Julia: julia/julia.md
     - Makefile: makefile/makefile.md
-    - Python: python/python.md
-    - Qt: qt/qt.md
+    - Python: 
+      - Python: python/python.md
+      - PyGame: python/pygame.md
+    - Qt:
+      - Qt: qt/qt.md
+      - Qt Game: qt/game.md
+      - QML: qt/qml.md
+      - QThread: qt/qthread.md
+      - Signals & Slots: qt/slots.md
     - Taichi: taichi/taichi.md
     - Script:
       - Lua: script/lua/lua.md
@@ -205,6 +224,10 @@ nav:
   - HPC:
     - Supercomputing Center: hpc/hpc.md
     - Academic conferences: hpc/conferences.md
+  - Math&Physics :
+    - Numeical: math/numerical/numerical.md
+    - Mechanics: 
+      - Fluid Mechanics: physics/mechanics/fluid.md
   - Resources:
     - People: resources/people/people.md
     - Website: resources/website/website.md
@@ -215,7 +238,9 @@ nav:
     - LLVM: llvm/llvm.md
     - Lex and Yacc: lex/lex.md
     - oneAPI: oneapi/oneapi.md
-    - Test: test/test.md
+    - Test:
+      - Gogletest: test/test.md
+      - CukeTest: test/cuketest/cuketest.md
     - Game Engine:
       - Unreal Engine: game/unreal/ue5.md
       - Unity: game/unity/unity.md
@@ -229,6 +254,8 @@ nav:
       - Chocolatey: package/chocolatey/chocolatey.md
       - vcpkg: package/vcpkg/vcpkg.md
     - Visual Studio: tools/visual-studio.md
+  - AI:
+    - Music: ai/music/music.md 
   - Docs:
     - Markdown: markdown/markdown.md 
     - MkDocs: mkdocs/mkdocs.md 

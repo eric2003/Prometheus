@@ -1,6 +1,6 @@
 # VTK
 
-## Article link
+## Article Link
 
 -  [vtk.org](https://vtk.org/).
 -  [Hello VTK](https://www.bilibili.com/video/BV1k5411X7dA/).
@@ -13,10 +13,24 @@
 -  [VTK可视化方法：流线、流管、流面、流带](https://www.bilibili.com/video/BV13K411k7PG/).
 -  [VTK数据类型3：vtkUnstructuredGrid](https://www.bilibili.com/video/BV1Ej411g7G7/).
 -  [Programming with VTK - a high-level visualization library](https://www.youtube.com/watch?v=Ln_kDFpMnVw/).
--  [VTK Overview - Part I (Graphics Model)](https://www.youtube.com/watch?v=0m611JTA6l0&list=PL3MBEY06P4z0TQfvOXsobBnXjLTHXESip/).
 -  [vtk file format](https://www.youtube.com/watch?v=XOppSWffccs/).
--  [Scientific Data Analysis and Visualization with VTK and ParaView | SciPy 2015 | Cory Quammen](https://www.youtube.com/watch?v=8ugmkKaYKxM&/).
+-  [Scientific Data Analysis and Visualization with VTK and ParaView | SciPy 2015 | Cory Quammen](https://www.youtube.com/watch?v=8ugmkKaYKxM/).
 
+## VTK overview
+
+-  [VTK Overview - Part I (Graphics Model)](https://www.youtube.com/watch?v=0m611JTA6l0&list=PL3MBEY06P4z0TQfvOXsobBnXjLTHXESip/).
+-  [VTK overview - part 2 (Visualization Model)](https://www.youtube.com/watch?v=5mBNdGmCzUI/).
+-  [VTK overview - part 2 (Visualization Model)](https://www.youtube.com/watch?v=5mBNdGmCzUI/).
+
+## VTK & QT
+
+-  [How to use VTK with Qt using CMake and Visual Studio 2017 - 1 of 3](https://www.youtube.com/watch?v=u5-Df1YlxCI/).
+-  [How to use VTK with Qt using CMake and Visual Studio 2017 - 2 of 3](https://www.youtube.com/watch?v=7UsF7RxxpdQ/).
+-  [How to use VTK with Qt using CMake and Visual Studio 2017 - 3 of 3](https://www.youtube.com/watch?v=7S3CDHaMSvA/).
+
+## Trame and VTK
+
+-  [How to build a scientific web app in 10 min with Trame and VTK](https://www.youtube.com/watch?v=q1Lls2NGu34/).
 
 ## Enthought
 

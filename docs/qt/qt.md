@@ -12,6 +12,39 @@
 -  [《Qt 5.9 C++开发指南》2021 完整版](https://www.bilibili.com/video/BV1AX4y1w7Nt/).
 -  [Qt6.3.1 C++ GUI开发教程（完整版）](https://www.bilibili.com/video/BV1G94y1Q7h6/).
 -  [《Qt6 C++开发指南 》2023（上册，完整版）](https://www.bilibili.com/video/BV1km4y1k7CW/).
+-  [Qt6 C++ GUI Development Course ( Build GUI Apps in Qt & C++ )](https://www.youtube.com/watch?v=Wi9nQTDFF4U/).
+
+## Qt Tutorial
+
+-  [Qt Tutorial](https://www.youtube.com/playlist?list=PLGLfVvz_LVvQrqLpBB4Sfz7gxMN9shP6v/).
+-  [Qt Tutorial : C++ Notepad App](https://www.youtube.com/watch?v=I96uPDifZ1w&list=PLGLfVvz_LVvQrqLpBB4Sfz7gxMN9shP6v&index=2/).
+-  [Qt Tutorial 2 : C++ Calculator](https://www.youtube.com/watch?v=txGRU7OrTZo&list=PLGLfVvz_LVvQrqLpBB4Sfz7gxMN9shP6v&index=2/).
+-  [Qt Tutorial 3 : Qt Charts](https://www.youtube.com/watch?v=MHn3ZTWcyXk&list=PLGLfVvz_LVvQrqLpBB4Sfz7gxMN9shP6v&index=3/).
+-  [Qt Tutorial 4 : C++ Paint App](https://www.youtube.com/watch?v=uzgU2XzhnHY&list=PLGLfVvz_LVvQrqLpBB4Sfz7gxMN9shP6v&index=4/).
+-  [Qt Tutorial 5 : Finish Paint App](https://www.youtube.com/watch?v=F-ha0F2yLqA&list=PLGLfVvz_LVvQrqLpBB4Sfz7gxMN9shP6v&index=5/).
+
+## Qt QML
+
+-  [QT6-QML编程快速入门](https://www.bilibili.com/video/BV1hC411h71F/).
+-  [QML6(Qt Quick)开发教程（完整版）](https://www.bilibili.com/video/BV1j14y1e7Hf/).
+-  [QML教程](https://www.bilibili.com/video/BV1dS4y1u7vN/).
+-  [PyQt + QML 桌面 无边框 悬浮 便利签](https://www.bilibili.com/video/BV17N4y157zh/).
+-  [浅 浅 入 门 一 下 Q M L 吧！](https://www.bilibili.com/video/BV1jf4y1d7sK/).
+-  [【英文字幕】Qt quick(QML)技术解读 入门到熟练（完结）](https://www.bilibili.com/video/BV164411C782/).
+-  [Qt QML Tutorial](https://www.youtube.com/watch?v=RWd-zjclFB0&list=PLP7UmEJ9z4mpi0JXcPS0VRK-7eFAfROZI/).
+-  [Qt QML Tutorial-KhoaTran Programmer](https://www.youtube.com/watch?v=2c0fpk_aObo&list=PLxkHKJE0D3pCT9qKzQ6eFOZ0gdXKxPaDU/).
+
+
+## pyQt6 
+
+-  [2024版 PyQt6 Python桌面开发 视频教程(无废话版) 玩命更新中~](https://www.bilibili.com/video/BV11C4y1P7fj/).
+
+
+## Youtuber 
+
+-  [Derek Banas](https://www.youtube.com/@derekbanas/).
+-  [ProgrammingKnowledge](https://www.youtube.com/@ProgrammingKnowledge/).
+-  [Abdullah](https://www.youtube.com/@Abdullah-mg5zl/).
 
 
 
@@ -41,6 +74,68 @@ ModernQt
 ```
 git clone https://github.com/eric2003/ModernQt.git
 ```
+
+
+Qt MediaPlayer
+```
+    Qt5
+    mediaPlayer = new QMediaPlayer(this);
+    mediaPlayer->setMedia(QUrl(filePath.c_str()));
+    Qt6
+    mediaPlayer = new QMediaPlayer(this);
+    QAudioOutput * audioOutput = new QAudioOutput(this);
+    mediaPlayer->setAudioOutput(audioOutput);
+    mediaPlayer->setSource(QUrl(filePath.c_str()));	
+```
+
+stateChanged
+```
+  Qt5
+  QMediaPlayer::stateChanged
+  Qt6
+  QMediaPlayer::mediaStatusChanged
+```
+
+state()
+```
+  Qt5
+  mediaPlayer->state() == QMediaPlayer::PlayingState
+  Qt6
+  mediaPlayer->playbackState() == QMediaPlayer::PlayingState
+```
+
+setMuted(bool)
+```
+  Qt5
+  mediaPlayer->setMuted(true)
+  Qt6
+  mediaPlayer->->audioOutput()->setMuted(true)
+```
+
+setMuted(bool)
+```
+  Qt5
+  mediaPlayer->setMuted(true)
+  Qt6
+  mediaPlayer->->audioOutput()->setMuted(true)
+```
+
+volume()
+```
+  Qt5
+  mediaPlayer->volume()
+  Qt6
+  mediaPlayer->->audioOutput()->volume()
+```
+
+QMediaPlayer::State
+```
+  Qt5
+  enum QMediaPlayer::State
+  Qt6
+  enum QMediaPlayer::PlaybackState
+```
+
 
 ## QT Series Link
 
@@ -89,6 +184,16 @@ git clone https://github.com/eric2003/ModernQt.git
 -  [qt6.4.0+VS2022+源码编译moc.exe简单测试](https://zhuanlan.zhihu.com/p/574714916/).
 -  [qt6.4.0+源码编译moc.exe+命令行文件输出简单测试](https://zhuanlan.zhihu.com/p/574724593/).
 -  [qt6.4.0+源码编译moc.exe+文件输出debug简单测试](https://zhuanlan.zhihu.com/p/574879089/).
+-  [windows11+Qt6.6.2+C++ Notepad App简单测试](https://zhuanlan.zhihu.com/p/687064491/).
+-  [windows11+Qt6.6.2+ C++ Calculator App简单测试](https://zhuanlan.zhihu.com/p/687212297/).
+-  [windows11+Qt6.6.2+ C++QtCharts+QLineSeries简单测试](https://zhuanlan.zhihu.com/p/687300379/).
+-  [windows11+Qt6.6.2+ C++QtCharts+QBarSeries简单测试](https://zhuanlan.zhihu.com/p/687333385/).
+-  [windows11+Qt6.6.2+ C++QtCharts+QHorizontalStackedBarSeries简单测试](https://zhuanlan.zhihu.com/p/687336722/).
+-  [windows11+Qt6.6.2+QtCharts+QLineSeries+Animation简单测试](https://zhuanlan.zhihu.com/p/687342776/).
+-  [windows11+Qt6.6.2+QtCharts+QPieSeries简单测试](https://zhuanlan.zhihu.com/p/687347292/).
+-  [windows11+Qt6.6.2+C++ Paint App简单测试](https://zhuanlan.zhihu.com/p/687406964/).
+-  [windows11+Qt6.6.2+QThread+Dice简单测试](https://zhuanlan.zhihu.com/p/687457020/).
+-  [windows11+Qt6.6.2+QThread::currentThreadId()简单测试](https://zhuanlan.zhihu.com/p/687617049/).
 
 ## Qt6+windeployqt
 
@@ -98,3 +203,51 @@ git clone https://github.com/eric2003/ModernQt.git
 -  [Qt6.3.2+CMake+VS2022+Release+windeployqt简单测试](https://zhuanlan.zhihu.com/p/566822126/).
 -  [Vcpkg+Qt6.3.1+CMake+VS2022+Release+windeployqt简单测试](https://zhuanlan.zhihu.com/p/566828832/).
 -  [Vcpkg+Qt6.3.1+CMake+VS2022+Debug+windeployqt简单测试](https://zhuanlan.zhihu.com/p/566834738/).
+
+
+## QT C++ GUI Tutorial For Beginners
+
+-  [QT C++ GUI Tutorial For Beginners](https://www.youtube.com/playlist?list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA/).
+-  [Qt Tutorials For Beginners 1 - Introduction](https://www.youtube.com/watch?v=EkjaiDsiM-Q&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=2/).
+-  [Qt Tutorials For Beginners 2 - How to Install Qt Creator IDE (Open Source Version)](https://www.youtube.com/watch?v=eS7ank-qFjg&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=2/).
+-  [Qt Tutorials For Beginners 3 - First Qt Application](https://www.youtube.com/watch?v=5JVLO8yBMXA&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=3/).
+-  [Qt Tutorials For Beginners 4 - First Qt GUI widget Application](https://www.youtube.com/watch?v=Y1c-ieVO-UY&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=4/).
+-  [Qt Tutorials For Beginners 5 - Qt Signal and slots](https://www.youtube.com/watch?v=F56fSKoNCtk&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=5/).
+-  [Qt Tutorials For Beginners 6 - QMessageBox](https://www.youtube.com/watch?v=xJdxE_7IBsU&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=6/).
+-  [Qt Tutorials For Beginners 7 - Layouts in QT (Horizontal, Vertical, Grid and Form)](https://www.youtube.com/watch?v=gWa2rqe8l6E&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=7/).
+-  [Qt Tutorials For Beginners 8 - Spacers, Splitter, Buddy and Tabs](https://www.youtube.com/watch?v=y9Zx_FJBC1U&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=8/).
+-  [Qt Tutorials For Beginners 9 - How to Show Another Window From MainWindow in QT](https://www.youtube.com/watch?v=VigUMAfE2q4&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=9/).
+-  [Qt Tutorials For Beginners 10 - Simple Login app using QT](https://www.youtube.com/watch?v=6_elY8O20I8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=10/).
+-  [Qt Tutorials For Beginners 11 - Displaying image using label in Qt](https://www.youtube.com/watch?v=SyzxerD2Yps&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=11/).
+-  [Qt Tutorials For Beginners 12 - QStatusBar](https://www.youtube.com/watch?v=BI5TQ_NPp1s&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=12/).
+-  [Qt Tutorials For Beginners 13 - Resource Collection Files (.qrc)](https://www.youtube.com/watch?v=CTbpS0PN-JQ&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=13/).
+-  [Qt Tutorials For Beginners 14 - Use QLineEdit as password field](https://www.youtube.com/watch?v=Sf-Vr-1q5UA&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=14/).
+-  [Qt Tutorials For Beginners 15 - Qt Stylesheets and using HTML](https://www.youtube.com/watch?v=us2bq5vpQ9g&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=15/).
+-  [Qt Tutorials For Beginners 16 - QCheckBox](https://www.youtube.com/watch?v=2Dv-TO9KQDE&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=16/).
+-  [Qt Tutorials For Beginners 17 - QRadioButton](https://www.youtube.com/watch?v=utjU9csHCO8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=17/).
+-  [Qt Tutorials For Beginners 18 - QAction, QMenu, QToolBar](https://www.youtube.com/watch?v=E9eQO5czNrw&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=18/).
+-  [Qt Tutorials For Beginners 19 - QComboBox](https://www.youtube.com/watch?v=-6ZS7nxgzrQ&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=19/).
+-  [Qt Tutorials For Beginners 20 - QListWidget](https://www.youtube.com/watch?v=2YRAJt-LbkM&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=20/).
+-  [Qt Tutorials For Beginners 21 - QDir](https://www.youtube.com/watch?v=hstOtTEeW9Y&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=21/).
+-  [Qt Tutorials For Beginners 22 - QFile](https://www.youtube.com/watch?v=tY6nW3Wm3NE&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=22/).
+-  [Qt Tutorials For Beginners 23 - QFileDialog](https://www.youtube.com/watch?v=Fgt4WWdn3Ko&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=23/).
+-  [Qt Tutorials For Beginners 24 - QTimer](https://www.youtube.com/watch?v=E4L4IjAR-Ww&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=24/).
+-  [Qt Tutorials For Beginners 25 - Creating Digital Clock by using QDateTime](https://www.youtube.com/watch?v=zywq2kpcXP4&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=25/).
+-  [Qt Tutorials For Beginners 26 - Simple Notepad Application Part - 1](https://www.youtube.com/watch?v=j4j1gbYJtUw&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=26/).
+-  [Qt Tutorials For Beginners 27 - Simple Notepad Application Part - 2](https://www.youtube.com/watch?v=ucWsnp064ow&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=27/).
+-  [Qt Tutorials For Beginners 28 - QTabWidget](https://www.youtube.com/watch?v=68_PHjBohAs&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=28/).
+-  [Qt Tutorials For Beginners 29 - QFontDialog](https://www.youtube.com/watch?v=Kmpg6MD-LjM&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=29/).
+-  [Qt Tutorials For Beginners 30 - QColorDialog](https://www.youtube.com/watch?v=rtgOb03xl_U&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=30/).
+-  [Qt Tutorials For Beginners 31 - QPrintDialog and QPrinter](https://www.youtube.com/watch?v=ugW7ULhJwPw&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=31/).
+
+
+## Qt 5 Tutorial
+
+-  [QT5 TUTORIAL HELLO WORLD - 2020](https://www.bogotobogo.com/Qt/Qt5_TutorialHelloWorld.php).
+-  [《Qt 5.9 C++开发指南》2021 完整版](https://www.bilibili.com/video/BV1AX4y1w7Nt/).
+
+
+## Qt MediaPlayer
+
+-  [Qt C++ QMediaPlayer -1](https://www.youtube.com/watch?v=aghuCmJd7TY/).
+

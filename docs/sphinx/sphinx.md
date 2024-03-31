@@ -1,16 +1,17 @@
 # Sphinx
 
-## article link
+## Article link
+
 -  [Tutorials - Olga Matoula, Aya Elsayed: Automate Documentation with Sphinx & GitHub Actions](https://www.youtube.com/watch?v=_K6cLQufv9k/).
 -  [Sphinx tutorial](https://olgarithms.github.io/sphinx-tutorial/).
 -  [Sphinx to GitHub Pages via GitHub Actions](https://redandgreen.co.uk/sphinx-to-github-pages-via-github-actions/).
 -  [Introduction to Sphinx Python Document Generation](https://www.youtube.com/watch?v=nZttMg_n_s0/).
-
+-  [Document Your Scientific Project With Markdown, Sphinx, and Read the Docs | PyData Global 2021](https://www.youtube.com/watch?v=qRSb299awB0/).
+-  [[22] Sphinx for Python Documentation Tutorial (Melissa Weber Mendonça)](https://www.youtube.com/watch?v=tXWscUSYdBs/).
 
 
 ## step
 ```
-git clone https://github.com/eric2003/Sphinx-Site.git
 git clone https://github.com/eric2003/Sphinx-Site.git
 ```
 

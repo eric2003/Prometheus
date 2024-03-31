@@ -30,3 +30,11 @@ DownloadFile example 3
 (New-Object System.Net.WebClient).DownloadFile("https://community.chocolatey.org/install.ps1","D:\work\bazel_work\install.ps1")
 (New-Object System.Net.WebClient).DownloadFile("https://community.chocolatey.org/install.ps1","D:\work\bazel_work\install.txt")
 ```
+
+
+## Edge
+
+```
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+"C:\Program Files (x86)\Microsoft\Edge\Application"
+```
