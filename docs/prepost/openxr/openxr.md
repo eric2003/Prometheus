@@ -1,0 +1,11 @@
+# OpenXR
+
+UNIFYING REALITY
+
+OpenXR is a royalty-free, open standard that provides high-performance access to Augmented Reality (AR) and Virtual Reality (VR)—collectively known as XR—platforms and devices.
+
+## OpenXR Link
+
+-  [OpenXR HomePage](https://www.khronos.org/openxr/).
+
+
