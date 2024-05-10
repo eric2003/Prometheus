@@ -97,6 +97,7 @@ nav:
       - FEniCS: cfd/fenics.md
       - OpenFOAM: cfd/openfoam/openfoam.md
       - SU2: cfd/su2/su2.md
+      - XFluids: cfd/xfluids/xfluids.md
   - Shell:
     - CMD: shell/cmd/cmd.md
     - powershell: shell/powershell/powershell.md
@@ -107,6 +108,7 @@ nav:
     - GitHub Actions: github/actions.md
     - codes: github/codes.md
   - Pre&Post:
+    - Blender: prepost/blender/blender.md
     - FFmpeg: prepost/ffmpeg/ffmpeg.md
     - Geometric: prepost/geometric/geometric.md
     - GMesh: prepost/gmesh/gmesh.md
@@ -162,6 +164,7 @@ nav:
         - Property: cmake/cmake-property.md
         - Parse: cmake/cmake-parse.md
         - Python: cmake/cmake-python.md
+        - Regex: cmake/cmake-regex.md
     - Fortran: language/fortran/fortran.md
     - Java: language/java/java.md
     - JavaScript: language/javascript/javascript.md
@@ -169,6 +172,8 @@ nav:
     - Makefile: makefile/makefile.md
     - Mojo :
       - Mojo : language/mojo/mojo.md
+    - Perl :
+      - Perl : language/perl/perl.md      
     - Python: 
       - Argparse: language/python/argparse.md
       - Command: language/python/command.md
@@ -178,6 +183,7 @@ nav:
       - Python: language/python/python.md      
     - Qt:
       - Qt: language/qt/qt.md
+      - Qt-CMake: language/qt/qt-cmake.md
       - Qt Game: language/qt/game.md
       - QML: language/qt/qml.md
       - QThread: language/qt/qthread.md
@@ -202,11 +208,13 @@ nav:
     - People: resources/people/people.md
     - Website: resources/website/website.md
   - Tools:
+    - Boost: tools/boost/boost.md
     - Clang: clang/clang.md
     - Environment Modules: modules/modules.md  
     - GCC: gcc/gcc.md
     - LLVM: llvm/llvm.md
     - Lex and Yacc: lex/lex.md
+    - Nsight: nsight/nsight.md
     - oneAPI: oneapi/oneapi.md
     - Test:
       - Gogletest: test/test.md
@@ -223,13 +231,28 @@ nav:
     - Package Manager:
       - Chocolatey: package/chocolatey/chocolatey.md
       - vcpkg: package/vcpkg/vcpkg.md
+      - NuGet: package/nuget/nuget.md
     - Visual Studio: 
       - Visual Studio: tools/vs/visual-studio.md
       - VS2022: tools/vs/vs2022.md
+    - System Tools: 
+      - Windows: 
+        - Install: tools/system/windows/install.md
+        - Path: tools/system/windows/windows-path.md        
+        - Total Commander: tools/system/windows/total-cmd.md
+        - USB: tools/system/windows/windows.md
   - AI:
     - Music: ai/music/music.md 
   - Docs:
     - Doxygen: doctools/doxygen/doxygen.md
+    - Ghostscript:
+      - Ghostscript: doctools/ghostscript/ghostscript.md
+    - Graphviz:
+      - Graphviz: doctools/graphviz/graphviz.md
+    - HTML Help Workshop:
+      - HTML Help Workshop: doctools/hhc/hhc.md
+    - LaTeX : 
+      - LaTeX : doctools/latex/latex.md
     - Markdown: doctools/markdown/markdown.md
     - MkDocs: doctools/mkdocs/mkdocs.md 
     - Read the Docs: doctools/readthedocs/readthedocs.md

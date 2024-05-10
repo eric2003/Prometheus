@@ -235,3 +235,126 @@ CommonMath
 CommonCore
 ```
 
+## ReadAllPolyDataTypesDemo
+```
+./ReadAllPolyDataTypesDemo.exe
+teapot.g
+cowHead.vtp
+horse.ply
+trumpet.obj
+42400-IDGH.stl
+v.vtk
+```
+or
+```
+./Release/ReadAllPolyDataTypesDemo.exe `
+../../../Data/teapot.g `
+../../../Data/cowHead.vtp `
+../../../Data/horse.ply `
+../../../Data/trumpet.obj `
+../../../Data/42400-IDGH.stl `
+../../../Data/v.vtk
+```
+
+## ReadAllUnstructuredGridTypes
+
+
+## list all vtk files
+
+python code
+```python
+import os
+
+directory = 'vtkfiles'
+
+file_names = os.listdir(directory)
+
+for file_name in file_names:
+    print(file_name)
+```
+
+results:
+```
+PS D:\work\python_work\ModernPython\codes\getfoderfiles\01a> py.exe .\testprj.py
+250.vtk
+AngularSector.vtk
+a_grid.vtk
+blow.vtk
+blowAttr.vtk
+blowGeom.vtk
+bore.vtk
+brain.vtk
+brainImageSmooth.vtk
+carotid.vtk
+damavand-volcano.vtk
+DEC.vtk
+faults.vtk
+fieldfile.vtk
+financial.vtk
+fran_cut.vtk
+GE.vtk
+GM.vtk
+hello.vtk
+hexa.vtk
+honolulu.vtk
+IBM.vtk
+ironProt.vtk
+k.vtk
+kitchen.vtk
+matrix.vtk
+notch_stress.vtk
+office.binary.vtk
+opal_mound_fault.vtk
+PentaHexa.vtk
+plate.vtk
+polyEx.vtk
+polyline.vtk
+post.vtk
+qualityEx.vtk
+RectGrid2.vtk
+Ruapehu_mag_dem_15m_NZTM.vtk
+SampleStructGrid.vtk
+StructuredPoints.vtk
+SurfaceVectors.vtk
+t.vtk
+teeth.lps.vtk
+teeth.ras.vtk
+teeth.vtk
+tensors.vtk
+tetraMesh.vtk
+texThres.vtk
+texThres2.vtk
+topo_clean.vtk
+track1.binary.vtk
+track2.binary.vtk
+track3.binary.vtk
+uGridEx.vtk
+usa.vtk
+v.vtk
+vtk.vtk
+VTKCellTypes.vtk
+```
+
+TransientHDFReader简单测试
+```
+TransientHDFReader简单测试
+```
+
+## FullHead.mhd need FullHead.raw.gz
+```
+FullHead.mhd
+FullHead.raw.gz
+```
+
+### Remote
+
+```
+https://code.ornl.gov/ecpcitest/vtk-m/-/tree/v9.0.0/Remote
+```
+
+### Examples Math/VectorDot some error
+```
+Value 0 : -nan(ind)
+Value 1 : inf
+Value 2 : inf
+```
