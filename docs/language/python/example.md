@@ -351,3 +351,15 @@ util.dist= <FileHash mode: sha256 value: XgdmP3yx9-wQEFjO7OvMj9RjEf5JlR5HFFR69v7
 util.locate()= C:\Users\eric\AppData\Local\Programs\Python\Python312\Lib\site-packages\wheel\vendored\packaging\utils.py
 ```
 
+## http
+
+```
+py.exe -m http.server 8080
+```
+
+results
+```
+PS D:\work\qt_2024_work\ModernQt\codes\QML\httpuiremote\httpuiremote> py.exe -m http.server 8080
+Serving HTTP on :: port 8080 (http://[::]:8080/) ...
+```
+

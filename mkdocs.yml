@@ -104,11 +104,14 @@ nav:
   - FileFormat:
     - File Format Docs: file-format/file-format.md
   - GitHub:
+    - Git: github/git.md
     - GitHub Pages: github/github.md
     - GitHub Actions: github/actions.md
-    - codes: github/codes.md
+    - Library :
+      - NodeEditor : github/lib/nodeeditor.md
   - Pre&Post:
     - Blender: prepost/blender/blender.md
+    - EasyX: prepost/easyx/easyx.md
     - FFmpeg: prepost/ffmpeg/ffmpeg.md
     - Geometric: prepost/geometric/geometric.md
     - GMesh: prepost/gmesh/gmesh.md
@@ -119,6 +122,8 @@ nav:
       - GLAD: prepost/opengl/glad/glad.md
       - GLEW: prepost/opengl/glew/glew.md
       - GLFW: prepost/opengl/glfw/glfw.md
+      - GLM:  prepost/opengl/glm/glm.md
+      - GLSL: prepost/opengl/glsl/glsl.md
       - FREE-GLUT: prepost/opengl/glut/freeglut.md
       - OpenGL: prepost/opengl/opengl.md
     - Open CASCADE: prepost/occ/occ.md
@@ -146,15 +151,6 @@ nav:
     - OpenACC: parallel/openacc/openacc.md
     - OpenMP: parallel/openmp/openmp.md
   - Programming:
-    - C++: 
-      - Articles and Videos: language/cpp/videos.md
-      - Conference: 
-        - Advanced C++: language/cpp/conference/advanced_cpp.md
-        - CppCon: language/cpp/conference/cppcon.md
-        - Meeting C++: language/cpp/conference/meeting_cpp.md
-      - Code Examples:
-        - Simple Code: language/cpp/example.md
-      - MultiThread: language/cpp/multithread.md
     - Build System:
       - Bazel: bazel/bazel.md
       - CMake: 
@@ -165,6 +161,20 @@ nav:
         - Parse: cmake/cmake-parse.md
         - Python: cmake/cmake-python.md
         - Regex: cmake/cmake-regex.md
+    - C++: 
+      - Articles and Videos: language/cpp/videos.md
+      - Conference: 
+        - Advanced C++: language/cpp/conference/advanced_cpp.md
+        - CppCon: language/cpp/conference/cppcon.md
+        - Meeting C++: language/cpp/conference/meeting_cpp.md
+      - Code Examples:
+        - Simple Code: language/cpp/example.md
+      - Grammar : language/cpp/grammar.md
+      - MultiThread: language/cpp/multithread.md
+    - CSharp:
+      - CSharp: language/csharp/csharp.md
+      - Windows Forms: language/csharp/forms.md
+      - WPF: language/csharp/wpf.md
     - Fortran: language/fortran/fortran.md
     - Java: language/java/java.md
     - JavaScript: language/javascript/javascript.md
@@ -214,20 +224,12 @@ nav:
     - GCC: gcc/gcc.md
     - LLVM: llvm/llvm.md
     - Lex and Yacc: lex/lex.md
+    - Node.js: tools/nodejs/nodejs.md
     - Nsight: nsight/nsight.md
     - oneAPI: oneapi/oneapi.md
     - Test:
       - Gogletest: test/test.md
       - CukeTest: test/cuketest/cuketest.md
-    - Game Engine:
-      - Unreal Engine: game/unreal/ue5.md
-      - Unity: game/unity/unity.md
-      - Piccolo: game/piccolo/piccolo.md
-    - Games:
-      - Games10x: games/games10x.md
-      - Games20x: games/games20x.md
-      - Games30x: games/games30x.md
-      - Games40x: games/games40x.md
     - Package Manager:
       - Chocolatey: package/chocolatey/chocolatey.md
       - vcpkg: package/vcpkg/vcpkg.md
@@ -241,6 +243,21 @@ nav:
         - Path: tools/system/windows/windows-path.md        
         - Total Commander: tools/system/windows/total-cmd.md
         - USB: tools/system/windows/windows.md
+  - Engine:
+    - Game Engine:
+      - Game Engine: engine/game/engine/engine.md
+      - Unreal Engine: engine/game/unreal/ue5.md
+      - Unity: engine/game/unity/unity.md
+      - Piccolo: engine/game/piccolo/piccolo.md
+    - Games:
+      - Games10x: engine/games/games10x.md
+      - Games20x: engine/games/games20x.md
+      - Games30x: engine/games/games30x.md
+      - Games40x: engine/games/games40x.md
+    - Physics Engine:
+      - Physics Engine: engine/physics/physics.md
+    - Tutorial:
+      - Tutorial: engine/tutorial/tutorial.md
   - AI:
     - Music: ai/music/music.md 
   - Docs:

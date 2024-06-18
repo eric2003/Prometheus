@@ -46,9 +46,12 @@
 ## command
 Intel® oneAPI Base Toolkit for Windows* (64 bit)
 ```
+  Version	2024.1.0
+  Date	March 22, 2024  
   Version 2023.2.0
   Date    July 13, 2023
 ```
+
 
 setvars.bat
 ```  

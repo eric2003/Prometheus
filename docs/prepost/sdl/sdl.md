@@ -11,6 +11,8 @@ Simple Directmedia Layer (SDL) is a framework for creating cross-platform games 
 
 -  [SDL Tutorials](https://wiki.libsdl.org/SDL3/Tutorials/).
 -  [SDL Made Easy](https://www.youtube.com/playlist?list=PLHJE4y54mpC5_eEz9gCqIkNpU-n_2eyNt/).
+-  [SDL 2 Tutorial Series-Sonar Systems](https://www.youtube.com/watch?v=uvxV1xlApm4&list=PLRtjMdoYXLf75jCBW6Ln2aS7DZoB5q2Hr&index=1/).
+-  [SDL2 Simple Directmedia Layer-Mike Shah](https://www.youtube.com/watch?v=QM4WW8hcsPU&list=PLvv0ScY6vfd-p1gSnbQhY7vMe2rng0IL0&index=1/).
 
 
 ## CMake Info

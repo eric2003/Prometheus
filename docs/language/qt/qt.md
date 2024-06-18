@@ -21,6 +21,12 @@
 -  [《Qt6 C++开发指南 》2023（上册，完整版）](https://www.bilibili.com/video/BV1km4y1k7CW/).
 -  [Qt6 C++ GUI Development Course ( Build GUI Apps in Qt & C++ )](https://www.youtube.com/watch?v=Wi9nQTDFF4U/).
 
+## Qt Book
+
+-  [Qt5 Cadaques 正體中文版](https://ycheng.gitbooks.io/qt5_cadaques-zh_tw).
+-  [A Book about Qt5](https://qmlbook.readthedocs.io/).
+
+
 ## Qt Tutorial
 
 -  [Qt Tutorial](https://www.youtube.com/playlist?list=PLGLfVvz_LVvQrqLpBB4Sfz7gxMN9shP6v/).
@@ -45,6 +51,10 @@
 ## pyQt6 
 
 -  [2024版 PyQt6 Python桌面开发 视频教程(无废话版) 玩命更新中~](https://www.bilibili.com/video/BV11C4y1P7fj/).
+
+## X计划--NodeEditor
+
+-  [X计划--NodeEditor](https://www.bilibili.com/video/BV1hx4y1i7d2//).
 
 
 ## Youtuber 

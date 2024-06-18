@@ -8,6 +8,8 @@ Open CASCADE Technology (OCCT) is the only open-source full-scale 3D geometry li
 -  [OpenCascade教程](https://www.bilibili.com/video/BV1hb4y1W7ZB/).
 -  [Gmsh Netgen OCCT](https://www.bilibili.com/video/BV1i541117SK/).
 -  [OSG新版教学视频（2021）— 内容篇](https://www.bilibili.com/video/BV14o4y1f7eH/).
+-  [零基础入门——OCC应用与开发系列课程](https://www.bilibili.com/video/BV1Kx421D7As/).
+
 
 ## OpenCascade
 

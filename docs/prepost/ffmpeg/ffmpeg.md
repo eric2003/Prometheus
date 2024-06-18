@@ -16,6 +16,11 @@
 -  [github release](https://github.com/GyanD/codexffmpeg/releases/tag/7.0).
 -  [ShiftMediaProject-FFmpeg](https://github.com/ShiftMediaProject/FFmpeg).
 
+### OpenGL and FFmpeg
+
+-  [Real-time video processing in C++ with OpenGL and FFmpeg](https://www.bilibili.com/video/BV1Dz421m7Lk/).
+
+
 ## Youtuber
 
 -  [GamesWithGabe](https://www.youtube.com/@GamesWithGabe/).

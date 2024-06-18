@@ -228,8 +228,6 @@ output:
 
 [This is a link](https://blog.webdevsimplified.com)
   
-[Relative](/2023-06/markdown-crash-course)
-
 https://blog.webdevsimplified.com
 
 <https://blog.webdevsimplified.com>

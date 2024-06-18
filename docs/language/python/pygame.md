@@ -16,6 +16,13 @@
 -  [Pygame RPG Codealong 09 - Hover Effect On Stats Screen](https://www.youtube.com/watch?v=1nDQSHxZS8w/).
 -  [Pygame RPG Codealong 10 - Leveling Up](https://www.youtube.com/watch?v=fizlHH7gWog/).
 
+## Creating Tetris
+
+-  [Creating Tetris in Python with pygame - Beginner Tutorial (OOP)](https://www.youtube.com/watch?v=nF_crEtmpBo/).
+-  [Let's code Tetris Game in Python](https://www.youtube.com/watch?v=7kGNs5R-AM8/).
+
+
+
 ## Youtuber
 
 -  [aprilmaycodes](https://www.youtube.com/@aprilmaycodes/).

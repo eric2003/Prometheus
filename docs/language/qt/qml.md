@@ -12,6 +12,7 @@
 -  [Qt Quick Examples - Animation](http://www.bim-times.com/qt/Qt-5.11.1/qtquick/qtquick-animation-example.html).
 -  [Qt QML complete tutorial](https://www.bilibili.com/video/BV1Nx4y1D7dw/).
 -  [QT开发基础教程 QML ListView 列表视图简易介绍](https://www.bilibili.com/video/BV14p421y717/).
+-  [C++ cmake工程引入qt6和Quick 教程](https://zhuanlan.zhihu.com/p/661282870/).
 
 
 ## QML Book
@@ -320,4 +321,99 @@ c:\Users\eric\Pictures\
 ### balsamui.exe location
 ```
 c:\local\Qt\Tools\QtDesignStudio\qt6_design_studio_reduced_version\bin\balsamui.exe
+```
+
+### QML_XHR_ALLOW_FILE_READ
+
+run.bat
+```
+set QML_XHR_ALLOW_FILE_READ=1
+"c:\local\Qt\Tools\QtCreator\bin\qtcreator.exe"
+```
+
+### venv
+
+```
+py.exe -m venv venv
+venv\Scripts\activate
+```
+
+results
+```
+PS D:\work\qt_2024_work\ModernQt\codes\QML\restapi\01a\restapi\restservice> venv\Scripts\activate
+(venv) PS D:\work\qt_2024_work\ModernQt\codes\QML\restapi\01a\restapi\restservice>
+```
+
+### Flask
+
+```
+https://flask.palletsprojects.com
+py.exe -m venv venv
+venv\Scripts\activate
+```
+
+### Install Flask
+
+```
+pip install Flask
+```
+
+### upgrade pip
+
+```
+python.exe -m pip install --upgrade pip
+py.exe -m pip install --upgrade pip
+```
+
+### run flask
+
+```
+flask --app server run
+```
+
+### json load problem
+
+```python
+json.load(file('colors.json', 'r'))
+```
+
+error
+```
+colors = json.load(file('colors.json', 'r'))
+                       ^^^^
+NameError: name 'file' is not defined. Did you mean: 'filter'?
+```
+
+```python
+# Opening JSON file
+f = open('data.json')
+ 
+# returns JSON object as 
+# a dictionary
+data = json.load(f)
+```
+
+### OfflineStorage
+```
+"C:\\Users\\eric\\AppData\\Roaming\\applocalstorage\\QML\\OfflineStorage\\Databases\\d41d8cd98f00b204e9800998ecf8427e"
+```
+
+### plugin
+
+default
+```
+Object class-name: MyItem
+URI: com.mycompany.qmlcomponents
+```
+
+simple example
+```
+Object class-name: CppModel
+URI: com.eric.cppModel
+```
+
+### cmake qtquick
+
+```
+cmake -DCMAKE_PREFIX_PATH=c:\local\Qt\6.7.0\msvc2019_64\lib\cmake\
 ```

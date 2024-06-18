@@ -66,6 +66,24 @@ File position(winget install)
 C:\Users\eric\AppData\Local\Programs\Julia-1.10.2
 ```
 
+### Get-Command julia
+
+```powershell
+PS C:\Users\eric> Get-Command julia
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Application     julia.exe                                          1.10.2.0   C:\Users\eric\AppData\Local\Programs\J...
+```
+
+```powershell
+PS C:\Users\eric> Get-Command julia | out-string -Width 160
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Application     julia.exe                                          1.10.2.0   C:\Users\eric\AppData\Local\Programs\Julia-1.10.2\bin\julia.exe
+```
+
 
 ## Import
 

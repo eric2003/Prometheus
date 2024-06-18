@@ -16,6 +16,8 @@
 - [双笙子佯谬](https://space.bilibili.com/263032155/).
 - [【录播】现代C++中的高性能并行编程与优化（持续更新中）](https://www.bilibili.com/video/BV1fa411r7zp/).
 - [高性能并行编程与优化](https://github.com/parallel101/).
+- [现代C++项目实战](https://www.bilibili.com/video/BV1Ur4y1V7Kh/).
+
 
 ### 大官人学CFD
 
@@ -25,6 +27,18 @@
 
 - [阿西拜编程](https://space.bilibili.com/412587130/).
 
+### Voidmatrix
+
+- [Voidmatrix-前网易游戏研发工程师 ](https://space.bilibili.com/25864506/).
+
+
+### 先进编译实验室
+
+- [先进编译实验室](https://space.bilibili.com/1540261574/).
+
+## 国家天元数学西北中心
+
+- [国家天元数学西北中心](https://space.bilibili.com/477835562/).
 
 
 ## youtuber

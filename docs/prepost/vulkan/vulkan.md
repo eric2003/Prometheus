@@ -17,6 +17,14 @@ Vulkan is a cross-platform industry standard enabling developers to target a wid
 
 -  [Vulkan Tutorial](https://vulkan-tutorial.com/).
 -  [Vulkan入门](https://www.bilibili.com/video/BV1R44y1M7e2/).
+-  [Vulkan Game Engine Tutorial](https://www.bilibili.com/video/BV1za411C7tt/).
+-  [AdiosyEngine，基于Vulkan的渲染框架](https://www.bilibili.com/video/BV15J4m1V7Wm/).
+-  [手搓Vulkan渲染引擎](https://www.bilibili.com/video/BV15J4m1V7Wm/).
+
+## Game engine
+
+-  [How to Make a Game Engine: Introducing the VULKAN GAME ENGINE Series!](https://www.youtube.com/watch?v=dHPuU-DJoBM&list=PLv8Ddw9K0JPg1BEO-RS-0MYs423cvLVtj/).
+
 
 ## CMake 
 
