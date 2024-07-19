@@ -20,6 +20,13 @@
 -  [Qt6.3.1 C++ GUI开发教程（完整版）](https://www.bilibili.com/video/BV1G94y1Q7h6/).
 -  [《Qt6 C++开发指南 》2023（上册，完整版）](https://www.bilibili.com/video/BV1km4y1k7CW/).
 -  [Qt6 C++ GUI Development Course ( Build GUI Apps in Qt & C++ )](https://www.youtube.com/watch?v=Wi9nQTDFF4U/).
+-  [Qt 快速入门系列教程](https://shouce.jb51.net/qt-beginning/45.html).
+
+
+## Qt Github
+
+-  [Qt实战/Qt入门和进阶/Qt教程](https://github.com/feiyangqingyun/qtkaifajingyan/).
+
 
 ## Qt Book
 
@@ -72,12 +79,19 @@ cmake .. -D CMAKE_PREFIX_PATH:PATH=C:/local/Qt/6.6.2/msvc2019_64/
 cmake --build .
 C:\local\Qt\6.6.2\msvc2019_64\bin\windeployqt.exe .\Debug\testprj.exe
 ```
+## Check Qt Version
 
 qmake -v
 ```
 $ c:\local\Qt\6.6.2\msvc2019_64\bin\qmake -v
 QMake version 3.1
 Using Qt version 6.6.2 in C:/local/Qt/6.6.2/msvc2019_64/lib
+```
+
+```
+PS C:\Users\eric> qmake -v
+QMake version 3.1
+Using Qt version 6.7.2 in C:/local/Qt/6.7.2/msvc2019_64/lib
 ```
 
 %(Qt:QT_INSTALL_PREFIX)

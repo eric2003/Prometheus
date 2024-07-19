@@ -8,3 +8,20 @@ HDF5 consists of a file format for storing HDF5 data, a data model for logically
 -  [The HDF Group Documentation](https://portal.hdfgroup.org/documentation/).
 -  [CGNS and HDF5 compiling and linking related article links compilation](https://zhuanlan.zhihu.com/p/452874893/).
 
+## download
+
+-  [HDF5 1.14.4.3](https://portal.hdfgroup.org/downloads/hdf5/hdf5_1_14_4.html).
+-  [HDF5 1.14.4.3 FTP](https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.4/bin/).
+-  [HDF5 1.14.4.3 FTP](https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.4/bin/).
+
+## install location
+
+```
+c:\dev\HDF_Group\HDF5\1.10.9
+c:\dev\HDF_Group\HDF5\1.14.0
+c:\dev\HDF_Group\HDF5\1.14.2
+c:\dev\HDF_Group\HDF5\1.14.4
+```
+
+
+

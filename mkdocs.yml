@@ -150,6 +150,7 @@ nav:
     - MPI: parallel/mpi/mpi.md
     - OpenACC: parallel/openacc/openacc.md
     - OpenMP: parallel/openmp/openmp.md
+    - Thread: parallel/thread/thread.md
   - Programming:
     - Build System:
       - Bazel: bazel/bazel.md
@@ -188,14 +189,18 @@ nav:
       - Argparse: language/python/argparse.md
       - Command: language/python/command.md
       - Example: language/python/example.md
+      - Flask: language/python/flask.md
       - Grammar: language/python/grammar.md
       - PyGame: language/python/pygame.md
+      - Pyglet: language/python/pyglet.md
       - Python: language/python/python.md      
     - Qt:
       - Qt: language/qt/qt.md
       - Qt-CMake: language/qt/qt-cmake.md
+      - Qt-Examples: language/qt/qt-examples.md
       - Qt Game: language/qt/game.md
       - QML: language/qt/qml.md
+      - QProcess: language/qt/qprocess.md
       - QThread: language/qt/qthread.md
       - Signals & Slots: language/qt/slots.md
     - Rust: language/rust/rust.md

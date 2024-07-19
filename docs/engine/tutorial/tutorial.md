@@ -30,9 +30,14 @@
 -  [从零开始的C++双人合作塔防游戏！](https://www.bilibili.com/video/BV1Zn4y1R7GT/).
 
 
+## Mesh
+
+-  [Math for Game Developers - Triangle Meshes](https://www.youtube.com/watch?v=P2xMqTgsgsE/).
 
 
 ## Youtuber
 
 -  [Giant Sloth Games](https://www.youtube.com/@GiantSlothGames/).
+-  [Jorge Rodriguez](https://www.youtube.com/@JorgeVinoRodriguez/).
+
 
