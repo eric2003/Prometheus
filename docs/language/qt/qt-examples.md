@@ -3,6 +3,7 @@
 ## Qt Examples And Tutorials
 
 -  [Qt Examples And Tutorials](https://doc.qt.io/qt-6/qtexamplesandtutorials.html).
+-  [C++ 全栈聊天项目](https://www.bilibili.com/video/BV1k2421K7ZB/).
 
 
 ## Splitter
@@ -358,3 +359,21 @@ MyThread::run, this->thread() =  QThread(0x1c7ddeeb0f0)
 ```
 ping www.baidu.com
 ```
+
+## QTreeView QModelIndex
+
+```cpp
+QObject::connect(this->ui->treeView, &QAbstractItemView::clicked, this, &MainWindow::onMyTreeViewClicked);
+
+void MainWindow::on_treeView_clicked(const QModelIndex &index)
+{
+    qDebug() <<"MainWindow::on_treeView_clicked" << "index=" << index;
+    int row = index.row();
+    int col = index.column();
+    qDebug() <<"item row=" << row << "column=" << col;
+
+    QString text = index.data(Qt::DisplayRole).toString();
+    qDebug() << "text = " << text;
+}
+```
+

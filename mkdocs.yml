@@ -90,7 +90,7 @@ nav:
   - CFD&CAE:
     - OneFLOW: cfd/oneflow.md
     - CGNS: cfd/cgns.md
-    - HDF5: hdf5/hdf5.md
+    - HDF5: cfd/hdf5/hdf5.md
     - METIS: metis/metis.md
     - Scientific Computing: scientific/computing.md
     - CFD Open Source:
@@ -176,6 +176,10 @@ nav:
       - CSharp: language/csharp/csharp.md
       - Windows Forms: language/csharp/forms.md
       - WPF: language/csharp/wpf.md
+    - Data:
+      - CSV: data/csv/csv.md
+      - Json: data/json/json.md
+      - XML: data/xml/xml.md
     - Fortran: language/fortran/fortran.md
     - Java: language/java/java.md
     - JavaScript: language/javascript/javascript.md
@@ -204,13 +208,10 @@ nav:
       - QThread: language/qt/qthread.md
       - Signals & Slots: language/qt/slots.md
     - Rust: language/rust/rust.md
-    - Taichi: language/taichi/taichi.md
     - Script:
       - Lua: script/lua/lua.md
-    - Data:
-      - CSV: data/csv/csv.md
-      - Json: data/json/json.md
-      - XML: data/xml/xml.md
+    - Taichi: language/taichi/taichi.md
+    - Tcltk : language/tcltk/tcltk.md
   - HPC:
     - Supercomputing Center: hpc/hpc.md
     - Academic conferences: hpc/conferences.md
@@ -220,6 +221,7 @@ nav:
       - Fluid Mechanics: physics/mechanics/fluid.md
     - Physics Engine: physics/engine/engine.md
   - Resources:
+    - Images: resources/images/images.md
     - People: resources/people/people.md
     - Website: resources/website/website.md
   - Tools:
@@ -272,7 +274,7 @@ nav:
     - Graphviz:
       - Graphviz: doctools/graphviz/graphviz.md
     - HTML Help Workshop:
-      - HTML Help Workshop: doctools/hhc/hhc.md
+      - HTML Help Workshop: doctools/htmlhelp/htmlhelp.md
     - LaTeX : 
       - LaTeX : doctools/latex/latex.md
     - Markdown: doctools/markdown/markdown.md

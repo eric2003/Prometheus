@@ -264,3 +264,483 @@ results:
 ```
 -- myfilename=a.txt
 ```
+
+## check_c_source_compiles
+
+```cmake
+include_guard(GLOBAL)
+include(Internal/CheckSourceCompiles)
+
+macro(CHECK_C_SOURCE_COMPILES SOURCE VAR)
+  cmake_check_source_compiles(C "${SOURCE}" ${VAR} ${ARGN})
+endmacro()
+```
+
+## cmake_check_source_compiles
+
+```cmake
+include_guard(GLOBAL)
+include(Internal/CheckSourceCompiles)
+
+function(CHECK_SOURCE_COMPILES _lang _source _var)
+  cmake_check_source_compiles(${_lang} "${_source}" ${_var} ${ARGN})
+endfunction()
+```
+
+
+## CMAKE_CHECK_SOURCE_COMPILES code
+
+```cmake
+include_guard(GLOBAL)
+
+block(SCOPE_FOR POLICIES)
+cmake_policy(SET CMP0054 NEW) # if() quoted variables not dereferenced
+cmake_policy(SET CMP0057 NEW) # if() supports IN_LIST
+
+function(CMAKE_CHECK_SOURCE_COMPILES _lang _source _var)
+  if(NOT DEFINED "${_var}")
+    set(_lang_filename "src")
+    if(_lang STREQUAL "C")
+      set(_lang_textual "C")
+      set(_lang_ext "c")
+    elseif(_lang STREQUAL "CXX")
+      set(_lang_textual "C++")
+      set(_lang_ext "cxx")
+    elseif(_lang STREQUAL "CUDA")
+      set(_lang_textual "CUDA")
+      set(_lang_ext "cu")
+    elseif(_lang STREQUAL "Fortran")
+      set(_lang_textual "Fortran")
+      set(_lang_ext "F90")
+    elseif(_lang STREQUAL "HIP")
+      set(_lang_textual "HIP")
+      set(_lang_ext "hip")
+    elseif(_lang STREQUAL "ISPC")
+      set(_lang_textual "ISPC")
+      set(_lang_ext "ispc")
+    elseif(_lang STREQUAL "OBJC")
+      set(_lang_textual "Objective-C")
+      set(_lang_ext "m")
+    elseif(_lang STREQUAL "OBJCXX")
+      set(_lang_textual "Objective-C++")
+      set(_lang_ext "mm")
+    elseif(_lang STREQUAL "Swift")
+      set(_lang_textual "Swift")
+      set(_lang_ext "swift")
+      if (NOT DEFINED CMAKE_TRY_COMPILE_TARGET_TYPE
+          OR CMAKE_TRY_COMPILE_TARGET_TYPE STREQUAL "EXECUTABLE")
+        set(_lang_filename "main")
+      endif()
+    else()
+      message (SEND_ERROR "check_source_compiles: ${_lang}: unknown language.")
+      return()
+    endif()
+
+    get_property (_supported_languages GLOBAL PROPERTY ENABLED_LANGUAGES)
+    if (NOT _lang IN_LIST _supported_languages)
+      message (SEND_ERROR "check_source_compiles: ${_lang}: needs to be enabled before use.")
+      return()
+    endif()
+
+    set(_FAIL_REGEX)
+    set(_SRC_EXT)
+    set(_key)
+    foreach(arg ${ARGN})
+      if("${arg}" MATCHES "^(FAIL_REGEX|SRC_EXT|OUTPUT_VARIABLE)$")
+        set(_key "${arg}")
+      elseif(_key STREQUAL "FAIL_REGEX")
+        list(APPEND _FAIL_REGEX "${arg}")
+      elseif(_key STREQUAL "SRC_EXT")
+        set(_SRC_EXT "${arg}")
+        set(_key "")
+      elseif(_key STREQUAL "OUTPUT_VARIABLE")
+        set(_OUTPUT_VARIABLE "${arg}")
+        set(_key "")
+      else()
+        message(FATAL_ERROR "Unknown argument:\n  ${arg}\n")
+      endif()
+    endforeach()
+
+    if(NOT _SRC_EXT)
+      set(_SRC_EXT ${_lang_ext})
+    endif()
+
+    if(CMAKE_REQUIRED_LINK_OPTIONS)
+      set(CHECK_${LANG}_SOURCE_COMPILES_ADD_LINK_OPTIONS
+        LINK_OPTIONS ${CMAKE_REQUIRED_LINK_OPTIONS})
+    else()
+      set(CHECK_${LANG}_SOURCE_COMPILES_ADD_LINK_OPTIONS)
+    endif()
+    if(CMAKE_REQUIRED_LIBRARIES)
+      set(CHECK_${LANG}_SOURCE_COMPILES_ADD_LIBRARIES
+        LINK_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES})
+    else()
+      set(CHECK_${LANG}_SOURCE_COMPILES_ADD_LIBRARIES)
+    endif()
+    if(CMAKE_REQUIRED_INCLUDES)
+      set(CHECK_${LANG}_SOURCE_COMPILES_ADD_INCLUDES
+        "-DINCLUDE_DIRECTORIES:STRING=${CMAKE_REQUIRED_INCLUDES}")
+    else()
+      set(CHECK_${LANG}_SOURCE_COMPILES_ADD_INCLUDES)
+    endif()
+
+    if(NOT CMAKE_REQUIRED_QUIET)
+      message(CHECK_START "Performing Test ${_var}")
+    endif()
+    string(APPEND _source "\n")
+    try_compile(${_var}
+      SOURCE_FROM_VAR "${_lang_filename}.${_SRC_EXT}" _source
+      COMPILE_DEFINITIONS -D${_var} ${CMAKE_REQUIRED_DEFINITIONS}
+      ${CHECK_${LANG}_SOURCE_COMPILES_ADD_LINK_OPTIONS}
+      ${CHECK_${LANG}_SOURCE_COMPILES_ADD_LIBRARIES}
+      CMAKE_FLAGS -DCOMPILE_DEFINITIONS:STRING=${CMAKE_REQUIRED_FLAGS}
+      "${CHECK_${LANG}_SOURCE_COMPILES_ADD_INCLUDES}"
+      OUTPUT_VARIABLE OUTPUT)
+
+    foreach(_regex ${_FAIL_REGEX})
+      if("${OUTPUT}" MATCHES "${_regex}")
+        set(${_var} 0)
+      endif()
+    endforeach()
+
+    if (_OUTPUT_VARIABLE)
+      set(${_OUTPUT_VARIABLE} "${OUTPUT}" PARENT_SCOPE)
+    endif()
+
+    if(${_var})
+      set(${_var} 1 CACHE INTERNAL "Test ${_var}")
+      if(NOT CMAKE_REQUIRED_QUIET)
+        message(CHECK_PASS "Success")
+      endif()
+    else()
+      if(NOT CMAKE_REQUIRED_QUIET)
+        message(CHECK_FAIL "Failed")
+      endif()
+      set(${_var} "" CACHE INTERNAL "Test ${_var}")
+    endif()
+  endif()
+endfunction()
+
+endblock()
+```
+
+## cmTryCompileCommand.h
+
+```cpp
+/* Distributed under the OSI-approved BSD 3-Clause License.  See accompanying
+   file Copyright.txt or https://cmake.org/licensing for details.  */
+#pragma once
+
+#include "cmConfigure.h" // IWYU pragma: keep
+
+#include <string>
+#include <vector>
+
+class cmExecutionStatus;
+
+bool cmTryCompileCommand(std::vector<std::string> const& args,
+                         cmExecutionStatus& status);
+```
+
+## cmTryCompileCommand.cxx
+
+```cpp
+/* Distributed under the OSI-approved BSD 3-Clause License.  See accompanying
+   file Copyright.txt or https://cmake.org/licensing for details.  */
+#include "cmTryCompileCommand.h"
+
+#include <cm/optional>
+
+#include "cmConfigureLog.h"
+#include "cmCoreTryCompile.h"
+#include "cmExecutionStatus.h"
+#include "cmMakefile.h"
+#include "cmMessageType.h"
+#include "cmRange.h"
+#include "cmState.h"
+#include "cmStateTypes.h"
+#include "cmStringAlgorithms.h"
+#include "cmValue.h"
+#include "cmake.h"
+
+namespace {
+#ifndef CMAKE_BOOTSTRAP
+void WriteTryCompileEvent(cmConfigureLog& log, cmMakefile const& mf,
+                          cmTryCompileResult const& compileResult)
+{
+  // Keep in sync with cmFileAPIConfigureLog's DumpEventKindNames.
+  static const std::vector<unsigned long> LogVersionsWithTryCompileV1{ 1 };
+
+  if (log.IsAnyLogVersionEnabled(LogVersionsWithTryCompileV1)) {
+    log.BeginEvent("try_compile-v1", mf);
+    cmCoreTryCompile::WriteTryCompileEventFields(log, compileResult);
+    log.EndEvent();
+  }
+}
+#endif
+}
+
+bool cmTryCompileCommand(std::vector<std::string> const& args,
+                         cmExecutionStatus& status)
+{
+  cmMakefile& mf = status.GetMakefile();
+
+  if (args.size() < 3) {
+    mf.IssueMessage(
+      MessageType::FATAL_ERROR,
+      "The try_compile() command requires at least 3 arguments.");
+    return false;
+  }
+
+  if (mf.GetCMakeInstance()->GetWorkingMode() == cmake::FIND_PACKAGE_MODE) {
+    mf.IssueMessage(
+      MessageType::FATAL_ERROR,
+      "The try_compile() command is not supported in --find-package mode.");
+    return false;
+  }
+
+  cmStateEnums::TargetType targetType = cmStateEnums::EXECUTABLE;
+  cmValue tt = mf.GetDefinition("CMAKE_TRY_COMPILE_TARGET_TYPE");
+  if (cmNonempty(tt)) {
+    if (*tt == cmState::GetTargetTypeName(cmStateEnums::EXECUTABLE)) {
+      targetType = cmStateEnums::EXECUTABLE;
+    } else if (*tt ==
+               cmState::GetTargetTypeName(cmStateEnums::STATIC_LIBRARY)) {
+      targetType = cmStateEnums::STATIC_LIBRARY;
+    } else {
+      mf.IssueMessage(
+        MessageType::FATAL_ERROR,
+        cmStrCat("Invalid value '", *tt,
+                 "' for CMAKE_TRY_COMPILE_TARGET_TYPE.  Only '",
+                 cmState::GetTargetTypeName(cmStateEnums::EXECUTABLE),
+                 "' and '",
+                 cmState::GetTargetTypeName(cmStateEnums::STATIC_LIBRARY),
+                 "' are allowed."));
+      return false;
+    }
+  }
+
+  cmCoreTryCompile tc(&mf);
+  cmCoreTryCompile::Arguments arguments =
+    tc.ParseArgs(cmMakeRange(args), false);
+  if (!arguments) {
+    return true;
+  }
+
+  cm::optional<cmTryCompileResult> compileResult =
+    tc.TryCompileCode(arguments, targetType);
+#ifndef CMAKE_BOOTSTRAP
+  if (compileResult && !arguments.NoLog) {
+    if (cmConfigureLog* log = mf.GetCMakeInstance()->GetConfigureLog()) {
+      WriteTryCompileEvent(*log, mf, *compileResult);
+    }
+  }
+#endif
+
+  // if They specified clean then we clean up what we can
+  if (tc.SrcFileSignature) {
+    if (!mf.GetCMakeInstance()->GetDebugTryCompile()) {
+      tc.CleanupFiles(tc.BinaryDirectory);
+    }
+  }
+  return true;
+}
+```
+
+## TryCompile
+
+```cpp
+  // actually do the try compile now that everything is setup
+  int res = this->Makefile->TryCompile(
+    sourceDirectory, this->BinaryDirectory, projectName, targetName,
+    this->SrcFileSignature, cmake::NO_BUILD_PARALLEL_LEVEL,
+    &arguments.CMakeFlags, output);
+	
+int cmMakefile::TryCompile(const std::string& srcdir,
+                           const std::string& bindir,
+                           const std::string& projectName,
+                           const std::string& targetName, bool fast, int jobs,
+                           const std::vector<std::string>* cmakeArgs,
+                           std::string& output)	
+						   
+  // finally call the generator to actually build the resulting project
+  int ret = this->GetGlobalGenerator()->TryCompile(
+    jobs, srcdir, bindir, projectName, targetName, fast, output, this);	
+
+	int cmGlobalGenerator::TryCompile(int jobs, const std::string& srcdir,
+                                  const std::string& bindir,
+                                  const std::string& projectName,
+                                  const std::string& target, bool fast,
+                                  std::string& output, cmMakefile* mf)
+```
+
+
+## cmGlobalGenerator::TryCompile
+
+```cpp
+int cmGlobalGenerator::TryCompile(int jobs, const std::string& srcdir,
+                                  const std::string& bindir,
+                                  const std::string& projectName,
+                                  const std::string& target, bool fast,
+                                  std::string& output, cmMakefile* mf)
+{
+  // if this is not set, then this is a first time configure
+  // and there is a good chance that the try compile stuff will
+  // take the bulk of the time, so try and guess some progress
+  // by getting closer and closer to 100 without actually getting there.
+  if (!this->CMakeInstance->GetState()->GetInitializedCacheValue(
+        "CMAKE_NUMBER_OF_MAKEFILES")) {
+    // If CMAKE_NUMBER_OF_MAKEFILES is not set
+    // we are in the first time progress and we have no
+    // idea how long it will be.  So, just move 1/10th of the way
+    // there each time, and don't go over 95%
+    this->FirstTimeProgress += ((1.0f - this->FirstTimeProgress) / 30.0f);
+    if (this->FirstTimeProgress > 0.95f) {
+      this->FirstTimeProgress = 0.95f;
+    }
+    this->CMakeInstance->UpdateProgress("Configuring",
+                                        this->FirstTimeProgress);
+  }
+
+  std::vector<std::string> newTarget = {};
+  if (!target.empty()) {
+    newTarget = { target };
+  }
+  std::string config =
+    mf->GetSafeDefinition("CMAKE_TRY_COMPILE_CONFIGURATION");
+  cmBuildOptions defaultBuildOptions(false, fast, PackageResolveMode::Disable);
+
+  std::stringstream ostr;
+  auto ret =
+    this->Build(jobs, srcdir, bindir, projectName, newTarget, ostr, "", config,
+                defaultBuildOptions, true, this->TryCompileTimeout);
+  output = ostr.str();
+  return ret;
+}
+```
+
+## cmGlobalGenerator::Build
+
+```cpp
+int cmGlobalGenerator::Build(
+  int jobs, const std::string& /*unused*/, const std::string& bindir,
+  const std::string& projectName, const std::vector<std::string>& targets,
+  std::ostream& ostr, const std::string& makeCommandCSTR,
+  const std::string& config, const cmBuildOptions& buildOptions, bool verbose,
+  cmDuration timeout, cmSystemTools::OutputOption outputflag,
+  std::vector<std::string> const& nativeOptions)
+{
+  bool hideconsole = cmSystemTools::GetRunCommandHideConsole();
+
+  /**
+   * Run an executable command and put the stdout in output.
+   */
+  cmWorkingDirectory workdir(bindir);
+  ostr << "Change Dir: '" << bindir << '\'' << std::endl;
+  if (workdir.Failed()) {
+    cmSystemTools::SetRunCommandHideConsole(hideconsole);
+    std::string err = cmStrCat("Failed to change directory: ",
+                               std::strerror(workdir.GetLastResult()));
+    cmSystemTools::Error(err);
+    ostr << err << std::endl;
+    return 1;
+  }
+  std::string realConfig = config;
+  if (realConfig.empty()) {
+    realConfig = this->GetDefaultBuildConfig();
+  }
+
+  int retVal = 0;
+  cmSystemTools::SetRunCommandHideConsole(true);
+  std::string outputBuffer;
+  std::string* outputPtr = &outputBuffer;
+
+  std::vector<GeneratedMakeCommand> makeCommand = this->GenerateBuildCommand(
+    makeCommandCSTR, projectName, bindir, targets, realConfig, jobs, verbose,
+    buildOptions, nativeOptions);
+
+  // Workaround to convince some commands to produce output.
+  if (outputflag == cmSystemTools::OUTPUT_PASSTHROUGH &&
+      makeCommand.back().RequiresOutputForward) {
+    outputflag = cmSystemTools::OUTPUT_FORWARD;
+  }
+
+  // should we do a clean first?
+  if (buildOptions.Clean) {
+    std::vector<GeneratedMakeCommand> cleanCommand =
+      this->GenerateBuildCommand(makeCommandCSTR, projectName, bindir,
+                                 { "clean" }, realConfig, jobs, verbose,
+                                 buildOptions);
+    ostr << "\nRun Clean Command: " << cleanCommand.front().QuotedPrintable()
+         << std::endl;
+    if (cleanCommand.size() != 1) {
+      this->GetCMakeInstance()->IssueMessage(MessageType::INTERNAL_ERROR,
+                                             "The generator did not produce "
+                                             "exactly one command for the "
+                                             "'clean' target");
+      return 1;
+    }
+    if (!cmSystemTools::RunSingleCommand(cleanCommand.front().PrimaryCommand,
+                                         outputPtr, outputPtr, &retVal,
+                                         nullptr, outputflag, timeout)) {
+      cmSystemTools::SetRunCommandHideConsole(hideconsole);
+      cmSystemTools::Error("Generator: execution of make clean failed.");
+      ostr << *outputPtr << "\nGenerator: execution of make clean failed."
+           << std::endl;
+
+      return 1;
+    }
+    ostr << *outputPtr;
+  }
+
+  // now build
+  std::string makeCommandStr;
+  std::string outputMakeCommandStr;
+  bool isWatcomWMake = this->CMakeInstance->GetState()->UseWatcomWMake();
+  bool needBuildOutput = isWatcomWMake;
+  std::string buildOutput;
+  ostr << "\nRun Build Command(s): ";
+
+  retVal = 0;
+  for (auto command = makeCommand.begin();
+       command != makeCommand.end() && retVal == 0; ++command) {
+    makeCommandStr = command->Printable();
+    outputMakeCommandStr = command->QuotedPrintable();
+    if ((command + 1) != makeCommand.end()) {
+      makeCommandStr += " && ";
+      outputMakeCommandStr += " && ";
+    }
+
+    ostr << outputMakeCommandStr << std::endl;
+    if (!cmSystemTools::RunSingleCommand(command->PrimaryCommand, outputPtr,
+                                         outputPtr, &retVal, nullptr,
+                                         outputflag, timeout)) {
+      cmSystemTools::SetRunCommandHideConsole(hideconsole);
+      cmSystemTools::Error(
+        cmStrCat("Generator: execution of make failed. Make command was: ",
+                 makeCommandStr));
+      ostr << *outputPtr
+           << "\nGenerator: execution of make failed. Make command was: "
+           << outputMakeCommandStr << std::endl;
+
+      return 1;
+    }
+    ostr << *outputPtr << std::flush;
+    if (needBuildOutput) {
+      buildOutput += *outputPtr;
+    }
+  }
+  ostr << std::endl;
+  cmSystemTools::SetRunCommandHideConsole(hideconsole);
+
+  // The OpenWatcom tools do not return an error code when a link
+  // library is not found!
+  if (isWatcomWMake && retVal == 0 &&
+      buildOutput.find("W1008: cannot open") != std::string::npos) {
+    retVal = 1;
+  }
+
+  return retVal;
+}
+```
+

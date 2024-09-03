@@ -4,9 +4,6 @@
 
 -  [Get and Install Qt](https://doc.qt.io/qt-6/get-and-install-qt.html).
 
-```
-```
-
 ## Article link
 
 -  [Qt-OneFLOW doc](https://eric2003.github.io/OneFLOW/qt.html).
@@ -21,6 +18,10 @@
 -  [《Qt6 C++开发指南 》2023（上册，完整版）](https://www.bilibili.com/video/BV1km4y1k7CW/).
 -  [Qt6 C++ GUI Development Course ( Build GUI Apps in Qt & C++ )](https://www.youtube.com/watch?v=Wi9nQTDFF4U/).
 -  [Qt 快速入门系列教程](https://shouce.jb51.net/qt-beginning/45.html).
+
+## 深入理解QT
+
+-  [深入理解QT](https://www.bilibili.com/video/BV1vh4y1r7sc/).
 
 
 ## Qt Github
