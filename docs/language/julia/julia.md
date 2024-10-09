@@ -50,6 +50,10 @@
 
 ## Windows Julia
 
+### download
+
+-  [Official Binaries for Manual Download](https://julialang.org/downloads/).
+
 ### Install
 
 ```
@@ -61,9 +65,10 @@ File position(winget install)
 c:\Users\eric\AppData\Local\Microsoft\WindowsApps\julia.exe
 ```
 
-File position(winget install)
+File position(install julia-1.10.5-win64.exe)
 ```
-C:\Users\eric\AppData\Local\Programs\Julia-1.10.2
+C:\Users\eric\AppData\Local\Programs\Julia-1.10.5
+c:\Users\eric\AppData\Local\Programs\Julia-1.10.5\bin\julia.exe
 ```
 
 ### Get-Command julia
@@ -131,6 +136,22 @@ Platform Info:
   LIBM: libopenlibm
   LLVM: libLLVM-15.0.7 (ORCJIT, skylake)
 Threads: 1 default, 0 interactive, 1 GC (on 16 virtual cores)
+```
+
+### Julia
+
+```
+PS C:\Users\eric> julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.10.5 (2024-08-27)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia>
 ```
 
 ## 注释

@@ -8,6 +8,12 @@ Welcome to Eric's Scientific Computing Website
 - [GitHub](https://github.com/eric2003/)
 - [Zhihu（知乎）](https://www.zhihu.com/people/jia-fei-miao-18-13/)
 
+## Website
+
+- [OneFLOW Scientific Computation](https://eric2003.github.io/OneFLOW/)
+- [ Eric's Scientific Computing Website](https://eric2003.github.io/Prometheus/)
+- [reStructuredText](https://restructuredtextmenu.readthedocs.io/)
+
 ## Eric's GitHub Project
 
 - [OneFLOW](https://github.com/eric2003/OneFLOW/)

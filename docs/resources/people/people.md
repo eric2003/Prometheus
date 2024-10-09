@@ -18,10 +18,23 @@
 - [高性能并行编程与优化](https://github.com/parallel101/).
 - [现代C++项目实战](https://www.bilibili.com/video/BV1Ur4y1V7Kh/).
 
+### mq白cpp
+
+- [mq白cpp](https://space.bilibili.com/1292761396/).
+- [《C++20 STL Cookbook》2023](https://www.bilibili.com/video/BV1r8411N75b/).
+- [现代C++教程 2023](https://www.bilibili.com/video/BV1D84y1t76J/).
+- [现代C++100题](https://www.bilibili.com/video/BV1Zj411r7eP/).
+
 
 ### 大官人学CFD
 
 - [大官人学CFD](https://space.bilibili.com/196986312/).
+
+### 曾导SJTU
+
+- [曾导SJTU](https://space.bilibili.com/518794423/).
+- [两个合集的简介](https://www.bilibili.com/video/BV1Nk4y1E7po/).
+- [Adaptive Mesh Refinement](https://www.bilibili.com/video/BV1WH4y1X7mm/).
 
 ### 阿西拜编程
 

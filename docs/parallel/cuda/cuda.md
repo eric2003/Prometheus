@@ -1,12 +1,19 @@
 # CUDA
 
-## article link
+## Article link
+
 -  [NVIDIA CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/).
 -  [CUDA Toolkit download and documentation](https://docs.nvidia.com/cuda/cuda-c-programming-guide/).
 -  [Sample programs in the CUDA Programming Guide](https://github.com/NVIDIA/cuda-samples/tree/master/Samples/).
 -  [CUDA C Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html).
 -  [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-cpp-guide/index.html).
 -  [CUDA Samples](https://docs.nvidia.com/cuda/cuda-samples/index.html).
+
+## Lessons
+
+-  [freeCodeCamp推出高质量CUDA编程教程--GPU高性能计算 -- 第一部分](https://www.bilibili.com/video/BV1iysBe9EXi/).
+-  [freeCodeCamp推出高质量CUDA编程教程--GPU高性能计算 -- 第二部分](https://www.bilibili.com/video/BV1jCsBesEbM/).
+-  [freeCodeCamp推出高质量CUDA编程教程--GPU高性能计算 -- 第三部分](https://www.bilibili.com/video/BV1WYxGeFEua/).
 
 ## install
 

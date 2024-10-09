@@ -76,20 +76,22 @@ markdown_extensions:
   - pymdownx.tilde  
 
 extra_javascript:
-  - mkdocs/javascripts/katex.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
 extra_css:
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-  - mkdocs/css/no-footer.css
-  - mkdocs/css/unordered-list-symbols.css
+  - https://unpkg.com/katex@0/dist/katex.min.css 
   
 # Page tree
 nav:  
   - Home: home/index.md
   - CFD&CAE:
     - OneFLOW: cfd/oneflow.md
-    - CGNS: cfd/cgns.md
+    - CGNS: 
+      - CGNS: cfd/cgns/cgns.md
+      - CGNS Struct: cfd/cgns/cgns-struct.md
+      - Example: cfd/cgns/cgns-example.md
     - HDF5: cfd/hdf5/hdf5.md
     - METIS: metis/metis.md
     - Scientific Computing: scientific/computing.md
@@ -183,7 +185,9 @@ nav:
     - Fortran: language/fortran/fortran.md
     - Java: language/java/java.md
     - JavaScript: language/javascript/javascript.md
-    - Julia: language/julia/julia.md
+    - Julia: 
+      - Julia: language/julia/julia.md
+      - CFD-Julia: language/julia/cfd-julia.md
     - Makefile: makefile/makefile.md
     - Mojo :
       - Mojo : language/mojo/mojo.md
@@ -220,6 +224,9 @@ nav:
     - Mechanics: 
       - Fluid Mechanics: physics/mechanics/fluid.md
     - Physics Engine: physics/engine/engine.md
+    - Music: math/music/music.md
+  - Recent:
+    - Recent: recent/recent.md
   - Resources:
     - Images: resources/images/images.md
     - People: resources/people/people.md

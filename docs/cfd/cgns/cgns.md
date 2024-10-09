@@ -296,4 +296,50 @@ c:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\libirc.lib
 c:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\svml_dispmd.lib
 ```
 
+## ZoneType_t
 
+```cpp
+typedef enum {
+  CGNS_ENUMV( ZoneTypeNull ) =CG_Null,
+  CGNS_ENUMV( ZoneTypeUserDefined ) =CG_UserDefined,
+  CGNS_ENUMV( Structured ) =2,
+  CGNS_ENUMV( Unstructured ) =3
+} CGNS_ENUMT( ZoneType_t );
+
+#define NofValidZoneTypes 4
+
+extern CGNSDLL const char * ZoneTypeName[NofValidZoneTypes];
+```
+
+
+## PointSetType_t
+
+```cpp
+typedef enum {
+  CGNS_ENUMV( PointSetTypeNull ) =CG_Null,
+  CGNS_ENUMV( PointSetTypeUserDefined ) =CG_UserDefined,
+  CGNS_ENUMV( PointList ) =2,
+  CGNS_ENUMV( PointListDonor ) =3,
+  CGNS_ENUMV( PointRange ) =4,
+  CGNS_ENUMV( PointRangeDonor ) =5,
+  CGNS_ENUMV( ElementRange ) =6,
+  CGNS_ENUMV( ElementList ) =7,
+  CGNS_ENUMV( CellListDonor ) =8
+} CGNS_ENUMT( PointSetType_t );
+```
+
+## cgns_ptset
+
+```cpp
+typedef struct {            /* IndexArray/Range_t Node      */
+    char_33 name;           /* name of ADF node                     */
+    double id;              /* ADF ID number (address) of node      */
+    cgns_link *link;        /* link information         */  /* V2.1 */
+    int in_link;            /* set if child of a linked node        */
+    CGNS_ENUMT(PointSetType_t) type;  /* PointList, PointRange, ...       */
+    char_33 data_type;      /* type of data                         */
+    cgsize_t npts;          /* number of points to define the patch */
+    cgsize_t size_of_patch; /* nr of nodes or elements in patch     */
+    void *data;             /* data (only loaded in MODE_MODIFY     */
+} cgns_ptset;   
+```
