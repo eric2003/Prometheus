@@ -84,7 +84,7 @@ extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css 
   
 # Page tree
-nav:  
+nav:
   - Home: 
     - Home: home/index.md
     - About: home/about.md
