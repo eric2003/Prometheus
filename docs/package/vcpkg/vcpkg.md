@@ -143,3 +143,26 @@ Could not locate a complete Visual Studio instance
 The following paths were examined for Visual Studio instances:
     C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary/Build\vcvarsall.bat
 ```
+
+## example
+```
+cmake_minimum_required(VERSION 3.0)
+project(YourProjectName)
+
+# 设置vcpkg的路径
+set(VCPKG_ROOT "path/to/vcpkg" CACHE STRING "Vcpkg root directory")
+
+# 设置vcpkg的三个变量
+set(CMAKE_TOOLCHAIN_FILE "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+set(VCPKG_TARGET_TRIPLET "x64-windows" CACHE STRING "Vcpkg target triplet")
+set(VCPKG_OVERLAY_PORTS "path/to/your/overlay/ports" CACHE STRING "Vcpkg overlay ports directory")
+
+# 添加vcpkg的库
+find_package(vcpkg_library_name REQUIRED)
+
+# 添加你的库
+add_library(YourLibraryName SHARED YourSourceFiles)
+
+# 链接vcpkg的库到你的库
+target_link_libraries(YourLibraryName PRIVATE vcpkg_library_name)
+```

@@ -14,6 +14,8 @@
 -  [每个科研工作者在写高性能代码时都需了解的硬件知识](https://guixinliu.github.io/hardware_introduction/pluto.jl.html).
 -  [Package to call Python functions from the Julia language](https://github.com/JuliaPy/PyCall.jl).
 -  [CFD_Julia系列链接整理](https://zhuanlan.zhihu.com/p/523584688/).
+-  [Julia By Example](https://juliabyexample.helpmanual.io/).
+
 
 ## CFD_Julia系列
 
@@ -46,6 +48,7 @@
 -  [CFD_Julia NS2D_PseudoSpectral_23_Rule简单测试](https://zhuanlan.zhihu.com/p/525118575/).
 -  [Julia 删除Manifest.toml+Project.toml后update](https://zhuanlan.zhihu.com/p/586677960/).
 -  [Julia using Printf+@printf简单测试](https://zhuanlan.zhihu.com/p/586721694/).
+-  [Windows11+Julia1.11.1 (October 16, 2024)Install简单测试](https://zhuanlan.zhihu.com/p/4341816521/).
 
 
 ## Windows Julia
@@ -184,3 +187,319 @@ julia>  arr = [1,2,3]
  2
  3
 ```
+
+-  [Printf Link](https://docs.julialang.org/en/v1/stdlib/Printf/).
+
+### printf
+```julia
+# importing Printf
+using Printf
+ 
+# using printf macro with @ sign 
+@printf("pi = %0.20f", float(pi))
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\Printf\01> julia .\testprj.jl
+pi = 3.14159265358979311600
+```
+
+### @printf "Hello %s" "world"
+```julia
+# importing Printf
+using Printf
+
+@printf "Hello %s" "world"
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\02> julia .\testprj.jl
+Hello world
+```
+
+### @printf "Scientific notation %e" 1.234
+```julia
+# importing Printf
+using Printf
+
+@printf "Scientific notation %e" 1.234
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\03> julia .\testprj.jl
+Scientific notation 1.234000e+00
+```
+
+### @printf "Scientific notation three digits %.3e" 1.23456
+```julia
+# importing Printf
+using Printf
+
+@printf "Scientific notation three digits %.3e" 1.23456
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\04> julia .\testprj.jl
+Scientific notation three digits 1.235e+00
+```
+
+### @printf "Decimal two digits %.2f" 1.23456
+```julia
+# importing Printf
+using Printf
+
+@printf "Decimal two digits %.2f" 1.23456
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\05> julia .\testprj.jl
+Decimal two digits 1.23
+```
+
+### @printf "Padded to length 5 %5i" 123
+```julia
+# importing Printf
+using Printf
+
+@printf "Padded to length 5 %5i" 123
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\06> julia .\testprj.jl
+Padded to length 5   123
+```
+
+### @printf "Padded with zeros to length 6 %06i" 123
+```julia
+# importing Printf
+using Printf
+
+@printf "Padded with zeros to length 6 %06i" 123
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\07> julia .\testprj.jl
+Padded with zeros to length 6 000123
+```
+
+### @printf "Use shorter of decimal or scientific %g %g" 1.23 12300000.0
+```julia
+# importing Printf
+using Printf
+
+@printf "Use shorter of decimal or scientific %g %g" 1.23 12300000.0
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\08> julia .\testprj.jl
+Use shorter of decimal or scientific 1.23 1.23e+07
+```
+
+### @printf "Use dynamic width and precision  %*.*f" 10 2 0.12345
+```julia
+# importing Printf
+using Printf
+
+@printf "Use dynamic width and precision  %*.*f" 10 2 0.12345
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\09> julia .\testprj.jl
+Use dynamic width and precision        0.12
+```
+
+### @printf("%f %F %f %F", Inf, Inf, NaN, NaN)
+```julia
+# importing Printf
+using Printf
+
+@printf("%f %F %f %F", Inf, Inf, NaN, NaN)
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\10> julia .\testprj.jl
+Inf Inf NaN NaN
+```
+
+### @printf "%.0f %.1f %f" 0.5 0.025 -0.0078125
+```julia
+# importing Printf
+using Printf
+
+@printf "%.0f %.1f %f" 0.5 0.025 -0.0078125
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\11> julia .\testprj.jl
+0 0.0 -0.007812
+```
+
+### @printf "this is a %s %15.1f" "test" 34.567
+```julia
+# importing Printf
+using Printf
+
+@printf "this is a %s %15.1f" "test" 34.567
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printf\12> julia .\testprj.jl
+this is a test            34.6
+```
+
+### printstyled
+```julia
+# using printstyled 
+ 
+# printing text in different colors
+for color in [:red, :cyan, :blue, :magenta]
+    printstyled("Hello World $(color)\n"; color = color)
+end
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\printstyled\01> julia .\testprj.jl
+Hello World red
+Hello World cyan
+Hello World blue
+Hello World magenta
+```
+
+### sprintf
+```julia
+# importing Printf
+using Printf
+ 
+# using @macro with sprintf where output is a string
+String1 = @sprintf("pi = %0.20f", float(pi))
+
+println(String1)
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\sprintf\01> julia .\testprj.jl
+pi = 3.14159265358979311600
+```
+
+### println
+```julia
+for i in 1:10
+    println("Iteration: $(i)/10")
+end
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\println\01> julia .\testprj.jl
+Iteration: 1/10
+Iteration: 2/10
+Iteration: 3/10
+Iteration: 4/10
+Iteration: 5/10
+Iteration: 6/10
+Iteration: 7/10
+Iteration: 8/10
+Iteration: 9/10
+Iteration: 10/10
+```
+
+### print for loop
+```julia
+for i in 1:10
+    sleep(0.1)
+    print("\rIteration: $(i)/10")
+end
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\print\04> julia .\testprj.jl
+Iteration: 10/10
+```
+
+### Creating a String
+```julia
+# Julia Program for  
+# Creation of String  
+  
+# Creating a String  
+# with double Quotes  
+String1 = "Welcome to the Geeks World"
+println("String with the use of Double Quotes: ")  
+println(String1)  
+  
+# Creating a String  
+# with triple Quotes  
+String1 = """I'm a Geek and I live in a world of Geeks"""
+println("\nString with the use of Triple Quotes: ")  
+println(String1)  
+  
+# Creating String with triple  
+# Quotes allows multiple lines  
+String1 ="""Geeks  
+            For  
+            Life"""
+println("\nCreating a multiline String: ")  
+println(String1)  
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\String\01> julia .\testprj.jl
+String with the use of Double Quotes:
+Welcome to the Geeks World
+
+String with the use of Triple Quotes:
+I'm a Geek and I live in a world of Geeks
+
+Creating a multiline String:
+Geeks
+For
+Life
+```
+
+### Access characters of String 
+```julia
+# Julia Program to Access  
+# characters of String  
+    
+String1 = "GeeksForGeeks"
+println("Initial String: ")  
+println(String1)  
+    
+# Printing First character  
+println("\nFirst character of String is: ")  
+println(String1[1])  
+    
+# Printing Last character  
+println("\nLast character of String is: ")  
+println(String1[end])  
+```
+
+output
+```powershell
+PS D:\work\julia_work\ModernJulia\codes\String\02> julia .\testprj.jl
+Initial String:
+GeeksForGeeks
+
+First character of String is:
+G
+
+Last character of String is:
+s
+```
+  

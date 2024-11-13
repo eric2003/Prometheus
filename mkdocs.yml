@@ -85,15 +85,23 @@ extra_css:
   
 # Page tree
 nav:  
-  - Home: home/index.md
+  - Home: 
+    - Home: home/index.md
+    - About: home/about.md
   - CFD&CAE:
-    - OneFLOW: cfd/oneflow.md
+    - OneFLOW: 
+      - OneFLOW: cfd/oneflow/oneflow.md
+      - Example: cfd/oneflow/example.md
+      - Parallel: cfd/oneflow/parallel.md
     - CGNS: 
       - CGNS: cfd/cgns/cgns.md
       - CGNS Struct: cfd/cgns/cgns-struct.md
       - Example: cfd/cgns/cgns-example.md
     - HDF5: cfd/hdf5/hdf5.md
     - METIS: metis/metis.md
+    - Partition: 
+      - Partition: cfd/partition/partition.md
+      - Interface: cfd/partition/interface.md
     - Scientific Computing: scientific/computing.md
     - CFD Open Source:
       - FEniCS: cfd/fenics.md
@@ -135,6 +143,7 @@ nav:
     - OSPRay: prepost/ospray/ospray.md
     - ParaView: prepost/paraview/paraview.md
     - SDL: prepost/sdl/sdl.md
+    - Tecplot: prepost/tecplot/tecplot.md
     - VTK: 
       - VTK: prepost/vtk/vtk.md
       - VTK-Macro: prepost/vtk/vtk-macro.md
@@ -173,7 +182,10 @@ nav:
       - Code Examples:
         - Simple Code: language/cpp/example.md
       - Grammar : language/cpp/grammar.md
+      - Modules: language/cpp/modules/modules.md
       - MultiThread: language/cpp/multithread.md
+      - STL: 
+        - STL: language/cpp/stl/stl.md
     - CSharp:
       - CSharp: language/csharp/csharp.md
       - Windows Forms: language/csharp/forms.md
@@ -188,6 +200,7 @@ nav:
     - Julia: 
       - Julia: language/julia/julia.md
       - CFD-Julia: language/julia/cfd-julia.md
+      - CFD-Example: language/julia/cfd-example.md
     - Makefile: makefile/makefile.md
     - Mojo :
       - Mojo : language/mojo/mojo.md
@@ -207,6 +220,7 @@ nav:
       - Qt-CMake: language/qt/qt-cmake.md
       - Qt-Examples: language/qt/qt-examples.md
       - Qt Game: language/qt/game.md
+      - Qt-Install : language/qt/qt-install.md
       - QML: language/qt/qml.md
       - QProcess: language/qt/qprocess.md
       - QThread: language/qt/qthread.md
@@ -280,6 +294,8 @@ nav:
       - Ghostscript: doctools/ghostscript/ghostscript.md
     - Graphviz:
       - Graphviz: doctools/graphviz/graphviz.md
+    - HTML:
+      - HTML: doctools/html/html.md
     - HTML Help Workshop:
       - HTML Help Workshop: doctools/htmlhelp/htmlhelp.md
     - LaTeX : 

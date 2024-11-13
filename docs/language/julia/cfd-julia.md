@@ -1,5 +1,37 @@
 # Julia
 
+## CFD_Julia系列
+
+-  [CFD_Julia](https://zhuanlan.zhihu.com/p/523286979/).
+-  [julialang.org](https://julialang.org/).
+-  [Julia调用PyPlot绘图显示](https://zhuanlan.zhihu.com/p/524494365/).
+-  [CFD_Julia Heat_Equation_FTCS简单测试](https://zhuanlan.zhihu.com/p/524516874/).
+-  [CFD tutorial in Julia](https://zhuanlan.zhihu.com/p/524524598/).
+-  [控制台执行Julia Plots](https://zhuanlan.zhihu.com/p/524700016/).
+-  [Julia中文文档](https://zhuanlan.zhihu.com/p/524711647/).
+-  [CFD_Julia Heat_Equation_RK3简单测试](https://zhuanlan.zhihu.com/p/524768410/).
+-  [CFD_Julia Heat_Equation_CN简单测试](https://zhuanlan.zhihu.com/p/524786405/).
+-  [CFD_Julia Heat_Equation_ICP简单测试](https://zhuanlan.zhihu.com/p/524816179/).
+-  [CFD_Julia Inviscid_Burgers_WENO简单测试](https://zhuanlan.zhihu.com/p/524837303/).
+-  [CFD_Julia Inviscid_Burgers_CRWENO简单测试](https://zhuanlan.zhihu.com/p/524843661/).
+-  [CFD_Julia Inviscid_Burgers_Flux_Splitting简单测试](https://zhuanlan.zhihu.com/p/524915137/).
+-  [CFD_Julia Inviscid_Burgers_Rieman简单测试](https://zhuanlan.zhihu.com/p/524927405/).
+-  [CFD_Julia Euler_1D_Roe简单测试](https://zhuanlan.zhihu.com/p/524941082/).
+-  [CFD_Julia Euler_1D_HLLC+Rusanov简单测试](https://zhuanlan.zhihu.com/p/524956488/).
+-  [CFD_Julia Poisson_Solver_FFT简单测试](https://zhuanlan.zhihu.com/p/524966296/).
+-  [CFD_Julia Poisson_Solver_FFT_Spectral简单测试](https://zhuanlan.zhihu.com/p/525055028/).
+-  [CFD_Julia Poisson_Solver_FST简单测试](https://zhuanlan.zhihu.com/p/525058286/).
+-  [CFD_Julia Poisson_Solver_Conjugate_Gradient简单测试](https://zhuanlan.zhihu.com/p/525072170/).
+-  [CFD_Julia Poisson_Solver_Multigrid简单测试](https://zhuanlan.zhihu.com/p/525074670/).
+-  [CFD_Julia Poisson_Solver_Gauss_Seidel简单测试](https://zhuanlan.zhihu.com/p/525098595/).
+-  [CFD_Julia NS2D_Lid_Driven_Cavity简单测试](https://zhuanlan.zhihu.com/p/525105279/).
+-  [CFD_Julia NS2D_Vortex_Merger简单测试](https://zhuanlan.zhihu.com/p/525109410/).
+-  [CFD_Julia NS2D_Hybrid_Solver简单测试](https://zhuanlan.zhihu.com/p/525113260/).
+-  [CFD_Julia NS2D_PseudoSpectral_32_Rule简单测试](https://zhuanlan.zhihu.com/p/525116517/).
+-  [CFD_Julia NS2D_PseudoSpectral_23_Rule简单测试](https://zhuanlan.zhihu.com/p/525118575/).
+-  [Julia 删除Manifest.toml+Project.toml后update](https://zhuanlan.zhihu.com/p/586677960/).
+-  [Julia using Printf+@printf简单测试](https://zhuanlan.zhihu.com/p/586721694/).
+-  [Windows11+Julia1.11.1 (October 16, 2024)Install简单测试](https://zhuanlan.zhihu.com/p/4341816521/).
 
 
 ### CFD_Julia Heat_Equation_FTCS简单测试
@@ -191,3 +223,76 @@ julia> Pkg.build("PyCall");
     Building Conda ─→ `C:\Users\eric\.julia\scratchspaces\44cfe95a-1eb2-52ea-b672-e2afdf69b78f\b19db3927f0db4151cb86d073689f2428e524576\build.log`
     Building PyCall → `C:\Users\eric\.julia\scratchspaces\44cfe95a-1eb2-52ea-b672-e2afdf69b78f\9816a3826b0ebf49ab4926e2b18842ad8b5c8f04\build.log`
 ```
+
+### 01_Heat_Equation_FTCS
+
+location
+```
+d:\work\julia_work\ModernJulia\codes\CFD\01_Heat_Equation_FTCS\
+```
+
+Package CPUTime not found
+```
+PS D:\work\julia_work\ModernJulia\codes\CFD\01_Heat_Equation_FTCS> julia .\ftcs.jl
+ERROR: LoadError: ArgumentError: Package CPUTime not found in current path.
+- Run `import Pkg; Pkg.add("CPUTime")` to install the CPUTime package.
+Stacktrace:
+ [1] macro expansion
+   @ .\loading.jl:2223 [inlined]
+ [2] macro expansion
+   @ .\lock.jl:273 [inlined]
+ [3] __require(into::Module, mod::Symbol)
+   @ Base .\loading.jl:2198
+ [4] #invoke_in_world#3
+   @ .\essentials.jl:1089 [inlined]
+ [5] invoke_in_world
+   @ .\essentials.jl:1086 [inlined]
+ [6] require(into::Module, mod::Symbol)
+   @ Base .\loading.jl:2191
+in expression starting at D:\work\julia_work\ModernJulia\codes\CFD\01_Heat_Equation_FTCS\ftcs.jl:1
+```
+
+### ENV["PYTHON"]
+```
+PS C:\Users\eric> julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.11.1 (2024-10-16)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> ENV["PYTHON"] = raw"c:\Users\eric\AppData\Local\Programs\Python\Python313\python.exe";
+
+julia> import Pkg; Pkg.build("PyCall");
+    Building Conda ─→ `C:\Users\eric\.julia\scratchspaces\44cfe95a-1eb2-52ea-b672-e2afdf69b78f\b19db3927f0db4151cb86d073689f2428e524576\build.log`
+    Building PyCall → `C:\Users\eric\.julia\scratchspaces\44cfe95a-1eb2-52ea-b672-e2afdf69b78f\9816a3826b0ebf49ab4926e2b18842ad8b5c8f04\build.log`
+Precompiling project...
+  2 dependencies successfully precompiled in 13 seconds. 208 already precompiled.
+```
+
+### Julia ---- PyCall.jl 的正确安装方式
+-  [Julia ---- PyCall.jl 的正确安装方式](https://blog.csdn.net/weixin_41715077/article/details/106330252/).
+
+1
+```
+import Pkg; 
+Pkg.add("Conda")
+Pkg.build("Conda")
+
+Pkg.add("PyCall")
+Pkg.build("PyCall")
+```
+
+2
+```
+import Pkg; 
+Pkg.add("Conda")
+Pkg.add("PyCall")
+#这里使用自己的安装路径
+ENV["PYTHON"] = raw"c:\Users\eric\AppData\Local\Programs\Anaconda3";
+Pkg.build("PyCall")
+```
+

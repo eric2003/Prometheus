@@ -5,13 +5,38 @@
 - [漫谈一下数学、物理、计算机中的广义的循环结构](https://www.bilibili.com/video/BV1ysxyeREWi/).
 - [【开源】QBlueprint——QT C++仿虚幻引擎蓝图](https://www.bilibili.com/video/BV1za4Ue8E7p/).
 - [格子玻尔兹曼方法（LBM）复杂边界格式 Mei-Luo-Shyy, Guo-Zheng-Shi](https://www.bilibili.com/video/BV1RCHbeQEMS/).
-- [从零开始速成C++联机游戏开发！| EasyX制作哈基米大冒险](https://www.bilibili.com/video/BV1yjsoeREdZ/).
-- [【从零开始的C++游戏开发】速通联机游戏开发基础与HTTP服务器搭建 | EasyX制作哈基米大冒险](https://www.bilibili.com/video/BV1og4VeoEBc/).
-- [C++模板与SFINAE：高效解决接口自动化](https://www.bilibili.com/video/BV1Fk4uenEB4/).
 - [如何处理GPU中的二维不等长数组](https://www.bilibili.com/video/BV1qcxgeVEMM/).
 - [81种数学符号的介绍](https://www.bilibili.com/video/BV1KJpve4E2F/).
 - [乘影开源 GPGPU 软件工具链介绍 - 孔荔 (清华大学，软件工程师) - 2024 RISC-V 中国峰会](https://www.bilibili.com/video/BV1KjtCeFEMC/).
 - [2024年9月更新的完整系列测试开发实战课程](https://www.bilibili.com/video/BV1jo4y1q7Yi/).
+- [发现宝藏李新亮老师的课题组也在做自适应网格，强烈推荐大家学习AMReX](https://www.bilibili.com/video/BV1CGycYfEH5/).
+- [如何编写更方便扩展的C++代码，推荐阅读《c++设计模式》](https://www.bilibili.com/video/BV11dmgYwEH7/).
+- [【C++17】小彭老师陪你从零手搓HTTP服务器](https://www.bilibili.com/video/BV1Mz421i7Fm/).
+- [腾讯cpp编码规范学习](https://www.bilibili.com/video/BV1852YYvE2a/).
+- [流体力学18讲.中英字幕[Prof. Van Buren.Fluid Mechanics特拉华大学]](https://www.bilibili.com/video/BV1DMt3e5ERw/).
+
+## C++
+- [从零开始速成C++联机游戏开发！| EasyX制作哈基米大冒险](https://www.bilibili.com/video/BV1yjsoeREdZ/).
+- [【从零开始的C++游戏开发】速通联机游戏开发基础与HTTP服务器搭建 | EasyX制作哈基米大冒险](https://www.bilibili.com/video/BV1og4VeoEBc/).
+- [C++模板与SFINAE：高效解决接口自动化](https://www.bilibili.com/video/BV1Fk4uenEB4/).
+- [CppCon 2023-几乎所有新特性和更新特性的概述 - Marc Gregoire](https://www.bilibili.com/video/BV1g3SBY9EQM/).
+- [CppCon 2023-线性代数进入标准 C++ - Mark Hoemmen](https://www.bilibili.com/video/BV1PyyLYNEAA/).
+- [Johan Berg: Deducing this, C++23's Explicit Object Parameter](https://www.youtube.com/watch?v=78JQq52A0b0/).
+
+## CFD
+
+- [斯坦福cs267应用并行计算](https://www.bilibili.com/video/BV1ZaWjebEqW/).
+- [CFD及网格技术介绍](https://www.bilibili.com/video/BV1Hg12YQE7V/).
+- [(附代码)【清华博士】逐行代码讲解LBM伪势模型模拟池式沸腾传热](https://www.bilibili.com/video/BV1TX4GegENj/).
+- [【清华博士】格子玻尔兹曼方法入门教程](https://www.bilibili.com/video/BV1n91qYhEHQ/).
+- [从零开始的哈基米大冒险](https://www.bilibili.com/video/BV1yjsoeREdZ/).
+- [格子玻尔兹曼方法（LBM）复杂边界格式 Mei-Luo-Shyy, Guo-Zheng-Shi](https://www.bilibili.com/video/BV1RCHbeQEMS/).
+- [写大规模三维并行计算流体力学(CFD)求解器时，有什么经验和心得？](https://www.zhihu.com/question/67619060/answer/3461353315).
+
+
+## Github Links
+
+- [mnucci32/aither](https://github.com/mnucci32/aither/).
 
 ## Recent Update
 

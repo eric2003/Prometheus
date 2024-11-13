@@ -15,6 +15,8 @@ mkdocs serve
 ## Write formulas
 
 -  [Write formulas](https://mkdocs-magicspace.alnoda.org/tutorials/markdown/formulas/).
+-  [写数学公式的坑](https://yangzhang.site/Note/mkdocs/about_math/).
+
 
 ```
 pip install pymdown-extensions
@@ -24,7 +26,7 @@ Requirement already satisfied: markdown>=3.5 in c:\users\eric\appdata\local\prog
 Requirement already satisfied: pyyaml in c:\users\eric\appdata\local\programs\python\python312\lib\site-packages (from pymdown-extensions) (6.0.1)
 ```
 
-$\times$
+## Example
 
 Inline and block formulas render differently. 
 
