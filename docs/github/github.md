@@ -14,3 +14,7 @@
 - [Github科学计算相关链接整理](https://zhuanlan.zhihu.com/p/532669612/).
 - [使用makdown+mkdocs在github上创建自己的主页](https://zhuanlan.zhihu.com/p/685390406/).
 - [使用sphinx在github上创建自己的主页](https://zhuanlan.zhihu.com/p/685677623/).
+
+- [通过ipaddress更新github的hostsIP](https://zhuanlan.zhihu.com/p/681350679).
+
+

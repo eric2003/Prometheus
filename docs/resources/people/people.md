@@ -79,6 +79,15 @@
 - [有限元基础编程-何晓明-2021-4-18](https://www.bilibili.com/video/BV1S5411c72G/).
 - [有限元基础编程-何晓明-2021-04-25](https://www.bilibili.com/video/BV1TK4y1Z7yz/).
 
+## Code
+
+- [practice_fem](https://gitee.com/jiangyouyige/practice_fem).
+
+
+### 易木木响叮当
+
+- [易木木响叮当](https://space.bilibili.com/220862083).
+
 ### chenyongxin（南安普顿大学 空气动力学博士）
 
 - [Y.Chen](https://www.zhihu.com/people/dr-yongxin-chen).
@@ -125,6 +134,12 @@ IQ95 The Homo Siliconiens
 
 ### Google Open Source
 - [GoogleOpenSource](https://www.youtube.com/@GoogleOpenSource/).
+
+
+### CoffeeBeforeArch
+- [CoffeeBeforeArch](https://www.youtube.com/@CoffeeBeforeArch).
+
+
 
 
 

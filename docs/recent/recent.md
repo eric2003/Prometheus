@@ -22,6 +22,10 @@
 - [CppCon 2023-几乎所有新特性和更新特性的概述 - Marc Gregoire](https://www.bilibili.com/video/BV1g3SBY9EQM/).
 - [CppCon 2023-线性代数进入标准 C++ - Mark Hoemmen](https://www.bilibili.com/video/BV1PyyLYNEAA/).
 - [Johan Berg: Deducing this, C++23's Explicit Object Parameter](https://www.youtube.com/watch?v=78JQq52A0b0/).
+- [std::linalg: Linear Algebra Coming to Standard C++ - Mark Hoemmen - CppCon 2023](https://www.youtube.com/watch?v=-UXHMlAMXNk).
+- [Modern C++: Unique Ptrs and Vectors](https://www.youtube.com/watch?v=b8V-WIjlScA).
+- [一起来学C++ 41.并行编程](https://www.bilibili.com/video/BV1jYk3YuEUd/).
+
 
 ## CFD
 
@@ -32,6 +36,42 @@
 - [从零开始的哈基米大冒险](https://www.bilibili.com/video/BV1yjsoeREdZ/).
 - [格子玻尔兹曼方法（LBM）复杂边界格式 Mei-Luo-Shyy, Guo-Zheng-Shi](https://www.bilibili.com/video/BV1RCHbeQEMS/).
 - [写大规模三维并行计算流体力学(CFD)求解器时，有什么经验和心得？](https://www.zhihu.com/question/67619060/answer/3461353315).
+- [CFD有限体积法：基础篇（完）](https://www.bilibili.com/video/BV1wQ4y1k77R/).
+- [计算流体力学03 方程离散](https://www.bilibili.com/video/BV1uW4y1v7up/).
+- [计算流体力学（CFD）概论完整课程，从入门到实际应用—佛罗里达大学课程](https://www.bilibili.com/video/BV1nY4y1a7XS).
+- [从零开始写cfd程序6.1 - -对流项的离散（二阶迎风格式和高精度格式）](https://www.bilibili.com/video/BV1g1UzYxEDe/).
+- [「自制课程」计算流体力学（CFD）入门 课程合集持续更新中 天津大学刘建新](https://www.bilibili.com/video/BV1vE411W7kV/).
+- [李新亮老师的计算流体力学（CFD）课程视频 2020](https://www.bilibili.com/video/av91919531/).
+- [全手工推导 计算流体力学基础-前置知识（已完结）](https://www.bilibili.com/video/BV1gq4y1V7zq/).
+- [计算流体力学有限元法方法](https://www.bilibili.com/video/BV1Qs4y1g7wZ/).
+- [CFD计算流体力学软件教学——入门篇(Fluent/ICEM/CFD-post)](https://www.bilibili.com/video/BV1dv42167MK/).
+- [【CFD教程 VoF方法】1. 文献总结](https://www.bilibili.com/video/BV1LY4y1B7PA/).
+- [【CFD入门系列教程】Lecture-2.1 泊松方程的基本迭代求解](https://www.bilibili.com/video/BV1jQ4y1B7C7/).
+
+
+## Finite Element(有限元)
+
+- [【计算力学】有限元基本理论和程序设计3 坐标系转换和总体刚度矩阵的组集](https://www.bilibili.com/video/BV1LRqVYPEWv/).
+- [有限元法基础-福州大学](https://www.bilibili.com/video/BV1AUSNYJEGz/).
+- [有限元理论基础](https://www.bilibili.com/video/BV14G4y1h7Tp/).
+- [有限元编程基础-Matlab语言基础](https://www.bilibili.com/video/BV1qNUmYREZs/).
+- [有限元 -7 牛顿迭代](https://www.bilibili.com/video/BV1MHBLYbEpx/).
+- [自研CAD软件开发记录之数据结构之美](https://www.bilibili.com/video/BV1CvzgYMEFv/).
+- [一维有限元方法（一）](https://www.bilibili.com/video/BV1ju41187us/).
+- [【有限元讨论班 1】一维问题的有限元](https://www.bilibili.com/video/BV1Hr4y1U7A8).
+- [有限元分析的数学原理与代码实现 01，matlab有限元系列](https://www.bilibili.com/video/BV1FP4y117Zd).
+- [有限元编程书籍强烈推荐！！！](https://www.bilibili.com/video/BV1p84y1z74P).
+- [有限元 Deal.II Dealii 编程 开源 软件开D发](https://www.bilibili.com/video/BV12x411d7Uv).
+- [自主开发有限元软件，精度可靠，底层代码开源](https://www.bilibili.com/video/BV1sSq9YfEPW/).
+
+
+## Physics
+
+- [朗道二卷 《场论》 解析合集](https://www.bilibili.com/video/BV1RS4y1u7x4/).
+
+## 神经网络求解偏微分方程基础介绍
+
+- [神经网络求解偏微分方程基础介绍](https://www.bilibili.com/video/BV1PszKYbEur/).
 
 
 ## Github Links

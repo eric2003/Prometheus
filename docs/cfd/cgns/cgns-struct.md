@@ -204,3 +204,47 @@ typedef struct {            /* BC_t node                */
     cgns_famname *famname;
 } cgns_boco;
 ```
+
+cgns_section
+```cpp
+typedef struct {            /* Elements_t node                      */
+    char_33 name;           /* name of ADF node                     */
+    double id;              /* ADF ID number (address) of node      */
+    cgns_link *link;        /* link information         */  /* V2.1 */
+    int in_link;            /* set if child of a linked node        */
+    int ndescr;             /* no of Descriptor_t nodes             */
+    cgns_descr *descr;      /* ptrs to in-memory copy of descr      */
+    CGNS_ENUMT(ElementType_t) el_type;  /* element type             */
+    int el_bound;           /* nr of bound. el. if sorted, else 0   */
+    cgsize_t range[2];      /* index of first and last element  */
+    int *rind_planes;       /* No. of rind-elements                 */
+    cgns_array *connect;    /* ElementConnectivity                  */
+    cgns_array *connect_offset; /* ElementStartOffset               */
+    cgns_array *parelem;    /* ParentElements                       */
+    cgns_array *parface;    /* ParentElementsPosition               */
+    int nuser_data;         /* number of user defined data nodes    */  /* V2.1 */
+    cgns_user_data *user_data; /* User defined data.        */  /* V2.1 */
+} cgns_section;
+```
+
+ElementStartOffset
+```
+typedef struct {            /* Elements_t node                      */
+    char_33 name;           /* name of ADF node                     */
+    double id;              /* ADF ID number (address) of node      */
+    cgns_link *link;        /* link information         */  /* V2.1 */
+    int in_link;            /* set if child of a linked node        */
+    int ndescr;             /* no of Descriptor_t nodes             */
+    cgns_descr *descr;      /* ptrs to in-memory copy of descr      */
+    CGNS_ENUMT(ElementType_t) el_type;  /* element type             */
+    int el_bound;           /* nr of bound. el. if sorted, else 0   */
+    cgsize_t range[2];      /* index of first and last element  */
+    int *rind_planes;       /* No. of rind-elements                 */
+    cgns_array *connect;    /* ElementConnectivity                  */
+    cgns_array *connect_offset; /* ElementStartOffset               */
+    cgns_array *parelem;    /* ParentElements                       */
+    cgns_array *parface;    /* ParentElementsPosition               */
+    int nuser_data;         /* number of user defined data nodes    */  /* V2.1 */
+    cgns_user_data *user_data; /* User defined data.        */  /* V2.1 */
+} cgns_section;
+```

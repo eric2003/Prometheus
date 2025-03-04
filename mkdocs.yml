@@ -97,15 +97,36 @@ nav:
       - CGNS: cfd/cgns/cgns.md
       - CGNS Struct: cfd/cgns/cgns-struct.md
       - Example: cfd/cgns/cgns-example.md
+    - Equation:
+      - Burgers Equation: cfd/equation/burgers.md
+      - Convection Equation: cfd/equation/convection.md
+      - Euler Equation: cfd/equation/euler.md
+      - Heat Equation: cfd/equation/heat.md
     - HDF5: cfd/hdf5/hdf5.md
+    - Matrix: 
+      - Matrix: cfd/matrix/matrix.md
+      - Tridiagonal: cfd/matrix/tridiagonal.md
     - METIS: metis/metis.md
+    - NS12Steps: cfd/ns12steps/ns12steps.md
     - Partition: 
       - Partition: cfd/partition/partition.md
       - Interface: cfd/partition/interface.md
+    - People:
+      - Blazek: cfd/people/blazek.md
+    - Scheme:
+      - Scheme: cfd/scheme/scheme.md
+      - ENO: cfd/scheme/eno.md
+      - WENO: cfd/scheme/weno.md
+      - WENO3: cfd/scheme/weno3.md
+      - Runge-Kutta: cfd/scheme/runge-kutta.md
     - Scientific Computing: scientific/computing.md
     - CFD Open Source:
       - FEniCS: cfd/fenics.md
+      - FOODIE: cfd/foodie/foodie.md
+      - iPIC3D: cfd/ipic3d/ipic3d.md
+      - MFEM: cfd/mfem/mfem.md      
       - OpenFOAM: cfd/openfoam/openfoam.md
+      - PHG: cfd/phg/phg.md      
       - SU2: cfd/su2/su2.md
       - XFluids: cfd/xfluids/xfluids.md
   - Shell:
@@ -119,8 +140,10 @@ nav:
     - GitHub Actions: github/actions.md
     - Library :
       - NodeEditor : github/lib/nodeeditor.md
+      - ExprTk : github/lib/exprtk.md
   - Pre&Post:
     - Blender: prepost/blender/blender.md
+    - CFD: prepost/cfd/cfd.md
     - EasyX: prepost/easyx/easyx.md
     - FFmpeg: prepost/ffmpeg/ffmpeg.md
     - Geometric: prepost/geometric/geometric.md
@@ -177,10 +200,13 @@ nav:
       - Articles and Videos: language/cpp/videos.md
       - Conference: 
         - Advanced C++: language/cpp/conference/advanced_cpp.md
+        - ACCU Conference: language/cpp/conference/accu_conference.md
         - CppCon: language/cpp/conference/cppcon.md
+        - CppNow: language/cpp/conference/cppnow.md
         - Meeting C++: language/cpp/conference/meeting_cpp.md
       - Code Examples:
         - Simple Code: language/cpp/example.md
+      - C++ Weekly: language/cpp/column/cppweekly.md
       - Grammar : language/cpp/grammar.md
       - Modules: language/cpp/modules/modules.md
       - MultiThread: language/cpp/multithread.md
@@ -194,7 +220,9 @@ nav:
       - CSV: data/csv/csv.md
       - Json: data/json/json.md
       - XML: data/xml/xml.md
-    - Fortran: language/fortran/fortran.md
+    - Fortran:
+      - Fortran: language/fortran/fortran.md
+      - Example: language/fortran/example.md
     - Java: language/java/java.md
     - JavaScript: language/javascript/javascript.md
     - Julia: 
@@ -210,8 +238,11 @@ nav:
       - Argparse: language/python/argparse.md
       - Command: language/python/command.md
       - Example: language/python/example.md
+      - File: language/python/file.md
       - Flask: language/python/flask.md
       - Grammar: language/python/grammar.md
+      - Jinja:
+        - Jinja: language/python/jinja.md
       - PyGame: language/python/pygame.md
       - Pyglet: language/python/pyglet.md
       - Python: language/python/python.md      
@@ -223,6 +254,7 @@ nav:
       - Qt-Install : language/qt/qt-install.md
       - QML: language/qt/qml.md
       - QProcess: language/qt/qprocess.md
+      - QSql: language/qt/qsql.md
       - QThread: language/qt/qthread.md
       - Signals & Slots: language/qt/slots.md
     - Rust: language/rust/rust.md
@@ -250,11 +282,17 @@ nav:
     - Clang: clang/clang.md
     - Environment Modules: modules/modules.md  
     - GCC: gcc/gcc.md
+    - Jupyter:
+      - Jupyter: tools/jupyter/jupyter.md
+      - Jupyter Lab: tools/jupyter/jupyterlab.md
+      - Jupyter Notebook: tools/jupyter/jupyter-notebook.md
     - LLVM: llvm/llvm.md
     - Lex and Yacc: lex/lex.md
     - Node.js: tools/nodejs/nodejs.md
-    - Nsight: nsight/nsight.md
-    - oneAPI: oneapi/oneapi.md
+    - Nsight: tools/nsight/nsight.md
+    - oneAPI:
+      - oneAPI: tools/oneapi/oneapi.md
+      - Install: tools/oneapi/install.md
     - Test:
       - Gogletest: test/test.md
       - CukeTest: test/cuketest/cuketest.md
@@ -287,7 +325,14 @@ nav:
     - Tutorial:
       - Tutorial: engine/tutorial/tutorial.md
   - AI:
-    - Music: ai/music/music.md 
+    - AI: ai/ai.md 
+    - DeepSeek: ai/deepseek/deepseek.md 
+    - Doubao: ai/doubao/doubao.md 
+    - Gemini: ai/gemini/gemini.md
+    - Grok: ai/grok/grok.md
+    - Kimi: ai/kimi/kimi.md
+    - Lean: ai/lean/lean.md
+    - Music: ai/music/music.md     
   - Docs:
     - Doxygen: doctools/doxygen/doxygen.md
     - Ghostscript:
@@ -300,7 +345,9 @@ nav:
       - HTML Help Workshop: doctools/htmlhelp/htmlhelp.md
     - LaTeX : 
       - LaTeX : doctools/latex/latex.md
-    - Markdown: doctools/markdown/markdown.md
+    - Markdown:
+      - Markdown: doctools/markdown/markdown.md
+      - Code-Lang: doctools/markdown/code-lang.md
     - MkDocs: doctools/mkdocs/mkdocs.md 
     - Read the Docs: doctools/readthedocs/readthedocs.md
     - Sphinx: doctools/sphinx/sphinx.md

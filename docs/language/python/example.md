@@ -5,6 +5,158 @@
 -  [Argparse](https://docs.python.org/zh-cn/3/library/argparse.html).
 -  [Argument Parsing with argparse in Python](https://www.youtube.com/watch?v=88pl8TuuKz0).
 
+## F-String
+
+-  [5 Useful F-String Tricks In Python](https://www.youtube.com/watch?v=EoNOWVYKyo0).
+
+```python
+n:int = 1000000000
+print(f'{n}')
+print(f'{n:_}')
+print(f'{n:,}')
+```
+
+output
+```powershell
+PS D:\work\python_work\ModernPython\codes\F-String\01> python .\testprj.py
+1000000000
+1_000_000_000
+1,000,000,000
+```
+
+```python
+var: str = 'var'
+print(f'{var:>20}:')
+print(f'{var:<20}:')
+print(f'{var:^20}:')
+```
+
+output
+```powershell
+PS D:\work\python_work\ModernPython\codes\F-String\02> python .\testprj.py
+                 var:
+var                 :
+        var         :
+```
+
+```python
+var: str = 'var'
+print(f'{var:_>20}')
+print(f'{var:#<20}')
+print(f'{var:|^20}')
+```
+
+output
+```powershell
+PS D:\work\python_work\ModernPython\codes\F-String\02a> python .\testprj.py
+_________________var
+var#################
+||||||||var|||||||||
+```
+
+```python
+from datetime import datetime
+now: datetime = datetime.now()
+
+print(f'{now:%d.%m.%y}')
+```
+
+output
+```powershell
+PS D:\work\python_work\ModernPython\codes\F-String\03> python .\testprj.py
+21.02.25
+```
+
+```python
+from datetime import datetime
+now: datetime = datetime.now()
+
+print(f'{now:%d.%m.%y (%H:%M:%S)}')
+```
+
+output
+```powershell
+PS D:\work\python_work\ModernPython\codes\F-String\03a> python .\testprj.py
+21.02.25 (13:02:50)
+```
+
+```python
+from datetime import datetime
+now: datetime = datetime.now()
+
+print(f'{now:%d.%m.%y (%H:%M:%S)}')
+print(f'{now:%c}')
+print(f'{now:%I%p}')
+```
+
+output
+```powershell
+PS D:\work\python_work\ModernPython\codes\F-String\03b> python .\testprj.py
+21.02.25 (13:06:24)
+Fri Feb 21 13:06:24 2025
+01PM
+```
+
+```python
+n: float = 1234.5678
+print(round(n,2))
+print(f'{n:.2f}')
+```
+
+output
+```powershell
+PS D:\work\python_work\ModernPython\codes\F-String\04> python .\testprj.py
+1234.57
+1234.57
+```
+
+```python
+n: float = 1234.5678
+print(f'Result: {n:.2f}')
+```
+
+output
+```powershell
+PS D:\work\python_work\ModernPython\codes\F-String\04a> python .\testprj.py
+Result: 1234.57
+```
+
+```python
+n: float = 1234.5678
+print(f'Result: {n:.2f}')
+print(f'Result: {n:.0f}')
+print(f'Result: {n:_.3f}')
+print(f'Result: {n:,.3f}')
+```
+
+output
+```powershell
+PS D:\work\python_work\ModernPython\codes\F-String\04b> python .\testprj.py
+Result: 1234.57
+Result: 1235
+Result: 1_234.568
+Result: 1,234.568
+```
+
+```python
+a: int = 5
+b: int = 10
+my_var: str = 'Bob says hi'
+
+print(f'a + b = {a+b}')
+print(f'{a + b =}')
+print(f'{my_var =}')
+```
+
+output
+```powershell
+PS D:\work\python_work\ModernPython\codes\F-String\05a> python .\testprj.py
+a + b = 15
+a + b =15
+my_var ='Bob says hi'
+```
+
+
 ## logging
 
 -  [logging](https://docs.python.org/zh-cn/3/library/logging.html).

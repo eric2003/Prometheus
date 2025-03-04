@@ -256,4 +256,25 @@ Qt::Widgets
 Qt::WidgetsPrivate
 Qt6::QModernWindowsStylePlugin
 ```
+## Qt6_DIR
+
+Qt >= 6.4.2
+```
+Qt6_DIR=c:\local\Qt\6.8.1\msvc2022_64\lib\cmake\Qt6\
+```
+
+## Qt6 cmake
+
+```cmake
+cmake .. -DCMAKE_PREFIX_PATH="D;C:/local/Qt/6.8.1/msvc2022_64"
+cmake .. -DCMAKE_PREFIX_PATH:PATH="C:/local/Qt/6.8.1/msvc2022_64"
+```
+
+## windeployqt
+
+```powershell
+C:\local\Qt\6.3.2\msvc2019_64\bin\windeployqt.exe .\Debug\testprj.exe
+c:\local\Qt\6.8.1\msvc2022_64\bin\windeployqt.exe .\Debug\testprj.exe
+```
+
 

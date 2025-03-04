@@ -230,3 +230,74 @@ Grandparent directory: D:\work\python_work\ModernPython\codes
 relative_path 1 directory: ..
 relative_path 2 directory: ..\..
 ```
+
+## get_sorted_indices
+
+```python
+def get_sorted_indices(arr1, arr2):
+    sort_map = {value: index for index, value in enumerate(arr2)}
+    sorted_indices = []
+    for element in arr2:  
+        index = sort_map[element] 
+        sorted_indices.append(index)
+    return sorted_indices
+        
+# 原始数组  
+original_array = [10, 20, 5, 8, 25]  
+
+# 目标数组  
+target_array = [25, 8, 20, 10, 5]  
+
+# 创建一个排序map  
+sort_map = {value: index for index, value in enumerate(target_array)}  
+
+# 使用排序map对原始数组进行排序  
+sorted_array = sorted(original_array, key=lambda x: sort_map[x])  
+
+sorted_indices = get_sorted_indices(original_array, target_array)
+
+print(original_array)
+print(sorted_array)
+print(sort_map)
+print(sorted_indices) 
+```
+
+output
+```
+PS D:\work\python_work\ModernPython\codes\sort\01c> python .\testprj.py
+[10, 20, 5, 8, 25]
+[25, 8, 20, 10, 5]
+{25: 0, 8: 1, 20: 2, 10: 3, 5: 4}
+[0, 1, 2, 3, 4]
+```
+
+```python
+arrx = [10, 30, 50, 60, 80]  
+
+# 获取每个元素的索引  
+for element in arrx:  
+    index = arrx.index(element)  
+    print(f"元素: {element}, 索引: {index}") 
+```
+
+output
+```
+元素: 10, 索引: 0  
+元素: 30, 索引: 1  
+元素: 50, 索引: 2  
+元素: 60, 索引: 3  
+元素: 80, 索引: 4 
+```
+
+```python
+
+original_array = [10, 20, 5, 8, 25]  
+target_array = [25, 8, 20, 10, 5]  
+index_map = [4,3,1,0,2]
+result_array = original_array[index_map]
+
+print(original_array)
+print(index_map)
+print(result_array)
+print(target_array) 
+```

@@ -1,8 +1,11 @@
 # Meeting C++
 
-## Meeting C++ 2023
+## Meeting C++ 2024
 
-### Meeting C++ 2023
+-  [Meeting C++ 2024](https://www.youtube.com/playlist?list=PLRyNF2Y6sca0ApISGUPC6Epl2hEENGw9I).
+-  [C++26: an overview - Rainer Grimm - Meeting C++ 2024](https://www.youtube.com/watch?v=WUjHo5NbDBw).
+
+## Meeting C++ 2023
 
 -  [Meeting C++ 2023](https://www.youtube.com/playlist?list=PLRyNF2Y6sca0KMWJXADniEDufnFdIJz7l).
 -  [AI Assistants for C++ Developers - Michael Price - Meeting C++ 2023](https://www.youtube.com/watch?v=BkyrQgjJVAo&list=PLRyNF2Y6sca0KMWJXADniEDufnFdIJz7l/).
@@ -58,7 +61,9 @@
 -  [grpc C++ ... a way to go generic - Irakleia Karyoti - Meeting C++ 2023](https://www.youtube.com/watch?v=3oRDfHbBPKQ&list=PLRyNF2Y6sca0KMWJXADniEDufnFdIJz7l&index=51/).
 -  [What is a random number and why should I care - Frances Buontempo - Meeting C++ 2023](https://www.youtube.com/watch?v=tGKMuaMNxMw&list=PLRyNF2Y6sca0KMWJXADniEDufnFdIJz7l&index=52/).
 
+## Meeting C++ 2022
 
+-  [Breaking Dependencies: The Path to High-Quality Software - Klaus Iglberger - Meeting C++ 2022](https://www.youtube.com/watch?v=B4s381OrjWo).
 
 ## Youtube
 

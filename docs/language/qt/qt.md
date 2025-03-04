@@ -82,6 +82,8 @@ C:\local\Qt\6.6.2\msvc2019_64\bin\windeployqt.exe .\Debug\testprj.exe
 ```
 ## Check Qt Version
 
+- [Windows11下查看QT版本号](https://zhuanlan.zhihu.com/p/566402975).
+
 qmake -v
 ```
 $ c:\local\Qt\6.6.2\msvc2019_64\bin\qmake -v
@@ -94,6 +96,13 @@ PS C:\Users\eric> qmake -v
 QMake version 3.1
 Using Qt version 6.7.2 in C:/local/Qt/6.7.2/msvc2019_64/lib
 ```
+
+```
+PS C:\local\Qt\6.8.1\msvc2022_64\bin> ./qmake -v
+QMake version 3.1
+Using Qt version 6.8.1 in C:/local/Qt/6.8.1/msvc2022_64/lib
+```
+
 
 %(Qt:QT_INSTALL_PREFIX)
 

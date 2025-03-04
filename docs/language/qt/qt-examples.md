@@ -5,6 +5,18 @@
 -  [Qt Examples And Tutorials](https://doc.qt.io/qt-6/qtexamplesandtutorials.html).
 -  [C++ 全栈聊天项目](https://www.bilibili.com/video/BV1k2421K7ZB/).
 
+## Compile
+
+```
+cmake .. -D CMAKE_PREFIX_PATH:PATH="C:/local/Qt/6.8.1/msvc2022_64/"
+```
+
+## windeployqt.exe
+
+```
+c:\local\Qt\6.8.1\msvc2022_64\bin\windeployqt.exe .\Debug\testprj.exe
+c:\local\Qt\6.8.1\msvc2022_64\bin\windeployqt.exe .\Debug\Mesh.exe
+```
 
 ## Splitter
 

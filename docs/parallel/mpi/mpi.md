@@ -1,6 +1,6 @@
 # MPI
 
-## article link
+## MPI Link
 -  [MPI official document](https://www.mpi-forum.org/docs/).
 -  [MPICH](https://www.mpich.org/documentation/).
 -  [OpenMPI](https://www.open-mpi.org/doc/).
@@ -9,6 +9,30 @@
 -  [Open MPI Tutorial](https://usc-rc.github.io/tutorials/open-mpi/).
 -  [A Comprehensive MPI Tutorial Resource](https://mpitutorial.com/).
 -  [Open MPI v5.0.x](https://docs.open-mpi.org/en/v5.0.x/).
+-  [MPI（Message Passing Interface）系列链接整理](https://zhuanlan.zhihu.com/p/521054318).
+-  [并行计算](https://parallel.zhangjikai.com/).
+-  [MPI/OpenMP/Hybrid混合并行计算PI](https://www.bilibili.com/video/BV13m4y1G7ai/).
+
+
+## 并行编程
+
+-  [并行编程入门与实践1](https://www.bilibili.com/video/BV1dVSdYLE8R/).
+-  [并行编程入门与实践2](https://www.bilibili.com/video/BV1wNDRYdEHw).
+-  [并行编程入门与实践3](https://www.bilibili.com/video/BV1hcm9YfEkr).
+-  [并行编程入门与实践4](https://www.bilibili.com/video/BV1PQU2YvE8J).
+-  [并行编程入门与实践5](https://www.bilibili.com/video/BV1xHz7YFEMy/).
+-  [并行编程入门与实践6](https://www.bilibili.com/video/BV1NCiRYfEwh).
+
+## 并行程序设计 谭光明
+
+-  [并行程序设计 谭光明](https://www.bilibili.com/video/BV1XM4y1S7wy/).
+
+## 并行计算
+
+-  [【并行计算 CS267 2021】伯克利—中英字幕](https://www.bilibili.com/video/BV1GH4y1c7ey/).
+-  [【并行计算 CS149 2023】斯坦福大学—中英字幕](https://www.bilibili.com/video/BV1du17YfE5G).
+-  [CMU 15-418 Parallel Computer Architecture and Programming](https://www.bilibili.com/video/BV18b421J7cA).
+
 
 ## command
 
@@ -117,6 +141,65 @@ function(echo_target tgt)
 
     message(STATUS "")
 endfunction()
+```
+
+## HXSendString
+```cpp
+#include <mpi.h>
+import std;
+
+#define HX_PARALLEL
+void HXSendString( std::string const & str, int recv_pid, int tag = 0 )
+{
+#ifdef HX_PARALLEL
+    unsigned len = str.size();
+    MPI_Send( &len, 1, MPI_UNSIGNED, recv_pid, tag, MPI_COMM_WORLD );
+    if ( len == 0 ) return;
+    MPI_Send( str.data(), len, MPI_CHAR, recv_pid, tag, MPI_COMM_WORLD );
+#endif
+}
+
+void HXRecvString( std::string & str, int send_pid, int tag = 0 )
+{
+#ifdef HX_PARALLEL
+    unsigned len;
+    MPI_Status status;
+    MPI_Recv( &len, 1, MPI_UNSIGNED, send_pid, tag, MPI_COMM_WORLD, &status );
+    if ( len == 0 ) return;
+    str.resize( len );
+    MPI_Recv( str.data(), len, MPI_CHAR, send_pid, tag, MPI_COMM_WORLD, &status );
+#endif
+}
+
+int main(int argc, char* argv[])
+{
+    MPI_Init(&argc, &argv);
+
+    int nProc;
+    MPI_Comm_size( MPI_COMM_WORLD, &nProc );
+    int pid;
+    MPI_Comm_rank( MPI_COMM_WORLD, &pid );
+    int serverid = 0;
+
+    std::string str = std::format("Hello from process {}\n", pid );
+    if ( pid != serverid )
+    {
+        HXSendString( str, serverid );
+    }
+    else {
+        for ( int pid = 0; pid < nProc; ++ pid )
+        {
+            if ( pid != serverid )
+            {
+                HXRecvString( str, pid );
+            }
+            std::print( "{}", str );
+        }
+    }
+    MPI_Finalize();
+
+    return 0;
+}
 ```
 
 ### void ReadCgnsGrid( const std::string & filename )

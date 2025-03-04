@@ -6,7 +6,23 @@ Git is a free and open source distributed version control system designed to han
 
 - [git-scm.com](https://git-scm.com/).
 
+## git --version
 
+```git
+eric@DELL MINGW64 ~
+$ git --version
+git version 2.47.1.windows.1
+```
+
+```powershell
+PS C:\Users\eric> git --version
+git version 2.47.1.windows.1
+PS C:\Users\eric> git --version
+git version 2.48.1.windows.1
+```
+
+
+## ssh-keygen
 ```
 ssh-keygen -t rsa -C 'xxx@163.com'
 ```

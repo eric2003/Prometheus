@@ -11,6 +11,17 @@
 - [Windows Batch Scripting ](https://en.wikibooks.org/wiki/Windows_Batch_Scripting).
 - [Batch Script Tutorial ](https://www.tutorialspoint.com/batch_script/index.htm).
 
+echo %USERPROFILE%
+```batch
+C:\Users\eric>echo %USERPROFILE%
+C:\Users\eric
+```
+
+```bat
+C:\Users\eric>echo %USERPROFILE%
+C:\Users\eric
+```
+
 
 
 
