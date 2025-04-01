@@ -10,6 +10,7 @@
 ## code
 
 - [WENO (Weighted Essentially Non-Oscillatory) schemes](https://github.com/wme7/WENO).
+- [WenOOF](https://github.com/Fortran-FOSS-Programmers/WenOOF).
 
 ## PyWENO
 
@@ -447,6 +448,101 @@ PS D:\github\OneFLOW\example\weno-coef\crj\python\01d> python .\crj.py
    1/7     -43/42    667/210  -2341/420  853/140  -617/140   363/140
 ```
 
+### 等宽矩阵打印
+
+```python
+import numpy as np
+from fractions import Fraction
+
+def inverse_matrix(matrix):
+    # 将矩阵元素转换为浮点数以计算逆矩阵
+    matrix_float = matrix.astype(float)
+    inverse = np.linalg.inv(matrix_float)
+    # 将逆矩阵元素转换为分数
+    inverse_fraction = [[Fraction(inverse[i, j]).limit_denominator() for j in range(len(inverse))] for i in range(len(inverse))]
+    return inverse_fraction
+
+def print_matrix_fraction(matrix):
+    # 将矩阵转换为Fraction数组
+    fraction_matrix = np.array([[Fraction(x).limit_denominator() for x in row] for row in matrix])
+    
+    # 转换为字符串矩阵并计算每列的最大宽度
+    str_matrix = []
+    rows = len(fraction_matrix)
+    cols = len(fraction_matrix[0])
+    col_widths = [0] * cols  # 每列的最大宽度
+    
+    # 将数字转换为字符串，并记录每列最大宽度
+    for row in fraction_matrix:
+        str_row = []
+        for j, f in enumerate(row):
+            if f.denominator == 1:
+                s = f"{f.numerator}"
+            else:
+                s = f"{f.numerator}/{f.denominator}"
+            str_row.append(s)
+            current_length = len(s)
+            if current_length > col_widths[j]:
+                col_widths[j] = current_length
+        str_matrix.append(str_row)
+    
+    # 打印矩阵，每列等宽右对齐，添加逗号
+    print("Matrix in Fraction Form:")
+    for i in range(rows):
+        row_elements = []
+        for j in range(cols):
+            element = str_matrix[i][j]
+            # 右对齐，使用该列的最大宽度
+            formatted_element = f"{element:>{col_widths[j]}}"
+            # 除最后一列外添加逗号和空格
+            if j < cols - 1:
+                formatted_element += ", "
+            else:
+                formatted_element += " "
+            row_elements.append(formatted_element)
+        # 拼接一行并打印
+        formatted_row = "".join(row_elements)
+        print(f"[ {formatted_row}]")
+
+# 定义原始矩阵 matrix
+matrix = np.array([[1, -2, 49/12], [1, -1, 13/12], [1, 0, 1/12]])
+
+# 计算逆矩阵
+inverse = inverse_matrix(matrix)
+
+# 调用函数打印矩阵和逆矩阵
+print_matrix_fraction(matrix)
+print("\nInverse Matrix in Fraction Form:")
+print_matrix_fraction(inverse)
+
+# 计算两个矩阵的乘积
+product = np.dot(matrix, inverse)
+
+print("\nProduct of Matrix and Inverse Matrix:")
+print_matrix_fraction(product)
+```
+
+output
+```powershell
+PS D:\github\OneFLOW\example\weno-coef\fractions\03h> python .\testprj.py
+Matrix in Fraction Form:
+[ 1, -2, 49/12 ]
+[ 1, -1, 13/12 ]
+[ 1,  0,  1/12 ]
+
+Inverse Matrix in Fraction Form:
+Matrix in Fraction Form:
+[ -1/24, 1/12, 23/24 ]
+[   1/2,   -2,   3/2 ]
+[   1/2,   -1,   1/2 ]
+
+Product of Matrix and Inverse Matrix:
+Matrix in Fraction Form:
+[ 1, 0, 0 ]
+[ 0, 1, 0 ]
+[ 0, 0, 1 ]
+```
+
 代码与ENO公式的对应关系
 
 1. 差分计算
@@ -637,7 +733,7 @@ $$
 cell sizes
 
 $$
-\Delta{x}_{i}\equiv{x}_{i+\frac{1}{2}}-x_{i+\frac{1}{2}}
+\Delta{x}_{i}\equiv{x}_{i+\frac{1}{2}}-x_{i-\frac{1}{2}}
 $$
 
 
@@ -1580,3 +1676,498 @@ plt.show()
 ```
 
 ![Reconstruction and Approximation in 1D](images/reconstrcution-ghost-1d.png "Reconstruction and Approximation in 1D")
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+    
+def plot_all_cell_center( xcc, yref ):
+    plt.scatter(xcc, np.full_like(xcc, yref), s=20, facecolor='black', edgecolor='black', linewidth=1)
+    return
+    
+def plot_cell_center( xcc, yref ):
+    nx = xcc.size
+    ii = nx // 2
+    im = ii - 1
+    ip = ii + 1
+    xcc_new = []
+    for i in range(0, nx):
+        if i > 1 and i < im:
+            continue
+        if i > ip and i < nx-2:
+            continue
+        xcc_new.append( xcc[i] )
+    plt.scatter(xcc_new, np.full_like(xcc_new, yref), s=20, facecolor='black', edgecolor='black', linewidth=1)
+    return
+    
+def plot_ghost_cell_center( xcc, yref ):
+    plt.scatter(xcc, np.full_like(xcc, yref), s=20, facecolor='red', edgecolor='black', linewidth=1)
+    return
+    
+def plot_ghost_mesh( x, yref ):
+    dx = x[1] - x[0]
+    dy = 0.1 * dx
+    for xm in x:
+        plt.plot([xm, xm], [yref-dy, yref+dy], 'k-')  # 绘制垂直线
+    return
+
+def plot_mesh( x, yref ):
+    dx = x[1] - x[0]
+    dy = 0.1 * dx
+    for xm in x:
+        plt.plot([xm, xm], [yref-dy, yref+dy], 'k-')  # 绘制垂直线
+    #
+    
+    nxc = x.size - 1
+    ii = nxc // 2
+    im = ii - 1
+    ip = ii + 1
+    
+    for i in range(0, nxc):
+        if i > 1 and i < im:
+            plt.plot([x[i], x[i+1]], [yref, yref], 'k--', linewidth=1)
+        elif i > ip and i < nx-2:
+            plt.plot([x[i], x[i+1]], [yref, yref], 'k--', linewidth=1)
+        else :
+            plt.plot([x[i], x[i+1]], [yref, yref], 'b-', linewidth=1)
+    #plt.plot(x, np.full_like(x, yref), 'k--', linewidth=1)
+    return
+    
+def addDollarString(str_in):    
+    mystr = '$' + str_in + '$'
+    return mystr
+    
+def removeDollarString(str_in):    
+    mystr = str_in.strip("$")
+    return mystr    
+    
+def genstrNp(strn, i):
+    if i != 0:
+        ai = abs(i)
+        if i > 0:
+           ss = '+'
+        else:
+           ss = '-'
+        mystr = r'$' + strn + ss + f'{abs(i)}'+r'$'
+        #mystr = strn + ss + f'{abs(i)}'
+    else:
+        if strn == '':
+            mystr = r'$'+ '0' + r'$'
+            #mystr = '0'
+        else:
+            mystr = r'$'+ strn + r'$'
+            #mystr = strn
+    return mystr
+    
+def genstrXNhalf(strn, i):
+    if i != 0:
+        ai = abs(i)
+        if i > 0:
+           ss = '+'
+        else:
+           ss = '-'
+        mystr = r'$x_{' + strn + ss + r'\frac{' + f'{ai}' + r'}{2}}$'
+        #mystr = r'x_{' + strn + ss + r'\frac{' + f'{ai}' + r'}{2}}'
+    else:
+        mystr = r'$x_{' + strn + ss + r'\frac{' + r'}{2}}$'
+        #mystr = r'x_{' + strn + ss + r'\frac{' + r'}{2}}'
+    return mystr    
+   
+def plot_label(x, xcc, yref, ishift):
+    x0 = x[0]
+    dx = x[1] - x[0]
+    dyb = 0.8 * dx
+    dyt = dyb * 0.6
+    yb = yref - dyb
+    yt = yref + dyt
+    ybc = yref - 0.5* dyb
+    
+    str_list = []
+    str_list.append('$a=')
+    
+    i1 = 2 * ( 1 + ishift ) - 1
+    i2 = i1 + 2
+    
+    str1 = genstrXNhalf('', i1)
+    str2 = genstrXNhalf('', i2)
+    str_list.append(removeDollarString(str1))
+    str_list.append('<')
+    str_list.append(removeDollarString(str2))
+    str_list.append('<')
+    str_list.append(r'\cdots')
+    str_list.append('<')
+    
+    plt.text(x[0], yb, str1, fontsize=12, ha='center')
+    plt.text(x[1], yb, str2, fontsize=12, ha='center')
+    
+    i1 = 2 * ( 1 + ishift ) - 1
+    i2 = i1 - 2
+    
+    str1 = genstrXNhalf('N', i1)
+    str2 = genstrXNhalf('N', i2)
+    
+    str_list.append(removeDollarString(str2))
+    str_list.append('<')
+    str_list.append(removeDollarString(str1))
+    str_list.append('=b$')    
+    
+    plt.text(x[-1], yb, str1, fontsize=12, ha='center')
+    plt.text(x[-2], yb, str2, fontsize=12, ha='center')
+    
+    plt.text(x[0], yt, r'$x=a$', fontsize=12, ha='center')
+    plt.text(x[-1], yt, r'$x=b$', fontsize=12, ha='center')
+    
+    i1 = 1 + ishift
+    i2 = i1 + 1
+    
+    str1 = genstrNp('',i1)
+    str2 = genstrNp('',i2)
+    
+    plt.text(xcc[0], ybc, str1, fontsize=12, ha='center')
+    plt.text(xcc[1], ybc, str2, fontsize=12, ha='center')
+    
+    i1 = ishift
+    i2 = i1 - 1
+    
+    str1 = genstrNp('N',i1)
+    str2 = genstrNp('N',i2)
+    
+    plt.text(xcc[-1], ybc, str1, fontsize=12, ha='center')
+    plt.text(xcc[-2], ybc, str2, fontsize=12, ha='center')    
+    
+    nx = xcc.size
+    i = nx // 2
+    print("i=",i)
+    im = i - 1
+    ip = i + 1
+    
+    s1 = genstrNp('i',-1)
+    s2 = genstrNp('i',0)
+    s3 = genstrNp('i',+1)
+    
+    plt.text(xcc[im], ybc, s1, fontsize=12, ha='center')
+    plt.text(xcc[i], ybc, s2, fontsize=12, ha='center')
+    plt.text(xcc[ip], ybc, s3, fontsize=12, ha='center')
+    
+    sss = ''
+    for item in str_list:
+        sss += item
+        
+    print(f'{sss=}')
+  
+    str = 'Grid: ' + sss
+    
+    nx = xcc.size
+    ii = nx // 2
+    
+    plt.text(x[ii], yb-dx, str, fontsize=12, ha='center')
+ 
+    return
+    
+def plot_ghost_label_left(xg, xgcc, yref, ishift):
+    dx = abs(xg[1] - xg[0])
+    dyb = 0.8 * dx
+    dyt = dyb * 0.6
+    yb = yref - dyb
+    yt = yref + dyt
+    ybc = yref - 0.5* dyb
+    
+    i1 = -1 + 2 * ishift
+    i2 = i1 - 2
+    
+    str1 = genstrXNhalf('', i1)
+    str2 = genstrXNhalf('', i2)
+    
+    plt.text(xg[1], yb, str1, fontsize=12, ha='center')
+    plt.text(xg[2], yb, str2, fontsize=12, ha='center')
+    
+    i1 = 0+ishift
+    i2 = i1-1
+    
+    str1 = genstrNp('',i1)
+    str2 = genstrNp('',i2)    
+    
+    plt.text(xgcc[0], ybc, str1, fontsize=12, ha='center')
+    plt.text(xgcc[1], ybc, str2, fontsize=12, ha='center')
+ 
+    return
+
+   
+def plot_ghost_label_right(xg, xgcc, yref, ishift):
+    dx = abs(xg[1] - xg[0])
+    dyb = 0.8 * dx
+    dyt = dyb * 0.6
+    yb = yref - dyb
+    yt = yref + dyt
+    ybc = yref - 0.5* dyb
+    
+    i1 = 2*(1+ishift)+1
+    i2 = i1 + 2
+    
+    str1 = genstrXNhalf('N', i1)
+    str2 = genstrXNhalf('N', i2)
+    
+    plt.text(xg[1], yb, str1, fontsize=12, ha='center')
+    plt.text(xg[2], yb, str2, fontsize=12, ha='center')
+    
+    i1 = 1+ishift
+    i2 = i1+1
+    str1 = genstrNp('N',i1)
+    str2 = genstrNp('N',i2)
+    
+    plt.text(xgcc[0], ybc, str1, fontsize=12, ha='center')
+    plt.text(xgcc[1], ybc, str2, fontsize=12, ha='center')    
+ 
+    return
+
+# 设置字体为 Times New Roman
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif', serif=['Times New Roman'])
+
+# 设置图形大小和样式
+plt.figure(figsize=(12, 5))
+
+nx = 9
+L  = 1.0
+x_l = 0.0
+dx = L / nx
+
+x   = np.zeros(nx+1, dtype=np.float64)
+xcc = np.zeros(nx, dtype=np.float64)
+
+nghost = 2
+x_ghost_l   = np.zeros(nghost+1, dtype=np.float64)
+xcc_ghost_l = np.zeros(nghost, dtype=np.float64)
+x_ghost_r   = np.zeros(nghost+1, dtype=np.float64)
+xcc_ghost_r = np.zeros(nghost, dtype=np.float64)
+
+for i in range(0, nx+1):
+    x[i] = x_l + dx*(i)
+    
+for i in range(0, nx):
+    xcc[i] = 0.5*(x[i]+x[i+1])
+    
+x_ghost_l[0] = x[0]
+for ighost in range(1, nghost+1):
+    dx = x[0] - x[ighost]
+    x_ghost_l[ighost] = x[0] + dx
+    
+x_ghost_r[0] = x[nx]
+for ighost in range(1, nghost+1):
+    dx = x[nx] - x[nx-ighost]
+    x_ghost_r[ighost] = x[nx] + dx
+    
+for ighost in range(0, nghost):
+    xcc_ghost_l[ighost] = 0.5*(x_ghost_l[ighost]+x_ghost_l[ighost+1])
+    xcc_ghost_r[ighost] = 0.5*(x_ghost_r[ighost]+x_ghost_r[ighost+1])
+    
+print("x=",x)
+print("xcc=",xcc)
+
+print("x_ghost_l=",x_ghost_l)
+print("xcc_ghost_l=",xcc_ghost_l)
+print("x_ghost_r=",x_ghost_r)
+print("xcc_ghost_r=",xcc_ghost_r)
+
+yref = 0.0
+
+plot_ghost_cell_center( xcc_ghost_l,yref )
+plot_ghost_cell_center( xcc_ghost_r,yref )
+
+plot_ghost_mesh( x_ghost_l, yref )
+plot_ghost_mesh( x_ghost_r, yref )
+
+ishift = -1
+plot_ghost_label_left(x_ghost_l, xcc_ghost_l, yref, ishift)
+plot_ghost_label_right(x_ghost_r, xcc_ghost_r, yref, ishift)
+
+plot_cell_center( xcc, yref )
+plot_mesh( x, yref )
+plot_label(x, xcc, yref, ishift)
+    
+plt.axis('equal')
+plt.axis('off')
+
+plt.savefig('cfd.png', bbox_inches='tight', dpi=300)
+plt.show()
+```
+
+![Reconstruction and Approximation in 1D](images/reconstrcution-ghost-1d-v1.png "Reconstruction and Approximation in 1D-v1")
+![Reconstruction and Approximation in 1D](images/reconstrcution-ghost-1d-v2.png "Reconstruction and Approximation in 1D-v2")
+![Reconstruction and Approximation in 1D](images/reconstrcution-ghost-1d-v3.png "Reconstruction and Approximation in 1D-v3")
+![Reconstruction and Approximation in 1D](images/reconstrcution-ghost-1d-v5.png "Reconstruction and Approximation in 1D-v5")
+![Reconstruction and Approximation in 1D](images/reconstrcution-ghost-1d-v6.png "Reconstruction and Approximation in 1D-v6")
+![Reconstruction and Approximation in 1D](images/reconstrcution-ghost-1d-v7.png "Reconstruction and Approximation in 1D-v7")
+![Reconstruction and Approximation in 1D](images/reconstrcution-ghost-1d-v4.png "Reconstruction and Approximation in 1D-v4")
+
+
+```fortran
+integer, parameter :: nx = 10
+integer, parameter :: ighost = 2
+real(8) :: u(-ighost:nx+ighost)
+real(8) :: u(-2:10+2)
+
+| -2 | -1 | 0 | 1 | 2 | 3 4 5 6 7 8 9 | 10 | 11 | 12 |
+   1    2   3   4   5                   13   14   15
+               ist=4                   ied=13
+		   
+ist = 1 + ighost + 1 = 4
+ied = nx + ighost + 1 = nx + 3 = 13
+0->3
+nx->nx+3
+do j=0,nx->do j=3,nx+3->do j=ist-1,ied
+x(-ighost:nx+ighost)
+ncell = nx = 10
+ni = nx + 1 = 11
+nghost = 2*ighost+1=5
+ntotalcell = ncell + nghost=10+5=15
+real(8) :: u(1:ntotalcell)
+ishift=ighost+1=3
+ist = 4 = 1+ishift
+ied = 13= 10+ishift
+
+!chose the stencil by ENO method
+do j = -ighost, nx + ighost
+    dd(0,j)=u(j)
+enddo
+do i=1,iorder-1
+    do j=-ighost,nx+ighost-1
+        dd(i,j)=dd(i-1,j+1)-dd(i-1,j)
+    enddo
+enddo
+->
+
+real(8) :: dd(0:ighost-1, -ighost:nx+ighost)
+->
+real(8) :: dd(0:ighost-1, 1:ntotalcell)
+do j = 1, nx + ighost + ighost + 1
+    dd(0,j)=u(j)
+enddo
+
+do i=1,iorder-1
+    do j=1,ntotalcell-1
+        dd(i,j)=dd(i-1,j+1)-dd(i-1,j)
+    enddo
+enddo
+-----------------------------------------
+
+integer :: il(0:nx),ir(0:nx)
+
+do j = 0, nx 
+    il(j) = j
+    ir(j) = j + 1
+    do i=1,iorder-1  
+        if( abs(dd(i,il(j)-1)) <= abs(dd(i,il(j))) ) then
+            il(j)=il(j)-1 
+        endif
+        if( abs(dd(i,ir(j)-1)) <= abs(dd(i,ir(j))) ) then
+            ir(j)=ir(j)-1 
+        endif
+    enddo
+enddo
+->
+| -2 | -1 | 0 | 1 | 2 | 3 4 5 6 7 8 9 | 10 | 11 | 12 |
+   1    2   3   4   5                   13   14   15
+               ist=4                   ied=13
+		   
+ist = 1 + ighost + 1 = 4
+ied = nx + ighost + 1 = nx + 3 = 13
+              
+integer :: il(ist-1:ied),ir(ist-1:ied)
+integer :: il(3:13),ir(3:13)
+
+do j = ist-1, ied 
+    il(j) = j
+    ir(j) = j + 1
+    do i=1,iorder-1  
+        if( abs(dd(i,il(j)-1)) <= abs(dd(i,il(j))) ) then
+            il(j)=il(j)-1 
+        endif
+        if( abs(dd(i,ir(j)-1)) <= abs(dd(i,ir(j))) ) then
+            ir(j)=ir(j)-1 
+        endif
+    enddo
+enddo
+------------------------------------
+subroutine boundary( u, nx, ighost )
+    implicit none
+    integer :: nx, ighost
+    real(8) :: u(-ighost:nx+ighost)
+    integer :: i
+	
+	!nx = 10
+	!ighost=2
+	!u(0)=u(nx)
+	!u(-1)=u(nx-1)
+	!u(-2)=u(nx-2)
+	!u(ist-1)=u(ied)
+	!u(ist-2)=u(ied-1)
+	!u(ist-3)=u(ied-2)
+         
+    do i = 0, - ighost, - 1
+        u( i ) = u( i + nx )
+    enddo
+         
+    do i = nx + 1, nx + ighost
+        u( i ) = u( i - nx )
+    enddo
+	
+| -2 | -1 | 0 | 1 | 2 | 3 4 5 6 7 8 9 | 10 | 11 | 12 |
+   1    2   3   4   5                   13   14   15
+               ist=4                   ied=13	
+	
+	!u(nx+1)=u(1)
+	!u(nx+2)=u(2)
+	
+	!u(ied+1)=u(4)=u(ist)
+	!u(ied+2)=u(5)=u(ist+1)
+	
+end subroutine boundary
+------------------------------------
+1    2    3   4   5   6              13   14   15   16
+| -2 | -1 | 0 | 1 | 2 | 3 4 5 6 7 8 9 | 10 | 11 | 12 |
+   1    2   3   4   5                   13   14   15
+               ist=4                   ied=13
+			   
+-2   -1   0   1	  2   3	              9    10   11   12
+| -2 | -1 | 0 | 1 | 2 | 3 4 5 6 7 8 9 | 10 | 11 | 12 |
+
+def boundary(u):
+    #ighost=2,-ighost=-2
+    #ishift = ighost + 1=3
+    #ist = 1 + ishift
+    #ied = nx + ishift    
+    #i=-2,-1,0
+    #ishift+i=3-2,3-1,3+0=1,2,3
+    #ied + i=ied-2,ied-1,ied+0
+    #ist=ishift
+    #ied=nx-1+ishift
+    for i in range(-ighost, 1):
+        u[ishift + i] = u[ied + i]
+    #i=1,2
+    #ied+i=ied+1,ied+2
+    #ishift+i=3+1,3+2=4,5
+    for i in range(1, ighost + 1):
+        u[ied + i] = u[ishift + i]
+		
+def boundary(u):
+    #ighost=2,-ighost=-2
+    #ishift = ighost + 1=3
+    #ist = 1 + ishift
+    #ied = nx + ishift    
+    #i=-2,-1,0
+    #ishift+i=3-2,3-1,3+0=1,2,3
+    #ied + i=ied-2,ied-1,ied+0
+    #ist=ishift
+    #ied=nx-1+ishift
+    #ist-1=2
+    for i in range(-ighost, 1):
+        u[ist - 1 + i] = u[ied + i]
+    #i=1,2
+    #ied+i=ied+1,ied+2
+    #ist-1=2
+    #ist-1+i=3,4
+    for i in range(1, ighost + 1):
+        u[ied + i] = u[ist - 1 + i]		
+			   
+```

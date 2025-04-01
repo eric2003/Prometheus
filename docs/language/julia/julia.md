@@ -92,6 +92,12 @@ CommandType     Name                                               Version    So
 Application     julia.exe                                          1.10.2.0   C:\Users\eric\AppData\Local\Programs\Julia-1.10.2\bin\julia.exe
 ```
 
+### position
+
+```
+C:\Users\eric\AppData\Local\Programs\Julia-1.11.4
+```
+
 
 ## Import
 
@@ -123,6 +129,12 @@ julia version 1.10.2
 ```
 julia> VERSION
 v"1.10.2"
+```
+
+### julia --version
+```
+PS C:\Users\eric> julia --version
+julia version 1.11.4
 ```
 
 ### versioninfo()

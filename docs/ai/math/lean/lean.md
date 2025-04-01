@@ -1,14 +1,44 @@
 # Lean4
 
 
-## Link
+## Install
 
 - [使用国内镜像安装 Mathlib/Lean4](https://zhuanlan.zhihu.com/p/680690436).
 - [Installing Lean 4 on Windows](https://leanprover-community.github.io/install/windows.html).
+
+## Tutorial
+
 - [Lean定理证明](https://subfish-zhou.github.io/theorem_proving_in_lean4_zh_CN/title_page.html).
 - [自然数游戏速通 Lean4](https://www.bilibili.com/video/BV1X6421Z7tg/).
 - [VSCode Lean 4 Code Actions](https://marketplace.visualstudio.com/items?itemName=denis-gorbachev.lean4-code-actions).
+- [【Lean】Peano公理](https://www.bilibili.com/video/BV1onWheAEJ5).
+- [人工智能数学验证工具LEAN4【入门介绍4】次幂世界-如何描述费马大定理](https://www.bilibili.com/video/BV1FV411Q7Ni).
+- [【人工智能数学验证工具LEAN4【入门介绍5】推理世界-如何使用和证明推理性的命题](https://www.bilibili.com/video/BV1KZ4y1n7ZC/).
+- [mathematics_in_lean](https://leanprover-community.github.io/mathematics_in_lean/).
+- [Lean and its Mathematical Library](https://leanprover-community.github.io/).
+- [Lean 4 中文入门 —— 第一讲：Type Theory](https://www.bilibili.com/video/BV12m4y1x7CA/).
+- [Lean 4 中文入门 —— 第二讲：Propositions As Types](https://www.bilibili.com/video/BV1cM4y1p7DG/).
+- [Lean 4 中文入门 —— 第2.5讲：Propositions As Types - 课后题讲解](https://www.bilibili.com/video/BV1rV411G7gw).
+- [Infinitude of primes --- a Lean theorem prover demo](https://www.youtube.com/watch?v=b59fpAJ8Mfs).
+- [leanprover community](https://www.youtube.com/@leanprovercommunity5485).
+- [Metaprogramming in Lean](https://www.youtube.com/watch?v=Ix8zSpsfbDk&list=PL_bVGic_CrGtMw1QVFRLRsZjcymm56mRi).
 
+
+## Lean 中文文档
+
+- [Lean 中文文档](https://www.leanprover.cn/).
+
+## 数学形式化 | Lean4Game 教程
+
+- [数学形式化 | Lean4Game 教程](https://www.lookeng.cn/2024/06/04/lean/lean-games/).
+
+
+## Theorem Proving in Lean 4
+
+- [Theorem Proving in Lean 4](https://leanprover.github.io/theorem_proving_in_lean4/).
+- [Lean Documentation Overview](https://lean-lang.org/lean4/doc/).
+- [Quickstart](https://lean-lang.org/lean4/doc/quickstart.html).
+- [Learning Lean 4 ](https://leanprover-community.github.io/learn.html).
 
 ## Lean4入门
 
@@ -982,3 +1012,5 @@ cat .\lean-toolchain
 PS C:\Users\eric\Documents\Github\work\LeanProject> cat .\lean-toolchain
 leanprover/lean4:v4.17.0
 ```
+
+

@@ -75,13 +75,18 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde  
 
-extra_javascript:
-  - javascripts/katex.js
-  - https://unpkg.com/katex@0/dist/katex.min.js
-  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-
+#extra_javascript:
+#  - javascripts/katex.js
+#  - https://unpkg.com/katex@0/dist/katex.min.js
+#  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css 
+  
+# JavaScript 配置，用于加载 MathJax
+extra_javascript:
+  - javascripts/mathjax.js  # 自定义 MathJax 设置
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js  # 从 CDN 加载 MathJax  
   
 # Page tree
 nav:
@@ -115,6 +120,7 @@ nav:
       - Blazek: cfd/people/blazek.md
     - Scheme:
       - Scheme: cfd/scheme/scheme.md
+      - Engquist-Osher: cfd/scheme/engquist-osher.md
       - ENO: cfd/scheme/eno.md
       - WENO: cfd/scheme/weno.md
       - WENO3: cfd/scheme/weno3.md
@@ -245,7 +251,8 @@ nav:
         - Jinja: language/python/jinja.md
       - PyGame: language/python/pygame.md
       - Pyglet: language/python/pyglet.md
-      - Python: language/python/python.md      
+      - Python: language/python/python.md
+      - Better-Python: language/python/better-python.md
     - Qt:
       - Qt: language/qt/qt.md
       - Qt-CMake: language/qt/qt-cmake.md
@@ -326,12 +333,17 @@ nav:
       - Tutorial: engine/tutorial/tutorial.md
   - AI:
     - AI: ai/ai.md 
+    - Claude: ai/claude/claude.md 
     - DeepSeek: ai/deepseek/deepseek.md 
     - Doubao: ai/doubao/doubao.md 
     - Gemini: ai/gemini/gemini.md
     - Grok: ai/grok/grok.md
     - Kimi: ai/kimi/kimi.md
-    - Lean: ai/lean/lean.md
+    - Math:
+      - Coq: ai/math/coq/coq.md
+      - Idris: ai/math/idris/idris.md
+      - Isabelle: ai/math/isabelle/isabelle.md
+      - Lean: ai/math/lean/lean.md
     - Music: ai/music/music.md     
   - Docs:
     - Doxygen: doctools/doxygen/doxygen.md
