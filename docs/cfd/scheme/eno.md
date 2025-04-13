@@ -5,6 +5,8 @@
 - [WENO schemes](https://eric2003.github.io/OneFLOW/cfd/scheme/weno.html).
 - [Efficient Finite Difference WENO Scheme for Hyperbolic Systems with Non-Conservative Products and Stiff Source Terms](https://www.youtube.com/watch?v=D87ctxheEr0).
 - [Prof. Chi-Wang Shu: Mathematics in Scientific Computing](https://www.youtube.com/watch?v=0FdOVvCJJEk).
+- [《Applied Numerical Methods for PDEs》第八章 双曲型方程的数值方法(23)](https://zhuanlan.zhihu.com/p/1892889167643510677).
+- [Applied-Numerical-Methods](https://github.com/Kaos599/Applied-Numerical-Methods).
 
 
 ## 第八章 ENO 和 weighted ENO 方法
@@ -2334,3 +2336,165 @@ $$
 $$
 \cfrac{1}{\Delta x}\int_{x_{j-1/2}}^{x_{j+1/2}}p(x)dx=\bar{u}_{j},\quad j=i-1,i,i+1
 $$
+
+## plot Eno 1-7
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+import re
+
+# 定义一个包含不同颜色、线形和标记的列表
+# 定义10种不同的样式
+styles = [
+    {'color': 'black', 'linestyle': '-', 'marker': 'o'},
+    {'color': 'blue', 'linestyle': '--', 'marker': 's'},
+    {'color': 'black', 'linestyle': '-', 'marker': '^'},
+    {'color': 'blue', 'linestyle': '--', 'marker': 'v'},
+    {'color': 'black', 'linestyle': '-', 'marker': '<'},
+    {'color': 'blue', 'linestyle': '--', 'marker': '>'},
+    {'color': 'black', 'linestyle': '-', 'marker': 'D'},
+
+]
+
+# 设置目录路径
+directory = '../'
+
+# 初始化一个空列表来存储文件名
+solution_files = []
+
+# 遍历目录中的所有文件和文件夹
+for filename in os.listdir(directory):
+    # 检查文件名是否以 "solution" 开头，并且以 ".plt" 结尾
+    if filename.startswith("solution") and filename.endswith(".plt"):
+        # 将匹配的文件名添加到列表中
+        solution_files.append(filename)
+
+# 打印结果
+print("Found the following solution files:")
+for file in solution_files:
+    print(file)
+    
+    
+def read_solution_file(file_name):
+    x_list = []
+    u_list = []
+    
+    with open(file_name, newline='') as csvfile:
+        icount = 0
+        for line in csvfile:
+            # 去除首尾空格，按连续空格分割
+            row = line.strip().split()    
+            x_list.append(row[0])
+            u_list.append(row[1])
+            icount += 1
+    ni = icount
+    print("ni=",ni)
+    x = np.zeros( ni )
+    u = np.zeros( ni )
+
+    for i in range(0, ni):
+        x[i] = float(x_list[i])
+        u[i] = float(u_list[i])
+    return x, u
+
+plt.figure("OneFLOW-CFD Solver", figsize=(10, 6))
+plt.xlabel('x')
+plt.ylabel('u')
+
+num_files = len(solution_files)
+num_styles = len(styles)
+
+# 初始化一个空列表来存储提取的字符串
+extracted_numbers = []
+
+# 遍历文件名列表
+for file in solution_files:
+    # 使用正则表达式提取 eno 后面的数字
+    match = re.search(r'eno(\d+)', file)
+    if match:
+        # 将提取的字符串添加到列表中
+        extracted_numbers.append('eno' + match.group(1))
+
+# 打印结果
+print("Extracted strings:", extracted_numbers)
+
+icount = 0
+for file in solution_files:
+    filename = '../' + file
+    x, u = read_solution_file(filename)
+    #print(f'{x=}')
+    #print(f'{u=}')
+    
+    idx = icount % num_styles
+    style = styles[idx]
+    label = extracted_numbers[icount]
+
+    plt.plot(x, u, marker=style['marker'], markerfacecolor='none', linestyle=style['linestyle'], color=style['color'], \
+    markersize=5, linewidth=0.5, alpha=1.0, label=f'{label}')
+    icount += 1
+ 
+T  = 0.625
+rk = 2
+plt.legend()
+plt.grid(True, color='gray', linestyle='--', linewidth=0.5, alpha=0.7)    
+plt.tight_layout()
+plt.show()
+```
+
+output
+```
+PS D:\github\OneFLOW\example\1d-linear-convection\eno\rusanov\rk2\compare\01e> python .\plot.py
+Found the following solution files:
+solution_eno1.plt
+solution_eno2.plt
+solution_eno3.plt
+solution_eno4.plt
+solution_eno5.plt
+solution_eno6.plt
+solution_eno7.plt
+Extracted strings: ['eno1', 'eno2', 'eno3', 'eno4', 'eno5', 'eno6', 'eno7']
+ni= 40
+ni= 40
+ni= 40
+ni= 40
+ni= 40
+ni= 40
+ni= 40
+```
+
+![ENO1-7](images/eno1-7v1.png "ENO1-7 v1")
+![ENO1-7](images/eno1-7v2.png "ENO1-7 v2")
+
+```python
+import numpy as np
+
+class Mesh:
+    def __init__(self):
+        self.nx = 40
+
+class MyClass:
+    def __init__(self, mesh):
+        self.mesh = mesh
+
+# 创建 Mesh 类的实例
+mesh = Mesh()
+
+# 创建 MyClass 类的实例
+my_class_instance = MyClass(mesh)
+
+# 检测 mesh 和 my_class_instance.mesh 是否指向同一个对象
+print(mesh is my_class_instance.mesh)  # 输出: True
+
+# 修改 Mesh 实例的属性，观察影响
+mesh.nx = 50
+print(my_class_instance.mesh.nx)  # 输出: 50，表明 my_class_instance.mesh 和 mesh 是同一个对象
+```
+
+output
+```
+PS D:\work\python_work\ModernPython\codes\copy\01> python .\testprj.py
+True
+50
+```

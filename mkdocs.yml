@@ -98,6 +98,8 @@ nav:
       - OneFLOW: cfd/oneflow/oneflow.md
       - Example: cfd/oneflow/example.md
       - Parallel: cfd/oneflow/parallel.md
+    - Concept:
+      - CFL number: cfd/concept/cfl.md
     - CGNS: 
       - CGNS: cfd/cgns/cgns.md
       - CGNS Struct: cfd/cgns/cgns-struct.md
@@ -122,6 +124,8 @@ nav:
       - Scheme: cfd/scheme/scheme.md
       - Engquist-Osher: cfd/scheme/engquist-osher.md
       - ENO: cfd/scheme/eno.md
+      - ENO2: cfd/scheme/eno2.md
+      - Lax-Friedrichs: cfd/scheme/lax-friedrichs.md
       - WENO: cfd/scheme/weno.md
       - WENO3: cfd/scheme/weno3.md
       - Runge-Kutta: cfd/scheme/runge-kutta.md
