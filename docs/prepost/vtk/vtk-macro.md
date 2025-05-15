@@ -27,3 +27,30 @@ vtkObjectFactory.h
 #endif
 ```
 
+vtkTypeMacro(vtkPolyData, vtkPointSet);
+```
+protected: const char* GetClassNameInternal() const override {
+    return "vtkPolyData";
+} public: typedef vtkPointSet Superclass; static vtkTypeBool IsTypeOf(const char* type) {
+    if (!strcmp("vtkPolyData", type)) {
+        return 1;
+    } return vtkPointSet::IsTypeOf(type);
+} vtkTypeBool IsA(const char* type) override {
+    return this->vtkPolyData::IsTypeOf(type);
+} static vtkPolyData* SafeDownCast(vtkObjectBase* o) {
+    if (o && o->IsA("vtkPolyData")) {
+        return static_cast<vtkPolyData*>(o);
+    } return nullptr;
+}  vtkPolyData* NewInstance() const {
+    return vtkPolyData::SafeDownCast(this->NewInstanceInternal());
+} static vtkIdType GetNumberOfGenerationsFromBaseType(const char* type) {
+    if (!strcmp("vtkPolyData", type)) {
+        return 0;
+    } return 1 + vtkPointSet::GetNumberOfGenerationsFromBaseType(type);
+} vtkIdType GetNumberOfGenerationsFromBase(const char* type) override {
+    return this->vtkPolyData::GetNumberOfGenerationsFromBaseType(type);
+} public: protected: vtkObjectBase* NewInstanceInternal() const override {
+    return vtkPolyData::New();
+} public:
+```
+

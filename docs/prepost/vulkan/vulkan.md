@@ -11,6 +11,7 @@ Vulkan is a cross-platform industry standard enabling developers to target a wid
 ## Vulkan SDK
 
 -  [Vulkan SDK](https://vulkan.lunarg.com/sdk/home#windows/).
+-  [SDK version query and download API](https://vulkan.lunarg.com/sdk/home).
 
 
 ## vulkan-tutorial
@@ -25,7 +26,40 @@ Vulkan is a cross-platform industry standard enabling developers to target a wid
 
 -  [How to Make a Game Engine: Introducing the VULKAN GAME ENGINE Series!](https://www.youtube.com/watch?v=dHPuU-DJoBM&list=PLv8Ddw9K0JPg1BEO-RS-0MYs423cvLVtj/).
 
+```
+```
 
+- Validate Layer Manifests
+    C:\Users\eric\VulkanSDK
+
+- [VULKAN_SDK] C:\VulkanSDK\1.4.4.313.0\Bin
+    - VK_LAYER_LUNARG_api_dump - 1.4.313
+    - VK_LAYER_LUNARG_crash_diagnostic -1.4.313 (BETA)
+    - VK_LAYER_LUNARG_gfrecconstruct -1.4.313
+    - VK_LAYER_KHRONOS_profiles -1.4.313
+    - VK_LAYER_KHRONOS_shader_object -1.4.313
+    - VK_LAYER_KHRONOS_synchronization2 -1.4.313
+    - VK_LAYERHRONOS_validation -1.4.313
+    - VK_LAYER_LUNARG_monitor -1.4.313
+    - VK_LAYER_LUNARG_screenshot -1.4.313
+
+- [System Explicit Path] C:\VulkanSDK\1.4.313.0\Bin
+    - VK_LAYER_LUNARG_api_dump -1.4.313
+    - VK_LAYER_LUNARG_crash_diagnostic -1.4.313 (BETA)
+    - VK_LAYER_LUNARG_grecconstruct -1.4.313
+    - VK_LAYER_KHRONOS_profiles -1.4.313
+    - VK_LAYER_KHRONOS_shader_object -1.4.313
+    - VK_LAYERHRONOS_synchronization2 -1.4.313
+    - VK_LAYERHRONOS_validation -1.4.313
+    - VK_LAYER_LUNARG_monitor -1.4.313
+    - VK_LAYER_LUNARG_screenshot -1.4.313
+
+- [System Implicit Path] 
+    C:\WINDOWS\System32\DriverStore\FileRepository\nvm_disps.inf_amd64_3efa186d0d770b7f7a1nv-vk64.json
+
+- [System Implicit Path] C:\Program Files (x8686)\Epic Games\LauncherPortal\Extras\Overlay
+    - VK_LAYEREOS_Overlay -1.2.136
+  
 ## CMake 
 
 ### FindVulkan

@@ -1,6 +1,6 @@
 # Makefile
 
-## article link
+## Link
 - [Makefile从入门到精通系列链接整理 ](https://zhuanlan.zhihu.com/p/398677004/).
 - [Step-by-step Makefile tutorial ](https://gist.github.com/francois-rozet/c8efb19f66fed666263641d4e40f8863/).
 - [makefile 常用函数notdir、wildcard、patsubst ](https://cloud.tencent.com/developer/article/2055032/).

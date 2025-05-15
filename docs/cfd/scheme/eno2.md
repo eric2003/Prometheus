@@ -944,6 +944,8 @@ k=2
 [ -1.0/2.0,  3.0/2.0 ]
 ```
 
+## WENO3
+
 For third-order WENO, the numerical flux is defined as
 
 $$
@@ -970,6 +972,26 @@ Note that the stencil $\{i-2, i-1, i, i+1\}$ for (8.151) is biased to the left d
 
 $$
 \begin{array}{l}
+\displaystyle v_{i+\frac{1}{2}}^{(r)} = \sum_{j=0}^{k-1} c_{rj} \bar{v}_{i-r+j}, \quad r = 0, ..., k-1,\\
+\displaystyle v_{i+\frac{1}{2}}^{(0)} = \sum_{j=0}^{k-1} c_{0,j} \bar{v}_{i+j}\\
+\displaystyle v_{i+\frac{1}{2}}^{(1)} = \sum_{j=0}^{k-1} c_{1,j} \bar{v}_{i-1+j}\\
+\end{array}
+$$
+
+k=2
+
+$$
+\begin{array}{l}
+k=2\\
+\displaystyle v_{i+\frac{1}{2}}^{(0)} = \sum_{j=0}^{1} c_{0,j} \bar{v}_{i+j}
+=c_{0,0} \bar{v}_{i}+c_{0,1} \bar{v}_{i+1}=\frac{1}{2}\bar{v}_{i}+\frac{1}{2}\bar{v}_{i+1}\\
+\displaystyle v_{i+\frac{1}{2}}^{(1)} = \sum_{j=0}^{1} c_{1,j} \bar{v}_{i-1+j}=
+c_{1,0} \bar{v}_{i-1}+c_{1,1} \bar{v}_{i}=-\frac{1}{2}\bar{v}_{i-1}+\frac{3}{2}\bar{v}_{i}\\
+\end{array}
+$$
+
+$$
+\begin{array}{l}
 \displaystyle q_{i+1/2}=\sum_{r=0}^{k-1} \omega_{r}q_{i+1/2}^{(r)}\\
 \displaystyle q_{i+1/2}^{L}=\sum_{r=0}^{k-1} \omega_{r}^{L}q_{i+1/2}^{L(r)}\\
 \displaystyle q_{i+1/2}^{R}=\sum_{r=0}^{k-1} \omega_{r}^{R}q_{i+1/2}^{R(r)}\\
@@ -984,9 +1006,9 @@ $$
  q_{i+1/2}^{L(1)}
 \end{bmatrix}=
 \begin{bmatrix}
+\frac{1}{2}q_{i}&+&\frac{1}{2}q_{i+1}\\
  -\frac{1}{2}q_{i-1}&+&\frac{3}{2}q_{i}\\
- \frac{1}{2}q_{i}&+&\frac{1}{2}q_{i+1}\\
-\end{bmatrix}
+ \end{bmatrix}
 $$
 
 qi+1/2,R
@@ -997,8 +1019,8 @@ $$
  q_{i+1/2}^{R(1)}
 \end{bmatrix}=
 \begin{bmatrix}
- \frac{3}{2}q_{i+1}&-&\frac{1}{2}q_{i+2}\\
  \frac{1}{2}q_{i}&+&\frac{1}{2}q_{i+1}\\
+ \frac{3}{2}q_{i+1}&-&\frac{1}{2}q_{i+2}\\
 \end{bmatrix}
 $$
 
@@ -1016,6 +1038,12 @@ $$
 \alpha_{k}=\cfrac{d_{k}}{(\beta_{k}+\epsilon)^2},k=0,1\\
 $$
 
+or
+
+$$
+\alpha_{k}=\cfrac{d_{k}}{(\epsilon+\text{IS}_{k})^p},k=0,1,p=2\\
+$$
+
 $$
 \begin{array}{l}
 \omega_{k}^{L}=\cfrac{\alpha_{k}^{L}}{\alpha_{0}^{L}+\alpha_{1}^{L}},
@@ -1029,7 +1057,238 @@ in which the smoothness indicators are defined as
 
 $$
 \begin{array}{l}
-\beta_{0}^{L}=(q_{i}-q_{i-1})^2\\
-\beta_{1}^{L}=(q_{i+1}-q_{i})^2\\
+\beta_{0}^{L}=\text{IS}_{0}^{L}=(q_{i+1}-q_{i})^2\\
+\beta_{1}^{L}=\text{IS}_{1}^{L}=(q_{i}-q_{i-1})^2\\
+\end{array}
+$$
+
+$$
+\begin{array}{l}
+d_{0}^{L}=\frac{2}{3}\\
+d_{1}^{L}=\frac{1}{3}\\
+\end{array}
+$$
+
+$$
+\begin{array}{l}
+\beta_{0}^{R}=\text{IS}_{0}^{R}=(q_{i+1}-q_{i})^2\\
+\beta_{1}^{R}=\text{IS}_{1}^{R}=(q_{i+2}-q_{i+1})^2\\
+\end{array}
+$$
+
+$$
+\begin{array}{l}
+d_{0}^{R}=\frac{2}{3}\\
+d_{1}^{R}=\frac{1}{3}\\
+\end{array}
+$$
+
+
+## WENO5
+
+$$
+\begin{array}{l}
+\displaystyle q_{i+1/2}=\sum_{r=0}^{k-1} \omega_{r}q_{i+1/2}^{(r)}\\
+\displaystyle q_{i+1/2}^{L}=\sum_{r=0}^{k-1} \omega_{r}^{L}q_{i+1/2}^{L(r)}\\
+\displaystyle q_{i+1/2}^{R}=\sum_{r=0}^{k-1} \omega_{r}^{R}q_{i+1/2}^{R(r)}\\
+\end{array}
+$$
+
+k=3
+```cpp
+k=3
+[ 11.0/6.0, -7.0/6.0,  1.0/3.0 ]
+[  1.0/3.0,  5.0/6.0, -1.0/6.0 ]
+[ -1.0/6.0,  5.0/6.0,  1.0/3.0 ]
+[  1.0/3.0, -7.0/6.0, 11.0/6.0 ]
+```
+
+$$
+\begin{array}{l}
+\displaystyle q_{i+1/2}^{L}=\omega_{0}^{L}q_{i+1/2}^{L(0)}
++\omega_{1}^{L}q_{i+1/2}^{L(1)}
++\omega_{2}^{L}q_{i+1/2}^{L(2)}\\
+\displaystyle q_{i+1/2}^{R}=\omega_{0}^{R}q_{i+1/2}^{R(0)}+
+\omega_{1}^{R}q_{i+1/2}^{R(1)}
++\omega_{2}^{R}q_{i+1/2}^{R(2)}\\
+\end{array}
+$$
+
+qi+1/2,L
+
+$$
+\begin{bmatrix}
+ q_{i+1/2}^{L(0)}\\
+ q_{i+1/2}^{L(1)}\\
+ q_{i+1/2}^{L(2)}\\
+\end{bmatrix}=
+\begin{bmatrix}
+\frac{1}{3}q_{i}&+&\frac{5}{6}q_{i+1}&-&\frac{1}{6}q_{i+2}\\
+-\frac{1}{6}q_{i-1}&+&\frac{5}{6}q_{i}&+&\frac{1}{3}q_{i+1}\\
++\frac{1}{3}q_{i-2}&-&\frac{7}{6}q_{i-1}&+&\frac{11}{6}q_{i}\\
+ \end{bmatrix}
+$$
+
+qi+1/2,R
+
+$$
+\begin{bmatrix}
+ q_{i+1/2}^{R(0)}\\
+ q_{i+1/2}^{R(1)}\\
+ q_{i+1/2}^{R(2)}\\
+\end{bmatrix}=
+\begin{bmatrix}
+\frac{1}{3}q_{i+1}&+&\frac{5}{6}q_{i}-&\frac{1}{6}q_{i-1}\\
+-\frac{1}{6}q_{i+2}&+&\frac{5}{6}q_{i+1}+&\frac{1}{3}q_{i}\\
++\frac{1}{3}q_{i+3}&-&\frac{7}{6}q_{i+2}+&\frac{11}{6}q_{i+1}\\
+ \end{bmatrix}
+$$
+
+or
+
+upwind
+
+$$
+\begin{bmatrix}
+ V_{0}\\ V_{1}\\ V_{2}\\ V_{3}\\ V_{4}\\
+\end{bmatrix}=
+\begin{bmatrix}
+ q_{i-2}\\ q_{i-1}\\q_{i}\\q_{i+1}\\q_{i+2}\\
+\end{bmatrix}
+$$
+
+qi+1/2,L
+
+$$
+\begin{bmatrix}
+ q_{i+1/2}^{L(0)}\\
+ q_{i+1/2}^{L(1)}\\
+ q_{i+1/2}^{L(2)}\\
+\end{bmatrix}=
+\begin{bmatrix}
+\frac{1}{3}V_{2}&+&\frac{5}{6}V_{3}&-&\frac{1}{6}V_{4}\\
+-\frac{1}{6}V_{1}&+&\frac{5}{6}V_{2}&+&\frac{1}{3}V_{3}\\
++\frac{1}{3}V_{0}&-&\frac{7}{6}V_{1}&+&\frac{11}{6}V_{2}\\
+ \end{bmatrix}
+$$
+
+downwind
+
+$$
+\begin{bmatrix}
+ \hat{V}_{0}\\ \hat{V}_{1}\\ \hat{V}_{2}\\ \hat{V}_{3}\\ \hat{V}_{4}\\
+\end{bmatrix}=
+\begin{bmatrix}
+ q_{i+3}\\ q_{i+2}\\q_{i+1}\\q_{i}\\q_{i-1}\\
+\end{bmatrix}
+$$
+
+qi+1/2,R
+
+$$
+\begin{bmatrix}
+ q_{i+1/2}^{R(0)}\\
+ q_{i+1/2}^{R(1)}\\
+ q_{i+1/2}^{R(2)}\\
+\end{bmatrix}=
+\begin{bmatrix}
+\frac{1}{3}\hat{V}_{2}&+&\frac{5}{6}\hat{V}_{3}&-&\frac{1}{6}\hat{V}_{4}\\
+-\frac{1}{6}\hat{V}_{1}&+&\frac{5}{6}\hat{V}_{2}&+&\frac{1}{3}\hat{V}_{3}\\
++\frac{1}{3}\hat{V}_{0}&-&\frac{7}{6}\hat{V}_{1}&+&\frac{11}{6}\hat{V}_{2}\\
+ \end{bmatrix}
+$$
+
+where the nonlinear weights are defined as
+
+$$
+\omega_{r}=\cfrac{\alpha_{r}}{\alpha_{0}+\alpha_{1}+\alpha_{2}},
+\alpha_{r}=\cfrac{d_{r}}{(\beta_{r}+\epsilon)^2},r=0,1,2\\
+$$
+
+or
+
+$$
+\alpha_{r}=\cfrac{d_{r}}{(\epsilon+\text{IS}_{r})^p},r=0,1,2,p=2\\
+$$
+
+$$
+\begin{array}{l}
+\omega_{r}^{L}=\cfrac{\alpha_{r}^{L}}{\alpha_{0}^{L}+\alpha_{1}^{L}+\alpha_{2}^{L}},
+\alpha_{r}^{L}=\cfrac{d_{r}^{L}}{(\beta_{r}^{L}+\epsilon)^2},r=0,1,2\\
+\omega_{r}^{R}=\cfrac{\alpha_{r}^{R}}{\alpha_{0}^{R}+\alpha_{1}^{R}+\alpha_{2}^{R}},
+\alpha_{r}^{R}=\cfrac{d_{r}^{R}}{(\beta_{r}^{R}+\epsilon)^2},r=0,1,2\\
+\end{array}
+$$
+
+in which the smoothness indicators are defined as
+
+upwind:
+
+$$
+\begin{bmatrix}
+ V_{0}\\ V_{1}\\ V_{2}\\ V_{3}\\ V_{4}\\
+\end{bmatrix}=
+\begin{bmatrix}
+ q_{i-2}\\ q_{i-1}\\q_{i}\\q_{i+1}\\q_{i+2}\\
+\end{bmatrix}
+$$
+
+$$
+\begin{array}{l}
+\beta_{0}^{L}=\text{IS}_{0}^{L}=\frac{13}{12} (q_{i} - 2q_{i+1} + q_{i+2})^2 + \frac{1}{4} (3q_i - 4q_{i+1} + q_{i+2})^2\\
+\beta_{1}^{L}=\text{IS}_{1}^{L}=\frac{13}{12} (q_{i-1} - 2q_i + q_{i+1})^2 + \frac{1}{4} (q_{i-1} - q_{i+1})^2\\
+\beta_{2}^{L}=\text{IS}_{2}^{L}=\frac{13}{12} (q_{i-2} - 2q_{i-1} + q_{i})^2 + \frac{1}{4} (q_{i-2} - 4q_{i-1} + 3q_i)^2\\
+\end{array}
+$$
+
+$$
+\begin{array}{l}
+\beta_{0}^{L}=\text{IS}_{0}^{L}=\frac{13}{12} (V_{2} - 2V_{3} + V_{4})^2 + \frac{1}{4} (3V_{2}-4V_{3}+V_{4})^2\\
+\beta_{1}^{L}=\text{IS}_{1}^{L}=\frac{13}{12} (V_{1} - 2V_{2} + V_{3})^2 + \frac{1}{4} (V_{1} - V_{3})^2\\
+\beta_{2}^{L}=\text{IS}_{2}^{L}=\frac{13}{12} (V_{0} - 2V_{1} + V_{2})^2 + \frac{1}{4} (V_{0} - 4V_{1} + 3V_{2})^2\\
+\end{array}
+$$
+
+
+$$
+\begin{array}{l}
+d_{0}^{L}=\frac{3}{10}\\
+d_{1}^{L}=\frac{3}{5}\\
+d_{2}^{L}=\frac{1}{10}\\
+\end{array}
+$$
+
+downwind:
+
+$$
+\begin{bmatrix}
+ \hat{V}_{0}\\ \hat{V}_{1}\\ \hat{V}_{2}\\ \hat{V}_{3}\\ \hat{V}_{4}\\
+\end{bmatrix}=
+\begin{bmatrix}
+ q_{i+3}\\ q_{i+2}\\q_{i+1}\\q_{i}\\q_{i-1}\\
+\end{bmatrix}
+$$
+
+$$
+\begin{array}{l}
+\beta_{0}^{R}=\text{IS}_{0}^{R}=\frac{13}{12} (\hat{V}_{2} - 2\hat{V}_{3} + \hat{V}_{4})^2 + \frac{1}{4} (3\hat{V}_{2}-4\hat{V}_{3}+\hat{V}_{4})^2\\
+\beta_{1}^{R}=\text{IS}_{1}^{R}=\frac{13}{12} (\hat{V}_{1} - 2\hat{V}_{2} + \hat{V}_{3})^2 + \frac{1}{4} (\hat{V}_{1} - \hat{V}_{3})^2\\
+\beta_{2}^{R}=\text{IS}_{2}^{R}=\frac{13}{12} (\hat{V}_{0} - 2\hat{V}_{1} + \hat{V}_{2})^2 + \frac{1}{4} (\hat{V}_{0} - 4\hat{V}_{1} + 3\hat{V}_{2})^2\\
+\end{array}
+$$
+
+$$
+\begin{array}{l}
+\beta_{0}^{R}=\text{IS}_{0}^{R}=\frac{13}{12} (q_{i+1}-2q_{i}+q_{i-1})^2 + \frac{1}{4} (3q_{i+1}-4q_{i}+q_{i-1})^2\\
+\beta_{1}^{R}=\text{IS}_{1}^{R}=\frac{13}{12} (q_{i+2}-2q_{i+1}+q_{i})^2 + \frac{1}{4} (q_{i+2}-q_{i})^2\\
+\beta_{2}^{R}=\text{IS}_{2}^{R}=\frac{13}{12} (q_{i+3}-2q_{i+2}+q_{i+1})^2 + \frac{1}{4} (q_{i+3}- 4q_{i+2}+3q_{i+1})^2\\
+\end{array}
+$$
+
+$$
+\begin{array}{l}
+d_{0}^{R}=\frac{3}{10}\\
+d_{1}^{R}=\frac{3}{5}\\
+d_{2}^{R}=\frac{1}{10}\\
 \end{array}
 $$

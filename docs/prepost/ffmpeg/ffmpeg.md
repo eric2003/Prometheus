@@ -15,6 +15,8 @@
 -  [How to Install FFmpeg on Windows 11](https://www.youtube.com/watch?v=22vmzTs5BoE/).
 -  [github release](https://github.com/GyanD/codexffmpeg/releases/tag/7.0).
 -  [ShiftMediaProject-FFmpeg](https://github.com/ShiftMediaProject/FFmpeg).
+-  [FFmpeg编译无坑版（Windows篇）--转载](https://www.wensent.com/detail/v6QBag8jJQ).
+
 
 ### OpenGL and FFmpeg
 
@@ -24,6 +26,12 @@
 ## Youtuber
 
 -  [GamesWithGabe](https://www.youtube.com/@GamesWithGabe/).
+
+## download
+
+```
+git clone https://git.ffmpeg.org/ffmpeg.git
+```
 
 check version
 

@@ -27,6 +27,15 @@ git version 2.48.1.windows.1
 ssh-keygen -t rsa -C 'xxx@163.com'
 ```
 
+## Ubuntu key directory example
+```
+Your identification has been saved in /home/eric/.ssh/id_rsa
+Your public key has been saved in /home/eric/.ssh/id_rsa.pub
+eric@fantasy:~/.ssh$ ls
+authorized_keys  id_rsa  id_rsa.pub
+```
+
+
 ## 显示gitconfig内容
 ```
 git config --list
@@ -61,6 +70,19 @@ github.global.ssl  IN  A  151.101.193.194
 获取github的地址
 ```
   IN  A  140.82.113.3
+```
+
+## windows git bash
+
+```
+eric@DELL MINGW64 ~
+$
+```
+
+pwd
+```
+$ pwd
+/c/Users/eric
 ```
 
 

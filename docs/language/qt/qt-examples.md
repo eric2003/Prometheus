@@ -16,6 +16,7 @@ cmake .. -D CMAKE_PREFIX_PATH:PATH="C:/local/Qt/6.8.1/msvc2022_64/"
 ```
 c:\local\Qt\6.8.1\msvc2022_64\bin\windeployqt.exe .\Debug\testprj.exe
 c:\local\Qt\6.8.1\msvc2022_64\bin\windeployqt.exe .\Debug\Mesh.exe
+c:\local\Qt\6.9.0\msvc2022_64\bin\windeployqt.exe .\Release
 ```
 
 ## Splitter

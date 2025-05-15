@@ -68,6 +68,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tasklist  # 添加此行
   - admonition
   - pymdownx.details
   - footnotes
@@ -98,10 +99,13 @@ nav:
       - OneFLOW: cfd/oneflow/oneflow.md
       - Example: cfd/oneflow/example.md
       - Parallel: cfd/oneflow/parallel.md
+    - Code:
+      - Code: cfd/code/code.md
     - Concept:
       - CFL number: cfd/concept/cfl.md
     - CGNS: 
       - CGNS: cfd/cgns/cgns.md
+      - CGNS Compile: cfd/cgns/cgns-compile.md
       - CGNS Struct: cfd/cgns/cgns-struct.md
       - Example: cfd/cgns/cgns-example.md
     - Equation:
@@ -120,6 +124,7 @@ nav:
       - Interface: cfd/partition/interface.md
     - People:
       - Blazek: cfd/people/blazek.md
+      - XuKun: cfd/people/xukun.md
     - Scheme:
       - Scheme: cfd/scheme/scheme.md
       - Engquist-Osher: cfd/scheme/engquist-osher.md
@@ -141,7 +146,11 @@ nav:
       - XFluids: cfd/xfluids/xfluids.md
   - Shell:
     - CMD: shell/cmd/cmd.md
-    - powershell: shell/powershell/powershell.md
+    - MSYS2: shell/msys2/msys2.md
+    - PowerShell: shell/powershell/powershell.md
+    - Ubuntu: shell/ubuntu/ubuntu.md
+    - Windows: shell/windows/windows.md
+    - XShell: shell/xshell/xshell.md
   - FileFormat:
     - File Format Docs: file-format/file-format.md
   - GitHub:
@@ -155,11 +164,14 @@ nav:
     - Blender: prepost/blender/blender.md
     - CFD: prepost/cfd/cfd.md
     - EasyX: prepost/easyx/easyx.md
-    - FFmpeg: prepost/ffmpeg/ffmpeg.md
+    - FFmpeg: 
+      - FFmpeg: prepost/ffmpeg/ffmpeg.md
+      - CMake: prepost/ffmpeg/ffmpeg-cmake.md
     - Geometric: prepost/geometric/geometric.md
     - GMesh: prepost/gmesh/gmesh.md
     - HoloLens: prepost/hololens/hololens.md
     - Manim: prepost/manim/manim.md
+    - Mayavi: prepost/mayavi/mayavi.md
     - Netgen: prepost/netgen/netgen.md
     - OpenGL:
       - GLAD: prepost/opengl/glad/glad.md
@@ -176,13 +188,19 @@ nav:
     - OSPRay: prepost/ospray/ospray.md
     - ParaView: prepost/paraview/paraview.md
     - SDL: prepost/sdl/sdl.md
+    - SteamVR: prepost/steamvr/steamvr.md    
     - Tecplot: prepost/tecplot/tecplot.md
     - VTK: 
       - VTK: prepost/vtk/vtk.md
+      - VTK-Debug: prepost/vtk/vtk-debug.md
+      - VTK-Install: prepost/vtk/vtk-install.md
       - VTK-Macro: prepost/vtk/vtk-macro.md
       - Examples: prepost/vtk/vtk-examples.md
       - File Format: prepost/vtk/vtk-fileformat.md
       - VTK-CMake: prepost/vtk/vtk-cmake.md
+      - VTK-Build: prepost/vtk/vtk-build.md
+      - VTK-Data: prepost/vtk/vtk-data.md
+      - VTK-Remote: prepost/vtk/vtk-remote.md
     - Vulkan: 
       - Vulkan: prepost/vulkan/vulkan.md
     - Scientific visualization: 
@@ -191,21 +209,25 @@ nav:
       - Web-based: scientific/web.md
   - Parallel:
     - CUDA: parallel/cuda/cuda.md
-    - MPI: parallel/mpi/mpi.md
+    - MPI: 
+      - MPI: parallel/mpi/mpi.md
+      - MSMPI: parallel/mpi/msmpi.md
     - OpenACC: parallel/openacc/openacc.md
     - OpenMP: parallel/openmp/openmp.md
     - Thread: parallel/thread/thread.md
   - Programming:
     - Build System:
-      - Bazel: bazel/bazel.md
+      - Bazel: build-tools/bazel/bazel.md
       - CMake: 
-        - CMake: cmake/cmake.md
-        - Example: cmake/cmake-example.md
-        - Install: cmake/cmake-install.md
-        - Property: cmake/cmake-property.md
-        - Parse: cmake/cmake-parse.md
-        - Python: cmake/cmake-python.md
-        - Regex: cmake/cmake-regex.md
+        - CMake: build-tools/cmake/cmake.md
+        - Example: build-tools/cmake/cmake-example.md
+        - CMake Generators: build-tools/cmake/cmake-generators.md
+        - Install: build-tools/cmake/cmake-install.md
+        - Property: build-tools/cmake/cmake-property.md
+        - Parse: build-tools/cmake/cmake-parse.md
+        - Python: build-tools/cmake/cmake-python.md
+        - Regex: build-tools/cmake/cmake-regex.md
+      - Make: build-tools/make/make.md        
     - C++: 
       - Articles and Videos: language/cpp/videos.md
       - Conference: 
@@ -233,13 +255,14 @@ nav:
     - Fortran:
       - Fortran: language/fortran/fortran.md
       - Example: language/fortran/example.md
+      - Intel Fortran: language/fortran/intel.md
+    - Lua: language/lua/lua.md
     - Java: language/java/java.md
     - JavaScript: language/javascript/javascript.md
     - Julia: 
       - Julia: language/julia/julia.md
       - CFD-Julia: language/julia/cfd-julia.md
       - CFD-Example: language/julia/cfd-example.md
-    - Makefile: makefile/makefile.md
     - Mojo :
       - Mojo : language/mojo/mojo.md
     - Perl :
@@ -290,20 +313,23 @@ nav:
     - Website: resources/website/website.md
   - Tools:
     - Boost: tools/boost/boost.md
-    - Clang: clang/clang.md
-    - Environment Modules: modules/modules.md  
-    - GCC: gcc/gcc.md
+    - Compiler:
+      - Compiler: compiler/compiler.md
+      - Clang: compiler/clang/clang.md
+      - GCC: compiler/gcc/gcc.md
+      - LLVM: compiler/llvm/llvm.md
+    - Modules: tools/modules/modules.md  
     - Jupyter:
       - Jupyter: tools/jupyter/jupyter.md
       - Jupyter Lab: tools/jupyter/jupyterlab.md
       - Jupyter Notebook: tools/jupyter/jupyter-notebook.md
-    - LLVM: llvm/llvm.md
     - Lex and Yacc: lex/lex.md
     - Node.js: tools/nodejs/nodejs.md
     - Nsight: tools/nsight/nsight.md
     - oneAPI:
       - oneAPI: tools/oneapi/oneapi.md
       - Install: tools/oneapi/install.md
+      - icpx: tools/oneapi/icpx.md
     - Test:
       - Gogletest: test/test.md
       - CukeTest: test/cuketest/cuketest.md

@@ -39,6 +39,10 @@
 ## 用户手册
 
 -  [上海交大超算平台用户手册](https://docs.hpc.sjtu.edu.cn/).
+-  [中国科大超算中心用户使用手册](https://scc.ustc.edu.cn/zlsc/user_doc/html/).
+
+
+
 
 ## 超算互联网联合体
 
