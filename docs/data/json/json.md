@@ -7,4 +7,16 @@ JSON (JavaScript Object Notation) is a lightweight data-interchange format. It i
 -  [www.json.org](https://www.json.org/json-en.html).
 
 
+git clone git@github.com:open-source-parsers/jsoncpp.git
+```
+PS D:\work\jsoncpp_work> git clone git@github.com:open-source-parsers/jsoncpp.git
+Cloning into 'jsoncpp'...
+remote: Enumerating objects: 8811, done.
+remote: Counting objects: 100% (2655/2655), done.
+remote: Compressing objects: 100% (377/377), done.
+remote: Total 8811 (delta 2422), reused 2278 (delta 2278), pack-reused 6156 (from 3)
+Receiving objects: 100% (8811/8811), 2.92 MiB | 2.03 MiB/s, done.
+Resolving deltas: 100% (5603/5603), done.
+```
+
 

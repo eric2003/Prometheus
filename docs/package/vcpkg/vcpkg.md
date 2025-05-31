@@ -126,7 +126,13 @@ Read more about vcpkg telemetry at docs/about/privacy.md
 ## cmake
 ```
   cmake -DCMAKE_TOOLCHAIN_FILE="C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake" ..  
-```  
+```
+
+```
+cmake .. -DCMAKE_TOOLCHAIN_FILE="C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows
+or
+cmake .. -DCMAKE_TOOLCHAIN_FILE="C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET="x64-windows"
+```
 
 ## error info
 
@@ -165,4 +171,231 @@ add_library(YourLibraryName SHARED YourSourceFiles)
 
 # 链接vcpkg的库到你的库
 target_link_libraries(YourLibraryName PRIVATE vcpkg_library_name)
+```
+
+## z_vcpkg_add_vcpkg_to_cmake_path
+```
+function(z_vcpkg_add_vcpkg_to_cmake_path list suffix)
+    set(vcpkg_paths
+        "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}${suffix}"
+        "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/debug${suffix}"
+    )
+    if(NOT DEFINED CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE MATCHES "^[Dd][Ee][Bb][Uu][Gg]$")
+        list(REVERSE vcpkg_paths)
+    endif()
+    if(VCPKG_PREFER_SYSTEM_LIBS)
+        list(APPEND "${list}" "${vcpkg_paths}")
+    else()
+        list(INSERT "${list}" "0" "${vcpkg_paths}")
+    endif()
+    set("${list}" "${${list}}" PARENT_SCOPE)
+endfunction()
+z_vcpkg_add_vcpkg_to_cmake_path(CMAKE_PREFIX_PATH "")
+z_vcpkg_add_vcpkg_to_cmake_path(CMAKE_LIBRARY_PATH "/lib/manual-link")
+z_vcpkg_add_vcpkg_to_cmake_path(CMAKE_FIND_ROOT_PATH "")s
+```
+
+```
+功能：
+将 vcpkg 的库路径（Release 和 Debug）添加到 CMake 的查找路径：
+CMAKE_PREFIX_PATH：查找包和配置文件。
+CMAKE_LIBRARY_PATH：查找手动链接的库。
+CMAKE_FIND_ROOT_PATH：交叉编译时的根路径。
+逻辑：
+为每个路径添加 Release（VCPKG_TARGET_TRIPLET）和 Debug（VCPKG_TARGET_TRIPLET/debug）版本。
+Debug 构建时，优先查找 Debug 路径（通过 list(REVERSE)）。
+如果 VCPKG_PREFER_SYSTEM_LIBS 为 ON，将 vcpkg 路径追加到列表末尾（系统库优先）；否则插入到开头（vcpkg 库优先）。
+意义：
+确保 CMake 能找到 vcpkg 安装的库和头文件。
+支持 Debug/Release 配置和交叉编译。
+```
+
+```
+PS D:\work\openvdb_work\simple\01a\build> Remove-Item -Recurse -Force *
+PS D:\work\openvdb_work\simple\01a\build> cmake --version
+cmake version 4.0.2
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+PS D:\work\openvdb_work\simple\01a\build> cmake .. -DCMAKE_MODULE_PATH=C:/dev/OpenVDB/lib/cmake/OpenVDB -G "Visual Studio 17 2022" -A x64
+-- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.26100.
+-- The C compiler identification is MSVC 19.43.34810.0
+-- The CXX compiler identification is MSVC 19.43.34810.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+COMPONENT = openvdb
+-- Found OpenVDB: C:/dev/OpenVDB/include (found version "12.0.2") found components: openvdb
+-- OpenVDB ABI Version: 12
+-- Found TBB: C:/Program Files (x86)/Intel/oneAPI/tbb/latest/include (found version "2022.0") found components: tbb
+-- Found Blosc: C:/dev/blosc/lib/blosc.lib (found version "1.21.7")
+-- Found ZLIB: C:/dev/zlib/lib/z.lib (found version "1.3.1.1")
+CMake Warning (dev) at C:/dev/OpenVDB/lib/cmake/OpenVDB/FindOpenVDB.cmake:632 (find_package):
+  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
+  set the policy and suppress this warning.
+
+Call Stack (most recent call first):
+  CMakeLists.txt:8 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found Boost: C:/dev/boost_1_88_0/stage/lib/cmake/Boost-1.88.0/BoostConfig.cmake (found version "1.88.0") found components: iostreams
+-- Found TBB: C:/Program Files (x86)/Intel/oneAPI/tbb/latest/include (found version "2022.0") found components: tbb tbbmalloc tbbmalloc_proxy
+-- Configuring done (6.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: D:/work/openvdb_work/simple/01a/build
+PS D:\work\openvdb_work\simple\01a\build>
+```
+
+## vcpkg-cmake-wrapper.cmake Search results
+```
+Search results:
+63 files and 0 directories found
+
+c:\dev\vcpkg\ports\z3\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\zlib\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\zeromq\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\zeus\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\vera++\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\verilator\c\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\wxwidgets\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\wtl\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\wxsqlite3\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\wxpython\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\wxpython-4.0\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\wxsqlite\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\wxscintilla\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\wxscintilla-aq\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\sdl2pp\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\python3\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\protobuf\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\polyclipping\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\physfs\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\opencv\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\octomap\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\nccl\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\mosquitto\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\vma\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\vnc\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\vncserver\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libxslt\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libxml2\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libxml++\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libx11\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libssh2\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\librdkafka\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\librsvg\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\librsync\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libtiff\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libpq\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libpng\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libnotify\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libmng\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libmad\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\liblzma\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libjpeg-turbo\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libjpeg\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libjxrt\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libiconv\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libicu\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libidn2\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libidn11\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libiconv\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\libssh\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\librsvg\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\librdkafka\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\librdkafka\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\glib\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\glog\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\glew\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\giflib\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\gflags\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\gettext-lib\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\gdal\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\freetype\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\freeglut\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\fleacs\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\ffmpeg\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\expat\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\egl\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\cpng\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\curl\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\cudnn\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\curlpp\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\boost-uninstall\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\asiosdk\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\amalgamated\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\ports\alsa\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\packages\lib64-windows\share\lib\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\packages\opengl\lib64-windows\share\opengl\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\packages\libm2m\lib64-windows\share\libm2m\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\packages\boost-uninstall_x64-windows\share\boost\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\installed\x64-windows\share\zlib\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\installed\x64-windows\share\opencv4\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\installed\x64-windows\share\libibm\vcpkg-cmake-wrapper.cmake
+c:\dev\vcpkg\installed\x64-windows\share\boost\vcpkg-cmake-wrapper.cmake
+```
+
+## Find text vcpkg-cmake-wrapper in file
+```
+Search results:
+244 files and 0 directories found
+
+c:\dev\vcpkg\vcpkg.exe
+c:\dev\vcpkg\scripts\buildsystems\vcpkg.cmake
+c:\dev\vcpkg\ports\zyre\portfile.cmake
+c:\dev\vcpkg\ports\zlib\portfile.cmake
+c:\dev\vcpkg\ports\zeromq\portfile.cmake
+c:\dev\vcpkg\ports\weu\portfile.cmake
+c:\dev\vcpkg\ports\wxwidgets\portfile.cmake
+c:\dev\vcpkg\ports\wxportfile.cmake
+c:\dev\vcpkg\ports\wtl\portfile.cmake
+c:\dev\vcpkg\ports\tiff\portfile.cmake
+c:\dev\vcpkg\ports\stb\portfile.cmake
+c:\dev\vcpkg\ports\sqlite\portfile.cmake
+c:\dev\vcpkg\ports\silk-encoder\portfile.cmake
+c:\dev\vcpkg\ports\shiftmedia-libgdx\portfile.cmake
+c:\dev\vcpkg\ports\sd2pp\portfile.cmake
+c:\dev\vcpkg\ports\qtbase\fix_eg_2_patch\portfile.cmake
+c:\dev\vcpkg\ports\python3\portfile.cmake
+c:\dev\vcpkg\ports\pthreads\portfile.cmake
+c:\dev\vcpkg\ports\protobuf\portfile.cmake
+c:\dev\vcpkg\ports\polyclipping\portfile.cmake
+c:\dev\vcpkg\ports\physfs\portfile.cmake
+c:\dev\vcpkg\ports\openvdb\portfile.cmake
+c:\dev\vcpkg\ports\openssl\portfile.cmake
+c:\dev\vcpkg\ports\openexr\portfile.cmake
+c:\dev\vcpkg\ports\opencv\portfile.cmake
+c:\dev\vcpkg\ports\octomap\portfile.cmake
+c:\dev\vcpkg\ports\nccl\portfile.cmake
+c:\dev\vcpkg\ports\nmp\portfile.cmake
+c:\dev\vcpkg\ports\nmosquito\portfile.cmake
+c:\dev\vcpkg\ports\nvml\portfile.cmake
+c:\dev\vcpkg\ports\nvapi\portfile.cmake
+c:\dev\vcpkg\ports\nvffti\portfile.cmake
+c:\dev\vcpkg\ports\nvrtc\portfile.cmake
+c:\dev\vcpkg\ports\nvtx\portfile.cmake
+c:\dev\vcpkg\ports\nvToolsExt\portfile.cmake
+c:\dev\vcpkg\ports\nv_omp\portfile.cmake
+c:\dev\vcpkg\ports\nvrtc\portfile.cmake
+c:\dev\vcpkg\ports\nvtx\portfile.cmake
+c:\dev\vcpkg\ports\nvToolsExt\portfile.cmake
+c:\dev\vcpkg\ports\nv_omp\portfile.cmake
+c:\dev\vcpkg\ports\nvrtc\portfile.cmake
+c:\dev\vcpkg\ports\nvtx\portfile.cmake
+c:\dev\vcpkg\ports\nvToolsExt\portfile.cmake
+c:\dev\vcpkg\ports\nv_omp\portfile.cmake
+c:\dev\vcpkg\ports\nvrtc\portfile.cmake
+c:\dev\vcpkg\ports\nvtx\portfile.cmake
+c:\dev\vcpkg\ports\nvToolsExt\portfile.cmake
+c:\dev\vcpkg\ports\nv_omp\portfile.cmake
+c:\dev\vcpkg\ports\nvrtc\portfile.cmake
+c:\dev\vcpkg\ports\nvtx\portfile.cmake
+c:\dev\vcpkg\ports\nvToolsExt\portfile.cmake
 ```

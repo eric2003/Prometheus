@@ -29,5 +29,7 @@ Description:
 
 -  [Writing a Holographic Remoting Remote app using the OpenXR API](https://learn.microsoft.com/en-us/windows/mixed-reality/develop/native/holographic-remoting-create-remote-openxr).
 
-
+```
+git clone git@github.com:KhronosGroup/OpenXR-SDK.git
+```
 

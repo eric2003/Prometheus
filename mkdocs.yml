@@ -146,13 +146,21 @@ nav:
       - XFluids: cfd/xfluids/xfluids.md
   - Shell:
     - CMD: shell/cmd/cmd.md
+    - FileManager: shell/filemanager/filemanager.md
     - MSYS2: shell/msys2/msys2.md
     - PowerShell: shell/powershell/powershell.md
     - Ubuntu: shell/ubuntu/ubuntu.md
+    - Useful: shell/useful/useful.md
     - Windows: shell/windows/windows.md
     - XShell: shell/xshell/xshell.md
-  - FileFormat:
-    - File Format Docs: file-format/file-format.md
+  - Data&DataBase:
+    - Data:
+      - CSV: data/csv/csv.md
+      - Json: data/json/json.md
+      - XML: data/xml/xml.md    
+      - File Format Docs: data/file-format/file-format.md
+    - DataBase:
+      - MySQL: database/mysql/mysql.md    
   - GitHub:
     - Git: github/git.md
     - GitHub Pages: github/github.md
@@ -181,8 +189,11 @@ nav:
       - GLSL: prepost/opengl/glsl/glsl.md
       - FREE-GLUT: prepost/opengl/glut/freeglut.md
       - OpenGL: prepost/opengl/opengl.md
-    - Open CASCADE: prepost/occ/occ.md
+    - Open CASCADE: 
+      - OCC: prepost/opencascade/opencascade.md
+      - OCC-Install: prepost/opencascade/install.md
     - OpenSceneGraph: prepost/osg/osg.md
+    - OpenVDB: prepost/openvdb/openvdb.md
     - OpenVR: prepost/openvr/openvr.md
     - OpenXR: prepost/openxr/openxr.md
     - OSPRay: prepost/ospray/ospray.md
@@ -207,6 +218,30 @@ nav:
       - Scientific: scientific/visualization.md
       - VisIt: scientific/visual/visit/visit.md      
       - Web-based: scientific/web.md
+  - Library:
+    - Library: lib/lib.md
+    - ADIOS2: lib/ADIOS2/ADIOS2.md
+    - Alembic: lib/alembic/alembic.md
+    - Eigen: lib/eigen/eigen.md
+    - GDAL: lib/GDAL/GDAL.md
+    - icu: lib/icu/icu.md
+    - jsoncpp: lib/jsoncpp/jsoncpp.md
+    - libarchive: lib/libarchive/libarchive.md
+    - libexpat: lib/libexpat/libexpat.md    
+    - libgeotiff: lib/libgeotiff/libgeotiff.md
+    - libLAS: lib/libLAS/libLAS.md
+    - libpsl: lib/libpsl/libpsl.md
+    - libtiff: lib/libtiff/libtiff.md
+    - MPICH: lib/mpich/mpich.md
+    - OpenBLAS: lib/OpenBLAS/OpenBLAS.md
+    - OpenSlide: lib/OpenSlide/OpenSlide.md
+    - OpenTURNS: lib/openturns/openturns.md
+    - OpenVDB: lib/openvdb/openvdb.md
+    - PROJ: lib/PROJ/PROJ.md
+    - SQLite3: lib/sqlite3/sqlite3.md
+    - VTK: lib/vtk/vtk.md
+    - zlib: lib/zlib/zlib.md
+    - zstd: lib/zstd/zstd.md
   - Parallel:
     - CUDA: parallel/cuda/cuda.md
     - MPI: 
@@ -227,7 +262,9 @@ nav:
         - Parse: build-tools/cmake/cmake-parse.md
         - Python: build-tools/cmake/cmake-python.md
         - Regex: build-tools/cmake/cmake-regex.md
-      - Make: build-tools/make/make.md        
+        - Custom: build-tools/cmake/cmake-custom.md        
+      - Make: build-tools/make/make.md
+      - Meson: build-tools/meson/meson.md
     - C++: 
       - Articles and Videos: language/cpp/videos.md
       - Conference: 
@@ -248,10 +285,6 @@ nav:
       - CSharp: language/csharp/csharp.md
       - Windows Forms: language/csharp/forms.md
       - WPF: language/csharp/wpf.md
-    - Data:
-      - CSV: data/csv/csv.md
-      - Json: data/json/json.md
-      - XML: data/xml/xml.md
     - Fortran:
       - Fortran: language/fortran/fortran.md
       - Example: language/fortran/example.md
@@ -318,7 +351,9 @@ nav:
       - Clang: compiler/clang/clang.md
       - GCC: compiler/gcc/gcc.md
       - LLVM: compiler/llvm/llvm.md
-    - Modules: tools/modules/modules.md  
+    - Download: 
+      - curl: tools/download/curl/curl.md 
+    - Modules: tools/modules/modules.md 
     - Jupyter:
       - Jupyter: tools/jupyter/jupyter.md
       - Jupyter Lab: tools/jupyter/jupyterlab.md
