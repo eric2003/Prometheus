@@ -153,7 +153,7 @@ nav:
     - Useful: shell/useful/useful.md
     - Windows: shell/windows/windows.md
     - XShell: shell/xshell/xshell.md
-  - Data&DataBase:
+  - Data:
     - Data:
       - CSV: data/csv/csv.md
       - Json: data/json/json.md
@@ -175,8 +175,9 @@ nav:
     - FFmpeg: 
       - FFmpeg: prepost/ffmpeg/ffmpeg.md
       - CMake: prepost/ffmpeg/ffmpeg-cmake.md
+    - FLTK: prepost/fltk/fltk.md
     - Geometric: prepost/geometric/geometric.md
-    - GMesh: prepost/gmesh/gmesh.md
+    - GMsh: prepost/gmsh/gmsh.md
     - HoloLens: prepost/hololens/hololens.md
     - Manim: prepost/manim/manim.md
     - Mayavi: prepost/mayavi/mayavi.md
@@ -197,7 +198,9 @@ nav:
     - OpenVR: prepost/openvr/openvr.md
     - OpenXR: prepost/openxr/openxr.md
     - OSPRay: prepost/ospray/ospray.md
-    - ParaView: prepost/paraview/paraview.md
+    - ParaView: 
+      - ParaView: prepost/paraview/paraview.md
+      - ParaView-Install: prepost/paraview/paraview-install.md
     - SDL: prepost/sdl/sdl.md
     - SteamVR: prepost/steamvr/steamvr.md    
     - Tecplot: prepost/tecplot/tecplot.md
@@ -212,6 +215,7 @@ nav:
       - VTK-Build: prepost/vtk/vtk-build.md
       - VTK-Data: prepost/vtk/vtk-data.md
       - VTK-Remote: prepost/vtk/vtk-remote.md
+      - VTK-Ubuntu: prepost/vtk/vtk-ubuntu.md
     - Vulkan: 
       - Vulkan: prepost/vulkan/vulkan.md
     - Scientific visualization: 
@@ -220,24 +224,53 @@ nav:
       - Web-based: scientific/web.md
   - Library:
     - Library: lib/lib.md
-    - ADIOS2: lib/ADIOS2/ADIOS2.md
-    - Alembic: lib/alembic/alembic.md
+    - ADIOS2: 
+      - ADIOS2: lib/ADIOS2/ADIOS2.md
+      - ADIOS2-ubuntu: lib/ADIOS2/ADIOS2-ubuntu.md
+    - Alembic: 
+      - Alembic:lib/alembic/alembic.md
+      - Alembic-ubuntu:lib/alembic/alembic-ubuntu.md
+    - anari: lib/anari/anari.md
+    - Boost: 
+      - Boost: lib/boost/boost.md
+      - Boost-Ubuntu: lib/boost/boost-ubuntu.md
     - Eigen: lib/eigen/eigen.md
-    - GDAL: lib/GDAL/GDAL.md
+    - embree: lib/embree/embree.md
+    - ffmpeg: lib/ffmpeg/ffmpeg.md
+    - GDAL: 
+      - GDAL: lib/GDAL/GDAL.md
+      - GDAL-ubuntu: lib/GDAL/GDAL-ubuntu
     - icu: lib/icu/icu.md
     - jsoncpp: lib/jsoncpp/jsoncpp.md
-    - libarchive: lib/libarchive/libarchive.md
+    - libarchive: 
+      - libarchive: lib/libarchive/libarchive.md
+      - libarchive-ubuntu: lib/libarchive/libarchive-ubuntu.md
     - libexpat: lib/libexpat/libexpat.md    
     - libgeotiff: lib/libgeotiff/libgeotiff.md
-    - libLAS: lib/libLAS/libLAS.md
+    - libLAS: 
+      - libLAS: lib/libLAS/libLAS.md
+      - libLAS-ubuntu: lib/libLAS/libLAS-ubuntu.md
     - libpsl: lib/libpsl/libpsl.md
     - libtiff: lib/libtiff/libtiff.md
+    - libxslt: lib/libxslt/libxslt.md
     - MPICH: lib/mpich/mpich.md
+    - MYSQL: lib/mysql/mysql.md
+    - ODBC: lib/odbc/odbc.md
     - OpenBLAS: lib/OpenBLAS/OpenBLAS.md
-    - OpenSlide: lib/OpenSlide/OpenSlide.md
-    - OpenTURNS: lib/openturns/openturns.md
+    - OpenCASCADE: lib/OpenCASCADE/OpenCASCADE.md
+    - OpenSlide: 
+      - OpenSlide: lib/OpenSlide/OpenSlide.md
+      - OpenSlide-ubuntu: lib/OpenSlide/OpenSlide-ubuntu.md
+    - OpenTURNS: 
+      - OpenTURNS:lib/openturns/openturns.md
+      - OpenTURNS-ubuntu:lib/openturns/openturns-ubuntu.md
     - OpenVDB: lib/openvdb/openvdb.md
+    - openvkl: lib/openvkl/openvkl.md
+    - openvr: lib/openvr/openvr.md
+    - openxr: lib/openxr/openxr.md
+    - PostgreSQL: lib/PostgreSQL/PostgreSQL.md
     - PROJ: lib/PROJ/PROJ.md
+    - rkcommon: lib/rkcommon/rkcommon.md
     - SQLite3: lib/sqlite3/sqlite3.md
     - VTK: lib/vtk/vtk.md
     - zlib: lib/zlib/zlib.md
@@ -249,6 +282,8 @@ nav:
       - MSMPI: parallel/mpi/msmpi.md
     - OpenACC: parallel/openacc/openacc.md
     - OpenMP: parallel/openmp/openmp.md
+    - OpenPMIx: parallel/openpmix/openpmix.md
+    - PRRTE: parallel/prrte/prrte.md
     - Thread: parallel/thread/thread.md
   - Programming:
     - Build System:
@@ -289,13 +324,14 @@ nav:
       - Fortran: language/fortran/fortran.md
       - Example: language/fortran/example.md
       - Intel Fortran: language/fortran/intel.md
-    - Lua: language/lua/lua.md
     - Java: language/java/java.md
     - JavaScript: language/javascript/javascript.md
     - Julia: 
       - Julia: language/julia/julia.md
       - CFD-Julia: language/julia/cfd-julia.md
       - CFD-Example: language/julia/cfd-example.md
+    - Kivy : language/kivy/kivy.md
+    - Lua: language/lua/lua.md    
     - Mojo :
       - Mojo : language/mojo/mojo.md
     - Perl :
@@ -313,22 +349,27 @@ nav:
       - Pyglet: language/python/pyglet.md
       - Python: language/python/python.md
       - Better-Python: language/python/better-python.md
+    - PyQt: language/pyqt/pyqt.md
     - Qt:
       - Qt: language/qt/qt.md
       - Qt-CMake: language/qt/qt-cmake.md
       - Qt-Examples: language/qt/qt-examples.md
       - Qt Game: language/qt/game.md
       - Qt-Install : language/qt/qt-install.md
+      - Qt-Ubuntu : language/qt/qt-ubuntu.md
       - QML: language/qt/qml.md
       - QProcess: language/qt/qprocess.md
       - QSql: language/qt/qsql.md
       - QThread: language/qt/qthread.md
+      - QtTools: language/qt/qt-tools.md
       - Signals & Slots: language/qt/slots.md
     - Rust: language/rust/rust.md
     - Script:
       - Lua: script/lua/lua.md
     - Taichi: language/taichi/taichi.md
     - Tcltk : language/tcltk/tcltk.md
+    - Tkinter : language/tkinter/tkinter.md
+    - wxPython : language/wxpython/wxpython.md
   - HPC:
     - Supercomputing Center: hpc/hpc.md
     - Academic conferences: hpc/conferences.md
@@ -345,7 +386,6 @@ nav:
     - People: resources/people/people.md
     - Website: resources/website/website.md
   - Tools:
-    - Boost: tools/boost/boost.md
     - Compiler:
       - Compiler: compiler/compiler.md
       - Clang: compiler/clang/clang.md
