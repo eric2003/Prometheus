@@ -16,6 +16,190 @@
 -  [01 - boost 库的安装和编译](https://keepfightinghxz.xyz/tools/c-%E5%BA%93/boost%E5%BA%93/01%20boost%E5%BA%93%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%BC%96%E8%AF%91/).
 
 
+## Boost latest
+
+-  [Boost latest https://www.boost.org/releases/latest/]( https://www.boost.org/releases/latest/).
+
+## Install Boost 1_89_0
+
+```powershell
+PS C:\dev\boost_1_89_0> .\bootstrap.bat
+Building Boost.Build engine
+LOCALAPPDATA=C:\Users\eric\AppData\Local
+Found with vswhere C:\Program Files\Microsoft Visual Studio\2022\Community
+Found with vswhere C:\Program Files\Microsoft Visual Studio\2022\Community
+Call_If_Exists "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\..\..\VC\Auxiliary\Build\vcvarsall.bat"  AMD64
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.12
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+###
+### Using 'vc143' toolset.
+###
+
+C:\dev\boost_1_89_0\tools\build\src\engine>"cl" /nologo /MP /MT /TP /Feb2 /wd4996 /wd4675 /O2 /GL /EHsc /Zc:wchar_t /Gw   -DNDEBUG  bindjam.cpp builtins.cpp class.cpp command.cpp compile.cpp constants.cpp cwd.cpp debug.cpp debugger.cpp events.cpp execcmd.cpp execnt.cpp execunix.cpp filent.cpp filesys.cpp fileunix.cpp frames.cpp function.cpp glob.cpp hash.cpp hcache.cpp hdrmacro.cpp headers.cpp jam.cpp jamgram.cpp lists.cpp make.cpp make1.cpp md5.cpp mem.cpp modules.cpp native.cpp output.cpp parse.cpp pathnt.cpp pathsys.cpp pathunix.cpp regexp.cpp rules.cpp scan.cpp search.cpp jam_strings.cpp startup.cpp tasks.cpp timestamp.cpp value.cpp variable.cpp w32_getreg.cpp mod_args.cpp mod_command_db.cpp mod_db.cpp mod_jam_builtin.cpp mod_jam_class.cpp mod_jam_errors.cpp mod_jam_modules.cpp mod_order.cpp mod_path.cpp mod_property_set.cpp mod_regex.cpp mod_sequence.cpp mod_set.cpp mod_string.cpp mod_summary.cpp mod_sysinfo.cpp mod_version.cpp /link kernel32.lib advapi32.lib user32.lib /MANIFEST:EMBED /MANIFESTINPUT:b2.exe.manifest
+bindjam.cpp
+builtins.cpp
+class.cpp
+command.cpp
+compile.cpp
+constants.cpp
+cwd.cpp
+debug.cpp
+debugger.cpp
+events.cpp
+execcmd.cpp
+execnt.cpp
+execunix.cpp
+filent.cpp
+filesys.cpp
+fileunix.cpp
+frames.cpp
+function.cpp
+glob.cpp
+hash.cpp
+hcache.cpp
+hdrmacro.cpp
+headers.cpp
+jam.cpp
+jamgram.cpp
+lists.cpp
+make.cpp
+make1.cpp
+md5.cpp
+mem.cpp
+modules.cpp
+native.cpp
+output.cpp
+parse.cpp
+pathnt.cpp
+pathsys.cpp
+pathunix.cpp
+regexp.cpp
+rules.cpp
+scan.cpp
+search.cpp
+jam_strings.cpp
+startup.cpp
+tasks.cpp
+timestamp.cpp
+value.cpp
+variable.cpp
+w32_getreg.cpp
+mod_args.cpp
+mod_command_db.cpp
+mod_db.cpp
+mod_jam_builtin.cpp
+mod_jam_class.cpp
+mod_jam_errors.cpp
+mod_jam_modules.cpp
+mod_order.cpp
+mod_path.cpp
+mod_property_set.cpp
+mod_regex.cpp
+mod_sequence.cpp
+mod_set.cpp
+mod_string.cpp
+mod_summary.cpp
+mod_sysinfo.cpp
+mod_version.cpp
+Generating code
+Finished generating code
+
+C:\dev\boost_1_89_0\tools\build\src\engine>dir *.exe
+ Volume in drive C has no label.
+ Volume Serial Number is 6E19-00BE
+
+ Directory of C:\dev\boost_1_89_0\tools\build\src\engine
+
+2025/08/23  23:25         1,065,984 b2.exe
+               1 File(s)      1,065,984 bytes
+               0 Dir(s)  48,762,032,128 bytes free
+
+Generating Boost.Build configuration in project-config.jam for msvc...
+
+Bootstrapping is done. To build, run:
+
+    .\b2
+
+To adjust configuration, edit 'project-config.jam'.
+Further information:
+
+    - Command line help:
+    .\b2 --help
+
+    - Getting started guide:
+    http://boost.org/more/getting_started/windows.html
+
+    - Boost.Build documentation:
+    http://www.boost.org/build/
+
+PS C:\dev\boost_1_89_0>
+```
+
+ls
+```
+PS C:\dev\boost_1_89_0> ls
+
+    Directory: C:\dev\boost_1_89_0
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----            2025/8/7     3:26                boost
+d----            2025/8/7     3:26                doc
+d----            2025/8/7     3:26                libs
+d----            2025/8/7     2:49                more
+d----            2025/8/7     2:48                status
+d----            2025/8/7     2:48                tools
+-a---           2025/8/23    23:25        1065984 b2.exe
+-a---            2025/8/7     2:48            868 boost-build.jam
+-a---            2025/8/7     2:48           1054 boost.css
+-a---            2025/8/7     2:48           6308 boost.png
+-a---            2025/8/7     2:48          21336 boostcpp.jam
+-a---            2025/8/7     2:48           2584 bootstrap.bat
+-a---            2025/8/7     2:48          10811 bootstrap.sh
+-a---            2025/8/7     2:48            794 index.htm
+-a---            2025/8/7     3:26           5418 index.html
+-a---            2025/8/7     2:48            298 INSTALL
+-a---            2025/8/7     2:48          17822 Jamroot
+-a---            2025/8/7     2:48           1361 LICENSE_1_0.txt
+-a---           2025/8/23    23:25            154 project-config.jam
+-a---            2025/8/7     2:48            552 README.md
+-a---            2025/8/7     2:48           2757 rst.css
+```
+
+```cmake
+cmake_minimum_required(VERSION 4.1.0)
+
+project ( testprj )
+
+find_package ( Boost )
+
+get_directory_property( my_import_targets DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} IMPORTED_TARGETS )
+message( STATUS "my_import_targets=${my_import_targets}" )
+```
+
+```
+PS D:\work\boost_work\ModernBoost\codes\cmakeinfo\01\build> cmake ..
+-- Building for: Visual Studio 17 2022
+-- The C compiler identification is MSVC 19.44.35214.0
+-- The CXX compiler identification is MSVC 19.44.35214.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- my_import_targets=Boost::headers;Boost::boost;Boost::diagnostic_definitions;Boost::disable_autolinking;Boost::dynamic_linking
+-- Configuring done (13.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: D:/work/boost_work/ModernBoost/codes/cmakeinfo/01/build
+```
 
 install
 ```
@@ -230,12 +414,14 @@ cmd /k '"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\V
 ```
 
 ### cd c:\dev\boost_1_88_0\
+
 ```
 PS C:\Users\eric> cd c:\dev\boost_1_88_0\
 PS C:\dev\boost_1_88_0>
 ```
 
 ### cmd /k 
+
 ```
 PS C:\dev\boost_1_88_0> cmd /k '"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" && powershell'
 **********************************************************************
@@ -251,6 +437,7 @@ PS C:\dev\boost_1_88_0>
 ```
 
 ### 运行 Bootstrap 脚本：.\bootstrap.bat
+
 在 Boost 根目录下运行以下命令，生成编译工具：
 
 ```

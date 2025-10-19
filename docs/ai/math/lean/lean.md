@@ -22,15 +22,33 @@
 - [Infinitude of primes --- a Lean theorem prover demo](https://www.youtube.com/watch?v=b59fpAJ8Mfs).
 - [leanprover community](https://www.youtube.com/@leanprovercommunity5485).
 - [Metaprogramming in Lean](https://www.youtube.com/watch?v=Ix8zSpsfbDk&list=PL_bVGic_CrGtMw1QVFRLRsZjcymm56mRi).
+- [Lean for the Curious Mathematician 2023](https://www.youtube.com/playlist?list=PLlF-CfQhukNn7xEbfL38eLgkveyk9_myQ).
+- [Lean4 Beginners](https://www.youtube.com/watch?v=taHLNmStyBk&list=PLiUpWaXHLW3hxj9yMTDN0ixWm5YdYKqJU).
+
+## Lean Game Server
+
+- [Lean Game Server](https://adam.math.hhu.de/).
+- [【Lean4】自然数游戏：教程关卡](https://zhuanlan.zhihu.com/p/707376015).
+- [Game Programming in Lean4 - A 2D Graphics library and Global Store for ECS](https://www.youtube.com/watch?v=cE-DIEWjnpw).
+- [Knights and Knaves Lean Game Server Walkthrough part 1](https://www.youtube.com/watch?v=TJwIlavfLOw).
+- [lean4game-logic](https://github.com/Trequetrum/lean4game-logic).
+- [Robo](https://github.com/hhu-adam/Robo).
 
 
 ## Lean 中文文档
 
 - [Lean 中文文档](https://www.leanprover.cn/).
+- [【Lean4】陶哲轩《实分析》](https://zhuanlan.zhihu.com/p/1916867569262003232).
+
 
 ## 数学形式化 | Lean4Game 教程
 
 - [数学形式化 | Lean4Game 教程](https://www.lookeng.cn/2024/06/04/lean/lean-games/).
+- [github-Set Theory Game](https://github.com/djvelleman/STG4/).
+- [github-lean4game-logic](https://github.com/Trequetrum/lean4game-logic).
+- [github-natural-number-game-solutions](https://github.com/adyavanapalli/natural-number-game-solutions).
+- [Lean4数学元编程入门练习36题+Lean4Cheat-sheet](https://www.bilibili.com/opus/975414466291171346).
+- [Lean4入门：MIL习题全讲（1）](https://www.bilibili.com/video/BV11K421a7HF/).
 
 
 ## Theorem Proving in Lean 4
@@ -43,6 +61,38 @@
 ## Lean4入门
 
 - [Lean4入门](https://www.bilibili.com/video/BV1ix421Q7KR/).
+- [Lean语言数学之旅——环境配置和一些基础概念](https://zhimi.vercel.app/lean_basics_20250109_zh-cn.html).
+- [Lean 4 中文入门 —— 第一讲：Type Theory](https://www.bilibili.com/video/BV12m4y1x7CA/).
+- [lean-lang.org](https://lean-lang.org/doc/reference/latest/).
+- [An Introduction to Lean 4](https://www.uv.es/coslloen/Lean4/).
+- [Learning Lean 4 ](https://leanprover-community.github.io/learn.html).
+- [Lean Documentation Overview](https://lean-lang.org/lean4/doc/).
+- [lean-lang.org-learn](https://lean-lang.org/learn/).
+- [Propositions-and-Proofs](https://lean-lang.org/theorem_proving_in_lean4/Propositions-and-Proofs/).
+
+## 陶哲轩
+
+- [analysis](https://github.com/teorth/analysis).
+- [陶哲轩重写20年本科经典教材！Lean编程数学证明，GitHub已放出](https://hub.baai.ac.cn/view/46137).
+
+git clone git@github.com:teorth/analysis.git
+```
+PS D:\work\lean_work> git clone git@github.com:teorth/analysis.git
+Cloning into 'analysis'...
+remote: Enumerating objects: 5535, done.
+remote: Counting objects: 100% (2758/2758), done.
+remote: Compressing objects: 100% (402/402), done.
+remote: Total 5535 (delta 2608), reused 2356 (delta 2356), pack-reused 2777 (from 4)
+Receiving objects: 100% (5535/5535), 1.68 MiB | 51.00 KiB/s, done.
+Resolving deltas: 100% (4047/4047), done.
+```
+
+## 徐天一
+
+
+- [Mini Course on Type Theory and Lean](https://logic.fudan.edu.cn/event2025/lean).
+
+
 
 ## AI for Math系列课程 Lean
 
@@ -51,18 +101,124 @@
 - [AI for Math系列课程 类型论进阶及更多tactic介绍 2025.1.16](https://www.bilibili.com/video/BV1C9AjeQEQU/).
 - [AI for Math系列课程 AI for Formalized Math简介 2025.1.17](https://www.bilibili.com/video/BV1pXAjepEZ1/).
 
-elan show
+## Lean4网上服务器
+
+```
+- [Lean4网上服务器](https://live.lean-lang.org/).
+- [lean-web-editor](https://leanprover-community.github.io/lean-web-editor/).
+
+```
+
+## Command
+
+### lake
+```
+PS C:\Users\eric> lake
+info: Version 4.1.2 of elan is available! Use `elan self update` to update.
+info: downloading https://github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-windows.tar.zst
+436.6 MiB / 436.6 MiB (100 %)   3.7 MiB/s ETA:   0 s
+info: installing C:\Users\eric\.elan\toolchains\leanprover--lean4---v4.24.0
+Lake version 5.0.0-src+797c613 (Lean version 4.24.0)
+
+USAGE:
+  lake [OPTIONS] <COMMAND>
+
+COMMANDS:
+  new <name> <temp>     create a Lean package in a new directory
+  init <name> <temp>    create a Lean package in the current directory
+  build <targets>...    build targets
+  query <targets>...    build targets and output results
+  exe <exe> <args>...   build an exe and run it in Lake's environment
+  check-build           check if any default build targets are configured
+  test                  test the package using the configured test driver
+  check-test            check if there is a properly configured test driver
+  lint                  lint the package using the configured lint driver
+  check-lint            check if there is a properly configured lint driver
+  clean                 remove build outputs
+  env <cmd> <args>...   execute a command in Lake's environment
+  lean <file>           elaborate a Lean file in Lake's context
+  update                update dependencies and save them to the manifest
+  pack                  pack build artifacts into an archive for distribution
+  unpack                unpack build artifacts from an distributed archive
+  upload <tag>          upload build artifacts to a GitHub release
+  script                manage and run workspace scripts
+  scripts               shorthand for `lake script list`
+  run <script>          shorthand for `lake script run`
+  translate-config      change language of the package configuration
+  serve                 start the Lean language server
+
+BASIC OPTIONS:
+  --version             print version and exit
+  --help, -h            print help of the program or a command and exit
+  --dir, -d=file        use the package configuration in a specific directory
+  --file, -f=file       use a specific file for the package configuration
+  -K key[=value]        set the configuration file option named key
+  --old                 only rebuild modified modules (ignore transitive deps)
+  --rehash, -H          hash all files for traces (do not trust `.hash` files)
+  --update              update dependencies on load (e.g., before a build)
+  --packages=file       JSON file of package entries that override the manifest
+  --reconfigure, -R     elaborate configuration files instead of using OLeans
+  --keep-toolchain      do not update toolchain on workspace update
+  --no-build            exit immediately if a build target is not up-to-date
+  --no-cache            build packages locally; do not download build caches
+  --try-cache           attempt to download build caches for supported packages
+  --json, -J            output JSON-formatted results (in `lake query`)
+  --text                output results as plain text (in `lake query`)
+
+OUTPUT OPTIONS:
+  --quiet, -q           hide informational logs and the progress indicator
+  --verbose, -v         show trace logs (command invocations) and built targets
+  --ansi, --no-ansi     toggle the use of ANSI escape codes to prettify output
+  --log-level=lv        minimum log level to output on success
+                        (levels: trace, info, warning, error)
+  --fail-level=lv       minimum log level to fail a build (default: error)
+  --iofail              fail build if any I/O or other info is logged
+                        (same as --fail-level=info)
+  --wfail               fail build if warnings are logged
+                        (same as --fail-level=warning)
+
+
+See `lake help <command>` for more information on a specific command.
+PS C:\Users\eric>
+```
+
+### elan self update
+```
+PS C:\Users\eric> elan self update
+info: downloading self-update
+info: elan updated successfully to 4.1.2
+```
+
+### elan --version
+```
+PS C:\Users\eric> elan --version
+elan 4.1.2 (58e8d545e 2025-05-26)
+```
+
+### elan show
 ```powershell
 PS C:\Users\eric\Documents\Github> elan show
 leanprover/lean4:v4.17.0 (resolved from default 'stable')
 (toolchain will be installed on first use)
 ```
 
-```powershell
-tar -xvf c:\Users\eric\.elan\toolchains\lean-4.17.0-windows.zip -C c:\Users\eric\.elan\toolchains\tmp
+```
+PS C:\Users\eric> elan show
+installed toolchains
+--------------------
+
+leanprover/lean4:v4.22.0
+leanprover/lean4:v4.23.0
+leanprover/lean4:v4.24.0 (resolved from default 'stable')
+
+active toolchain
+----------------
+
+leanprover/lean4:v4.24.0 (resolved from default 'stable')
+Lean (version 4.24.0, x86_64-w64-windows-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)
 ```
 
-lean -v
+###  lean -v
 ```powershell
 PS C:\Users\eric\.elan\toolchains> lean -v
 info: downloading https://github.com/leanprover/lean4/releases/download/v4.17.0/lean-4.17.0-windows.tar.zst
@@ -71,10 +227,22 @@ info: installing C:\Users\eric\.elan\toolchains\leanprover--lean4---v4.17.0
 Lean (version 4.17.0, x86_64-w64-windows-gnu, commit 306f36116535, Release)
 ```
 
+### lean --version
+```
+PS C:\Users\eric> lean -v
+Lean (version 4.24.0, x86_64-w64-windows-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)
+PS C:\Users\eric> lean --version
+Lean (version 4.24.0, x86_64-w64-windows-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)
+```
+
 leanprover--lean4---v4.17.0
 ```powershell
+C:\Users\eric\.elan\toolchains\leanprover--lean4---v4.17.0
 leanprover--lean4---v4.17.0
+leanprover--lean4---v4.23.0
 ```
+
+## elan default leanprover/lean4:v4.15.0
 
 ## Lake
 

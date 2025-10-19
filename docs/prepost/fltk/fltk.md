@@ -531,3 +531,103 @@ entering extended mode
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (./refman_utf8.tex
 ```
+
+## Install the games
+```cmake
+# Install the games
+
+if(FLTK_BUILD_TEST) # "OR FLTK_BUILD_GAMES" (not yet implemented)
+
+  set(games_ blocks checkers sudoku)
+  if(FLTK_USE_GL)
+    list(APPEND games_ glpuzzle)
+  endif()
+
+  foreach(game_ ${games_})
+    if(FLTK_BUILD_SHARED_LIBS)
+      set(tgt_ "${game_}-shared")
+      set_target_properties(${tgt_} PROPERTIES RUNTIME_OUTPUT_NAME ${game_})
+    else()
+      set(tgt_ ${game_})
+    endif()
+    #install(TARGETS ${tgt_}
+    #        EXPORT  FLTK-Targets
+    #        RUNTIME DESTINATION ${FLTK_BINDIR}
+    #        LIBRARY DESTINATION ${FLTK_LIBDIR}
+    #        ARCHIVE DESTINATION ${FLTK_LIBDIR}
+    #        BUNDLE  DESTINATION ${FLTK_BINDIR} # macOS: bundles
+    #)
+    # install man page
+    INSTALL_MAN (${game_} 6)
+  endforeach()
+  unset(game_)
+  unset(games_)
+endif()
+```
+
+
+```
+FLTK version
+      << "<li><i>FLTK version:</i> " << FL_MAJOR_VERSION << "."
+      << FL_MINOR_VERSION << "." << FL_PATCH_VERSION
+```
+
+
+```
+Search results:
+c:\dev\FLTK\include\FL\Enumerations.H
+c:\dev\FLTK\include\FL\fl_config.h
+c:\dev\FLTK-4.13\include\FL\Enumerations.H
+c:\dev\vcpkg\buildtrees\fltk\src\ase-1.3.11-62d86fb320\clean\documentation\src\enumerations.dox
+c:\dev\vcpkg\buildtrees\fltk\src\ase-1.3.11-62d86fb320\clean\FL\Enumerations.H
+c:\dev\vcpkg\buildtrees\fltk\src\ase-1.3.11-62d86fb320\clean\fluid\about_panel.cxx
+c:\dev\vcpkg\buildtrees\fltk\src\ase-1.3.11-62d86fb320\clean\fluid\about_panel.fl
+c:\dev\vcpkg\buildtrees\fltk\src\ase-1.3.11-62d86fb320\clean\fluid\fluid.cxx
+c:\dev\vcpkg\buildtrees\fltk\src\ase-1.3.11-62d86fb320\clean\src\fL\cocoa.mm
+c:\dev\vcpkg\installed\x64-windows\include\FL\Enumerations.H
+c:\dev\vcpkg\packages\fltk_x64-windows\include\FL\Enumerations.H
+```
+
+```
+代码	文件	行	列
+#if(FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION == 3) && (FL_PATCH_VERSION >= 4)	D:\work\gmsh_work\gmsh\src\fltk\openglWindow.cpp	794	32
+    sprintf(tmp, "%d.%d.%d", FL_MAJOR_VERSION, FL_MINOR_VERSION,	D:\work\gmsh_work\gmsh\src\common\CommandLine.cpp	377	48
+#if (FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION >= 4)	D:\work\gmsh_work\gmsh\src\common\CommandLine.cpp	27	33
+#elif (FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION == 3) && (FL_PATCH_VERSION >= 3)	D:\work\gmsh_work\gmsh\src\common\CommandLine.cpp	29	35
+#if((FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION >= 4)) || defined(__APPLE__)	D:\work\gmsh_work\gmsh\src\fltk\drawContextFltk.h	152	33
+#if(FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION == 3) && (FL_PATCH_VERSION >= 4)	D:\work\gmsh_work\gmsh\src\fltk\FlGui.cpp	518	32
+#elif(FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION >= 4)	D:\work\gmsh_work\gmsh\src\fltk\FlGui.cpp	520	34
+      << FL_MINOR_VERSION << "." << FL_PATCH_VERSION	D:\work\gmsh_work\gmsh\src\fltk\helpWindow.cpp	335	10
+#if(FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION == 3) && (FL_PATCH_VERSION >= 4)	D:\work\gmsh_work\gmsh\src\fltk\openglWindow.cpp	783	32
+#elif(FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION >= 4)	D:\work\gmsh_work\gmsh\src\fltk\openglWindow.cpp	785	34
+#elif(FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION >= 4)	D:\work\gmsh_work\gmsh\src\fltk\openglWindow.cpp	796	34
+#if(FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION >= 4)	D:\work\gmsh_work\gmsh\src\fltk\visibilityWindow.cpp	1228	32
+#if(FL_MAJOR_VERSION == 1) && (FL_MINOR_VERSION >= 4)	D:\work\gmsh_work\gmsh\src\fltk\visibilityWindow.cpp	1372	32
+```
+
+
+```
+C:\dev\vcpkg\installed\x64-windows\include\FL\Enumerations.H
+```
+
+```
+PS C:\dev\vcpkg> .\vcpkg.exe integrate remove
+User-wide integration was removed.
+```
+
+search Enumerations.H
+```
+Search results:
+(10 files and 0 directories found)
+
+- c:\dev\FLTK\include\FL\FL.H
+- c:\dev\FLTK\include\FL\fl_ask.H
+- c:\dev\FLTK\include\FL\fl_config.h
+- c:\dev\FLTK\include\FL\fl_draw.H
+- c:\dev\FLTK\include\FL\FL_Image.H
+- c:\dev\FLTK\include\FL\FL_Spinner.H
+- c:\dev\FLTK\include\FL\FL_Tree_Prefs.H
+- c:\dev\FLTK\include\FL\gl.h
+- c:\dev\FLTK\include\FL\glu.h
+- c:\dev\FLTK\include\FL\wx11.H
+```

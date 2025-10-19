@@ -134,6 +134,7 @@ nav:
       - WENO: cfd/scheme/weno.md
       - WENO3: cfd/scheme/weno3.md
       - Runge-Kutta: cfd/scheme/runge-kutta.md
+      - Rusanov: cfd/scheme/rusanov.md
     - Scientific Computing: scientific/computing.md
     - CFD Open Source:
       - FEniCS: cfd/fenics.md
@@ -141,7 +142,8 @@ nav:
       - iPIC3D: cfd/ipic3d/ipic3d.md
       - MFEM: cfd/mfem/mfem.md      
       - OpenFOAM: cfd/openfoam/openfoam.md
-      - PHG: cfd/phg/phg.md      
+      - PHG: cfd/phg/phg.md
+      - Salome: cfd/salome/salome.md
       - SU2: cfd/su2/su2.md
       - XFluids: cfd/xfluids/xfluids.md
   - Shell:
@@ -150,7 +152,10 @@ nav:
     - MSYS2: shell/msys2/msys2.md
     - PowerShell: shell/powershell/powershell.md
     - Ubuntu: shell/ubuntu/ubuntu.md
-    - Useful: shell/useful/useful.md
+    - Useful: 
+      - Useful: shell/useful/useful.md
+      - CMake: shell/useful/cmake.md
+      - Tools: shell/useful/tools.md
     - Windows: shell/windows/windows.md
     - XShell: shell/xshell/xshell.md
   - Data:
@@ -169,6 +174,7 @@ nav:
       - NodeEditor : github/lib/nodeeditor.md
       - ExprTk : github/lib/exprtk.md
   - Pre&Post:
+    - Mesh: prepost/mesh/mesh.md
     - Blender: prepost/blender/blender.md
     - CFD: prepost/cfd/cfd.md
     - EasyX: prepost/easyx/easyx.md
@@ -204,6 +210,7 @@ nav:
     - SDL: prepost/sdl/sdl.md
     - SteamVR: prepost/steamvr/steamvr.md    
     - Tecplot: prepost/tecplot/tecplot.md
+    - tetgen: prepost/tetgen/tetgen.md
     - VTK: 
       - VTK: prepost/vtk/vtk.md
       - VTK-Debug: prepost/vtk/vtk-debug.md
@@ -228,18 +235,20 @@ nav:
       - ADIOS2: lib/ADIOS2/ADIOS2.md
       - ADIOS2-ubuntu: lib/ADIOS2/ADIOS2-ubuntu.md
     - Alembic: 
-      - Alembic:lib/alembic/alembic.md
-      - Alembic-ubuntu:lib/alembic/alembic-ubuntu.md
+      - Alembic: lib/alembic/alembic.md
+      - Alembic-ubuntu: lib/alembic/alembic-ubuntu.md
     - anari: lib/anari/anari.md
     - Boost: 
       - Boost: lib/boost/boost.md
       - Boost-Ubuntu: lib/boost/boost-ubuntu.md
     - Eigen: lib/eigen/eigen.md
+    - CGAL: lib/CGAL/CGAL.md
     - embree: lib/embree/embree.md
     - ffmpeg: lib/ffmpeg/ffmpeg.md
+    - freetype: lib/freetype/freetype.md
     - GDAL: 
       - GDAL: lib/GDAL/GDAL.md
-      - GDAL-ubuntu: lib/GDAL/GDAL-ubuntu
+      - GDAL-ubuntu: lib/GDAL/GDAL-ubuntu.md
     - icu: lib/icu/icu.md
     - jsoncpp: lib/jsoncpp/jsoncpp.md
     - libarchive: 
@@ -247,9 +256,12 @@ nav:
       - libarchive-ubuntu: lib/libarchive/libarchive-ubuntu.md
     - libexpat: lib/libexpat/libexpat.md    
     - libgeotiff: lib/libgeotiff/libgeotiff.md
+    - libigl: lib/libigl/libigl.md
+    - libjpeg: lib/libjpeg/libjpeg.md
     - libLAS: 
       - libLAS: lib/libLAS/libLAS.md
       - libLAS-ubuntu: lib/libLAS/libLAS-ubuntu.md
+    - libpng: lib/libpng/libpng.md
     - libpsl: lib/libpsl/libpsl.md
     - libtiff: lib/libtiff/libtiff.md
     - libxslt: lib/libxslt/libxslt.md
@@ -262,12 +274,13 @@ nav:
       - OpenSlide: lib/OpenSlide/OpenSlide.md
       - OpenSlide-ubuntu: lib/OpenSlide/OpenSlide-ubuntu.md
     - OpenTURNS: 
-      - OpenTURNS:lib/openturns/openturns.md
-      - OpenTURNS-ubuntu:lib/openturns/openturns-ubuntu.md
+      - OpenTURNS: lib/openturns/openturns.md
+      - OpenTURNS-ubuntu: lib/openturns/openturns-ubuntu.md
     - OpenVDB: lib/openvdb/openvdb.md
     - openvkl: lib/openvkl/openvkl.md
     - openvr: lib/openvr/openvr.md
     - openxr: lib/openxr/openxr.md
+    - ospray: lib/ospray/ospray.md
     - PostgreSQL: lib/PostgreSQL/PostgreSQL.md
     - PROJ: lib/PROJ/PROJ.md
     - rkcommon: lib/rkcommon/rkcommon.md
@@ -281,7 +294,9 @@ nav:
       - MPI: parallel/mpi/mpi.md
       - MSMPI: parallel/mpi/msmpi.md
     - OpenACC: parallel/openacc/openacc.md
-    - OpenMP: parallel/openmp/openmp.md
+    - OpenMP: 
+      - OpenMP: parallel/openmp/openmp.md
+      - OpenMP-GCC: parallel/openmp/openmp-gcc.md
     - OpenPMIx: parallel/openpmix/openpmix.md
     - PRRTE: parallel/prrte/prrte.md
     - Thread: parallel/thread/thread.md
@@ -448,7 +463,10 @@ nav:
       - Coq: ai/math/coq/coq.md
       - Idris: ai/math/idris/idris.md
       - Isabelle: ai/math/isabelle/isabelle.md
-      - Lean: ai/math/lean/lean.md
+      - Lean: 
+        - Lean: ai/math/lean/lean.md
+        - Game: ai/math/lean/game.md
+        - MIL: ai/math/lean/mil.md
     - Music: ai/music/music.md     
   - Docs:
     - Doxygen: doctools/doxygen/doxygen.md

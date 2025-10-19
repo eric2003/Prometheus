@@ -15,17 +15,17 @@ $env:PATH = "c:/msys64/mingw64/bin;" + $env:PATH
 ### VsDevCmd.bat
 
 ```
-cmd /k '"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" && powershell'
+cmd /k '"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" && powershell'   
 ```
 
 ```
-& "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=x64
+& "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=x64   
 ```
 
 ### "VsDevCmd.bat" -arch=x64
 
 ```cmd
-C:\Users\eric>"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=x64
+C:\Users\eric>"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=x64   
 **********************************************************************
 ** Visual Studio 2022 Developer Command Prompt v17.13.7
 ** Copyright (c) 2022 Microsoft Corporation
@@ -36,7 +36,7 @@ C:\Users\eric>
 
 ### &"VsDevCmd.bat" -arch=x64 && powershell
 ```
-PS C:\Users\eric> &"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=x64 && powershell
+PS C:\Users\eric> &"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=x64 && powershell   
 **********************************************************************
 ** Visual Studio 2022 Developer Command Prompt v17.13.7
 ** Copyright (c) 2022 Microsoft Corporation
@@ -51,7 +51,7 @@ PS C:\Users\eric>
 
 ### cmd.exe "/K" '"VsDevCmd.bat" -arch=x64 && powershell'
 ```
-PS C:\Users\eric> cmd.exe "/K" '"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=x64 && powershell'
+PS C:\Users\eric> cmd.exe "/K" '"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=x64 && powershell'   
 **********************************************************************
 ** Visual Studio 2022 Developer Command Prompt v17.13.7
 ** Copyright (c) 2022 Microsoft Corporation
@@ -66,13 +66,13 @@ PS C:\Users\eric>
 
 ### cmd.exe "/K" '"vcvars64.bat" && powershell'
 ```
-cmd.exe "/K" '"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" && powershell'
+cmd.exe "/K" '"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" && powershell'   
 ```
 
 ### oneAPI\setvars.bat
 
 ```
-cmd.exe "/K" '"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" && powershell'
+cmd.exe "/K" '"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" && powershell'   
 ```
 
 ### IMPORTED_TARGETS
@@ -86,6 +86,20 @@ message( STATUS "my_import_targets=${my_import_targets}" )
 
 ```cmake
 cmake .. -G "Ninja" -D CMAKE_C_COMPILER=cl -D CMAKE_Fortran_COMPILER=ifx
+```
+
+### CMAKE_MODULE_PATH
+
+```cmake
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+```
+
+```cmake
+# 直接指定模块文件路径
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/FindXXX.cmake")
+
+# 调用FindXXX.cmake模块
+find_package(XXX REQUIRED)
 ```
 
 ### msys Path
@@ -105,7 +119,11 @@ c:\Program Files (x86)\Intel\oneAPI\2025.0\bin\tbb12_debug.dll
 $env:PATH = "c:/local/Qt/6.9.0/msvc2022_64/bin;" + $env:PATH
 ```
 
+### pacman -Syu
 
+```
+pacman -Syu
+```
 
 ### tar
 

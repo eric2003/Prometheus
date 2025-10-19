@@ -422,3 +422,52 @@ Hello from thread 14 of 16
 PS D:\work\llvm_work\ModernLLVM\codes\simplecode\02>
 ```
 
+## VS2022+LLVM-Clang+OpenMP
+
+```
+平台工具集：LLVM (clang-cl)
+c/c++: 其它选项: -openmp
+链接器：输入：附加依赖项：libomp.lib
+即
+Linker/Input/AdditionalDependencies: libomp.lib
+```
+
+```
+平台工具集：Visual Studio 2022 (v143)
+c/c++: 其它选项: /openmp:llvm 
+```
+
+```cmake
+cmake_minimum_required(VERSION 4.0.2)
+project(openmp_test)
+
+# 指定使用 C++11 标准
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# 打印编译器信息
+message(STATUS "CMAKE_C_COMPILER=${CMAKE_C_COMPILER}")
+message(STATUS "CMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}")
+
+# 手动指定 OpenMP 配置
+set(OpenMP_CXX_FLAGS "-openmp:llvm")
+
+# 查找 OpenMP
+find_package(OpenMP REQUIRED)
+
+get_directory_property( my_import_targets DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} IMPORTED_TARGETS )
+
+message( STATUS "my_import_targets=${my_import_targets}" )
+
+# 打印调试信息
+message(STATUS "CMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}")
+message(STATUS "OpenMP_CXX_FLAGS=${OpenMP_CXX_FLAGS}")
+message(STATUS "OpenMP_CXX_LIB_NAMES=${OpenMP_CXX_LIB_NAMES}")
+message(STATUS "OpenMP_libomp_LIBRARY=${OpenMP_libomp_LIBRARY}")
+
+# 添加可执行文件
+add_executable(openmp_test main.cpp)
+
+target_compile_options(openmp_test PRIVATE ${OpenMP_CXX_FLAGS})
+target_link_libraries(openmp_test PRIVATE OpenMP::OpenMP_CXX)
+```

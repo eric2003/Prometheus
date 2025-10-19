@@ -1167,3 +1167,11 @@ eric@DELL MINGW64 ~
 $ which code
 /c/Users/eric/AppData/Local/Programs/Microsoft VS Code/bin/code
 ```
+
+### mysys 显示汉字
+
+```
+界面右键options/Text/Character set/GBK
+or
+界面右键options/Text/Character set/UTF-8
+```
