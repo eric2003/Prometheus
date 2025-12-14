@@ -4,6 +4,37 @@
 
 -  [VTK File Formats](https://docs.vtk.org/en/latest/design_documents/VTKFileFormats.html).
 
+### HDF5
+
+-  [hdf5/v1_14](https://support.hdfgroup.org/releases/hdf5/v1_14/index.html).
+
+### Latest Release (9.5.2)
+```
+Data          VTKDataFiles-9.5.2.tar.gz
+Source        VTK-9.5.2.tar.gz
+              VTKData-9.5.2.tar.gz
+              VTKLargeDataFiles-9.5.2.tar.gz
+Documentation vtkDocHtml-9.5.2.tar.gz
+              VTKLargeData-9.5.2.tar.gz
+```
+
+```
+# 使用PowerShell检测占用（推荐）
+Get-Process | Where-Object {$_.MainWindowTitle -like "*VTK*"}  # 查找相关进程
+```
+
+```
+PS C:\Users\eric> Get-Process | Where-Object {$_.MainWindowTitle -like "*VTK*"}  # 查找相关进程
+
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     25   279.90      23.96      34.47    2772   1 cmake-gui
+    226 1,478.97   1,224.07     248.06   31696   1 devenv
+    619   499.53     319.77   1,305.33   11780   1 msedge
+     22    16.23      37.45       1.09   10856   1 notepad++
+```
+
+
 CMake Error VTK::opengl
 ```
 CMake Error at CMakeLists.txt:489 (message):

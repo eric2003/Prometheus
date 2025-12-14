@@ -64,3 +64,18 @@ Submodule path 'ThirdParty/QtTesting/vtkqttesting': checked out '209801f09fad0ec
 Submodule path 'Utilities/VisItBridge': checked out 'e7253e13240124d5be544e400bcaa8635712e253'
 Submodule path 'VTK': checked out 'd6a17f22a64e161637d28015b43a3b10af07fd0a'
 ```
+
+```
+PARAVIEW_USE_PYTHON
+VTK_SMP_ENABLE_TBB
+```
+
+
+```
+PARAVIEW_USE_PYTHON
+VTK_SMP_ENABLE_TBB
+PARAVIEW_BUILD_ALL_MODULES ON
+PARAVIEW_BUILD_TESTING ON
+PARAVIEW_ENABLE_EXAMPLES ON
+VTK_SMP_IMPLEMENTATION_TYPE TBB
+```

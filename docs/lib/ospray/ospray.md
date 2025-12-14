@@ -4,6 +4,24 @@
 
 - [github ospray](https://github.com/RenderKit/ospray).
 
+```
+ipconfig /flushdns
+```
+
+## windows11
+
+git clone https://github.com/ospray/ospray.git
+```
+PS D:\work\ospray_work> git clone https://github.com/ospray/ospray.git
+Cloning into 'ospray'...
+remote: Enumerating objects: 101795, done.
+remote: Counting objects: 100% (1864/1864), done.
+remote: Compressing objects: 100% (384/384), done.
+remote: Total 101795 (delta 1568), reused 1480 (delta 1480), pack-reused 99931 (from 3)
+Receiving objects: 100% (101795/101795), 31.53 MiB | 138.00 KiB/s, done.
+Resolving deltas: 100% (78712/78712), done.
+```
+
 ## git clone https://github.com/ospray/ospray.git
 ```
 eric@fantasy:~/work/ospray_work$ git clone https://github.com/ospray/ospray.git
@@ -14,7 +32,6 @@ remote: Compressing objects: 100% (2496/2496), done.
 remote: Total 101795 (delta 9872), reused 12604 (delta 9654), pack-reused 88686 (from 1)
 Receiving objects: 100% (101795/101795), 30.49 MiB | 54.00 KiB/s, done.
 Resolving deltas: 100% (78797/78797), done.
-
 ```
 
 ## ispc --version

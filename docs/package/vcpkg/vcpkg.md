@@ -9,6 +9,15 @@ vcpkg is a free C/C++ package manager for acquiring and managing libraries. Choo
 - [vcpkg documentation](https://learn.microsoft.com/en-us/vcpkg/).
 - [vcpkg系列链接整理](https://zhuanlan.zhihu.com/p/564608106/).
 
+## vcpkg-tool
+
+- [vcpkg-tool](https://github.com/microsoft/vcpkg-tool#).
+
+git clone git@github.com:microsoft/vcpkg-tool.git
+```
+```
+
+
 ## Set up vcpkg
 
 1、Clone the repository
@@ -97,6 +106,20 @@ Read more about vcpkg telemetry at docs/about/privacy.md
     * vcpkg-cmake-get-vars:x64-windows -> 2023-03-02
   Additional packages (*) will be modified to complete this operation.
   If you are sure you want to rebuild the above packages, run this command with the --no-dry-run option.		  
+```
+
+## .\vcpkg upgrade
+```
+To update these packages and all dependencies, run
+.\vcpkg upgrade'
+To only remove outdated packages, run
+.\vcpkg remove --outdated
+```
+
+## .\vcpkg remove --outdated
+
+```
+.\vcpkg remove --outdated --recurse
 ```
 
 ## search
@@ -402,5 +425,24 @@ c:\dev\vcpkg\ports\nvToolsExt\portfile.cmake
 
 ## ./vcpkg install fltk
 
+```powershell
+# 手动下载文件
+Invoke-WebRequest -Uri "https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.42.12/gdk-pixbuf-2.42.12.tar.gz" -OutFile "C:\tmp\gdk-pixbuf-test.tar.gz"
+
+# 计算哈希值（多次运行看是否一致）
+Get-FileHash -Path "C:\tmp\gdk-pixbuf-test.tar.gz" -Algorithm SHA512
 ```
+
+```
+& "C:\Program Files\Git\mingw64\bin\curl.exe" `
+  -L -o C:\tmp\gdk-pixbuf-curl.tar.gz `
+  https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.42.12/gdk-pixbuf-2.42.12.tar.gz
+```
+
+```
+# 将手动下载的文件复制到 vcpkg 缓存，使用 vcpkg 期望的精确文件名
+Copy-Item "C:\tmp\gdk-pixbuf-curl.tar.gz" "C:\dev\vcpkg\downloads\GNOME-gdk-pixbuf-2.42.12.tar.gz" -Force
+
+# 验证文件存在且大小正确 (7MB)
+Get-Item "C:\dev\vcpkg\downloads\GNOME-gdk-pixbuf-2.42.12.tar.gz"
 ```

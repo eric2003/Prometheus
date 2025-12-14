@@ -131,13 +131,18 @@ nav:
       - ENO: cfd/scheme/eno.md
       - ENO2: cfd/scheme/eno2.md
       - Lax-Friedrichs: cfd/scheme/lax-friedrichs.md
+      - Smooth-Indicator : cfd/scheme/smooth-indicator.md
+      - Upwind5: cfd/scheme/upwind5.md
       - WENO: cfd/scheme/weno.md
       - WENO3: cfd/scheme/weno3.md
+      - WENO5: cfd/scheme/weno5.md
       - Runge-Kutta: cfd/scheme/runge-kutta.md
       - Rusanov: cfd/scheme/rusanov.md
+      - Figure: cfd/scheme/figure.md
     - Scientific Computing: scientific/computing.md
     - CFD Open Source:
       - FEniCS: cfd/fenics.md
+      - FiPy: cfd/fipy/fipy.md
       - FOODIE: cfd/foodie/foodie.md
       - iPIC3D: cfd/ipic3d/ipic3d.md
       - MFEM: cfd/mfem/mfem.md      
@@ -396,6 +401,9 @@ nav:
     - Music: math/music/music.md
   - Recent:
     - Recent: recent/recent.md
+    - Project: recent/project.md
+    - Tools: recent/tools.md
+    - Babysimu: recent/babysimu.md
   - Resources:
     - Images: resources/images/images.md
     - People: resources/people/people.md
@@ -459,6 +467,7 @@ nav:
     - Gemini: ai/gemini/gemini.md
     - Grok: ai/grok/grok.md
     - Kimi: ai/kimi/kimi.md
+    - QWen: ai/qwen/qwen.md
     - Math:
       - Coq: ai/math/coq/coq.md
       - Idris: ai/math/idris/idris.md

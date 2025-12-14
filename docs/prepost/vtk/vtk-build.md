@@ -4,6 +4,520 @@
 
 -  [VTK File Formats](https://docs.vtk.org/en/latest/design_documents/VTKFileFormats.html).
 
+## vcpkg
+
+```
+在 CMake GUI 的主界面，点击 "Tools" > "Add Entry"（或右上角的 "Add Entry" 按钮）添加一个新变量：
+Name: CMAKE_TOOLCHAIN_FILE
+Type: PATH 或 FILEPATH
+Value: vcpkg 的工具链文件路径，例如 C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake（替换为你的实际路径）。
+Description: 可选，填 "vcpkg toolchain file"。
+```
+
+```
+Found OpenVR: C:/dev/openvr/lib/win64/openvr_api.lib
+Could NOT find FontConfig (missing: FONTCONFIG_LIBRARY FONTCONFIG_INCLUDE_DIR) 
+CMake Error at CMake/vtkModule.cmake:5357 (message):
+  Could not find the FontConfig external dependency.
+Call Stack (most recent call first):
+  Rendering/FreeTypeFontConfig/CMakeLists.txt:18 (vtk_module_find_package)
+  
+```
+
+./vcpkg install fontconfig
+```
+PS C:\dev\vcpkg> ./vcpkg install fontconfig
+```
+
+./vcpkg install pdal:x64-windows
+```
+./vcpkg install pdal:x64-windows
+```
+
+```
+./vcpkg install openvdb:x64-windows
+```
+
+```
+ODBC_INCLUDE_DIR c:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\
+ODBC_LIBRARY c:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\um\x64\odbc32.lib
+```
+
+```
+MySQL_INCLUDE_DIR c:\Program Files\MySQL\MySQL Server 8.4\include\
+MySQL_LIBRARY c:\Program Files\MySQL\MySQL Server 8.4\lib\libmysql.lib
+```
+
+```
+./vcpkg install liblas:x64-windows
+```
+
+```
+./vcpkg install adios2:x64-windows
+```
+
+```
+./vcpkg install msmpi:x64-windows
+```
+
+```
+./vcpkg install boost:x64-windows
+```
+
+
+```
+./vcpkg install openslide:x64-windows
+```
+
+```
+删除损坏的下载文件：
+# 删除 gdk-pixbuf 的下载缓存
+Remove-Item -Path "C:\dev\vcpkg\downloads\GNOME-gdk-pixbuf-2.42.12.tar.gz*" -Force
+
+# 或手动删除整个 downloads 目录（谨慎操作）
+# Remove-Item -Path "C:\dev\vcpkg\downloads\*" -Force
+```
+
+```
+cd C:\dev\vcpkg
+git pull
+.\bootstrap-vcpkg.bat
+.\vcpkg upgrade --no-dry-run
+.\vcpkg install openslide:x64-windows
+```
+
+```
+# 进入 vcpkg 根目录（你的路径是 C:\dev\vcpkg）
+cd C:\dev\vcpkg
+
+# 拉取最新代码（需要 git 环境）
+git pull
+
+# 更新端口索引
+.\vcpkg update
+
+# 清理之前的构建缓存（避免旧缓存干扰）
+.\vcpkg remove gdk-pixbuf:x64-windows --purge
+.\vcpkg clean gdk-pixbuf:x64-windows
+.\vcpkg install gdk-pixbuf:x64-windows
+```
+
+```
+PS C:\dev\vcpkg> ./vcpkg install openslide:x64-windows
+Computing installation plan...
+The following packages will be rebuilt:
+  * gdk-pixbuf[core,jpeg,others,png,tiff]:x64-windows@2.42.12#4
+The following packages will be built and installed:
+  * libdicom:x64-windows@1.2.0#1
+    openslide:x64-windows@4.0.0#4
+  * uthash:x64-windows@2.3.0
+Additional packages (*) will be modified to complete this operation.
+warning: If you are sure you want to rebuild the above packages, run the command with the --recurse option.
+```
+
+使用新 Triplet 安装
+```
+# 使用新的 triplet 安装 openslide
+./vcpkg install openslide:x64-windows-clang --recurse
+```
+
+x64-windows-clang.cmake
+```cmake
+set(VCPKG_TARGET_ARCHITECTURE x64)
+set(VCPKG_CRT_LINKAGE dynamic)
+set(VCPKG_LIBRARY_LINKAGE dynamic)
+
+# 指定使用 clang-cl 编译器
+set(VCPKG_CMAKE_CONFIGURE_OPTIONS 
+    -T ClangCL
+    -DCMAKE_C_COMPILER=clang-cl
+    -DCMAKE_CXX_COMPILER=clang-cl
+)
+
+# 继承 x64-windows 的其他设置
+set(VCPKG_CHAINLOAD_TOOLCHAIN_FILE "${VCPKG_ROOT_DIR}/scripts/toolchains/windows.cmake")
+```
+
+```
+PS C:\Users\eric> clang-cl --version
+clang-cl: The term 'clang-cl' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+PS C:\Users\eric> & "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin\clang-cl.exe" --version
+clang version 19.1.5
+Target: i686-pc-windows-msvc
+Thread model: posix
+InstalledDir: C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin
+```
+
+```
+OPENSLIDE_INCLUDE_DIR c:\dev\openslide\include
+OPENSLIDE_LIBRARY c:\dev\openslide\lib\libopenslide.lib
+```
+
+```
+./vcpkg install libarchive:x64-windows
+```
+
+```
+.\vcpkg install freeglut:x64-windows
+```
+
+```
+.\vcpkg install openxr-loader:x64-windows
+```
+
+```
+# 卸载
+.\vcpkg remove liblas:x64-windows
+
+# 重新安装（会自动拉取所有依赖）
+.\vcpkg install liblas:x64-windows
+```
+
+```
+显式添加 find_package：如果您能编辑CMakeLists.txt（例如在VTK的IO/LAS/CMakeLists.txt或主项目中），
+添加：find_package(Boost REQUIRED COMPONENTS serialization)
+```
+
+## 
+
+```
+CMAKE_INSTALL_PREFIX C:/dev/VTK
+VTK_BUILD_ALL_MODULES
+VTK_BUILD_EXAMPLES
+VTK_BUILD_TESTING ON
+VTK_MODULE_ENABLE_VTK_RenderingOpenXRRemoting NO
+ODBC_INCLUDE_DIR c:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\
+ODBC_LIBRARY c:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\um\x64\odbc32.lib
+MySQL_INCLUDE_DIR c:\Program Files\MySQL\MySQL Server 8.4\include\
+MySQL_LIBRARY c:\Program Files\MySQL\MySQL Server 8.4\lib\libmysql.lib
+VTK_MODULE_ENABLE_VTK_GUISupportMFC NO
+OPENSLIDE_INCLUDE_DIR c:\dev\openslide\include
+OPENSLIDE_LIBRARY c:\dev\openslide\lib\libopenslide.lib
+```
+
+```
+CMake Error at C:/dev/vcpkg/installed/x64-windows/share/liblas/liblas-depends.cmake:61 (set_target_properties):
+  The link interface of target "liblas" contains:
+
+    Boost::serialization
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+Call Stack (most recent call first):
+  C:/dev/vcpkg/installed/x64-windows/share/liblas/liblas-config.cmake:24 (include)
+  C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake:904 (_find_package)
+  CMake/vtkModule.cmake:5351 (find_package)
+  IO/LAS/CMakeLists.txt:1 (vtk_module_find_package)
+```
+
+test_boost_targets.cmake
+```cmake
+# test_boost_targets.cmake
+cmake_minimum_required(VERSION 3.15)
+project(TestBoostTargets)
+
+# 查找 Boost（不指定组件，看能找到什么）
+find_package(Boost CONFIG REQUIRED)
+
+message(STATUS "=== Boost 找到的版本: ${Boost_VERSION} ===")
+message(STATUS "Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
+
+# 测试每个目标是否存在
+set(BOOST_TARGETS_TO_TEST 
+    Boost::iostreams 
+    Boost::program_options 
+    Boost::serialization 
+    Boost::thread
+    Boost::system
+    Boost::filesystem
+)
+
+foreach(target ${BOOST_TARGETS_TO_TEST})
+    if(TARGET ${target})
+        message(STATUS "✓ ${target} 存在")
+        # 获取目标的位置信息
+        get_target_property(target_loc ${target} LOCATION)
+        message(STATUS "  位置: ${target_loc}")
+    else()
+        message(STATUS "✗ ${target} 不存在")
+    endif()
+endforeach()
+
+# 测试查找 serialization 组件
+message(STATUS "\n=== 测试显式查找 serialization ===")
+find_package(Boost REQUIRED COMPONENTS serialization)
+if(TARGET Boost::serialization)
+    message(STATUS "✓ 显式查找后 Boost::serialization 已存在")
+endif()
+```
+
+
+```
+cmake -G "Visual Studio 17 2022" -A x64 `
+  -D CMAKE_TOOLCHAIN_FILE=C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake `
+  -D CMAKE_INSTALL_PREFIX=C:/dev/VTK `
+  -D VTK_BUILD_ALL_MODULES=ON `
+  -D VTK_BUILD_EXAMPLES=ON `
+  -D VTK_BUILD_TESTING=ON `
+  -D VTK_MODULE_ENABLE_VTK_RenderingOpenXRRemoting=NO `
+  -D ODBC_INCLUDE_DIR="c:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um" `
+  -D ODBC_LIBRARY="c:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x64/odbc32.lib" `
+  -D MySQL_INCLUDE_DIR="c:/Program Files/MySQL/MySQL Server 8.4/include" `
+  -D MySQL_LIBRARY="c:/Program Files/MySQL/MySQL Server 8.4/lib/libmysql.lib" `
+  -D VTK_MODULE_ENABLE_VTK_GUISupportMFC=NO `
+  -D OPENSLIDE_INCLUDE_DIR="c:/dev/openslide/include" `
+  -D OPENSLIDE_LIBRARY="c:/dev/openslide/lib/libopenslide.lib"
+```
+
+TestLASReader_test_1.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\build\IO\LAS\Testing\Cxx\TestLASReader_test_1.cxx
+//int TestLASReader_test_1(int argc, char **argv)
+int TestLASReader_test_1(int argc, char** const argv)
+```
+
+TestGDALRasterReader.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\IO\GDAL\Testing\Cxx\TestGDALRasterReader.cxx
+//int TestGDALRasterReader(int argc, char** argv)
+int TestGDALRasterReader(int argc, char** const)
+D:\work\vtk2025\VTK-9.5.2\build\IO\GDAL\Testing\Cxx\vtkIOGDALCxxTests.cxx
+//extern int TestGDALRasterReader(int, char*[]);
+extern int TestGDALRasterReader(int, char** const);
+```
+
+TestOpenSlideReader.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\Domains\Microscopy\Testing\Cxx\TestOpenSlideReader.cxx
+//int TestOpenSlideReader(int argc, char** argv)
+int TestOpenSlideReader(int argc, char** const argv)
+```
+
+TestOpenSlideReaderPartial.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\Domains\Microscopy\Testing\Cxx\TestOpenSlideReaderPartial.cxx
+//int TestOpenSlideReaderPartial(int argc, char** argv)
+int TestOpenSlideReaderPartial(int argc, char** const argv)
+```
+
+vtkDomainsMicroscopyCxxTests.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\build\Domains\Microscopy\Testing\Cxx\vtkDomainsMicroscopyCxxTests.cxx
+//extern int TestOpenSlideReader(int, char*[]);
+//extern int TestOpenSlideReaderPartial(int, char*[]);
+extern int TestOpenSlideReader(int argc, char** const argv);
+extern int TestOpenSlideReaderPartial(int argc, char** const argv);
+```
+
+TestLASReader_test_2.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\build\IO\LAS\Testing\Cxx\TestLASReader_test_2.cxx
+//int TestLASReader_test_2(int argc, char **argv)
+int TestLASReader_test_2(int argc, char** const argv)
+```
+
+vtkIOLASCxxTests.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\build\IO\LAS\Testing\Cxx\vtkIOLASCxxTests.cxx
+// extern int TestLASReader_test_1(int, char*[]);
+// extern int TestLASReader_test_2(int, char*[]);
+extern int TestLASReader_test_1(int argc, char** const argv);
+extern int TestLASReader_test_2(int argc, char** const argv);
+```
+
+TestGDALRasterReader.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\IO\GDAL\Testing\Cxx\TestGDALRasterReader.cxx
+//int TestGDALRasterReader(int argc, char** argv)
+int TestGDALRasterReader(int argc, char** const argv)
+```
+
+TestGDALRasterNoDataValue.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\IO\GDAL\Testing\Cxx\TestGDALRasterNoDataValue.cxx
+//int TestGDALRasterNoDataValue(int argc, char** argv)
+int TestGDALRasterNoDataValue(int argc, char** const argv)
+//extern int TestGDALRasterReader(int, char*[]);
+//extern int TestGDALRasterNoDataValue(int, char*[]);
+extern int TestGDALRasterReader(int argc, char** const argv);
+extern int TestGDALRasterNoDataValue(int argc, char** const argv);
+```
+
+vtkIOGDALCxxTests.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\build\IO\GDAL\Testing\Cxx\vtkIOGDALCxxTests.cxx
+//extern int TestGDALRasterReader(int, char*[]);
+//extern int TestGDALRasterNoDataValue(int, char*[]);
+//extern int TestGDALRasterPalette(int, char*[]);
+extern int TestGDALRasterReader(int argc, char** const argv);
+extern int TestGDALRasterNoDataValue(int argc, char** const argv);
+extern int TestGDALRasterPalette(int argc, char** const argv);
+```
+
+TestGDALRasterPalette.cxx
+```
+D:\work\vtk2025\VTK-9.5.2\IO\GDAL\Testing\Cxx\TestGDALRasterPalette.cxx
+//int TestGDALRasterPalette(int argc, char** argv)
+int TestGDALRasterPalette(int argc, char** const argv)
+```
+
+d:\work\vtk2025\VTK-9.5.2\IO\LAS\Testing\Cxx\CMakeLists.txt
+```cmake
+# TODO: Simplify this with some argument passing.
+set(VTK_LAS_READER_TESTS)
+function(add_vtk_las_reader_test test_input elevation)
+  get_filename_component(VTK_LAS_READER_POSTFIX ${test_input} NAME_WE)
+  set(VTK_LAS_READER_TEST_INPUT "${test_input}")
+  set(VTK_LAS_READER_ELEVATION "${elevation}")
+  set(test_source "TestLASReader_${VTK_LAS_READER_POSTFIX}.cxx")
+  configure_file(TestLASReader.cxx.in ${test_source})
+  set(VTK_LAS_READER_TESTS ${VTK_LAS_READER_TESTS} ${test_source} PARENT_SCOPE)
+endfunction()
+
+add_vtk_las_reader_test(test_1.las 0)
+add_vtk_las_reader_test(test_2.las -90)
+
+vtk_add_test_cxx(vtkIOLASCxxTests tests
+  ${VTK_LAS_READER_TESTS}
+  )
+vtk_test_cxx_executable(vtkIOLASCxxTests tests)
+```
+
+d:\work\vtk2025\VTK-9.5.2\IO\LAS\Testing\Cxx\TestLASReader.cxx.in
+```cpp
+// SPDX-FileCopyrightText: Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+// SPDX-License-Identifier: BSD-3-Clause
+/**
+ * This tests reading a LAS file.
+ */
+
+#include "vtkCamera.h"
+#include "vtkLookupTable.h"
+#include "vtkNew.h"
+#include "vtkPointData.h"
+#include "vtkPolyDataMapper.h"
+#include "vtkRegressionTestImage.h"
+#include "vtkRenderer.h"
+#include "vtkRenderWindowInteractor.h"
+#include "vtkRenderWindow.h"
+#include "vtkSmartPointer.h"
+#include "vtkTestUtilities.h"
+#include "vtkUnsignedCharArray.h"
+#include "vtkUnsignedShortArray.h"
+
+
+//#include "vtkXMLPolyDataWriter.h"
+
+#include "vtkLASReader.h"
+
+int TestLASReader_@VTK_LAS_READER_POSTFIX@(int argc, char **argv)
+{
+  const char* fileName = "Data/@VTK_LAS_READER_TEST_INPUT@";
+  const char* path = vtkTestUtilities::ExpandDataFileName(argc, argv, fileName);
+  vtkNew<vtkLASReader> reader;
+  //Select source file
+  reader->SetFileName(path);
+
+  //Read the output
+  reader->Update();
+
+  delete [] path;
+
+  vtkSmartPointer<vtkPolyData> outputData = reader->GetOutput();
+
+  bool useClassification = false;
+  bool useColor = false;
+  vtkUnsignedShortArray* classification =
+    vtkUnsignedShortArray::SafeDownCast(outputData->GetPointData()->GetArray("classification"));
+  vtkUnsignedShortArray* intensity =
+    vtkUnsignedShortArray::SafeDownCast(outputData->GetPointData()->GetArray("intensity"));
+  vtkUnsignedShortArray* color =
+    vtkUnsignedShortArray::SafeDownCast(outputData->GetPointData()->GetArray("color"));
+  double range[2];
+  if (classification)
+  {
+    classification->GetRange(range, 0);
+    if (range[0] != range[1])
+    {
+      std::cout << "Color by classification\n";
+      useClassification = true;
+      outputData->GetPointData()->SetActiveScalars("classification");
+    }
+  }
+  if (! useClassification)
+  {
+    if (color)
+    {
+      color->GetRange(range, 0);
+      if (range[0] != range[1])
+      {
+        std::cout << "Color by color scalar\n";
+        useColor = true;
+        outputData->GetPointData()->SetActiveScalars("color");
+      }
+    }
+    else
+    {
+      std::cout << "Color by intensity\n";
+      intensity->GetRange(range, 0);
+      outputData->GetPointData()->SetActiveScalars("intensity");
+    }
+  }
+
+
+  // vtkNew<vtkXMLPolyDataWriter> writer;
+  // writer->SetFileName("test.vtp");
+  // writer->SetInputData(outputData);
+  // writer->Write();
+
+  //Visualise in a render window
+  vtkNew<vtkPolyDataMapper> mapper;
+  mapper->SetInputData(outputData);
+  if (useColor)
+  {
+    mapper->SetColorModeToDirectScalars();
+  }
+  else
+  {
+    mapper->SetScalarRange(range);
+  }
+
+  vtkNew<vtkActor> actor;
+  actor->SetMapper(mapper);
+
+  vtkNew<vtkRenderer> renderer;
+  vtkNew<vtkRenderWindow> renderWindow;
+  renderWindow->AddRenderer(renderer);
+
+  vtkNew<vtkRenderWindowInteractor> renderWindowInteractor;
+  renderWindowInteractor->SetRenderWindow(renderWindow);
+  renderer->AddActor(actor);
+  renderer->ResetCamera();
+
+  vtkCamera *camera=renderer->GetActiveCamera();
+  camera->Elevation(@VTK_LAS_READER_ELEVATION@);
+
+  int retVal = vtkRegressionTestImageThreshold (renderWindow, 0.2);
+  if (retVal == vtkRegressionTester::DO_INTERACTOR)
+  {
+    renderWindowInteractor->Start ();
+    retVal = vtkRegressionTester::PASSED;
+  }
+  return !((retVal == vtkTesting::PASSED) || (retVal == vtkTesting::DO_INTERACTOR));
+}
+```
+
+```
+D:\work\vtk2025\VTK-9.5.2\IO\GDAL\Testing\Cxx\TestGDALRasterNoDataValue.cxx
+D:\work\vtk2025\VTK-9.5.2\IO\GDAL\Testing\Cxx\TestGDALRasterReader.cxx
+D:\work\vtk2025\VTK-9.5.2\IO\GDAL\Testing\Cxx\TestGDALRasterNoDataValue.cxx
+```
+
 ## example 1
 ```
 cmake .. -DVTK_GROUP_ENABLE_Qt=YES
@@ -203,6 +717,258 @@ cmake .. `
       -D VTK_MODULE_ENABLE_VTK_IOPDAL=NO `
       -D VTK_MODULE_ENABLE_VTK_GUISupportMFC=NO `
       | Tee-Object -FilePath "output.txt"
+```
+
+```
+cmake .. `
+  -G "Visual Studio 17 2022" -A x64 `
+  -D CMAKE_TOOLCHAIN_FILE=C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake `
+  -D CMAKE_INSTALL_PREFIX=C:/dev/VTK `
+  -D CMAKE_BUILD_TYPE=Release `
+  -D BUILD_SHARED_LIBS=ON `
+  -D VTK_BUILD_ALL_MODULES=ON `
+  -D VTK_BUILD_EXAMPLES=ON `
+  -D VTK_BUILD_TESTING=ON `
+  -D VTK_MODULE_ENABLE_VTK_RenderingOpenXRRemoting=NO `
+  -D ODBC_INCLUDE_DIR="c:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um" `
+  -D ODBC_LIBRARY="c:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x64/odbc32.lib" `
+  -D MySQL_INCLUDE_DIR="c:/Program Files/MySQL/MySQL Server 9.5/include" `
+  -D MySQL_LIBRARY="c:/Program Files/MySQL/MySQL Server 9.5/lib/libmysql.lib" `
+  -D VTK_MODULE_ENABLE_VTK_GUISupportMFC=NO `
+  -D OPENSLIDE_INCLUDE_DIR="c:/dev/openslide/include" `
+  -D OPENSLIDE_LIBRARY="c:/dev/openslide/lib/libopenslide.lib" `
+  | Tee-Object -FilePath "output.txt"
+```
+
+```
+cmake .. `
+  -G "Visual Studio 17 2022" -A x64 `
+  -D CMAKE_TOOLCHAIN_FILE=C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake `
+  -D CMAKE_INSTALL_PREFIX=C:/dev/VTK `
+  -D CMAKE_BUILD_TYPE=Release `
+  -D BUILD_SHARED_LIBS=ON `
+  -D VTK_BUILD_ALL_MODULES=ON `
+  -D VTK_BUILD_EXAMPLES=ON `
+  -D VTK_BUILD_TESTING=ON `
+  -D VTK_MODULE_ENABLE_VTK_RenderingOpenXRRemoting=NO `
+  -D VTK_MODULE_ENABLE_VTK_FiltersParallelVerdict=YES `
+  -D VTK_MODULE_ENABLE_VTK_IOPIO=YES `
+  -D MySQL_INCLUDE_DIR="c:/Program Files/MySQL/MySQL Server 9.5/include" `
+  -D MySQL_LIBRARY="c:/Program Files/MySQL/MySQL Server 9.5/lib/libmysql.lib" `
+  -D ODBC_INCLUDE_DIR="c:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um" `
+  -D ODBC_LIBRARY="c:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x64/odbc32.lib" `
+  -D VTK_MODULE_ENABLE_VTK_GUISupportMFC=NO `
+  -D OPENSLIDE_INCLUDE_DIR="c:/dev/openslide/include" `
+  -D OPENSLIDE_LIBRARY="c:/dev/openslide/lib/libopenslide.lib" `
+  | Tee-Object -FilePath "output.txt"
+```
+
+```
+CMake Error at CMakeLists.txt:567 (message):
+  Please reconfigure VTK with the following parameters to add required
+  modules: -DVTK_MODULE_ENABLE_VTK_FiltersParallelVerdict=WANT
+  -DVTK_MODULE_ENABLE_VTK_IOPIO=WANT
+```
+
+
+```
+PS C:\Users\eric> choco upgrade chocolatey
+Chocolatey v2.5.1
+Upgrading the following packages:
+chocolatey
+By upgrading, you accept licenses for the packages.
+chocolatey v2.5.1 is the latest version available based on your source(s).
+
+Chocolatey upgraded 0/1 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+```
+
+```
+PS C:\Users\eric> choco install xsltproc
+Chocolatey v2.5.1
+Installing the following packages:
+xsltproc
+By installing, you accept licenses for the packages.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading xsltproc 1.1.28.0... 100%
+
+Added C:\ProgramData\chocolatey\bin\xsltproc.exe shim pointed to '..\lib\xsltproc\tools\xsltproc.bat'.
+ ShimGen has successfully created a shim for iconv.exe
+ ShimGen has successfully created a shim for xmlcatalog.exe
+ ShimGen has successfully created a shim for xmllint.exe
+ The install of xsltproc was successful.
+  Deployed to 'C:\ProgramData\chocolatey\lib\xsltproc\tools\..\dist'
+
+Chocolatey installed 1/1 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+```
+
+```
+cmake ..
+cmake --build . --parallel 4 --config Release
+cmake --install .  --config Release
+or
+cmake --install .
+or 
+cmake --install . --prefix "c:/dev/VTK/"  --config Release
+```
+
+```
+VTK::CommonCore
+VTK::FiltersGeneral
+VTK::FiltersHybrid
+VTK::vtksys
+VTK::AcceleratorsVTKmFilters
+VTK::IOXdmf2
+VTK::IOCGNSReader
+VTK::DomainsChemistry
+VTK::FiltersAMR
+VTK::FiltersCellGrid
+VTK::FiltersCore
+VTK::FiltersExtraction
+VTK::FiltersFlowPaths
+VTK::FiltersGeneric
+VTK::FiltersGeometry
+VTK::FiltersHyperTree
+VTK::FiltersModeling
+VTK::FiltersParallel
+VTK::FiltersParallelDIY2
+VTK::FiltersParallelVerdict
+VTK::FiltersSources
+VTK::FiltersStatistics
+VTK::FiltersTemporal
+VTK::FiltersTensor
+VTK::FiltersTexture
+VTK::FiltersVerdict
+VTK::ImagingCore
+VTK::ImagingFourier
+VTK::ImagingGeneral
+VTK::ImagingHybrid
+VTK::ImagingSources
+VTK::IOAsynchronous
+VTK::IOChemistry
+VTK::IOGeometry
+VTK::IOImage
+VTK::IOInfovis
+VTK::IOLegacy
+VTK::IOParallel
+VTK::IOParallelXML
+VTK::IOPLY
+VTK::IOVPIC
+VTK::IOXML
+VTK::IOAMR
+VTK::IOAvmesh
+VTK::IOCellGrid
+VTK::IOCityGML
+VTK::IOCONVERGECFD
+VTK::IOERF
+VTK::IOFDS
+VTK::IOIOSS
+VTK::IOLANLX3D
+VTK::IOH5part
+VTK::IOH5Rage
+VTK::IONetCDF
+VTK::IOOggTheora
+VTK::IOOMF
+VTK::IOParallelExodus
+VTK::IOParallelLSDyna
+VTK::IOPIO
+VTK::IOHDF
+VTK::IOSegY
+VTK::IOTRUCHAS
+VTK::IOVeraOut
+VTK::IOTecplotTable
+VTK::IOFLUENTCFF
+VTK::RenderingCellGrid
+VTK::RenderingFreeType
+VTK::WrappingTools
+VTK::CommonDataModel
+VTK::FiltersPoints
+VTK::ParallelCore
+VTK::CommonSystem
+VTK::CommonExecutionModel
+VTK::IOEnSight
+VTK::IOCore
+VTK::cgns
+VTK::FiltersParallelStatistics
+VTK::GUISupportQt
+VTK::IOImport
+VTK::jsoncpp
+VTK::nlohmannjson
+VTK::ChartsCore
+VTK::pugixml
+VTK::IOExportGL2PS
+VTK::cli11
+VTK::TestingRendering
+VTK::netcdf
+VTK::FiltersGeometryPreview
+VTK::GeovisCore
+VTK::IOMovie
+VTK::CommonComputationalGeometry
+VTK::IOExport
+VTK::CommonMisc
+VTK::fmt
+VTK::RenderingAnnotation
+VTK::RenderingContext2D
+VTK::RenderingCore
+VTK::RenderingGridAxes
+VTK::RenderingParallel
+VTK::ViewsContext2D
+VTK::ViewsCore
+VTK::CommonColor
+VTK::DomainsChemistryOpenGL2
+VTK::glad
+VTK::InteractionStyle
+VTK::RenderingContextOpenGL2
+VTK::RenderingLICOpenGL2
+VTK::RenderingLabel
+VTK::RenderingOpenGL2
+VTK::RenderingVolumeAMR
+VTK::zlib
+VTK::lz4
+VTK::RenderingVolume
+VTK::CommonMath
+VTK::FiltersImaging
+VTK::doubleconversion
+VTK::loguru
+```
+
+
+```
+cd ThirdParty/QtTesting
+git clone https://gitlab.kitware.com/utils/vtkqttesting.git vtkqttesting
+```
+
+```
+cd ThirdParty/QtTesting
+git clone https://github.com/Kitware/QtTesting.git vtkqttesting
+```
+
+```
+# 查看所有 tag（正式 release 版本通常都在 tag 里）
+git tag -l           # 列出所有 tag
+git tag -l "v5.11.*" # 模糊搜索，比如只看 5.11 系列
+
+# 查看所有分支（本地 + 远程）
+git branch -a        # 带 remotes/origin/ 的就是远程分支
+
+# 查看最新的几个 tag（按时间倒序）
+git tag -l --sort=-version:refname | head -20
+```
+
+```
+# 推荐写法（会创建一个新分支，避免 detached HEAD）
+git checkout -b paraview-6.0.1 tags/v6.0.1
+# 或者简写（ParaView 的 tag 通常是 v5.x.x）
+git checkout -b pv-6.0.1 v6.0.1
+
+# 如果你不在乎 detached HEAD，直接切（只读用，没问题）
+git checkout v6.0.1
+```
+
+```
+PS C:\Users\eric> cd d:\work\paraview_work\ParaView\VTK\
+git checkout v9.5.2
 ```
 
 ubuntu cmake 1

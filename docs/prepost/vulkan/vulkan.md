@@ -22,12 +22,21 @@ Vulkan is a cross-platform industry standard enabling developers to target a wid
 -  [AdiosyEngine，基于Vulkan的渲染框架](https://www.bilibili.com/video/BV15J4m1V7Wm/).
 -  [手搓Vulkan渲染引擎](https://www.bilibili.com/video/BV15J4m1V7Wm/).
 
+## vulkan version
+
+```
+vulkansdk-windows-X64-1.4.328.1.exe
+```
+
+```
+$env:Vulkan_INCLUDE_DIR
+$env:VulkanSDK
+$env:VULKAN_SDK
+```
 ## Game engine
 
 -  [How to Make a Game Engine: Introducing the VULKAN GAME ENGINE Series!](https://www.youtube.com/watch?v=dHPuU-DJoBM&list=PLv8Ddw9K0JPg1BEO-RS-0MYs423cvLVtj/).
 
-```
-```
 
 - Validate Layer Manifests
     C:\Users\eric\VulkanSDK

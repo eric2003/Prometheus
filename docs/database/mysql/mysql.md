@@ -277,6 +277,9 @@ public:
 ```
 MySQL_INCLUDE_DIR="c:/Program Files/MySQL/MySQL Server 9.3/include" `
 MySQL_LIBRARY="c:/Program Files/MySQL/MySQL Server 9.3/lib/libmysql.lib" `
+
+MySQL_INCLUDE_DIR="c:/Program Files/MySQL/MySQL Server 9.5/include" `
+MySQL_LIBRARY="c:/Program Files/MySQL/MySQL Server 9.5/lib/libmysql.lib" `
 ```
 
 my_bool

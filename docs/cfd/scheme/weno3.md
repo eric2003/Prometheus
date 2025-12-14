@@ -7,6 +7,11 @@
 - [Prof. Chi-Wang Shu: Mathematics in Scientific Computing](https://www.youtube.com/watch?v=0FdOVvCJJEk).
 
 
+## 机构
+
+- [The State Key Laboratory of Scientific and Engineering Computing (LSEC)](https://lsec.cc.ac.cn/).
+- [lsec.cc.ac.cn](https://lsec.cc.ac.cn/lcfd/).
+
 ## code
 
 - [WENO (Weighted Essentially Non-Oscillatory) schemes](https://github.com/wme7/WENO).
@@ -448,6 +453,234 @@ PS D:\github\OneFLOW\example\weno-coef\crj\python\01d> python .\crj.py
    1/7     -43/42    667/210  -2341/420  853/140  -617/140   363/140
 ```
 
+```python
+from fractions import Fraction
+
+def calculate_crj(r, j, k):
+    result = Fraction(0, 1)
+    for m in range(j + 1, k + 1):
+        numerator = 0
+        for l in range(0, k + 1):
+            if l == m:
+                continue
+            product = 1
+            for q in range(0, k + 1):
+                if q == m or q == l:
+                    continue
+                product *= (r - q + 1)
+            numerator += product
+        denominator = 1
+        for l in range(0, k + 1):
+            if l == m:
+                continue
+            denominator *= (m - l)
+        result += Fraction(numerator, denominator)
+    return result
+
+for k in range(1, 8):
+    print(f"=== k = {k} ===")
+    mat = []
+    r_values = range(-1, k)
+    for r in r_values:
+        row = []
+        for j in range(k):
+            row.append(calculate_crj(r, j, k))
+        mat.append(row)
+
+    # 所有会出现字符串（包括表头 j=0, j=1...）用于计算统一宽度
+    header_cells = [f"j={j}" for j in range(k)]
+    all_strings = header_cells + [str(item) for row in mat for item in row]
+    max_width = max(len(s) for s in all_strings) if all_strings else 8
+
+    # r 列宽度（包含表头 "r"）
+    r_strings = ["r"] + [str(r) for r in r_values]
+    r_width = max(len(s) for s in r_strings)
+
+    # 表头
+    header = " ".join(f"{cell:^{max_width}}" for cell in header_cells)
+    print(f"{'r':>{r_width}} | {header}")
+
+    # 数据行（数值右对齐）
+    for r, row in zip(r_values, mat):
+        r_str = f"{r:>{r_width}}"
+        cells = " ".join(f"{str(item):>{max_width}}" for item in row)
+        print(f"{r_str} | {cells}")
+    print()
+```
+
+```
+PS D:\github\OneFLOW\example\weno-coef\crj\python\01f> python .\crj.py
+=== k = 1 ===
+ r | j=0
+-1 |   1
+ 0 |   1
+
+=== k = 2 ===
+ r | j=0  j=1
+-1 |  3/2 -1/2
+ 0 |  1/2  1/2
+ 1 | -1/2  3/2
+
+=== k = 3 ===
+ r | j=0  j=1  j=2
+-1 | 11/6 -7/6  1/3
+ 0 |  1/3  5/6 -1/6
+ 1 | -1/6  5/6  1/3
+ 2 |  1/3 -7/6 11/6
+
+=== k = 4 ===
+ r |  j=0    j=1    j=2    j=3
+-1 |  25/12 -23/12  13/12   -1/4
+ 0 |    1/4  13/12  -5/12   1/12
+ 1 |  -1/12   7/12   7/12  -1/12
+ 2 |   1/12  -5/12  13/12    1/4
+ 3 |   -1/4  13/12 -23/12  25/12
+
+=== k = 5 ===
+ r |   j=0     j=1     j=2     j=3     j=4
+-1 |  137/60 -163/60  137/60  -21/20     1/5
+ 0 |     1/5   77/60  -43/60   17/60   -1/20
+ 1 |   -1/20    9/20   47/60  -13/60    1/30
+ 2 |    1/30  -13/60   47/60    9/20   -1/20
+ 3 |   -1/20   17/60  -43/60   77/60     1/5
+ 4 |     1/5  -21/20  137/60 -163/60  137/60
+
+=== k = 6 ===
+ r |   j=0     j=1     j=2     j=3     j=4     j=5
+-1 |   49/20  -71/20   79/20 -163/60   31/30    -1/6
+ 0 |     1/6   29/20  -21/20   37/60  -13/60    1/30
+ 1 |   -1/30   11/30   19/20  -23/60    7/60   -1/60
+ 2 |    1/60   -2/15   37/60   37/60   -2/15    1/60
+ 3 |   -1/60    7/60  -23/60   19/20   11/30   -1/30
+ 4 |    1/30  -13/60   37/60  -21/20   29/20     1/6
+ 5 |    -1/6   31/30 -163/60   79/20  -71/20   49/20
+
+=== k = 7 ===
+ r |    j=0       j=1       j=2       j=3       j=4       j=5       j=6
+-1 |   363/140  -617/140   853/140 -2341/420   667/210    -43/42       1/7
+ 0 |       1/7   223/140  -197/140   153/140  -241/420    37/210     -1/42
+ 1 |     -1/42     13/42   153/140  -241/420   109/420   -31/420     1/105
+ 2 |     1/105   -19/210   107/210   319/420  -101/420      5/84    -1/140
+ 3 |    -1/140      5/84  -101/420   319/420   107/210   -19/210     1/105
+ 4 |     1/105   -31/420   109/420  -241/420   153/140     13/42     -1/42
+ 5 |     -1/42    37/210  -241/420   153/140  -197/140   223/140       1/7
+ 6 |       1/7    -43/42   667/210 -2341/420   853/140  -617/140   363/140
+```
+
+```python
+from fractions import Fraction
+
+def calculate_crj(r, j, k):
+    result = Fraction(0, 1)
+    for m in range(j + 1, k + 1):
+        numerator = 0
+        for l in range(0, k + 1):
+            if l == m:
+                continue
+            product = 1
+            for q in range(0, k + 1):
+                if q == m or q == l:
+                    continue
+                product *= (r - q + 1)
+            numerator += product
+        denominator = 1
+        for l in range(0, k + 1):
+            if l == m:
+                continue
+            denominator *= (m - l)
+        result += Fraction(numerator, denominator)
+    return result
+
+for k in range(1, 8):
+    print(f"=== k = {k} ===")
+    mat = []
+    # 关键修改：将 range(-1, k) 改为反向遍历（从大到小）
+    r_values = range(k - 1, -2, -1)  # 原范围是 [-1, 0, 1, ..., k-1]，反向后为 [k-1, ..., 1, 0, -1]
+    for r in r_values:
+        row = []
+        for j in range(k):
+            row.append(calculate_crj(r, j, k))
+        mat.append(row)
+
+    # 所有会出现字符串（包括表头 j=0, j=1...）用于计算统一宽度
+    header_cells = [f"j={j}" for j in range(k)]
+    all_strings = header_cells + [str(item) for row in mat for item in row]
+    max_width = max(len(s) for s in all_strings) if all_strings else 8
+
+    # r 列宽度（包含表头 "r"）
+    r_strings = ["r"] + [str(r) for r in r_values]
+    r_width = max(len(s) for s in r_strings)
+
+    # 表头
+    header = " ".join(f"{cell:^{max_width}}" for cell in header_cells)
+    print(f"{'r':>{r_width}} | {header}")
+
+    # 数据行（数值右对齐）
+    for r, row in zip(r_values, mat):
+        r_str = f"{r:>{r_width}}"
+        cells = " ".join(f"{str(item):>{max_width}}" for item in row)
+        print(f"{r_str} | {cells}")
+    print()
+```
+
+```
+=== k = 1 ===
+ r | j=0
+ 0 |   1
+-1 |   1
+
+=== k = 2 ===
+ r | j=0  j=1
+ 1 | -1/2  3/2
+ 0 |  1/2  1/2
+-1 |  3/2 -1/2
+
+=== k = 3 ===
+ r | j=0  j=1  j=2
+ 2 |  1/3 -7/6 11/6
+ 1 | -1/6  5/6  1/3
+ 0 |  1/3  5/6 -1/6
+-1 | 11/6 -7/6  1/3
+
+=== k = 4 ===
+ r |  j=0    j=1    j=2    j=3
+ 3 |   -1/4  13/12 -23/12  25/12
+ 2 |   1/12  -5/12  13/12    1/4
+ 1 |  -1/12   7/12   7/12  -1/12
+ 0 |    1/4  13/12  -5/12   1/12
+-1 |  25/12 -23/12  13/12   -1/4
+
+=== k = 5 ===
+ r |   j=0     j=1     j=2     j=3     j=4
+ 4 |     1/5  -21/20  137/60 -163/60  137/60
+ 3 |   -1/20   17/60  -43/60   77/60     1/5
+ 2 |    1/30  -13/60   47/60    9/20   -1/20
+ 1 |   -1/20    9/20   47/60  -13/60    1/30
+ 0 |     1/5   77/60  -43/60   17/60   -1/20
+-1 |  137/60 -163/60  137/60  -21/20     1/5
+
+=== k = 6 ===
+ r |   j=0     j=1     j=2     j=3     j=4     j=5
+ 5 |    -1/6   31/30 -163/60   79/20  -71/20   49/20
+ 4 |    1/30  -13/60   37/60  -21/20   29/20     1/6
+ 3 |   -1/60    7/60  -23/60   19/20   11/30   -1/30
+ 2 |    1/60   -2/15   37/60   37/60   -2/15    1/60
+ 1 |   -1/30   11/30   19/20  -23/60    7/60   -1/60
+ 0 |     1/6   29/20  -21/20   37/60  -13/60    1/30
+-1 |   49/20  -71/20   79/20 -163/60   31/30    -1/6
+
+=== k = 7 ===
+ r |    j=0       j=1       j=2       j=3       j=4       j=5       j=6
+ 6 |       1/7    -43/42   667/210 -2341/420   853/140  -617/140   363/140
+ 5 |     -1/42    37/210  -241/420   153/140  -197/140   223/140       1/7
+ 4 |     1/105   -31/420   109/420  -241/420   153/140     13/42     -1/42
+ 3 |    -1/140      5/84  -101/420   319/420   107/210   -19/210     1/105
+ 2 |     1/105   -19/210   107/210   319/420  -101/420      5/84    -1/140
+ 1 |     -1/42     13/42   153/140  -241/420   109/420   -31/420     1/105
+ 0 |       1/7   223/140  -197/140   153/140  -241/420    37/210     -1/42
+-1 |   363/140  -617/140   853/140 -2341/420   667/210    -43/42       1/7
+```
+
 ### 等宽矩阵打印
 
 ```python
@@ -589,22 +822,24 @@ enddo
 数学公式：
 
 模板选择的规则是：
+
 $$
 \text{选择} \quad k \quad \text{使得} \quad |\Delta^{(i)} u_{k-1}| \leq |\Delta^{(i)} u_k|
 $$
+
 即选择差分绝对值较小的模板。
 
 对应关系
-ir(j) 存储第 
-j
-j 个网格点选择的模板索引。
+ir(j) 存储第 j 个网格点选择的模板索引。
 
 通过比较差分的绝对值，更新模板索引 ir(j)。
 
 重构公式为：
+
 $$
 u_{j+1/2} = \sum_{m=0}^{p-1} c_{l,m} \cdot u_{k+m}
 $$
+
 其中：
 
 - $u_{j+1/2}$ 是重构后的值。
@@ -637,37 +872,20 @@ enddo
 ### 步骤
 1. **定义积分区间**：假设我们有一个区间 \([a, b]\)，在这个区间上我们有一个均匀的网格，网格点的数量为 \(n+1\)，网格点之间的距离为 \(h = \frac{b-a}{n}\)。
 
-2. **计算积分**：正弦函数在区间 \([a, b]\) 上的积分可以表示为：
-   $
-   \int_a^b \sin(x) \, dx
-   $
-   对于正弦函数，这个积分的理论解是：
-   $
-   \int_a^b \sin(x) \, dx = -\cos(x) \Big|_a^b = -\cos(b) + \cos(a)
-   $
+2. **计算积分**：正弦函数在区间 \([a, b]\) 上的积分可以表示为：$\int_a^b \sin(x) \, dx$
+   对于正弦函数，这个积分的理论解是：$\int_a^b \sin(x) \, dx = -\cos(x) \Big|_a^b = -\cos(b) + \cos(a)$
 
-3. **计算积分平均**：积分平均是积分值除以区间长度 \(b-a\)：
-   $
-   \text{积分平均} = \frac{1}{b-a} \int_a^b \sin(x) \, dx = \frac{-\cos(b) + \cos(a)}{b-a}
-   $
-   
+3. **计算积分平均**：积分平均是积分值除以区间长度 \(b-a\)：$\text{积分平均} = \frac{1}{b-a} \int_a^b \sin(x) \, dx = \frac{-\cos(b) + \cos(a)}{b-a}$
+  
    
 ### 步骤
 1. **定义积分区间**：假设我们有一个区间 \([a, b]\)，在这个区间上我们有一个均匀的网格，网格点的数量为 \(n+1\)，网格点之间的距离为 \(h = \frac{b-a}{n}\)。
 
-2. **计算积分**：正弦函数 \(\sin(2\pi x)\) 在区间 \([a, b]\) 上的积分可以表示为：
-   $
-   \int_a^b \sin(2\pi x) \, dx
-   $
-   对于正弦函数 \(\sin(2\pi x)\)，这个积分的理论解是：
-   $
-   \int_a^b \sin(2\pi x) \, dx = -\frac{1}{2\pi} \cos(2\pi x) \Big|_a^b = -\frac{1}{2\pi} (\cos(2\pi b) - \cos(2\pi a))
-   $
+2. **计算积分**：正弦函数 \(\sin(2\pi x)\) 在区间 \([a, b]\) 上的积分可以表示为：$\int_a^b \sin(2\pi x) \, dx$
+   对于正弦函数 \(\sin(2\pi x)\)，这个积分的理论解是：$\int_a^b \sin(2\pi x) \, dx = -\frac{1}{2\pi} \cos(2\pi x) \Big|_a^b = -\frac{1}{2\pi} (\cos(2\pi b) - \cos(2\pi a))$
 
 3. **计算积分平均**：积分平均是积分值除以区间长度 \(b-a\)：
-   $
-   \text{积分平均} = \frac{1}{b-a} \int_a^b \sin(2\pi x) \, dx = \frac{-\frac{1}{2\pi} (\cos(2\pi b) - \cos(2\pi a))}{b-a} = -\frac{1}{2\pi(b-a)} (\cos(2\pi b) - \cos(2\pi a))
-   $
+$\text{积分平均} = \frac{1}{b-a} \int_a^b \sin(2\pi x) \, dx = \frac{-\frac{1}{2\pi} (\cos(2\pi b) - \cos(2\pi a))}{b-a} = -\frac{1}{2\pi(b-a)} (\cos(2\pi b) - \cos(2\pi a))$
 
 ```fortran
    do i=1,nx 
@@ -680,19 +898,13 @@ enddo
 1. **定义积分区间**：假设我们有一个区间 \([a, b]\)，在这个区间上我们有一个均匀的网格，网格点的数量为 \(n+1\)，网格点之间的距离为 \(h = \frac{b-a}{n}\)。
 
 2. **计算积分**：函数 \( f(x) = x \) 在区间 \([a, b]\) 上的积分可以表示为：
-   $
-   \int_a^b x \, dx
-   $
+   $\int_a^b x \, dx$
    对于函数 \( f(x) = x \)，这个积分的理论解是：
-   $
-   \int_a^b x \, dx = \frac{x^2}{2} \Big|_a^b = \frac{b^2}{2} - \frac{a^2}{2}
-   $
+   $\int_a^b x \, dx = \frac{x^2}{2} \Big|_a^b = \frac{b^2}{2} - \frac{a^2}{2}$
 
 3. **计算积分平均**：积分平均是积分值除以区间长度 \(b-a\)：
-   $
-   \text{积分平均} = \frac{1}{b-a} \int_a^b x \, dx = \frac{\frac{b^2}{2} - \frac{a^2}{2}}{b-a} = \frac{b^2 - a^2}{2(b-a)} = \frac{(b-a)(b+a)}{2(b-a)} = \frac{b+a}{2}
-   $
-   
+   $\text{积分平均} = \frac{1}{b-a} \int_a^b x \, dx = \frac{\frac{b^2}{2} - \frac{a^2}{2}}{b-a} = \frac{b^2 - a^2}{2(b-a)} = \frac{(b-a)(b+a)}{2(b-a)} = \frac{b+a}{2}$
+
 ```fortran
    do i=1,nx 
       pu(i)=0.5*((x(i)+dx/2)*(x(i)+dx/2)-(x(i)-dx/2)*(x(i)-dx/2))/dx 
@@ -721,11 +933,13 @@ a=x_{\frac{1}{2}}<x_{\frac{3}{2}}<\cdots<x_{N-\frac{1}{2}}<x_{N+\frac{1}{2}}=b
 $$
 
 cells
+
 $$
 I_{i}\equiv[x_{i-\frac{1}{2}},x_{i+\frac{1}{2}}]
 $$
 
 cell centers
+
 $$
 x_{i}\equiv\cfrac{1}{2}(x_{i-\frac{1}{2}}+x_{i+\frac{1}{2}})
 $$

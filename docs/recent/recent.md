@@ -73,10 +73,15 @@
 
 - [神经网络求解偏微分方程基础介绍](https://www.bilibili.com/video/BV1PszKYbEur/).
 
+## MHD
+
+- [MHD方程的全局散度为零-熵稳定节点DG方法](https://zhuanlan.zhihu.com/p/1958375727461273603).
 
 ## Github Links
 
 - [mnucci32/aither](https://github.com/mnucci32/aither/).
+- [YouDub-webui: 优质视频中文化工具](https://github.com/liuzhao1225/YouDub-webui).
+
 
 ## Recent Update
 

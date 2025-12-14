@@ -66,3 +66,72 @@ Requirement already satisfied: python-dateutil>=2.8.1 in c:\users\eric\appdata\l
 Requirement already satisfied: platformdirs>=2.2.0 in c:\users\eric\appdata\local\programs\python\python313\lib\site-packages (from mkdocs-get-deps>=0.2.0->mkdocs) (4.3.6)
 Requirement already satisfied: six>=1.5 in c:\users\eric\appdata\local\programs\python\python313\lib\site-packages (from python-dateutil>=2.8.1->ghp-import>=1.0->mkdocs) (1.16.0)
 ```
+
+```
+pip uninstall -y mkdocs mkdocs-material watchdog
+pip uninstall -y mkdocs watchdog
+
+pip install mkdocs mkdocs-material
+pip install mkdocs
+pip install mkdocs-material
+mkdocs serve --livereload --watch docs/
+```
+
+```
+pip uninstall watchdog -y
+pip install watchdog==2.3.1
+tornado
+livereload
+```
+
+```
+# Windows PowerShell 中激活
+.\venv_py310\Scripts\Activate.ps1
+```
+
+```
+mkdocs serve --livereload --watch docs/
+mkdocs serve --livereload --watch ./
+mkdocs serve --livereload
+```
+
+```
+PS C:\Users\eric> pip show click
+Name: click
+Version: 8.3.0
+Summary: Composable command line interface toolkit
+Home-page:
+Author:
+Author-email:
+License-Expression: BSD-3-Clause
+Location: C:\Users\eric\AppData\Local\Programs\Python\Python314\Lib\site-packages
+Requires: colorama
+Required-by: mkdocs
+```
+
+pip uninstall click
+```
+PS C:\Users\eric> pip uninstall click
+Found existing installation: click 8.3.0
+Uninstalling click-8.3.0:
+  Would remove:
+    c:\users\eric\appdata\local\programs\python\python314\lib\site-packages\click-8.3.0.dist-info\*
+    c:\users\eric\appdata\local\programs\python\python314\lib\site-packages\click\*
+Proceed (Y/n)? y
+  Successfully uninstalled click-8.3.0
+```
+
+pip install click==8.1.7  # 示例：安装 8.1.7 版本（常用稳定版）
+```
+PS C:\Users\eric> pip install click==8.1.7  # 示例：安装 8.1.7 版本（常用稳定版）
+Collecting click==8.1.7
+  Using cached click-8.1.7-py3-none-any.whl.metadata (3.0 kB)
+Requirement already satisfied: colorama in c:\users\eric\appdata\local\programs\python\python314\lib\site-packages (from click==8.1.7) (0.4.6)
+Using cached click-8.1.7-py3-none-any.whl (97 kB)
+Installing collected packages: click
+Successfully installed click-8.1.7
+```
+
+```
+pip install click==8.2.1 --force-reinstall
+```

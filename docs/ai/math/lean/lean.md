@@ -240,9 +240,14 @@ leanprover--lean4---v4.17.0
 C:\Users\eric\.elan\toolchains\leanprover--lean4---v4.17.0
 leanprover--lean4---v4.17.0
 leanprover--lean4---v4.23.0
+leanprover--lean4---v4.25.0-rc1
 ```
 
 ## elan default leanprover/lean4:v4.15.0
+
+
+elan default leanprover/lean4:v4.25.0-rc1
+
 
 ## Lake
 
@@ -1181,4 +1186,4 @@ PS C:\Users\eric\Documents\Github\work\LeanProject> cat .\lean-toolchain
 leanprover/lean4:v4.17.0
 ```
 
-
+## 1123567890
