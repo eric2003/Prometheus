@@ -1,18 +1,62 @@
 name: publish site
-on: # 在什么时候触发工作流
-  push: # 在从本地main分支被push到GitHub仓库时
-    branches:
-      - main
-  pull_request: # 在main分支合并别人提的pr时
-    branches:
-      - main
-jobs: # 工作流的具体内容
-  deploy:
-    runs-on: ubuntu-latest # 创建一个新的云端虚拟机 使用最新Ubuntu系统
+
+# 触发条件 / Trigger conditions
+on:
+  push:
+    branches: [main]          # 推送到 main 分支时触发 / Trigger on push to main
+  pull_request:
+    branches: [main]          # 向 main 提 PR 时触发（仅构建校验，不部署）/ Trigger on PR to main (build check only, no deploy)
+
+# 权限 / Permissions
+permissions:
+  contents: write             # 允许推送 gh-pages 分支 / Allow pushing to gh-pages branch
+
+# 并发控制 / Concurrency control
+concurrency:
+  group: pages-${{ github.ref }}   # 同一分支的部署串行执行 / Serialize deployments per branch
+  cancel-in-progress: true         # 新任务取消旧的进行中任务 / Cancel in-progress runs on new push
+
+jobs:
+  build:
+    # 构建校验任务（PR 和 push 都跑）/ Build validation job (runs on both PR and push)
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 # 先checkout到main分支
-      - uses: actions/setup-python@v5 # 再安装Python3和相关环境
+      - uses: actions/checkout@v7
         with:
-          python-version: 3.x
-      - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
-      - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
+          fetch-depth: 0       # 完整 git 历史，gh-deploy 需要 / Full git history for gh-deploy
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"   # 锁定 Python 版本 / Pin Python version
+          cache: pip               # 缓存 pip 依赖 / Cache pip dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs-material   # 只装英文站点所需依赖 / Install only deps for English site
+      - name: Build (check only)
+        run: mkdocs build --strict      # strict 模式抓配置/链接错误，不部署 / Strict mode catches config/link errors, no deploy
+
+  deploy:
+    # 部署任务（仅 push 到 main 时执行）/ Deploy job (only on push to main)
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs-material
+      - name: Configure git identity
+        # gh-deploy 需要 git 提交身份，否则可能失败 / gh-deploy needs git identity, otherwise it may fail
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Deploy
+        # 强制推送到 gh-pages，覆盖旧构建 / Force push to gh-pages, overwrite previous build
+        run: mkdocs gh-deploy --force --clean
