@@ -27,7 +27,6 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"   # 锁定 Python 版本 / Pin Python version
-          cache: pip               # 缓存 pip 依赖 / Cache pip dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -47,7 +46,6 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-          cache: pip
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
