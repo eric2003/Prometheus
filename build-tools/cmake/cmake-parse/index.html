@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -15876,22 +15876,22 @@
 </span><span id="__span-0-4"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">options</span><span class="w"> </span><span class="s">OPTIONAL</span><span class="w"> </span><span class="s">FAST</span><span class="p">)</span>
 </span><span id="__span-0-5"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">oneValueArgs</span><span class="w"> </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">RENAME</span><span class="p">)</span>
 </span><span id="__span-0-6"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">multiValueArgs</span><span class="w"> </span><span class="s">TARGETS</span><span class="w"> </span><span class="s">CONFIGURATIONS</span><span class="p">)</span>
-</span><span id="__span-0-7"><span class="w">    </span><span class="nb">cmake_parse_arguments</span><span class="p">(</span><span class="s">MY_INSTALL</span><span class="w"> </span><span class="s2">&quot;${options}&quot;</span><span class="w"> </span><span class="s2">&quot;${oneValueArgs}&quot;</span>
-</span><span id="__span-0-8"><span class="w">                          </span><span class="s2">&quot;${multiValueArgs}&quot;</span><span class="w"> </span><span class="o">${</span><span class="nv">ARGN</span><span class="o">}</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-7"><span class="w">    </span><span class="nb">cmake_parse_arguments</span><span class="p">(</span><span class="s">MY_INSTALL</span><span class="w"> </span><span class="s2">"${options}"</span><span class="w"> </span><span class="s2">"${oneValueArgs}"</span>
+</span><span id="__span-0-8"><span class="w">                          </span><span class="s2">"${multiValueArgs}"</span><span class="w"> </span><span class="o">${</span><span class="nv">ARGN</span><span class="o">}</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-0-9"><span class="nb">endmacro</span><span class="p">()</span>
 </span><span id="__span-0-10">
 </span><span id="__span-0-11"><span class="nb">project</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">testprj</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-0-12">
 </span><span id="__span-0-13"><span class="nb">my_install</span><span class="p">(</span><span class="s">TARGETS</span><span class="w"> </span><span class="s">foo</span><span class="w"> </span><span class="s">bar</span><span class="w"> </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">bin</span><span class="w"> </span><span class="s">OPTIONAL</span><span class="w"> </span><span class="s">blub</span><span class="w"> </span><span class="s">CONFIGURATIONS</span><span class="p">)</span>
 </span><span id="__span-0-14">
-</span><span id="__span-0-15"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_INSTALL_OPTIONAL=${MY_INSTALL_OPTIONAL}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-0-16"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_INSTALL_FAST=${MY_INSTALL_FAST}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-0-17"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_INSTALL_DESTINATION=${MY_INSTALL_DESTINATION}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-0-18"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_INSTALL_RENAME=${MY_INSTALL_RENAME}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-0-19"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_INSTALL_TARGETS=${MY_INSTALL_TARGETS}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-0-20"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_INSTALL_CONFIGURATIONS=${MY_INSTALL_CONFIGURATIONS}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-0-21"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_INSTALL_UNPARSED_ARGUMENTS=${MY_INSTALL_UNPARSED_ARGUMENTS}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-0-22"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_INSTALL_KEYWORDS_MISSING_VALUES=${MY_INSTALL_KEYWORDS_MISSING_VALUES}&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-15"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_INSTALL_OPTIONAL=${MY_INSTALL_OPTIONAL}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-16"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_INSTALL_FAST=${MY_INSTALL_FAST}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-17"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_INSTALL_DESTINATION=${MY_INSTALL_DESTINATION}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-18"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_INSTALL_RENAME=${MY_INSTALL_RENAME}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-19"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_INSTALL_TARGETS=${MY_INSTALL_TARGETS}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-20"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_INSTALL_CONFIGURATIONS=${MY_INSTALL_CONFIGURATIONS}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-21"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_INSTALL_UNPARSED_ARGUMENTS=${MY_INSTALL_UNPARSED_ARGUMENTS}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-22"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_INSTALL_KEYWORDS_MISSING_VALUES=${MY_INSTALL_KEYWORDS_MISSING_VALUES}"</span><span class="w"> </span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>results:
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -16018,10 +16018,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -16265,7 +16265,7 @@
 <span class="normal">7</span>
 <span class="normal">8</span>
 <span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">PS C:\dev&gt; git clone https://github.com/microsoft/vcpkg.git
-</span><span id="__span-1-2">Cloning into &#39;vcpkg&#39;...
+</span><span id="__span-1-2">Cloning into 'vcpkg'...
 </span><span id="__span-1-3">remote: Enumerating objects: 245363, done.
 </span><span id="__span-1-4">remote: Counting objects: 100% (22102/22102), done.
 </span><span id="__span-1-5">remote: Compressing objects: 100% (378/378), done.
@@ -16388,7 +16388,7 @@
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">To update these packages and all dependencies, run
-</span><span id="__span-8-2">.\vcpkg upgrade&#39;
+</span><span id="__span-8-2">.\vcpkg upgrade'
 </span><span id="__span-8-3">To only remove outdated packages, run
 </span><span id="__span-8-4">.\vcpkg remove --outdated
 </span></code></pre></div></td></tr></table></div>
@@ -16412,13 +16412,13 @@
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">  .\vcpkg.exe install eigen3
 </span></code></pre></div></td></tr></table></div>
 <h2 id="cmake">cmake<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">  cmake -DCMAKE_TOOLCHAIN_FILE=&quot;C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake&quot; ..  
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">  cmake -DCMAKE_TOOLCHAIN_FILE="C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake" ..  
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1">cmake .. -DCMAKE_TOOLCHAIN_FILE=&quot;C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake&quot; -DVCPKG_TARGET_TRIPLET=x64-windows
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1">cmake .. -DCMAKE_TOOLCHAIN_FILE="C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows
 </span><span id="__span-15-2">or
-</span><span id="__span-15-3">cmake .. -DCMAKE_TOOLCHAIN_FILE=&quot;C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake&quot; -DVCPKG_TARGET_TRIPLET=&quot;x64-windows&quot;
+</span><span id="__span-15-3">cmake .. -DCMAKE_TOOLCHAIN_FILE="C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET="x64-windows"
 </span></code></pre></div></td></tr></table></div>
 <h2 id="error-info">error info<a class="headerlink" href="#error-info" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -16466,12 +16466,12 @@
 </span><span id="__span-17-2">project(YourProjectName)
 </span><span id="__span-17-3">
 </span><span id="__span-17-4"># 设置vcpkg的路径
-</span><span id="__span-17-5">set(VCPKG_ROOT &quot;path/to/vcpkg&quot; CACHE STRING &quot;Vcpkg root directory&quot;)
+</span><span id="__span-17-5">set(VCPKG_ROOT "path/to/vcpkg" CACHE STRING "Vcpkg root directory")
 </span><span id="__span-17-6">
 </span><span id="__span-17-7"># 设置vcpkg的三个变量
-</span><span id="__span-17-8">set(CMAKE_TOOLCHAIN_FILE &quot;${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake&quot; CACHE STRING &quot;Vcpkg toolchain file&quot;)
-</span><span id="__span-17-9">set(VCPKG_TARGET_TRIPLET &quot;x64-windows&quot; CACHE STRING &quot;Vcpkg target triplet&quot;)
-</span><span id="__span-17-10">set(VCPKG_OVERLAY_PORTS &quot;path/to/your/overlay/ports&quot; CACHE STRING &quot;Vcpkg overlay ports directory&quot;)
+</span><span id="__span-17-8">set(CMAKE_TOOLCHAIN_FILE "${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+</span><span id="__span-17-9">set(VCPKG_TARGET_TRIPLET "x64-windows" CACHE STRING "Vcpkg target triplet")
+</span><span id="__span-17-10">set(VCPKG_OVERLAY_PORTS "path/to/your/overlay/ports" CACHE STRING "Vcpkg overlay ports directory")
 </span><span id="__span-17-11">
 </span><span id="__span-17-12"># 添加vcpkg的库
 </span><span id="__span-17-13">find_package(vcpkg_library_name REQUIRED)
@@ -16502,22 +16502,22 @@
 <span class="normal">17</span>
 <span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1">function(z_vcpkg_add_vcpkg_to_cmake_path list suffix)
 </span><span id="__span-18-2">    set(vcpkg_paths
-</span><span id="__span-18-3">        &quot;${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}${suffix}&quot;
-</span><span id="__span-18-4">        &quot;${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/debug${suffix}&quot;
+</span><span id="__span-18-3">        "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}${suffix}"
+</span><span id="__span-18-4">        "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/debug${suffix}"
 </span><span id="__span-18-5">    )
-</span><span id="__span-18-6">    if(NOT DEFINED CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE MATCHES &quot;^[Dd][Ee][Bb][Uu][Gg]$&quot;)
+</span><span id="__span-18-6">    if(NOT DEFINED CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE MATCHES "^[Dd][Ee][Bb][Uu][Gg]$")
 </span><span id="__span-18-7">        list(REVERSE vcpkg_paths)
 </span><span id="__span-18-8">    endif()
 </span><span id="__span-18-9">    if(VCPKG_PREFER_SYSTEM_LIBS)
-</span><span id="__span-18-10">        list(APPEND &quot;${list}&quot; &quot;${vcpkg_paths}&quot;)
+</span><span id="__span-18-10">        list(APPEND "${list}" "${vcpkg_paths}")
 </span><span id="__span-18-11">    else()
-</span><span id="__span-18-12">        list(INSERT &quot;${list}&quot; &quot;0&quot; &quot;${vcpkg_paths}&quot;)
+</span><span id="__span-18-12">        list(INSERT "${list}" "0" "${vcpkg_paths}")
 </span><span id="__span-18-13">    endif()
-</span><span id="__span-18-14">    set(&quot;${list}&quot; &quot;${${list}}&quot; PARENT_SCOPE)
+</span><span id="__span-18-14">    set("${list}" "${${list}}" PARENT_SCOPE)
 </span><span id="__span-18-15">endfunction()
-</span><span id="__span-18-16">z_vcpkg_add_vcpkg_to_cmake_path(CMAKE_PREFIX_PATH &quot;&quot;)
-</span><span id="__span-18-17">z_vcpkg_add_vcpkg_to_cmake_path(CMAKE_LIBRARY_PATH &quot;/lib/manual-link&quot;)
-</span><span id="__span-18-18">z_vcpkg_add_vcpkg_to_cmake_path(CMAKE_FIND_ROOT_PATH &quot;&quot;)s
+</span><span id="__span-18-16">z_vcpkg_add_vcpkg_to_cmake_path(CMAKE_PREFIX_PATH "")
+</span><span id="__span-18-17">z_vcpkg_add_vcpkg_to_cmake_path(CMAKE_LIBRARY_PATH "/lib/manual-link")
+</span><span id="__span-18-18">z_vcpkg_add_vcpkg_to_cmake_path(CMAKE_FIND_ROOT_PATH "")s
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -16587,7 +16587,7 @@
 </span><span id="__span-20-3">cmake version 4.0.2
 </span><span id="__span-20-4">
 </span><span id="__span-20-5">CMake suite maintained and supported by Kitware (kitware.com/cmake).
-</span><span id="__span-20-6">PS D:\work\openvdb_work\simple\01a\build&gt; cmake .. -DCMAKE_MODULE_PATH=C:/dev/OpenVDB/lib/cmake/OpenVDB -G &quot;Visual Studio 17 2022&quot; -A x64
+</span><span id="__span-20-6">PS D:\work\openvdb_work\simple\01a\build&gt; cmake .. -DCMAKE_MODULE_PATH=C:/dev/OpenVDB/lib/cmake/OpenVDB -G "Visual Studio 17 2022" -A x64
 </span><span id="__span-20-7">-- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.26100.
 </span><span id="__span-20-8">-- The C compiler identification is MSVC 19.43.34810.0
 </span><span id="__span-20-9">-- The CXX compiler identification is MSVC 19.43.34810.0
@@ -16602,22 +16602,22 @@
 </span><span id="__span-20-18">-- Detecting CXX compile features
 </span><span id="__span-20-19">-- Detecting CXX compile features - done
 </span><span id="__span-20-20">COMPONENT = openvdb
-</span><span id="__span-20-21">-- Found OpenVDB: C:/dev/OpenVDB/include (found version &quot;12.0.2&quot;) found components: openvdb
+</span><span id="__span-20-21">-- Found OpenVDB: C:/dev/OpenVDB/include (found version "12.0.2") found components: openvdb
 </span><span id="__span-20-22">-- OpenVDB ABI Version: 12
-</span><span id="__span-20-23">-- Found TBB: C:/Program Files (x86)/Intel/oneAPI/tbb/latest/include (found version &quot;2022.0&quot;) found components: tbb
-</span><span id="__span-20-24">-- Found Blosc: C:/dev/blosc/lib/blosc.lib (found version &quot;1.21.7&quot;)
-</span><span id="__span-20-25">-- Found ZLIB: C:/dev/zlib/lib/z.lib (found version &quot;1.3.1.1&quot;)
+</span><span id="__span-20-23">-- Found TBB: C:/Program Files (x86)/Intel/oneAPI/tbb/latest/include (found version "2022.0") found components: tbb
+</span><span id="__span-20-24">-- Found Blosc: C:/dev/blosc/lib/blosc.lib (found version "1.21.7")
+</span><span id="__span-20-25">-- Found ZLIB: C:/dev/zlib/lib/z.lib (found version "1.3.1.1")
 </span><span id="__span-20-26">CMake Warning (dev) at C:/dev/OpenVDB/lib/cmake/OpenVDB/FindOpenVDB.cmake:632 (find_package):
-</span><span id="__span-20-27">  Policy CMP0167 is not set: The FindBoost module is removed.  Run &quot;cmake
-</span><span id="__span-20-28">  --help-policy CMP0167&quot; for policy details.  Use the cmake_policy command to
+</span><span id="__span-20-27">  Policy CMP0167 is not set: The FindBoost module is removed.  Run "cmake
+</span><span id="__span-20-28">  --help-policy CMP0167" for policy details.  Use the cmake_policy command to
 </span><span id="__span-20-29">  set the policy and suppress this warning.
 </span><span id="__span-20-30">
 </span><span id="__span-20-31">Call Stack (most recent call first):
 </span><span id="__span-20-32">  CMakeLists.txt:8 (find_package)
 </span><span id="__span-20-33">This warning is for project developers.  Use -Wno-dev to suppress it.
 </span><span id="__span-20-34">
-</span><span id="__span-20-35">-- Found Boost: C:/dev/boost_1_88_0/stage/lib/cmake/Boost-1.88.0/BoostConfig.cmake (found version &quot;1.88.0&quot;) found components: iostreams
-</span><span id="__span-20-36">-- Found TBB: C:/Program Files (x86)/Intel/oneAPI/tbb/latest/include (found version &quot;2022.0&quot;) found components: tbb tbbmalloc tbbmalloc_proxy
+</span><span id="__span-20-35">-- Found Boost: C:/dev/boost_1_88_0/stage/lib/cmake/Boost-1.88.0/BoostConfig.cmake (found version "1.88.0") found components: iostreams
+</span><span id="__span-20-36">-- Found TBB: C:/Program Files (x86)/Intel/oneAPI/tbb/latest/include (found version "2022.0") found components: tbb tbbmalloc tbbmalloc_proxy
 </span><span id="__span-20-37">-- Configuring done (6.7s)
 </span><span id="__span-20-38">-- Generating done (0.0s)
 </span><span id="__span-20-39">-- Build files have been written to: D:/work/openvdb_work/simple/01a/build
@@ -16909,14 +16909,14 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><span class="c"># 手动下载文件</span>
-</span><span id="__span-23-2"><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="s2">&quot;https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.42.12/gdk-pixbuf-2.42.12.tar.gz&quot;</span> <span class="n">-OutFile</span> <span class="s2">&quot;C:\tmp\gdk-pixbuf-test.tar.gz&quot;</span>
+</span><span id="__span-23-2"><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="s2">"https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.42.12/gdk-pixbuf-2.42.12.tar.gz"</span> <span class="n">-OutFile</span> <span class="s2">"C:\tmp\gdk-pixbuf-test.tar.gz"</span>
 </span><span id="__span-23-3">
 </span><span id="__span-23-4"><span class="c"># 计算哈希值（多次运行看是否一致）</span>
-</span><span id="__span-23-5"><span class="nb">Get-FileHash</span> <span class="n">-Path</span> <span class="s2">&quot;C:\tmp\gdk-pixbuf-test.tar.gz&quot;</span> <span class="n">-Algorithm</span> <span class="n">SHA512</span>
+</span><span id="__span-23-5"><span class="nb">Get-FileHash</span> <span class="n">-Path</span> <span class="s2">"C:\tmp\gdk-pixbuf-test.tar.gz"</span> <span class="n">-Algorithm</span> <span class="n">SHA512</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1">&amp; &quot;C:\Program Files\Git\mingw64\bin\curl.exe&quot; `
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1">&amp; "C:\Program Files\Git\mingw64\bin\curl.exe" `
 </span><span id="__span-24-2">  -L -o C:\tmp\gdk-pixbuf-curl.tar.gz `
 </span><span id="__span-24-3">  https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.42.12/gdk-pixbuf-2.42.12.tar.gz
 </span></code></pre></div></td></tr></table></div>
@@ -16925,10 +16925,10 @@
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"># 将手动下载的文件复制到 vcpkg 缓存，使用 vcpkg 期望的精确文件名
-</span><span id="__span-25-2">Copy-Item &quot;C:\tmp\gdk-pixbuf-curl.tar.gz&quot; &quot;C:\dev\vcpkg\downloads\GNOME-gdk-pixbuf-2.42.12.tar.gz&quot; -Force
+</span><span id="__span-25-2">Copy-Item "C:\tmp\gdk-pixbuf-curl.tar.gz" "C:\dev\vcpkg\downloads\GNOME-gdk-pixbuf-2.42.12.tar.gz" -Force
 </span><span id="__span-25-3">
 </span><span id="__span-25-4"># 验证文件存在且大小正确 (7MB)
-</span><span id="__span-25-5">Get-Item &quot;C:\dev\vcpkg\downloads\GNOME-gdk-pixbuf-2.42.12.tar.gz&quot;
+</span><span id="__span-25-5">Get-Item "C:\dev\vcpkg\downloads\GNOME-gdk-pixbuf-2.42.12.tar.gz"
 </span></code></pre></div></td></tr></table></div>
 
 
@@ -17002,10 +17002,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

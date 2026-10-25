@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -15989,7 +15989,7 @@
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">PS D:\work\fltk_work&gt; git clone https://github.com/fltk/fltk.git
-</span><span id="__span-0-2">Cloning into &#39;fltk&#39;...
+</span><span id="__span-0-2">Cloning into 'fltk'...
 </span><span id="__span-0-3">remote: Enumerating objects: 96557, done.
 </span><span id="__span-0-4">remote: Counting objects: 100% (168/168), done.
 </span><span id="__span-0-5">remote: Compressing objects: 100% (116/116), done.
@@ -16065,23 +16065,23 @@
 <span class="normal">65</span>
 <span class="normal">66</span>
 <span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">@echo off
-</span><span id="__span-1-2">REM Convert &#39;Doxyfile.in&#39; to &#39;Doxyfile&#39; or &#39;Doxybook&#39; for doxygen docs
+</span><span id="__span-1-2">REM Convert 'Doxyfile.in' to 'Doxyfile' or 'Doxybook' for doxygen docs
 </span><span id="__span-1-3">REM
 </span><span id="__span-1-4">REM Usage:
 </span><span id="__span-1-5">REM   convert_doxyfile.bat doxygen_path input output logfile
 </span><span id="__span-1-6">REM
 </span><span id="__span-1-7">REM where
-</span><span id="__span-1-8">REM - &#39;doxygen_path&#39; is the full path to the doxygen executable (e.g., &quot;C:\Program Files\doxygen\bin\doxygen.exe&quot;)
-</span><span id="__span-1-9">REM - &#39;input&#39; is the input file (e.g., &#39;Doxybook.in&#39;)
-</span><span id="__span-1-10">REM - &#39;output&#39; is the generated doxygen file (e.g., &#39;Doxybook&#39;)
-</span><span id="__span-1-11">REM - &#39;logfile&#39; is the file to store doxygen warnings and errors
+</span><span id="__span-1-8">REM - 'doxygen_path' is the full path to the doxygen executable (e.g., "C:\Program Files\doxygen\bin\doxygen.exe")
+</span><span id="__span-1-9">REM - 'input' is the input file (e.g., 'Doxybook.in')
+</span><span id="__span-1-10">REM - 'output' is the generated doxygen file (e.g., 'Doxybook')
+</span><span id="__span-1-11">REM - 'logfile' is the file to store doxygen warnings and errors
 </span><span id="__span-1-12">REM
 </span><span id="__span-1-13">REM Example:
-</span><span id="__span-1-14">REM   convert_doxyfile.bat &quot;C:\Program Files\doxygen\bin\doxygen.exe&quot; Doxybook.in Doxybook D:\work\fltk_work\fltk\build\documentation\Doxybook_error.log
+</span><span id="__span-1-14">REM   convert_doxyfile.bat "C:\Program Files\doxygen\bin\doxygen.exe" Doxybook.in Doxybook D:\work\fltk_work\fltk\build\documentation\Doxybook_error.log
 </span><span id="__span-1-15">REM
-</span><span id="__span-1-16">REM Doxygen warnings and errors are stored in &#39;logfile&#39; for review.
+</span><span id="__span-1-16">REM Doxygen warnings and errors are stored in 'logfile' for review.
 </span><span id="__span-1-17">REM
-</span><span id="__span-1-18">REM Dependencies: Requires &#39;doxygen.exe&#39; and Windows commands &#39;echo&#39; and &#39;date&#39;.
+</span><span id="__span-1-18">REM Dependencies: Requires 'doxygen.exe' and Windows commands 'echo' and 'date'.
 </span><span id="__span-1-19">
 </span><span id="__span-1-20">REM Store parameters
 </span><span id="__span-1-21">set DOXYGEN=%1
@@ -16090,30 +16090,30 @@
 </span><span id="__span-1-24">set LOGFILE=%4
 </span><span id="__span-1-25">
 </span><span id="__span-1-26">REM Remove quotes from DOXYGEN path for version check
-</span><span id="__span-1-27">set DOXYGEN_NOQUOTES=%DOXYGEN:&quot;=%
+</span><span id="__span-1-27">set DOXYGEN_NOQUOTES=%DOXYGEN:"=%
 </span><span id="__span-1-28">
 </span><span id="__span-1-29">REM Validate parameters
-</span><span id="__span-1-30">if &quot;%DOXYGEN%&quot;==&quot;&quot; (
+</span><span id="__span-1-30">if "%DOXYGEN%"=="" (
 </span><span id="__span-1-31">    echo Error: Doxygen path not provided
 </span><span id="__span-1-32">    exit /b 1
 </span><span id="__span-1-33">)
-</span><span id="__span-1-34">if &quot;%INFILE%&quot;==&quot;&quot; (
+</span><span id="__span-1-34">if "%INFILE%"=="" (
 </span><span id="__span-1-35">    echo Error: Input file not provided
 </span><span id="__span-1-36">    exit /b 1
 </span><span id="__span-1-37">)
-</span><span id="__span-1-38">if &quot;%OUTFILE%&quot;==&quot;&quot; (
+</span><span id="__span-1-38">if "%OUTFILE%"=="" (
 </span><span id="__span-1-39">    echo Error: Output file not provided
 </span><span id="__span-1-40">    exit /b 1
 </span><span id="__span-1-41">)
-</span><span id="__span-1-42">if &quot;%LOGFILE%&quot;==&quot;&quot; (
+</span><span id="__span-1-42">if "%LOGFILE%"=="" (
 </span><span id="__span-1-43">    echo Error: Log file not provided
 </span><span id="__span-1-44">    exit /b 1
 </span><span id="__span-1-45">)
 </span><span id="__span-1-46">
 </span><span id="__span-1-47">REM Get Doxygen version
-</span><span id="__span-1-48">for /f &quot;tokens=*&quot; %%i in (&#39;%DOXYGEN_NOQUOTES% --version&#39;) do set VERSION=%%i
+</span><span id="__span-1-48">for /f "tokens=*" %%i in ('%DOXYGEN_NOQUOTES% --version') do set VERSION=%%i
 </span><span id="__span-1-49">
-</span><span id="__span-1-50">REM Get current date and time (Windows equivalent of &#39;date&#39;)
+</span><span id="__span-1-50">REM Get current date and time (Windows equivalent of 'date')
 </span><span id="__span-1-51">set DATETIME=%date% %time%
 </span><span id="__span-1-52">
 </span><span id="__span-1-53">REM Write info header to LOGFILE
@@ -16217,62 +16217,62 @@
 <span class="normal">83</span>
 <span class="normal">84</span>
 <span class="normal">85</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">@echo off
-</span><span id="__span-2-2">REM Convert &#39;Doxyfile.in&#39; to &#39;Doxyfile&#39; or &#39;Doxybook&#39; for doxygen docs
+</span><span id="__span-2-2">REM Convert 'Doxyfile.in' to 'Doxyfile' or 'Doxybook' for doxygen docs
 </span><span id="__span-2-3">REM
 </span><span id="__span-2-4">REM Usage:
 </span><span id="__span-2-5">REM   convert_doxyfile.bat doxygen_path input output logfile
 </span><span id="__span-2-6">REM
 </span><span id="__span-2-7">REM where
-</span><span id="__span-2-8">REM - &#39;doxygen_path&#39; is the full path to the doxygen executable (e.g., &quot;C:\Program Files\doxygen\bin\doxygen.exe&quot;)
-</span><span id="__span-2-9">REM - &#39;input&#39; is the input file (e.g., &#39;Doxybook.in&#39;)
-</span><span id="__span-2-10">REM - &#39;output&#39; is the generated doxygen file (e.g., &#39;Doxybook&#39;)
-</span><span id="__span-2-11">REM - &#39;logfile&#39; is the file to store doxygen warnings and errors
+</span><span id="__span-2-8">REM - 'doxygen_path' is the full path to the doxygen executable (e.g., "C:\Program Files\doxygen\bin\doxygen.exe")
+</span><span id="__span-2-9">REM - 'input' is the input file (e.g., 'Doxybook.in')
+</span><span id="__span-2-10">REM - 'output' is the generated doxygen file (e.g., 'Doxybook')
+</span><span id="__span-2-11">REM - 'logfile' is the file to store doxygen warnings and errors
 </span><span id="__span-2-12">REM
 </span><span id="__span-2-13">REM Example:
-</span><span id="__span-2-14">REM   convert_doxyfile.bat &quot;C:\Program Files\doxygen\bin\doxygen.exe&quot; Doxybook.in Doxybook D:\work\fltk_work\fltk\build\documentation\Doxybook_error.log
+</span><span id="__span-2-14">REM   convert_doxyfile.bat "C:\Program Files\doxygen\bin\doxygen.exe" Doxybook.in Doxybook D:\work\fltk_work\fltk\build\documentation\Doxybook_error.log
 </span><span id="__span-2-15">REM
-</span><span id="__span-2-16">REM Dependencies: Requires &#39;doxygen.exe&#39; and Windows commands &#39;echo&#39; and &#39;date&#39;.
+</span><span id="__span-2-16">REM Dependencies: Requires 'doxygen.exe' and Windows commands 'echo' and 'date'.
 </span><span id="__span-2-17">
 </span><span id="__span-2-18">REM Store parameters, normalize paths (replace / with \)
-</span><span id="__span-2-19">set &quot;DOXYGEN=%~1&quot;
-</span><span id="__span-2-20">set &quot;INFILE=%~2&quot;
-</span><span id="__span-2-21">set &quot;OUTFILE=%~3&quot;
-</span><span id="__span-2-22">set &quot;LOGFILE=%~4&quot;
+</span><span id="__span-2-19">set "DOXYGEN=%~1"
+</span><span id="__span-2-20">set "INFILE=%~2"
+</span><span id="__span-2-21">set "OUTFILE=%~3"
+</span><span id="__span-2-22">set "LOGFILE=%~4"
 </span><span id="__span-2-23">
 </span><span id="__span-2-24">REM Normalize DOXYGEN path for version check (remove quotes and convert / to \)
-</span><span id="__span-2-25">set &quot;DOXYGEN_NOQUOTES=%DOXYGEN:&quot;=%&quot;
-</span><span id="__span-2-26">set &quot;DOXYGEN_NOQUOTES=%DOXYGEN_NOQUOTES:/=\%&quot;
+</span><span id="__span-2-25">set "DOXYGEN_NOQUOTES=%DOXYGEN:"=%"
+</span><span id="__span-2-26">set "DOXYGEN_NOQUOTES=%DOXYGEN_NOQUOTES:/=\%"
 </span><span id="__span-2-27">
 </span><span id="__span-2-28">REM Validate parameters
-</span><span id="__span-2-29">if &quot;%DOXYGEN%&quot;==&quot;&quot; (
+</span><span id="__span-2-29">if "%DOXYGEN%"=="" (
 </span><span id="__span-2-30">    echo Error: Doxygen path not provided
 </span><span id="__span-2-31">    exit /b 1
 </span><span id="__span-2-32">)
-</span><span id="__span-2-33">if not exist &quot;%DOXYGEN_NOQUOTES%&quot; (
+</span><span id="__span-2-33">if not exist "%DOXYGEN_NOQUOTES%" (
 </span><span id="__span-2-34">    echo Error: Doxygen executable not found at %DOXYGEN_NOQUOTES%
 </span><span id="__span-2-35">    exit /b 1
 </span><span id="__span-2-36">)
-</span><span id="__span-2-37">if &quot;%INFILE%&quot;==&quot;&quot; (
+</span><span id="__span-2-37">if "%INFILE%"=="" (
 </span><span id="__span-2-38">    echo Error: Input file not provided
 </span><span id="__span-2-39">    exit /b 1
 </span><span id="__span-2-40">)
-</span><span id="__span-2-41">if not exist &quot;%INFILE%&quot; (
+</span><span id="__span-2-41">if not exist "%INFILE%" (
 </span><span id="__span-2-42">    echo Error: Input file %INFILE% not found
 </span><span id="__span-2-43">    exit /b 1
 </span><span id="__span-2-44">)
-</span><span id="__span-2-45">if &quot;%OUTFILE%&quot;==&quot;&quot; (
+</span><span id="__span-2-45">if "%OUTFILE%"=="" (
 </span><span id="__span-2-46">    echo Error: Output file not provided
 </span><span id="__span-2-47">    exit /b 1
 </span><span id="__span-2-48">)
-</span><span id="__span-2-49">if &quot;%LOGFILE%&quot;==&quot;&quot; (
+</span><span id="__span-2-49">if "%LOGFILE%"=="" (
 </span><span id="__span-2-50">    echo Error: Log file not provided
 </span><span id="__span-2-51">    exit /b 1
 </span><span id="__span-2-52">)
 </span><span id="__span-2-53">
 </span><span id="__span-2-54">REM Ensure log file directory exists
-</span><span id="__span-2-55">for %%F in (&quot;%LOGFILE%&quot;) do set &quot;LOGDIR=%%~dpF&quot;
-</span><span id="__span-2-56">if not exist &quot;%LOGDIR%&quot; (
-</span><span id="__span-2-57">    mkdir &quot;%LOGDIR%&quot;
+</span><span id="__span-2-55">for %%F in ("%LOGFILE%") do set "LOGDIR=%%~dpF"
+</span><span id="__span-2-56">if not exist "%LOGDIR%" (
+</span><span id="__span-2-57">    mkdir "%LOGDIR%"
 </span><span id="__span-2-58">    if %ERRORLEVEL% neq 0 (
 </span><span id="__span-2-59">        echo Error: Failed to create log directory %LOGDIR%
 </span><span id="__span-2-60">        exit /b %ERRORLEVEL%
@@ -16280,10 +16280,10 @@
 </span><span id="__span-2-62">)
 </span><span id="__span-2-63">
 </span><span id="__span-2-64">REM Get Doxygen version
-</span><span id="__span-2-65">for /f &quot;tokens=*&quot; %%i in (&#39;&quot;%DOXYGEN_NOQUOTES%&quot; --version&#39;) do set &quot;VERSION=%%i&quot;
+</span><span id="__span-2-65">for /f "tokens=*" %%i in ('"%DOXYGEN_NOQUOTES%" --version') do set "VERSION=%%i"
 </span><span id="__span-2-66">
 </span><span id="__span-2-67">REM Get current date and time
-</span><span id="__span-2-68">set &quot;DATETIME=%date% %time%&quot;
+</span><span id="__span-2-68">set "DATETIME=%date% %time%"
 </span><span id="__span-2-69">
 </span><span id="__span-2-70">REM Write info header to LOGFILE
 </span><span id="__span-2-71">echo %OUTFILE% created by doxygen version %VERSION%&gt;%LOGFILE%
@@ -16291,7 +16291,7 @@
 </span><span id="__span-2-73">echo.&gt;&gt;%LOGFILE%
 </span><span id="__span-2-74">
 </span><span id="__span-2-75">REM Convert doxygen file and append errors/warnings to LOGFILE
-</span><span id="__span-2-76">&quot;%DOXYGEN%&quot; -u -s - &lt; &quot;%INFILE%&quot; &gt; &quot;%OUTFILE%&quot; 2&gt;&gt; &quot;%LOGFILE%&quot;
+</span><span id="__span-2-76">"%DOXYGEN%" -u -s - &lt; "%INFILE%" &gt; "%OUTFILE%" 2&gt;&gt; "%LOGFILE%"
 </span><span id="__span-2-77">
 </span><span id="__span-2-78">REM Check if the command was successful
 </span><span id="__span-2-79">if %ERRORLEVEL% neq 0 (
@@ -16302,7 +16302,7 @@
 </span><span id="__span-2-84">echo Successfully created %OUTFILE%
 </span><span id="__span-2-85">exit /b 0
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">convert_doxyfile.bat &quot;C:/Program Files/doxygen/bin/doxygen.exe&quot; Doxybook.in Doxybook Doxybook_error.log
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">convert_doxyfile.bat "C:/Program Files/doxygen/bin/doxygen.exe" Doxybook.in Doxybook Doxybook_error.log
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
 <span class="normal">  2</span>
@@ -16414,7 +16414,7 @@
 </span><span id="__span-4-4">REM Copyright 1998-2020 by Bill Spitzak and others.
 </span><span id="__span-4-5">REM
 </span><span id="__span-4-6">REM This library is free software. Distribution and use rights are outlined in
-</span><span id="__span-4-7">REM the file &quot;COPYING&quot; which should have been included with this file.  If this
+</span><span id="__span-4-7">REM the file "COPYING" which should have been included with this file.  If this
 </span><span id="__span-4-8">REM file is missing or damaged, see the license at:
 </span><span id="__span-4-9">REM
 </span><span id="__span-4-10">REM     https://www.fltk.org/COPYING.php
@@ -16425,7 +16425,7 @@
 </span><span id="__span-4-15">REM
 </span><span id="__span-4-16">REM This script generates latex/refman.pdf after doxygen has been executed.
 </span><span id="__span-4-17">REM
-</span><span id="__span-4-18">REM Input:  run &#39;doxygen Doxybook&#39; (creates files in subdirectory latex)
+</span><span id="__span-4-18">REM Input:  run 'doxygen Doxybook' (creates files in subdirectory latex)
 </span><span id="__span-4-19">REM Output: latex/refman.pdf (if successful)
 </span><span id="__span-4-20">REM
 </span><span id="__span-4-21">REM Next step: copy /Y latex/refman.pdf fltk.pdf
@@ -16455,7 +16455,7 @@
 </span><span id="__span-4-45">)
 </span><span id="__span-4-46">
 </span><span id="__span-4-47">REM Define pdflatex command with PDF metadata
-</span><span id="__span-4-48">set &quot;PDFLATEX_CMD=pdflatex --interaction=nonstopmode \&quot;\pdfinfo{/CreationDate(@PDF_DATE@)/ModDate(@PDF_DATE@)}\input{refman.tex}\&quot;&quot;
+</span><span id="__span-4-48">set "PDFLATEX_CMD=pdflatex --interaction=nonstopmode \"\pdfinfo{/CreationDate(@PDF_DATE@)/ModDate(@PDF_DATE@)}\input{refman.tex}\""
 </span><span id="__span-4-49">
 </span><span id="__span-4-50">REM Run pdflatex
 </span><span id="__span-4-51">echo Running pdflatex...
@@ -16488,9 +16488,9 @@
 </span><span id="__span-4-78">)
 </span><span id="__span-4-79">
 </span><span id="__span-4-80">REM Loop to rerun pdflatex if cross-references need updating
-</span><span id="__span-4-81">set &quot;LATEX_COUNT=5&quot;
+</span><span id="__span-4-81">set "LATEX_COUNT=5"
 </span><span id="__span-4-82">:rerun_loop
-</span><span id="__span-4-83">findstr /C:&quot;Rerun LaTeX&quot; /C:&quot;Rerun to get cross-references right&quot; refman.log &gt;nul
+</span><span id="__span-4-83">findstr /C:"Rerun LaTeX" /C:"Rerun to get cross-references right" refman.log &gt;nul
 </span><span id="__span-4-84">if %ERRORLEVEL% equ 0 if %LATEX_COUNT% gtr 0 (
 </span><span id="__span-4-85">    echo Rerunning pdflatex...
 </span><span id="__span-4-86">    %PDFLATEX_CMD% &gt;&gt; pdfall.log 2&gt;&amp;1
@@ -16624,7 +16624,7 @@
 </span><span id="__span-5-4">REM Copyright 1998-2020 by Bill Spitzak and others.
 </span><span id="__span-5-5">REM
 </span><span id="__span-5-6">REM This library is free software. Distribution and use rights are outlined in
-</span><span id="__span-5-7">REM the file &quot;COPYING&quot; which should have been included with this file.  If this
+</span><span id="__span-5-7">REM the file "COPYING" which should have been included with this file.  If this
 </span><span id="__span-5-8">REM file is missing or damaged, see the license at:
 </span><span id="__span-5-9">REM
 </span><span id="__span-5-10">REM     https://www.fltk.org/COPYING.php
@@ -16635,7 +16635,7 @@
 </span><span id="__span-5-15">REM
 </span><span id="__span-5-16">REM This script generates latex/refman.pdf after doxygen has been executed.
 </span><span id="__span-5-17">REM
-</span><span id="__span-5-18">REM Input:  run &#39;doxygen Doxybook&#39; (creates files in subdirectory latex)
+</span><span id="__span-5-18">REM Input:  run 'doxygen Doxybook' (creates files in subdirectory latex)
 </span><span id="__span-5-19">REM Output: latex/refman.pdf (if successful)
 </span><span id="__span-5-20">REM
 </span><span id="__span-5-21">REM Next step: copy /Y latex/refman.pdf fltk.pdf
@@ -16665,7 +16665,7 @@
 </span><span id="__span-5-45">)
 </span><span id="__span-5-46">
 </span><span id="__span-5-47">REM Define pdflatex command with PDF metadata
-</span><span id="__span-5-48">set &quot;PDFLATEX_CMD=pdflatex --interaction=nonstopmode \&quot;\pdfinfo{/CreationDate(@PDF_DATE@)/ModDate(@PDF_DATE@)}\input{refman.tex}\&quot;&quot;
+</span><span id="__span-5-48">set "PDFLATEX_CMD=pdflatex --interaction=nonstopmode \"\pdfinfo{/CreationDate(@PDF_DATE@)/ModDate(@PDF_DATE@)}\input{refman.tex}\""
 </span><span id="__span-5-49">
 </span><span id="__span-5-50">REM Run pdflatex
 </span><span id="__span-5-51">echo Running pdflatex...
@@ -16698,9 +16698,9 @@
 </span><span id="__span-5-78">)
 </span><span id="__span-5-79">
 </span><span id="__span-5-80">REM Loop to rerun pdflatex if cross-references need updating
-</span><span id="__span-5-81">set &quot;LATEX_COUNT=5&quot;
+</span><span id="__span-5-81">set "LATEX_COUNT=5"
 </span><span id="__span-5-82">:rerun_loop
-</span><span id="__span-5-83">findstr /C:&quot;Rerun LaTeX&quot; /C:&quot;Rerun to get cross-references right&quot; refman.log &gt;nul
+</span><span id="__span-5-83">findstr /C:"Rerun LaTeX" /C:"Rerun to get cross-references right" refman.log &gt;nul
 </span><span id="__span-5-84">if %ERRORLEVEL% equ 0 if %LATEX_COUNT% gtr 0 (
 </span><span id="__span-5-85">    echo Rerunning pdflatex...
 </span><span id="__span-5-86">    %PDFLATEX_CMD% &gt;&gt; pdfall.log 2&gt;&amp;1
@@ -16843,7 +16843,7 @@
 <span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; echo &#39;\documentclass{book}\usepackage{doxygen}\begin{document}Test\end{document}&#39; &gt; test.tex
+<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; echo '\documentclass{book}\usepackage{doxygen}\begin{document}Test\end{document}' &gt; test.tex
 </span><span id="__span-9-2">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; pdflatex test.tex
 </span><span id="__span-9-3">This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
 </span><span id="__span-9-4"> restricted \write18 enabled.
@@ -16917,8 +16917,8 @@
 </span><span id="__span-9-72">-a---            2025/6/6    10:18          11638 test.pdf
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">pdflatex --interaction=nonstopmode &quot;\pdfinfo{/CreationDate(D:20250606013634Z)/ModDate(D:20250606013634Z)}\input{refmantest.tex}&quot;
-</span><span id="__span-10-2">pdflatex --interaction=nonstopmode &quot;\pdfinfo{/CreationDate(D:20250606013634Z)/ModDate(D:20250606013634Z)}\input{refman.tex}&quot;
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">pdflatex --interaction=nonstopmode "\pdfinfo{/CreationDate(D:20250606013634Z)/ModDate(D:20250606013634Z)}\input{refmantest.tex}"
+</span><span id="__span-10-2">pdflatex --interaction=nonstopmode "\pdfinfo{/CreationDate(D:20250606013634Z)/ModDate(D:20250606013634Z)}\input{refman.tex}"
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -16932,9 +16932,9 @@
 <span class="normal">10</span>
 <span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; Copy-Item refman.tex refman_backup.tex
 </span><span id="__span-11-2">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; $content = Get-Content refman.tex
-</span><span id="__span-11-3">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; $newContent = $content -replace &#39;(\\documentclass\[twoside\]\{book\})&#39;, &#39;$1`n\usepackage[utf8]{inputenc}&#39;
+</span><span id="__span-11-3">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; $newContent = $content -replace '(\\documentclass\[twoside\]\{book\})', '$1`n\usepackage[utf8]{inputenc}'
 </span><span id="__span-11-4">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; $newContent | Set-Content refman_utf8.tex
-</span><span id="__span-11-5">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; pdflatex --interaction=nonstopmode &quot;\pdfinfo{/CreationDate(D:20250606013634Z)/ModDate(D:20250606013634Z)}\input{refman_utf8.tex}&quot; &gt; pdfall_utf8.log 2&gt;&amp;1
+</span><span id="__span-11-5">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; pdflatex --interaction=nonstopmode "\pdfinfo{/CreationDate(D:20250606013634Z)/ModDate(D:20250606013634Z)}\input{refman_utf8.tex}" &gt; pdfall_utf8.log 2&gt;&amp;1
 </span><span id="__span-11-6">PS D:\work\fltk_work\fltk\build\documentation\latex&gt; Get-Content pdfall_utf8.log
 </span><span id="__span-11-7">This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
 </span><span id="__span-11-8"> restricted \write18 enabled.
@@ -16973,7 +16973,7 @@
 <span class="normal">28</span>
 <span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><span class="c"># Install the games</span>
 </span><span id="__span-12-2">
-</span><span id="__span-12-3"><span class="nb">if</span><span class="p">(</span><span class="s">FLTK_BUILD_TEST</span><span class="p">)</span><span class="w"> </span><span class="c"># &quot;OR FLTK_BUILD_GAMES&quot; (not yet implemented)</span>
+</span><span id="__span-12-3"><span class="nb">if</span><span class="p">(</span><span class="s">FLTK_BUILD_TEST</span><span class="p">)</span><span class="w"> </span><span class="c"># "OR FLTK_BUILD_GAMES" (not yet implemented)</span>
 </span><span id="__span-12-4">
 </span><span id="__span-12-5"><span class="w">  </span><span class="nb">set</span><span class="p">(</span><span class="s">games_</span><span class="w"> </span><span class="s">blocks</span><span class="w"> </span><span class="s">checkers</span><span class="w"> </span><span class="s">sudoku</span><span class="p">)</span>
 </span><span id="__span-12-6"><span class="w">  </span><span class="nb">if</span><span class="p">(</span><span class="s">FLTK_USE_GL</span><span class="p">)</span>
@@ -16982,7 +16982,7 @@
 </span><span id="__span-12-9">
 </span><span id="__span-12-10"><span class="w">  </span><span class="nb">foreach</span><span class="p">(</span><span class="s">game_</span><span class="w"> </span><span class="o">${</span><span class="nv">games_</span><span class="o">}</span><span class="p">)</span>
 </span><span id="__span-12-11"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">FLTK_BUILD_SHARED_LIBS</span><span class="p">)</span>
-</span><span id="__span-12-12"><span class="w">      </span><span class="nb">set</span><span class="p">(</span><span class="s">tgt_</span><span class="w"> </span><span class="s2">&quot;${game_}-shared&quot;</span><span class="p">)</span>
+</span><span id="__span-12-12"><span class="w">      </span><span class="nb">set</span><span class="p">(</span><span class="s">tgt_</span><span class="w"> </span><span class="s2">"${game_}-shared"</span><span class="p">)</span>
 </span><span id="__span-12-13"><span class="w">      </span><span class="nb">set_target_properties</span><span class="p">(</span><span class="o">${</span><span class="nv">tgt_</span><span class="o">}</span><span class="w"> </span><span class="s">PROPERTIES</span><span class="w"> </span><span class="s">RUNTIME_OUTPUT_NAME</span><span class="w"> </span><span class="o">${</span><span class="nv">game_</span><span class="o">}</span><span class="p">)</span>
 </span><span id="__span-12-14"><span class="w">    </span><span class="nb">else</span><span class="p">()</span>
 </span><span id="__span-12-15"><span class="w">      </span><span class="nb">set</span><span class="p">(</span><span class="s">tgt_</span><span class="w"> </span><span class="o">${</span><span class="nv">game_</span><span class="o">}</span><span class="p">)</span>
@@ -17004,8 +17004,8 @@
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1">FLTK version
-</span><span id="__span-13-2">      &lt;&lt; &quot;&lt;li&gt;&lt;i&gt;FLTK version:&lt;/i&gt; &quot; &lt;&lt; FL_MAJOR_VERSION &lt;&lt; &quot;.&quot;
-</span><span id="__span-13-3">      &lt;&lt; FL_MINOR_VERSION &lt;&lt; &quot;.&quot; &lt;&lt; FL_PATCH_VERSION
+</span><span id="__span-13-2">      &lt;&lt; "&lt;li&gt;&lt;i&gt;FLTK version:&lt;/i&gt; " &lt;&lt; FL_MAJOR_VERSION &lt;&lt; "."
+</span><span id="__span-13-3">      &lt;&lt; FL_MINOR_VERSION &lt;&lt; "." &lt;&lt; FL_PATCH_VERSION
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -17046,13 +17046,13 @@
 <span class="normal">13</span>
 <span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1">代码  文件  行   列
 </span><span id="__span-15-2">#if(FL_MAJOR_VERSION == 1) &amp;&amp; (FL_MINOR_VERSION == 3) &amp;&amp; (FL_PATCH_VERSION &gt;= 4)    D:\work\gmsh_work\gmsh\src\fltk\openglWindow.cpp    794 32
-</span><span id="__span-15-3">    sprintf(tmp, &quot;%d.%d.%d&quot;, FL_MAJOR_VERSION, FL_MINOR_VERSION,    D:\work\gmsh_work\gmsh\src\common\CommandLine.cpp   377 48
+</span><span id="__span-15-3">    sprintf(tmp, "%d.%d.%d", FL_MAJOR_VERSION, FL_MINOR_VERSION,    D:\work\gmsh_work\gmsh\src\common\CommandLine.cpp   377 48
 </span><span id="__span-15-4">#if (FL_MAJOR_VERSION == 1) &amp;&amp; (FL_MINOR_VERSION &gt;= 4)  D:\work\gmsh_work\gmsh\src\common\CommandLine.cpp   27  33
 </span><span id="__span-15-5">#elif (FL_MAJOR_VERSION == 1) &amp;&amp; (FL_MINOR_VERSION == 3) &amp;&amp; (FL_PATCH_VERSION &gt;= 3) D:\work\gmsh_work\gmsh\src\common\CommandLine.cpp   29  35
 </span><span id="__span-15-6">#if((FL_MAJOR_VERSION == 1) &amp;&amp; (FL_MINOR_VERSION &gt;= 4)) || defined(__APPLE__)   D:\work\gmsh_work\gmsh\src\fltk\drawContextFltk.h   152 33
 </span><span id="__span-15-7">#if(FL_MAJOR_VERSION == 1) &amp;&amp; (FL_MINOR_VERSION == 3) &amp;&amp; (FL_PATCH_VERSION &gt;= 4)    D:\work\gmsh_work\gmsh\src\fltk\FlGui.cpp   518 32
 </span><span id="__span-15-8">#elif(FL_MAJOR_VERSION == 1) &amp;&amp; (FL_MINOR_VERSION &gt;= 4) D:\work\gmsh_work\gmsh\src\fltk\FlGui.cpp   520 34
-</span><span id="__span-15-9">      &lt;&lt; FL_MINOR_VERSION &lt;&lt; &quot;.&quot; &lt;&lt; FL_PATCH_VERSION    D:\work\gmsh_work\gmsh\src\fltk\helpWindow.cpp  335 10
+</span><span id="__span-15-9">      &lt;&lt; FL_MINOR_VERSION &lt;&lt; "." &lt;&lt; FL_PATCH_VERSION    D:\work\gmsh_work\gmsh\src\fltk\helpWindow.cpp  335 10
 </span><span id="__span-15-10">#if(FL_MAJOR_VERSION == 1) &amp;&amp; (FL_MINOR_VERSION == 3) &amp;&amp; (FL_PATCH_VERSION &gt;= 4)    D:\work\gmsh_work\gmsh\src\fltk\openglWindow.cpp    783 32
 </span><span id="__span-15-11">#elif(FL_MAJOR_VERSION == 1) &amp;&amp; (FL_MINOR_VERSION &gt;= 4) D:\work\gmsh_work\gmsh\src\fltk\openglWindow.cpp    785 34
 </span><span id="__span-15-12">#elif(FL_MAJOR_VERSION == 1) &amp;&amp; (FL_MINOR_VERSION &gt;= 4) D:\work\gmsh_work\gmsh\src\fltk\openglWindow.cpp    796 34
@@ -17164,10 +17164,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

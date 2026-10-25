@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -15865,9 +15865,9 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">cmake .. `
-</span><span id="__span-2-2">      -D CMAKE_INSTALL_PREFIX=&quot;c:/dev/libLAS&quot; `
-</span><span id="__span-2-3">      -D GEOTIFF_INCLUDE_DIR=&quot;c:/dev/GeoTIFF/include&quot; `
-</span><span id="__span-2-4">      -D GEOTIFF_LIBRARY=&quot;c:/dev/GeoTIFF/lib/geotiff_i.lib&quot;
+</span><span id="__span-2-2">      -D CMAKE_INSTALL_PREFIX="c:/dev/libLAS" `
+</span><span id="__span-2-3">      -D GEOTIFF_INCLUDE_DIR="c:/dev/GeoTIFF/include" `
+</span><span id="__span-2-4">      -D GEOTIFF_LIBRARY="c:/dev/GeoTIFF/lib/geotiff_i.lib"
 </span><span id="__span-2-5">cmake --build . --target make_osgeo4w_directories
 </span><span id="__span-2-6">cmake --build . --target copy
 </span><span id="__span-2-7">cmake --build . --target tar
@@ -15878,7 +15878,7 @@
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1">3&gt;libboost_thread-vc143-mt-x64-1_88.lib(thread.obj) : 
-</span><span id="__span-4-2">error LNK2005: &quot;public: __cdecl boost::detail::win32::handle_manager::~handle_manager(void)&quot; 
+</span><span id="__span-4-2">error LNK2005: "public: __cdecl boost::detail::win32::handle_manager::~handle_manager(void)" 
 </span><span id="__span-4-3">(??1handle_manager@win32@detail@boost@@QEAA@XZ) 
 </span><span id="__span-4-4">已经在 boost_thread-vc143-mt-x64-1_88.lib(boost_thread-vc143-mt-x64-1_88.dll) 中定义
 </span></code></pre></div></td></tr></table></div>
@@ -15896,9 +15896,9 @@
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">tar_directories(${OSGEO4W_DIR} ${libLAS_SOURCE_DIR}/${OSGEO4W_PACKAGES}/liblas-${LIBLAS_VERSION_MAJOR}.${LIBLAS_VERSION_MINOR}.${LIBLAS_VERSION_PATCH}-${OSGEO4W_UPSTREAM_RELEASE}.tar.bz2 &quot;bin/;etc/&quot;)
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1">tar_directories(${OSGEO4W_DIR} ${libLAS_SOURCE_DIR}/${OSGEO4W_PACKAGES}/liblas-${LIBLAS_VERSION_MAJOR}.${LIBLAS_VERSION_MINOR}.${LIBLAS_VERSION_PATCH}-${OSGEO4W_UPSTREAM_RELEASE}.tar.bz2 "bin/;etc/")
 </span><span id="__span-5-2">tar_directories(${OSGEO4W_DIR} ${libLAS_SOURCE_DIR}/${OSGEO4W_PACKAGES}/liblas-python-${LIBLAS_VERSION_MAJOR}.${LIBLAS_VERSION_MINOR}.${LIBLAS_VERSION_PATCH}-${OSGEO4W_UPSTREAM_RELEASE}.tar.bz2 apps)
-</span><span id="__span-5-3">tar_directories(${OSGEO4W_DIR}/devel ${libLAS_SOURCE_DIR}/${OSGEO4W_PACKAGES}/liblas-devel-${LIBLAS_VERSION_MAJOR}.${LIBLAS_VERSION_MINOR}.${LIBLAS_VERSION_PATCH}-${OSGEO4W_UPSTREAM_RELEASE}.tar.bz2 &quot;lib/;include&quot;)
+</span><span id="__span-5-3">tar_directories(${OSGEO4W_DIR}/devel ${libLAS_SOURCE_DIR}/${OSGEO4W_PACKAGES}/liblas-devel-${LIBLAS_VERSION_MAJOR}.${LIBLAS_VERSION_MINOR}.${LIBLAS_VERSION_PATCH}-${OSGEO4W_UPSTREAM_RELEASE}.tar.bz2 "lib/;include")
 </span><span id="__span-5-4">
 </span><span id="__span-5-5">tar_directories source=osgeo4w
 </span><span id="__span-5-6">tar_directories destination=D:/work/libLAS_work/libLAS-1.8.1/osgeo4w/packages/liblas-1.8.1-1.tar.bz2
@@ -15912,15 +15912,15 @@
 </span><span id="__span-5-14">tar_directories destination=D:/work/libLAS_work/libLAS-1.8.1/osgeo4w/packages/liblas-devel-1.8.1-1.tar.bz2
 </span><span id="__span-5-15">tar_directories base_paths=lib/;include
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">get_filename_component(absolute_path &quot;${relative_path}&quot; ABSOLUTE BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1">get_filename_component(absolute_path "${relative_path}" ABSOLUTE BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">EXEC : CMake error : Cannot open output file &quot;D:/work/libLAS_work/libLAS-1.8.1/osgeo4w/packages/liblas-1.8.1-1.tar.bz2&quot;: No such file or directory
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">EXEC : CMake error : Cannot open output file "D:/work/libLAS_work/libLAS-1.8.1/osgeo4w/packages/liblas-1.8.1-1.tar.bz2": No such file or directory
 </span><span id="__span-7-2">7&gt;EXEC : CMake error : Problem creating tar: D:/work/libLAS_work/libLAS-1.8.1/osgeo4w/packages/liblas-1.8.1-1.tar.bz2
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">6&gt;Error copying file &quot;python/liblas/__init__.py&quot; to &quot;osgeo4w/apps/python25/lib/site-packages/liblas/&quot;.
-</span><span id="__span-8-2">&quot;C:\Program Files\CMake\bin\cmake.exe&quot; -E copy_directory D:/work/libLAS_work/libLAS-1.8.1/include/liblas/ osgeo4w/devel/include/liblas/
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">6&gt;Error copying file "python/liblas/__init__.py" to "osgeo4w/apps/python25/lib/site-packages/liblas/".
+</span><span id="__span-8-2">"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/work/libLAS_work/libLAS-1.8.1/include/liblas/ osgeo4w/devel/include/liblas/
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -16272,7 +16272,7 @@
 </span><span id="__span-11-20">-- copy_files foreach SRC=python/liblas/vlr.py
 </span><span id="__span-11-21">-- copy_files foreach DST=osgeo4w/apps/python25/lib/site-packages/liblas/
 </span></code></pre></div></td></tr></table></div>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">Error copying directory from &quot;./include/liblas/&quot; to &quot;osgeo4w/devel/include/liblas/&quot;.
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">Error copying directory from "./include/liblas/" to "osgeo4w/devel/include/liblas/".
 </span></code></pre></div></td></tr></table></div>
 <h2 id="buildosgeo4wcmake">BuildOSGeo4W.cmake<a class="headerlink" href="#buildosgeo4wcmake" title="Permanent link">&para;</a></h2>
 <div class="language-cmake highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CMake</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -16475,7 +16475,7 @@
 </span><span id="__span-13-41">
 </span><span id="__span-13-42">
 </span><span id="__span-13-43"><span class="nb">add_custom_target</span><span class="p">(</span><span class="s">make_osgeo4w_directories</span>
-</span><span id="__span-13-44"><span class="w">  </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">&quot;Building OSGeo4W install directories&quot;</span><span class="p">)</span>
+</span><span id="__span-13-44"><span class="w">  </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">"Building OSGeo4W install directories"</span><span class="p">)</span>
 </span><span id="__span-13-45">
 </span><span id="__span-13-46"><span class="nb">foreach</span><span class="p">(</span><span class="s">utility</span><span class="w"> </span><span class="o">${</span><span class="nv">LIBLAS_UTILITIES</span><span class="o">}</span><span class="p">)</span>
 </span><span id="__span-13-47"><span class="w">    </span><span class="nb">add_dependencies</span><span class="p">(</span><span class="w">  </span><span class="s">make_osgeo4w_directories</span><span class="w">  </span><span class="o">${</span><span class="nv">utility</span><span class="o">}</span><span class="w"> </span><span class="p">)</span>
@@ -16489,7 +16489,7 @@
 </span><span id="__span-13-55"><span class="w">    </span><span class="p">)</span>
 </span><span id="__span-13-56"><span class="w">    </span><span class="nb">foreach</span><span class="p">(</span><span class="s">directory</span><span class="w"> </span><span class="o">${</span><span class="nv">OSGEO4W_DIRECTORIES</span><span class="o">}</span><span class="p">)</span>
 </span><span id="__span-13-57">
-</span><span id="__span-13-58"><span class="w">    </span><span class="nb">STRING</span><span class="p">(</span><span class="s">REGEX</span><span class="w"> </span><span class="s">REPLACE</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="s2">&quot;_&quot;</span><span class="w"> </span><span class="s">target</span><span class="w"> </span><span class="s2">&quot;${directory}&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-13-58"><span class="w">    </span><span class="nb">STRING</span><span class="p">(</span><span class="s">REGEX</span><span class="w"> </span><span class="s">REPLACE</span><span class="w"> </span><span class="s2">"/"</span><span class="w"> </span><span class="s2">"_"</span><span class="w"> </span><span class="s">target</span><span class="w"> </span><span class="s2">"${directory}"</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-13-59">
 </span><span id="__span-13-60"><span class="w">    </span><span class="nb">add_custom_command</span><span class="p">(</span>
 </span><span id="__span-13-61"><span class="w">        </span><span class="s">TARGET</span><span class="w"> </span><span class="s">make_osgeo4w_directories</span>
@@ -16502,7 +16502,7 @@
 </span><span id="__span-13-68">
 </span><span id="__span-13-69">
 </span><span id="__span-13-70">
-</span><span id="__span-13-71"><span class="nb">add_custom_target</span><span class="p">(</span><span class="s">copy</span><span class="w"> </span><span class="s">ALL</span><span class="w"> </span><span class="s">COMMENT</span><span class="w"> </span><span class="s2">&quot;Copying OSGeo4W files&quot;</span><span class="p">)</span>
+</span><span id="__span-13-71"><span class="nb">add_custom_target</span><span class="p">(</span><span class="s">copy</span><span class="w"> </span><span class="s">ALL</span><span class="w"> </span><span class="s">COMMENT</span><span class="w"> </span><span class="s2">"Copying OSGeo4W files"</span><span class="p">)</span>
 </span><span id="__span-13-72"><span class="nb">add_dependencies</span><span class="p">(</span><span class="w"> </span><span class="s">copy</span><span class="w"> </span><span class="s">make_osgeo4w_directories</span><span class="w">  </span><span class="p">)</span>
 </span><span id="__span-13-73">
 </span><span id="__span-13-74">
@@ -16512,8 +16512,8 @@
 </span><span id="__span-13-78"><span class="w">         </span><span class="s">RELATIVE</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="o">}</span>
 </span><span id="__span-13-79"><span class="w">        </span><span class="o">${</span><span class="nv">GLOBPAT</span><span class="o">}</span><span class="p">)</span>
 </span><span id="__span-13-80"><span class="w">    </span><span class="nb">foreach</span><span class="p">(</span><span class="s">FILENAME</span><span class="w"> </span><span class="o">${</span><span class="nv">COPY_FILES</span><span class="o">}</span><span class="p">)</span>
-</span><span id="__span-13-81"><span class="w">        </span><span class="nb">set</span><span class="p">(</span><span class="s">SRC</span><span class="w"> </span><span class="s2">&quot;${FILENAME}&quot;</span><span class="p">)</span>
-</span><span id="__span-13-82"><span class="w">        </span><span class="nb">set</span><span class="p">(</span><span class="s">DST</span><span class="w"> </span><span class="s2">&quot;${DESTINATION}&quot;</span><span class="p">)</span>
+</span><span id="__span-13-81"><span class="w">        </span><span class="nb">set</span><span class="p">(</span><span class="s">SRC</span><span class="w"> </span><span class="s2">"${FILENAME}"</span><span class="p">)</span>
+</span><span id="__span-13-82"><span class="w">        </span><span class="nb">set</span><span class="p">(</span><span class="s">DST</span><span class="w"> </span><span class="s2">"${DESTINATION}"</span><span class="p">)</span>
 </span><span id="__span-13-83"><span class="w">        </span><span class="nb">add_custom_command</span><span class="p">(</span>
 </span><span id="__span-13-84"><span class="w">            </span><span class="s">TARGET</span><span class="w"> </span><span class="s">copy</span>
 </span><span id="__span-13-85"><span class="w">            </span><span class="c">#COMMAND ${CMAKE_COMMAND} -E copy ${SRC} ${DST}</span>
@@ -16532,16 +16532,16 @@
 </span><span id="__span-13-98">
 </span><span id="__span-13-99">
 </span><span id="__span-13-100"><span class="nb">add_custom_target</span><span class="p">(</span><span class="s">tar</span>
-</span><span id="__span-13-101"><span class="w">  </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">&quot;Tarring OSGeo4W install&quot;</span><span class="p">)</span>
+</span><span id="__span-13-101"><span class="w">  </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">"Tarring OSGeo4W install"</span><span class="p">)</span>
 </span><span id="__span-13-102"><span class="nb">add_dependencies</span><span class="p">(</span><span class="w"> </span><span class="s">tar</span><span class="w"> </span><span class="s">copy</span><span class="w">  </span><span class="p">)</span>
 </span><span id="__span-13-103">
 </span><span id="__span-13-104"><span class="nb">macro</span><span class="w"> </span><span class="p">(</span><span class="s">tar_directories</span><span class="w"> </span><span class="s">source</span><span class="w"> </span><span class="s">destination</span><span class="w"> </span><span class="s">base_paths</span><span class="p">)</span><span class="w">    </span>
-</span><span id="__span-13-105"><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;tar_directories source=${source}&quot;</span><span class="p">)</span>
-</span><span id="__span-13-106"><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;tar_directories destination=${destination}&quot;</span><span class="p">)</span>
-</span><span id="__span-13-107"><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;tar_directories base_paths=${base_paths}&quot;</span><span class="p">)</span>
+</span><span id="__span-13-105"><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"tar_directories source=${source}"</span><span class="p">)</span>
+</span><span id="__span-13-106"><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"tar_directories destination=${destination}"</span><span class="p">)</span>
+</span><span id="__span-13-107"><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"tar_directories base_paths=${base_paths}"</span><span class="p">)</span>
 </span><span id="__span-13-108"><span class="w">    </span><span class="nb">add_custom_command</span><span class="p">(</span>
 </span><span id="__span-13-109"><span class="w">        </span><span class="s">TARGET</span><span class="w"> </span><span class="s">tar</span>
-</span><span id="__span-13-110"><span class="w">        </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">&quot;source={source},destination=${destination}&quot;</span>
+</span><span id="__span-13-110"><span class="w">        </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">"source={source},destination=${destination}"</span>
 </span><span id="__span-13-111"><span class="w">        </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">chdir</span><span class="w"> </span><span class="o">${</span><span class="nv">source</span><span class="o">}</span><span class="w"> </span><span class="s">cmake</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">tar</span><span class="w"> </span><span class="s">cjf</span><span class="w">  </span><span class="o">${</span><span class="nv">destination</span><span class="o">}</span><span class="w"> </span><span class="o">${</span><span class="nv">base_paths</span><span class="o">}</span>
 </span><span id="__span-13-112"><span class="w">    </span><span class="p">)</span>
 </span><span id="__span-13-113"><span class="nb">endmacro</span><span class="p">(</span><span class="s">tar_directories</span><span class="p">)</span>
@@ -16578,16 +16578,16 @@
 </span><span id="__span-13-144"><span class="nb">copy_directory</span><span class="p">(</span><span class="o">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include/liblas/</span><span class="w"> </span><span class="o">${</span><span class="nv">OSGEO4W_DEVEL_INCLUDE_LIBLAS_DIR</span><span class="o">}</span><span class="s">/</span><span class="w">  </span><span class="p">)</span>
 </span><span id="__span-13-145"><span class="nb">copy_files</span><span class="p">(</span><span class="o">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="o">}</span><span class="s">/python/liblas/*.py</span><span class="w"> </span><span class="o">${</span><span class="nv">OSGEO4W_PYTHON_DIR</span><span class="o">}</span><span class="s">/</span><span class="w">  </span><span class="p">)</span>
 </span><span id="__span-13-146">
-</span><span id="__span-13-147"><span class="c">#tar_directories(${OSGEO4W_DIR} ${libLAS_SOURCE_DIR}/${OSGEO4W_PACKAGES}/liblas-${LIBLAS_VERSION_MAJOR}.${LIBLAS_VERSION_MINOR}.${LIBLAS_VERSION_PATCH}-${OSGEO4W_UPSTREAM_RELEASE}.tar.bz2 &quot;bin/;etc/&quot;)</span>
+</span><span id="__span-13-147"><span class="c">#tar_directories(${OSGEO4W_DIR} ${libLAS_SOURCE_DIR}/${OSGEO4W_PACKAGES}/liblas-${LIBLAS_VERSION_MAJOR}.${LIBLAS_VERSION_MINOR}.${LIBLAS_VERSION_PATCH}-${OSGEO4W_UPSTREAM_RELEASE}.tar.bz2 "bin/;etc/")</span>
 </span><span id="__span-13-148"><span class="c">#tar_directories(${OSGEO4W_DIR} ${libLAS_SOURCE_DIR}/${OSGEO4W_PACKAGES}/liblas-python-${LIBLAS_VERSION_MAJOR}.${LIBLAS_VERSION_MINOR}.${LIBLAS_VERSION_PATCH}-${OSGEO4W_UPSTREAM_RELEASE}.tar.bz2 apps)</span>
-</span><span id="__span-13-149"><span class="c">#tar_directories(${OSGEO4W_DIR}/devel ${libLAS_SOURCE_DIR}/${OSGEO4W_PACKAGES}/liblas-devel-${LIBLAS_VERSION_MAJOR}.${LIBLAS_VERSION_MINOR}.${LIBLAS_VERSION_PATCH}-${OSGEO4W_UPSTREAM_RELEASE}.tar.bz2 &quot;lib/;include&quot;)</span>
+</span><span id="__span-13-149"><span class="c">#tar_directories(${OSGEO4W_DIR}/devel ${libLAS_SOURCE_DIR}/${OSGEO4W_PACKAGES}/liblas-devel-${LIBLAS_VERSION_MAJOR}.${LIBLAS_VERSION_MINOR}.${LIBLAS_VERSION_PATCH}-${OSGEO4W_UPSTREAM_RELEASE}.tar.bz2 "lib/;include")</span>
 </span><span id="__span-13-150">
-</span><span id="__span-13-151"><span class="nb">tar_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">OSGEO4W_DIR</span><span class="o">}</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_BINARY_DIR</span><span class="o">}</span><span class="s">/</span><span class="o">${</span><span class="nv">OSGEO4W_PACKAGES</span><span class="o">}</span><span class="s">/liblas-</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_MAJOR</span><span class="o">}</span><span class="s">.</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_MINOR</span><span class="o">}</span><span class="s">.</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_PATCH</span><span class="o">}</span><span class="s">-</span><span class="o">${</span><span class="nv">OSGEO4W_UPSTREAM_RELEASE</span><span class="o">}</span><span class="s">.tar.bz2</span><span class="w"> </span><span class="s2">&quot;bin/;etc/&quot;</span><span class="p">)</span>
+</span><span id="__span-13-151"><span class="nb">tar_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">OSGEO4W_DIR</span><span class="o">}</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_BINARY_DIR</span><span class="o">}</span><span class="s">/</span><span class="o">${</span><span class="nv">OSGEO4W_PACKAGES</span><span class="o">}</span><span class="s">/liblas-</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_MAJOR</span><span class="o">}</span><span class="s">.</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_MINOR</span><span class="o">}</span><span class="s">.</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_PATCH</span><span class="o">}</span><span class="s">-</span><span class="o">${</span><span class="nv">OSGEO4W_UPSTREAM_RELEASE</span><span class="o">}</span><span class="s">.tar.bz2</span><span class="w"> </span><span class="s2">"bin/;etc/"</span><span class="p">)</span>
 </span><span id="__span-13-152"><span class="nb">tar_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">OSGEO4W_DIR</span><span class="o">}</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_BINARY_DIR</span><span class="o">}</span><span class="s">/</span><span class="o">${</span><span class="nv">OSGEO4W_PACKAGES</span><span class="o">}</span><span class="s">/liblas-python-</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_MAJOR</span><span class="o">}</span><span class="s">.</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_MINOR</span><span class="o">}</span><span class="s">.</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_PATCH</span><span class="o">}</span><span class="s">-</span><span class="o">${</span><span class="nv">OSGEO4W_UPSTREAM_RELEASE</span><span class="o">}</span><span class="s">.tar.bz2</span><span class="w"> </span><span class="s">apps</span><span class="p">)</span>
-</span><span id="__span-13-153"><span class="nb">tar_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">OSGEO4W_DIR</span><span class="o">}</span><span class="s">/devel</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_BINARY_DIR</span><span class="o">}</span><span class="s">/</span><span class="o">${</span><span class="nv">OSGEO4W_PACKAGES</span><span class="o">}</span><span class="s">/liblas-devel-</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_MAJOR</span><span class="o">}</span><span class="s">.</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_MINOR</span><span class="o">}</span><span class="s">.</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_PATCH</span><span class="o">}</span><span class="s">-</span><span class="o">${</span><span class="nv">OSGEO4W_UPSTREAM_RELEASE</span><span class="o">}</span><span class="s">.tar.bz2</span><span class="w"> </span><span class="s2">&quot;lib/;include&quot;</span><span class="p">)</span>
+</span><span id="__span-13-153"><span class="nb">tar_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">OSGEO4W_DIR</span><span class="o">}</span><span class="s">/devel</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_BINARY_DIR</span><span class="o">}</span><span class="s">/</span><span class="o">${</span><span class="nv">OSGEO4W_PACKAGES</span><span class="o">}</span><span class="s">/liblas-devel-</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_MAJOR</span><span class="o">}</span><span class="s">.</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_MINOR</span><span class="o">}</span><span class="s">.</span><span class="o">${</span><span class="nv">LIBLAS_VERSION_PATCH</span><span class="o">}</span><span class="s">-</span><span class="o">${</span><span class="nv">OSGEO4W_UPSTREAM_RELEASE</span><span class="o">}</span><span class="s">.tar.bz2</span><span class="w"> </span><span class="s2">"lib/;include"</span><span class="p">)</span>
 </span><span id="__span-13-154">
 </span><span id="__span-13-155"><span class="nb">add_custom_target</span><span class="p">(</span><span class="s">osgeo4w</span>
-</span><span id="__span-13-156"><span class="w">    </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">&quot;Making OSGeo4W build&quot;</span><span class="p">)</span>
+</span><span id="__span-13-156"><span class="w">    </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">"Making OSGeo4W build"</span><span class="p">)</span>
 </span><span id="__span-13-157">
 </span><span id="__span-13-158"><span class="nb">add_dependencies</span><span class="p">(</span><span class="w"> </span><span class="s">osgeo4w</span><span class="w"> </span><span class="s">tar</span><span class="w">   </span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -16663,10 +16663,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

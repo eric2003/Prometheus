@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -16400,20 +16400,20 @@ The original blog post can still be found on the Qt blog</p>
 <ul>
 <li><a href="https://www.lainme.com/doku.php/blog/2015/12/%E7%94%A8cmake%E6%9D%A5%E7%BC%96%E8%AF%91fortran">用CMake来编译Fortran</a>.</li>
 </ul>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">/link /LIBPATH:&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\lib\x64&quot;
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">/link /LIBPATH:"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\lib\x64"
 </span></code></pre></div></td></tr></table></div>
 <p>nmake
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="nv">$env:path</span> <span class="p">+=</span> <span class="s2">&quot;;c:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\bin\Hostx64\x64\&quot;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="nv">$env:path</span> <span class="p">+=</span> <span class="s2">";c:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\bin\Hostx64\x64\"</span>
 </span></code></pre></div></td></tr></table></div></p>
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="k">%</span><span class="n">comspec</span><span class="p">%</span> <span class="p">/</span><span class="n">k</span> <span class="s2">&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat&quot;</span>
-</span><span id="__span-2-2"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">k</span> <span class="s2">&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat&quot;</span>
-</span><span id="__span-2-3"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">k</span> <span class="s1">&#39;&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat&quot; &amp;&amp; powershell&#39;</span>
-</span><span id="__span-2-4"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat&quot; &amp;&amp; powershell&#39;</span>
-</span><span id="__span-2-5"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat&quot; &amp;&amp; powershell&#39;</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="k">%</span><span class="n">comspec</span><span class="p">%</span> <span class="p">/</span><span class="n">k</span> <span class="s2">"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat"</span>
+</span><span id="__span-2-2"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">k</span> <span class="s2">"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat"</span>
+</span><span id="__span-2-3"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">k</span> <span class="s1">'"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" &amp;&amp; powershell'</span>
+</span><span id="__span-2-4"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" &amp;&amp; powershell'</span>
+</span><span id="__span-2-5"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>VS2022 LIB PATH(x86)
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16933,7 +16933,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-8-113">C:\Program Files (x86)\Intel\oneAPI\tcm\latest\bin
 </span><span id="__span-8-114">C:\Program Files (x86)\Intel\oneAPI\vtune\2025.0\bin64
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -16963,12 +16963,12 @@ The original blog post can still be found on the Qt blog</p>
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">eric</span><span class="p">&gt;</span> <span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">eric</span><span class="p">&gt;</span> <span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span><span id="__span-10-2"><span class="p">::</span> <span class="n">initializing</span> <span class="n">oneAPI</span> <span class="n">environment</span><span class="p">...</span>
 </span><span id="__span-10-3">   <span class="n">Initializing</span> <span class="n">Visual</span> <span class="n">Studio</span> <span class="n">command-line</span> <span class="n">environment</span><span class="p">...</span>
 </span><span id="__span-10-4">   <span class="n">Visual</span> <span class="n">Studio</span> <span class="n">version</span> <span class="n">17</span><span class="p">.</span><span class="n">13</span><span class="p">.</span><span class="n">6</span> <span class="n">environment</span> <span class="n">configured</span><span class="p">.</span>
-</span><span id="__span-10-5">   <span class="s2">&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\&quot;</span>
-</span><span id="__span-10-6">   <span class="n">Visual</span> <span class="n">Studio</span> <span class="n">command-line</span> <span class="n">environment</span> <span class="n">initialized</span> <span class="k">for</span><span class="p">:</span> <span class="s1">&#39;x64&#39;</span>
+</span><span id="__span-10-5">   <span class="s2">"C:\Program Files\Microsoft Visual Studio\2022\Community\"</span>
+</span><span id="__span-10-6">   <span class="n">Visual</span> <span class="n">Studio</span> <span class="n">command-line</span> <span class="n">environment</span> <span class="n">initialized</span> <span class="k">for</span><span class="p">:</span> <span class="s1">'x64'</span>
 </span><span id="__span-10-7"><span class="p">:</span>  <span class="n">advisor</span> <span class="p">--</span> <span class="n">latest</span>
 </span><span id="__span-10-8"><span class="p">:</span>  <span class="n">compiler</span> <span class="p">--</span> <span class="n">latest</span>
 </span><span id="__span-10-9"><span class="p">:</span>  <span class="n">dal</span> <span class="p">--</span> <span class="n">latest</span>
@@ -17025,8 +17025,8 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-13-2"><span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Fortran</span> <span class="n">Compiler</span> <span class="k">for</span> <span class="n">applications</span> <span class="n">running</span> <span class="n">on</span> <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">64</span><span class="p">,</span> <span class="n">Version</span> <span class="n">2025</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">4</span> <span class="n">Build</span> <span class="n">20241205</span>
 </span><span id="__span-13-3"><span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">1985</span><span class="p">-</span><span class="n">2024</span> <span class="n">Intel</span> <span class="n">Corporation</span><span class="p">.</span> <span class="n">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="p">.</span>
 </span><span id="__span-13-4">
-</span><span id="__span-13-5"><span class="n">ifx</span><span class="p">:</span> <span class="n">command</span> <span class="n">line</span> <span class="n">warning</span> <span class="c">#10006: ignoring unknown option &#39;/-version&#39;</span>
-</span><span id="__span-13-6"><span class="n">ifx</span><span class="p">:</span> <span class="n">command</span> <span class="n">line</span> <span class="n">error</span><span class="p">:</span> <span class="n">no</span> <span class="n">files</span> <span class="n">specified</span><span class="p">;</span> <span class="k">for</span> <span class="n">help</span> <span class="nb">type </span><span class="s2">&quot;ifx /help&quot;</span>
+</span><span id="__span-13-5"><span class="n">ifx</span><span class="p">:</span> <span class="n">command</span> <span class="n">line</span> <span class="n">warning</span> <span class="c">#10006: ignoring unknown option '/-version'</span>
+</span><span id="__span-13-6"><span class="n">ifx</span><span class="p">:</span> <span class="n">command</span> <span class="n">line</span> <span class="n">error</span><span class="p">:</span> <span class="n">no</span> <span class="n">files</span> <span class="n">specified</span><span class="p">;</span> <span class="k">for</span> <span class="n">help</span> <span class="nb">type </span><span class="s2">"ifx /help"</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h2 id="ifx-compile">ifx compile<a class="headerlink" href="#ifx-compile" title="Permanent link">&para;</a></h2>
 <h3 id="example-1">example 1<a class="headerlink" href="#example-1" title="Permanent link">&para;</a></h3>
@@ -17034,10 +17034,10 @@ The original blog post can still be found on the Qt blog</p>
 <div class="language-fortran highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Fortran</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><span class="k">program </span><span class="n">main</span>
-</span><span id="__span-14-2"><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Hello, World!&#39;</span>
+</span><span id="__span-14-2"><span class="w">    </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s1">'Hello, World!'</span>
 </span><span id="__span-14-3"><span class="k">end program </span><span class="n">main</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output 
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -17085,7 +17085,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-16-22"> <span class="n">Hello</span><span class="p">,</span> <span class="n">World</span><span class="p">!</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="example-2">example 2<a class="headerlink" href="#example-2" title="Permanent link">&para;</a></h3>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output 
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -17159,7 +17159,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-18-35"> <span class="n">Hello</span><span class="p">,</span> <span class="n">World</span><span class="p">!</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="example-3">example 3<a class="headerlink" href="#example-3" title="Permanent link">&para;</a></h3>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output 
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -17257,7 +17257,7 @@ The original blog post can still be found on the Qt blog</p>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><span class="k">subroutine </span><span class="n">sub1</span><span class="p">()</span><span class="w"> </span>
 </span><span id="__span-22-2"><span class="k">implicit none</span>
 </span><span id="__span-22-3">
-</span><span id="__span-22-4"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;haha1&quot;</span>
+</span><span id="__span-22-4"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">"haha1"</span>
 </span><span id="__span-22-5">
 </span><span id="__span-22-6"><span class="k">end subroutine </span><span class="n">sub1</span>
 </span></code></pre></div></td></tr></table></div></p>
@@ -17270,11 +17270,11 @@ The original blog post can still be found on the Qt blog</p>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><span class="k">subroutine </span><span class="n">sub2</span><span class="p">()</span><span class="w"> </span>
 </span><span id="__span-23-2"><span class="k">implicit none</span>
 </span><span id="__span-23-3">
-</span><span id="__span-23-4"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;haha2&quot;</span>
+</span><span id="__span-23-4"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">"haha2"</span>
 </span><span id="__span-23-5">
 </span><span id="__span-23-6"><span class="k">end subroutine </span><span class="n">sub2</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output 
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -17336,7 +17336,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-25-29"> <span class="n">haha2</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="example-5">example 5<a class="headerlink" href="#example-5" title="Permanent link">&para;</a></h3>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output 
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -17530,7 +17530,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-28-5">
 </span><span id="__span-28-6"><span class="k">contains      </span>
 </span><span id="__span-28-7"><span class="k">   subroutine </span><span class="n">show_N</span><span class="p">()</span><span class="w">          </span>
-</span><span id="__span-28-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">          </span>
+</span><span id="__span-28-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N = "</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">          </span>
 </span><span id="__span-28-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N</span><span class="w"> </span>
 </span><span id="__span-28-10">
 </span><span id="__span-28-11"><span class="k">end module </span><span class="n">mymod1</span><span class="w"> </span>
@@ -17542,7 +17542,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-28-17">
 </span><span id="__span-28-18"><span class="k">contains      </span>
 </span><span id="__span-28-19"><span class="k">   subroutine </span><span class="n">show_M</span><span class="p">()</span><span class="w">          </span>
-</span><span id="__span-28-20"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;M = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w">          </span>
+</span><span id="__span-28-20"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"M = "</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w">          </span>
 </span><span id="__span-28-21"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_M</span><span class="w"> </span>
 </span><span id="__span-28-22">
 </span><span id="__span-28-23"><span class="k">end module </span><span class="n">mymod2</span>
@@ -17557,7 +17557,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-28-32">
 </span><span id="__span-28-33"><span class="k">end program </span><span class="n">main_prog</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output 
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -17656,7 +17656,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-32-5">
 </span><span id="__span-32-6"><span class="k">contains      </span>
 </span><span id="__span-32-7"><span class="k">   subroutine </span><span class="n">show_N3</span><span class="p">()</span>
-</span><span id="__span-32-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N3 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N3</span>
+</span><span id="__span-32-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N3 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N3</span>
 </span><span id="__span-32-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N3</span>
 </span><span id="__span-32-10">
 </span><span id="__span-32-11"><span class="k">end module </span><span class="n">mod3</span>
@@ -17691,7 +17691,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-33-5">
 </span><span id="__span-33-6"><span class="k">contains      </span>
 </span><span id="__span-33-7"><span class="k">   subroutine </span><span class="n">show_N1</span><span class="p">()</span>
-</span><span id="__span-33-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N1 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span>
+</span><span id="__span-33-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N1 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span>
 </span><span id="__span-33-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N1</span>
 </span><span id="__span-33-10">
 </span><span id="__span-33-11"><span class="k">end module </span><span class="n">mod1</span>
@@ -17703,12 +17703,12 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-33-17">
 </span><span id="__span-33-18"><span class="k">contains      </span>
 </span><span id="__span-33-19"><span class="k">   subroutine </span><span class="n">show_N2</span><span class="p">()</span>
-</span><span id="__span-33-20"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N2 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
+</span><span id="__span-33-20"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N2 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
 </span><span id="__span-33-21"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N2</span>
 </span><span id="__span-33-22">
 </span><span id="__span-33-23"><span class="k">end module </span><span class="n">mod2</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-34-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-34-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output 
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -17929,7 +17929,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-37-5">
 </span><span id="__span-37-6"><span class="k">contains      </span>
 </span><span id="__span-37-7"><span class="k">   subroutine </span><span class="n">show_N3</span><span class="p">()</span>
-</span><span id="__span-37-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N3 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N3</span>
+</span><span id="__span-37-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N3 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N3</span>
 </span><span id="__span-37-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N3</span>
 </span><span id="__span-37-10">
 </span><span id="__span-37-11"><span class="k">end module </span><span class="n">mod3</span>
@@ -17968,7 +17968,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-38-5">
 </span><span id="__span-38-6"><span class="k">contains      </span>
 </span><span id="__span-38-7"><span class="k">   subroutine </span><span class="n">show_N1</span><span class="p">()</span>
-</span><span id="__span-38-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N1 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span>
+</span><span id="__span-38-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N1 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span>
 </span><span id="__span-38-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N1</span>
 </span><span id="__span-38-10">
 </span><span id="__span-38-11"><span class="k">end module </span><span class="n">mod1</span>
@@ -17981,15 +17981,15 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-38-18">
 </span><span id="__span-38-19"><span class="k">contains      </span>
 </span><span id="__span-38-20"><span class="k">   subroutine </span><span class="n">show_N2</span><span class="p">()</span>
-</span><span id="__span-38-21"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N2 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
-</span><span id="__span-38-22"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; begin to call show_N3() in show_N2()&quot;</span>
+</span><span id="__span-38-21"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N2 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
+</span><span id="__span-38-22"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">" begin to call show_N3() in show_N2()"</span>
 </span><span id="__span-38-23"><span class="w">      </span><span class="k">call </span><span class="n">show_N3</span><span class="p">()</span>
-</span><span id="__span-38-24"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; end to call show_N3() in show_N2()&quot;</span>
+</span><span id="__span-38-24"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">" end to call show_N3() in show_N2()"</span>
 </span><span id="__span-38-25"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N2</span>
 </span><span id="__span-38-26">
 </span><span id="__span-38-27"><span class="k">end module </span><span class="n">mod2</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-39-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-39-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output 
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -18278,7 +18278,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-42-5">
 </span><span id="__span-42-6"><span class="k">contains      </span>
 </span><span id="__span-42-7"><span class="k">   subroutine </span><span class="n">show_N3</span><span class="p">()</span>
-</span><span id="__span-42-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N3 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N3</span>
+</span><span id="__span-42-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N3 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N3</span>
 </span><span id="__span-42-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N3</span>
 </span><span id="__span-42-10">
 </span><span id="__span-42-11"><span class="k">end module </span><span class="n">mod3</span>
@@ -18317,7 +18317,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-43-5">
 </span><span id="__span-43-6"><span class="k">contains      </span>
 </span><span id="__span-43-7"><span class="k">   subroutine </span><span class="n">show_N1</span><span class="p">()</span>
-</span><span id="__span-43-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N1 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span>
+</span><span id="__span-43-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N1 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span>
 </span><span id="__span-43-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N1</span>
 </span><span id="__span-43-10">
 </span><span id="__span-43-11"><span class="k">end module </span><span class="n">mod1</span>
@@ -18330,10 +18330,10 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-43-18">
 </span><span id="__span-43-19"><span class="k">contains      </span>
 </span><span id="__span-43-20"><span class="k">   subroutine </span><span class="n">show_N2</span><span class="p">()</span>
-</span><span id="__span-43-21"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N2 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
-</span><span id="__span-43-22"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; begin to call show_N3() in show_N2()&quot;</span>
+</span><span id="__span-43-21"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N2 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
+</span><span id="__span-43-22"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">" begin to call show_N3() in show_N2()"</span>
 </span><span id="__span-43-23"><span class="w">      </span><span class="k">call </span><span class="n">show_N3</span><span class="p">()</span>
-</span><span id="__span-43-24"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; end to call show_N3() in show_N2()&quot;</span>
+</span><span id="__span-43-24"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">" end to call show_N3() in show_N2()"</span>
 </span><span id="__span-43-25"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N2</span>
 </span><span id="__span-43-26">
 </span><span id="__span-43-27"><span class="k">end module </span><span class="n">mod2</span>
@@ -18356,7 +18356,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-44-5">
 </span><span id="__span-44-6"><span class="k">contains      </span>
 </span><span id="__span-44-7"><span class="k">   subroutine </span><span class="n">show_N</span><span class="p">()</span><span class="w">          </span>
-</span><span id="__span-44-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">          </span>
+</span><span id="__span-44-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N = "</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">          </span>
 </span><span id="__span-44-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N</span><span class="w"> </span>
 </span><span id="__span-44-10">
 </span><span id="__span-44-11"><span class="k">end module </span><span class="n">mymod1</span><span class="w"> </span>
@@ -18379,12 +18379,12 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-45-5">
 </span><span id="__span-45-6"><span class="k">contains      </span>
 </span><span id="__span-45-7"><span class="k">   subroutine </span><span class="n">show_M</span><span class="p">()</span><span class="w">          </span>
-</span><span id="__span-45-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;M = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w">          </span>
+</span><span id="__span-45-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"M = "</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w">          </span>
 </span><span id="__span-45-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_M</span><span class="w"> </span>
 </span><span id="__span-45-10">
 </span><span id="__span-45-11"><span class="k">end module </span><span class="n">mymod2</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-46-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-46-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output 
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -18658,7 +18658,7 @@ The original blog post can still be found on the Qt blog</p>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-48-1"><span class="k">subroutine </span><span class="n">sub</span><span class="p">()</span><span class="w"> </span>
 </span><span id="__span-48-2"><span class="k">implicit none</span>
 </span><span id="__span-48-3">
-</span><span id="__span-48-4"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;haha&quot;</span>
+</span><span id="__span-48-4"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">"haha"</span>
 </span><span id="__span-48-5">
 </span><span id="__span-48-6"><span class="k">end subroutine </span><span class="n">sub</span>
 </span></code></pre></div></td></tr></table></div></p>
@@ -18675,7 +18675,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-49-5">
 </span><span id="__span-49-6"><span class="k">end program </span><span class="n">main_prog</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-50-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-50-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -18811,7 +18811,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-52-5">
 </span><span id="__span-52-6"><span class="k">contains      </span>
 </span><span id="__span-52-7"><span class="k">   subroutine </span><span class="n">show_N</span><span class="p">()</span><span class="w">          </span>
-</span><span id="__span-52-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">          </span>
+</span><span id="__span-52-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N = "</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">          </span>
 </span><span id="__span-52-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N</span><span class="w"> </span>
 </span><span id="__span-52-10">
 </span><span id="__span-52-11"><span class="k">end module </span><span class="n">onemod</span><span class="w"> </span>
@@ -18831,7 +18831,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-53-6">
 </span><span id="__span-53-7"><span class="k">end program </span><span class="n">main_prog</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-54-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-54-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -18971,7 +18971,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-56-5">
 </span><span id="__span-56-6"><span class="k">contains      </span>
 </span><span id="__span-56-7"><span class="k">   subroutine </span><span class="n">show_N3</span><span class="p">()</span>
-</span><span id="__span-56-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N3 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N3</span>
+</span><span id="__span-56-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N3 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N3</span>
 </span><span id="__span-56-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N3</span>
 </span><span id="__span-56-10">
 </span><span id="__span-56-11"><span class="k">end module </span><span class="n">mod3</span>
@@ -19010,7 +19010,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-57-5">
 </span><span id="__span-57-6"><span class="k">contains      </span>
 </span><span id="__span-57-7"><span class="k">   subroutine </span><span class="n">show_N1</span><span class="p">()</span>
-</span><span id="__span-57-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N1 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span>
+</span><span id="__span-57-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N1 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span>
 </span><span id="__span-57-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N1</span>
 </span><span id="__span-57-10">
 </span><span id="__span-57-11"><span class="k">end module </span><span class="n">mod1</span>
@@ -19023,10 +19023,10 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-57-18">
 </span><span id="__span-57-19"><span class="k">contains      </span>
 </span><span id="__span-57-20"><span class="k">   subroutine </span><span class="n">show_N2</span><span class="p">()</span>
-</span><span id="__span-57-21"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N2 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
-</span><span id="__span-57-22"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; begin to call show_N3() in show_N2()&quot;</span>
+</span><span id="__span-57-21"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N2 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
+</span><span id="__span-57-22"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">" begin to call show_N3() in show_N2()"</span>
 </span><span id="__span-57-23"><span class="w">      </span><span class="k">call </span><span class="n">show_N3</span><span class="p">()</span>
-</span><span id="__span-57-24"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; end to call show_N3() in show_N2()&quot;</span>
+</span><span id="__span-57-24"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">" end to call show_N3() in show_N2()"</span>
 </span><span id="__span-57-25"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N2</span>
 </span><span id="__span-57-26">
 </span><span id="__span-57-27"><span class="k">end module </span><span class="n">mod2</span>
@@ -19054,7 +19054,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-58-10">
 </span><span id="__span-58-11"><span class="k">end program </span><span class="n">main_prog</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-59-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-59-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -19248,7 +19248,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-61-5">
 </span><span id="__span-61-6"><span class="k">contains      </span>
 </span><span id="__span-61-7"><span class="k">   subroutine </span><span class="n">show_N3</span><span class="p">()</span>
-</span><span id="__span-61-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N3 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N3</span>
+</span><span id="__span-61-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N3 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N3</span>
 </span><span id="__span-61-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N3</span>
 </span><span id="__span-61-10">
 </span><span id="__span-61-11"><span class="k">end module </span><span class="n">mod3</span>
@@ -19287,7 +19287,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-62-5">
 </span><span id="__span-62-6"><span class="k">contains      </span>
 </span><span id="__span-62-7"><span class="k">   subroutine </span><span class="n">show_N1</span><span class="p">()</span>
-</span><span id="__span-62-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N1 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span>
+</span><span id="__span-62-8"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N1 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N1</span>
 </span><span id="__span-62-9"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N1</span>
 </span><span id="__span-62-10">
 </span><span id="__span-62-11"><span class="k">end module </span><span class="n">mod1</span>
@@ -19300,10 +19300,10 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-62-18">
 </span><span id="__span-62-19"><span class="k">contains      </span>
 </span><span id="__span-62-20"><span class="k">   subroutine </span><span class="n">show_N2</span><span class="p">()</span>
-</span><span id="__span-62-21"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N2 = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
-</span><span id="__span-62-22"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; begin to call show_N3() in show_N2()&quot;</span>
+</span><span id="__span-62-21"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N2 = "</span><span class="p">,</span><span class="w"> </span><span class="n">N2</span>
+</span><span id="__span-62-22"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">" begin to call show_N3() in show_N2()"</span>
 </span><span id="__span-62-23"><span class="w">      </span><span class="k">call </span><span class="n">show_N3</span><span class="p">()</span>
-</span><span id="__span-62-24"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; end to call show_N3() in show_N2()&quot;</span>
+</span><span id="__span-62-24"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">" end to call show_N3() in show_N2()"</span>
 </span><span id="__span-62-25"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N2</span>
 </span><span id="__span-62-26">
 </span><span id="__span-62-27"><span class="k">end module </span><span class="n">mod2</span>
@@ -19317,7 +19317,7 @@ The original blog post can still be found on the Qt blog</p>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-63-1"><span class="k">subroutine </span><span class="n">sub1</span><span class="p">()</span><span class="w"> </span>
 </span><span id="__span-63-2"><span class="k">implicit none</span>
 </span><span id="__span-63-3">
-</span><span id="__span-63-4"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;haha1&quot;</span>
+</span><span id="__span-63-4"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">"haha1"</span>
 </span><span id="__span-63-5">
 </span><span id="__span-63-6"><span class="k">end subroutine </span><span class="n">sub1</span>
 </span></code></pre></div></td></tr></table></div></p>
@@ -19330,7 +19330,7 @@ The original blog post can still be found on the Qt blog</p>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-64-1"><span class="k">subroutine </span><span class="n">sub2</span><span class="p">()</span><span class="w"> </span>
 </span><span id="__span-64-2"><span class="k">implicit none</span>
 </span><span id="__span-64-3">
-</span><span id="__span-64-4"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;haha2&quot;</span>
+</span><span id="__span-64-4"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">"haha2"</span>
 </span><span id="__span-64-5">
 </span><span id="__span-64-6"><span class="k">end subroutine </span><span class="n">sub2</span>
 </span></code></pre></div></td></tr></table></div></p>
@@ -19361,7 +19361,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-65-12">
 </span><span id="__span-65-13"><span class="k">end program </span><span class="n">main_prog</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-66-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-66-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -19639,7 +19639,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-68-2"><span class="c">!DEC$ ATTRIBUTES DLLEXPORT :: sub</span>
 </span><span id="__span-68-3"><span class="k">implicit none</span>
 </span><span id="__span-68-4">
-</span><span id="__span-68-5"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;haha&quot;</span>
+</span><span id="__span-68-5"><span class="k">    print</span><span class="o">*</span><span class="p">,</span><span class="s2">"haha"</span>
 </span><span id="__span-68-6">
 </span><span id="__span-68-7"><span class="k">end subroutine </span><span class="n">sub</span>
 </span></code></pre></div></td></tr></table></div></p>
@@ -19656,7 +19656,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-69-5">
 </span><span id="__span-69-6"><span class="k">end program </span><span class="n">main_prog</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-70-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-70-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -19953,7 +19953,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-71-64">
 </span><span id="__span-71-65">
 </span><span id="__span-71-66"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">01</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="p">.\</span><span class="n">testprj</span><span class="p">.</span><span class="n">exe</span>
-</span><span id="__span-71-67"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">01</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="nv">$env:path</span> <span class="p">+=</span> <span class="s2">&quot;;d:\work\fortran_work\ModernFortran\codes\windows\shared-lib\ifx\01\lib\build\&quot;</span>
+</span><span id="__span-71-67"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">01</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="nv">$env:path</span> <span class="p">+=</span> <span class="s2">";d:\work\fortran_work\ModernFortran\codes\windows\shared-lib\ifx\01\lib\build\"</span>
 </span><span id="__span-71-68"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">01</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="p">.\</span><span class="n">testprj</span><span class="p">.</span><span class="n">exe</span>
 </span><span id="__span-71-69"> <span class="n">haha</span>
 </span><span id="__span-71-70"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">01</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="n">dumpbin</span> <span class="p">/</span><span class="n">imports</span> <span class="p">./</span><span class="n">testprj</span><span class="p">.</span><span class="n">exe</span>
@@ -20138,7 +20138,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-72-6"><span class="k">contains      </span>
 </span><span id="__span-72-7"><span class="k">   subroutine </span><span class="n">show_N</span><span class="p">()</span>
 </span><span id="__span-72-8"><span class="w">      </span><span class="c">!DEC$ ATTRIBUTES DLLEXPORT :: show_N   </span>
-</span><span id="__span-72-9"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">          </span>
+</span><span id="__span-72-9"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N = "</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">          </span>
 </span><span id="__span-72-10"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N</span><span class="w"> </span>
 </span><span id="__span-72-11">
 </span><span id="__span-72-12"><span class="k">end module </span><span class="n">onemod</span><span class="w"> </span>
@@ -20158,7 +20158,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-73-6">
 </span><span id="__span-73-7"><span class="k">end program </span><span class="n">main_prog</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-74-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-74-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -20456,7 +20456,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-75-65"><span class="n">-a</span><span class="p">----</span>         <span class="n">2025</span><span class="p">/</span><span class="n">4</span><span class="p">/</span><span class="n">19</span>     <span class="n">21</span><span class="p">:</span><span class="n">02</span>         <span class="n">460288</span> <span class="n">testprj</span><span class="p">.</span><span class="n">exe</span>
 </span><span id="__span-75-66">
 </span><span id="__span-75-67">
-</span><span id="__span-75-68"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">02</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="nv">$env:path</span> <span class="p">+=</span> <span class="s2">&quot;;d:\work\fortran_work\ModernFortran\codes\windows\shared-lib\ifx\02\lib\build\&quot;</span>
+</span><span id="__span-75-68"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">02</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="nv">$env:path</span> <span class="p">+=</span> <span class="s2">";d:\work\fortran_work\ModernFortran\codes\windows\shared-lib\ifx\02\lib\build\"</span>
 </span><span id="__span-75-69"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">02</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="p">.\</span><span class="n">testprj</span><span class="p">.</span><span class="n">exe</span>
 </span><span id="__span-75-70"> <span class="n">N</span> <span class="p">=</span>         <span class="n">1024</span>
 </span><span id="__span-75-71"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">02</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="n">dumpbin</span> <span class="p">/</span><span class="n">imports</span> <span class="p">./</span><span class="n">testprj</span><span class="p">.</span><span class="n">exe</span>
@@ -20647,12 +20647,12 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-76-7"><span class="k">contains      </span>
 </span><span id="__span-76-8"><span class="k">   subroutine </span><span class="n">show_N</span><span class="p">()</span>
 </span><span id="__span-76-9"><span class="w">      </span><span class="c">!DEC$ ATTRIBUTES DLLEXPORT :: show_N   </span>
-</span><span id="__span-76-10"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">          </span>
+</span><span id="__span-76-10"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N = "</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="w">          </span>
 </span><span id="__span-76-11"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_N</span><span class="w"> </span>
 </span><span id="__span-76-12">
 </span><span id="__span-76-13"><span class="w">   </span><span class="k">subroutine </span><span class="n">show_M</span><span class="p">()</span>
 </span><span id="__span-76-14"><span class="w">      </span><span class="c">!DEC$ ATTRIBUTES DLLEXPORT :: show_M   </span>
-</span><span id="__span-76-15"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;M = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w">          </span>
+</span><span id="__span-76-15"><span class="w">      </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"M = "</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w">          </span>
 </span><span id="__span-76-16"><span class="w">   </span><span class="k">end subroutine </span><span class="n">show_M</span><span class="w">    </span>
 </span><span id="__span-76-17">
 </span><span id="__span-76-18"><span class="k">end module </span><span class="n">onemod</span>
@@ -20671,12 +20671,12 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-77-3"><span class="k">implicit none     </span>
 </span><span id="__span-77-4">
 </span><span id="__span-77-5"><span class="k">   call </span><span class="n">show_N</span><span class="p">()</span><span class="w"> </span>
-</span><span id="__span-77-6"><span class="w">   </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;N Para = &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
+</span><span id="__span-77-6"><span class="w">   </span><span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"N Para = "</span><span class="p">,</span><span class="w"> </span><span class="n">N</span>
 </span><span id="__span-77-7"><span class="w">   </span><span class="k">call </span><span class="n">show_M</span><span class="p">()</span><span class="w"> </span>
 </span><span id="__span-77-8">
 </span><span id="__span-77-9"><span class="k">end program </span><span class="n">main_prog</span>
 </span></code></pre></div></td></tr></table></div></p>
-<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-78-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files (x86)\Intel\oneAPI\setvars.bat&quot; &amp;&amp; powershell&#39;</span>
+<div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-78-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files (x86)\Intel\oneAPI\setvars.bat" &amp;&amp; powershell'</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Some of the output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -20977,7 +20977,7 @@ The original blog post can still be found on the Qt blog</p>
 </span><span id="__span-79-65"><span class="n">-a</span><span class="p">----</span>         <span class="n">2025</span><span class="p">/</span><span class="n">4</span><span class="p">/</span><span class="n">19</span>     <span class="n">21</span><span class="p">:</span><span class="n">17</span>         <span class="n">566784</span> <span class="n">testprj</span><span class="p">.</span><span class="n">exe</span>
 </span><span id="__span-79-66">
 </span><span id="__span-79-67">
-</span><span id="__span-79-68"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">03</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="nv">$env:path</span> <span class="p">+=</span> <span class="s2">&quot;;d:\work\fortran_work\ModernFortran\codes\windows\shared-lib\ifx\03\lib\build\&quot;</span>
+</span><span id="__span-79-68"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">03</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="nv">$env:path</span> <span class="p">+=</span> <span class="s2">";d:\work\fortran_work\ModernFortran\codes\windows\shared-lib\ifx\03\lib\build\"</span>
 </span><span id="__span-79-69"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">fortran_work</span><span class="p">\</span><span class="n">ModernFortran</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">windows</span><span class="p">\</span><span class="n">shared-lib</span><span class="p">\</span><span class="n">ifx</span><span class="p">\</span><span class="n">03</span><span class="p">\</span><span class="n">test</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="p">.\</span><span class="n">testprj</span><span class="p">.</span><span class="n">exe</span>
 </span><span id="__span-79-70"> <span class="n">N</span> <span class="p">=</span>         <span class="n">1024</span>
 </span><span id="__span-79-71"> <span class="n">N</span> <span class="n">Para</span> <span class="p">=</span>         <span class="n">1024</span>
@@ -21215,10 +21215,10 @@ The original blog post can still be found on the Qt blog</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

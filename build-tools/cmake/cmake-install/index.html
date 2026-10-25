@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -16013,16 +16013,16 @@
 <h2 id="add-environment-variables">Add environment variables<a class="headerlink" href="#add-environment-variables" title="Permanent link">&para;</a></h2>
 <p>HDF5 example
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">$env:HDF5_DIR = &quot;c:/dev/HDF_Group/HDF5/1.14.0/cmake/&quot;
-</span><span id="__span-0-2">$env:path += &quot;;C:/dev/HDF_Group/HDF5/1.14.0/bin/&quot;
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">$env:HDF5_DIR = "c:/dev/HDF_Group/HDF5/1.14.0/cmake/"
+</span><span id="__span-0-2">$env:path += ";C:/dev/HDF_Group/HDF5/1.14.0/bin/"
 </span></code></pre></div></td></tr></table></div></p>
 <p>GLAD example
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">$env:path += &quot;;C:/dev/gladtest/bin/&quot;
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">$env:path += ";C:/dev/gladtest/bin/"
 </span></code></pre></div></td></tr></table></div></p>
 <h2 id="install_1">install<a class="headerlink" href="#install_1" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">cmake --install . --config Debug
-</span><span id="__span-2-2">cmake --install . --prefix &quot;c:/dev/myprj/&quot;  --config Debug
+</span><span id="__span-2-2">cmake --install . --prefix "c:/dev/myprj/"  --config Debug
 </span></code></pre></div></td></tr></table></div>
 <p>delete dir and files
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1">rm * -recurse
@@ -16047,7 +16047,7 @@
 </span><span id="__span-5-4">or
 </span><span id="__span-5-5">cmake --install .
 </span><span id="__span-5-6">or 
-</span><span id="__span-5-7">cmake --install . --prefix &quot;c:/dev/myprj/&quot;  --config Release
+</span><span id="__span-5-7">cmake --install . --prefix "c:/dev/myprj/"  --config Release
 </span></code></pre></div></td></tr></table></div>
 <h3 id="install-destinations">install destinations<a class="headerlink" href="#install-destinations" title="Permanent link">&para;</a></h3>
 <div class="language-cmake highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CMake</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16058,9 +16058,9 @@
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="c"># make cache variables for install destinations</span>
 </span><span id="__span-6-2"><span class="nb">include</span><span class="p">(</span><span class="s">GNUInstallDirs</span><span class="p">)</span>
 </span><span id="__span-6-3">
-</span><span id="__span-6-4"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;CMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_LIBDIR}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-6-5"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;CMAKE_INSTALL_BINDIR=${CMAKE_INSTALL_BINDIR}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-6-6"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;CMAKE_INSTALL_INCLUDEDIR=${CMAKE_INSTALL_INCLUDEDIR}&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-6-4"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"CMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_LIBDIR}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-6-5"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"CMAKE_INSTALL_BINDIR=${CMAKE_INSTALL_BINDIR}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-6-6"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"CMAKE_INSTALL_INCLUDEDIR=${CMAKE_INSTALL_INCLUDEDIR}"</span><span class="w"> </span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>results:
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16089,11 +16089,11 @@
 </span><span id="__span-8-3"><span class="c">#--------------------------------------------------------------------</span>
 </span><span id="__span-8-4"><span class="nb">include</span><span class="p">(</span><span class="s">CMakePackageConfigHelpers</span><span class="p">)</span>
 </span><span id="__span-8-5">
-</span><span id="__span-8-6"><span class="nb">set</span><span class="p">(</span><span class="s">GLFW_CONFIG_PATH</span><span class="w"> </span><span class="s2">&quot;${CMAKE_INSTALL_LIBDIR}/cmake/glfw3&quot;</span><span class="p">)</span>
+</span><span id="__span-8-6"><span class="nb">set</span><span class="p">(</span><span class="s">GLFW_CONFIG_PATH</span><span class="w"> </span><span class="s2">"${CMAKE_INSTALL_LIBDIR}/cmake/glfw3"</span><span class="p">)</span>
 </span><span id="__span-8-7">
 </span><span id="__span-8-8"><span class="nb">configure_package_config_file</span><span class="p">(</span><span class="s">CMake/glfw3Config.cmake.in</span>
 </span><span id="__span-8-9"><span class="w">                              </span><span class="s">src/glfw3Config.cmake</span>
-</span><span id="__span-8-10"><span class="w">                              </span><span class="s">INSTALL_DESTINATION</span><span class="w"> </span><span class="s2">&quot;${GLFW_CONFIG_PATH}&quot;</span>
+</span><span id="__span-8-10"><span class="w">                              </span><span class="s">INSTALL_DESTINATION</span><span class="w"> </span><span class="s2">"${GLFW_CONFIG_PATH}"</span>
 </span><span id="__span-8-11"><span class="w">                              </span><span class="s">NO_CHECK_REQUIRED_COMPONENTS_MACRO</span><span class="p">)</span>
 </span><span id="__span-8-12">
 </span><span id="__span-8-13"><span class="nb">write_basic_package_version_file</span><span class="p">(</span><span class="s">src/glfw3ConfigVersion.cmake</span>
@@ -16145,31 +16145,31 @@
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="c">#----------------------------------------------------------------</span>
-</span><span id="__span-10-2"><span class="c"># Generated CMake target import file for configuration &quot;Release&quot;.</span>
+</span><span id="__span-10-2"><span class="c"># Generated CMake target import file for configuration "Release".</span>
 </span><span id="__span-10-3"><span class="c">#----------------------------------------------------------------</span>
 </span><span id="__span-10-4">
 </span><span id="__span-10-5"><span class="c"># Commands may need to know the format version.</span>
 </span><span id="__span-10-6"><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_IMPORT_FILE_VERSION</span><span class="w"> </span><span class="s">1</span><span class="p">)</span>
 </span><span id="__span-10-7">
-</span><span id="__span-10-8"><span class="c"># Import target &quot;Foo::Foo_static&quot; for configuration &quot;Release&quot;</span>
+</span><span id="__span-10-8"><span class="c"># Import target "Foo::Foo_static" for configuration "Release"</span>
 </span><span id="__span-10-9"><span class="nb">set_property</span><span class="p">(</span><span class="s">TARGET</span><span class="w"> </span><span class="s">Foo::Foo_static</span><span class="w"> </span><span class="s">APPEND</span><span class="w"> </span><span class="s">PROPERTY</span><span class="w"> </span><span class="s">IMPORTED_CONFIGURATIONS</span><span class="w"> </span><span class="s">RELEASE</span><span class="p">)</span>
 </span><span id="__span-10-10"><span class="nb">set_target_properties</span><span class="p">(</span><span class="s">Foo::Foo_static</span><span class="w"> </span><span class="s">PROPERTIES</span>
-</span><span id="__span-10-11"><span class="w">  </span><span class="s">IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE</span><span class="w"> </span><span class="s2">&quot;CXX&quot;</span>
-</span><span id="__span-10-12"><span class="w">  </span><span class="s">IMPORTED_LOCATION_RELEASE</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/lib/Foo_static.lib&quot;</span>
+</span><span id="__span-10-11"><span class="w">  </span><span class="s">IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE</span><span class="w"> </span><span class="s2">"CXX"</span>
+</span><span id="__span-10-12"><span class="w">  </span><span class="s">IMPORTED_LOCATION_RELEASE</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/lib/Foo_static.lib"</span>
 </span><span id="__span-10-13"><span class="w">  </span><span class="p">)</span>
 </span><span id="__span-10-14">
 </span><span id="__span-10-15"><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">_cmake_import_check_targets</span><span class="w"> </span><span class="s">Foo::Foo_static</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-10-16"><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">_cmake_import_check_files_for_Foo::Foo_static</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/lib/Foo_static.lib&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-16"><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">_cmake_import_check_files_for_Foo::Foo_static</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/lib/Foo_static.lib"</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-10-17">
-</span><span id="__span-10-18"><span class="c"># Import target &quot;Foo::Foo&quot; for configuration &quot;Release&quot;</span>
+</span><span id="__span-10-18"><span class="c"># Import target "Foo::Foo" for configuration "Release"</span>
 </span><span id="__span-10-19"><span class="nb">set_property</span><span class="p">(</span><span class="s">TARGET</span><span class="w"> </span><span class="s">Foo::Foo</span><span class="w"> </span><span class="s">APPEND</span><span class="w"> </span><span class="s">PROPERTY</span><span class="w"> </span><span class="s">IMPORTED_CONFIGURATIONS</span><span class="w"> </span><span class="s">RELEASE</span><span class="p">)</span>
 </span><span id="__span-10-20"><span class="nb">set_target_properties</span><span class="p">(</span><span class="s">Foo::Foo</span><span class="w"> </span><span class="s">PROPERTIES</span>
-</span><span id="__span-10-21"><span class="w">  </span><span class="s">IMPORTED_IMPLIB_RELEASE</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/lib/Foo.lib&quot;</span>
-</span><span id="__span-10-22"><span class="w">  </span><span class="s">IMPORTED_LOCATION_RELEASE</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/bin/Foo.dll&quot;</span>
+</span><span id="__span-10-21"><span class="w">  </span><span class="s">IMPORTED_IMPLIB_RELEASE</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/lib/Foo.lib"</span>
+</span><span id="__span-10-22"><span class="w">  </span><span class="s">IMPORTED_LOCATION_RELEASE</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/bin/Foo.dll"</span>
 </span><span id="__span-10-23"><span class="w">  </span><span class="p">)</span>
 </span><span id="__span-10-24">
 </span><span id="__span-10-25"><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">_cmake_import_check_targets</span><span class="w"> </span><span class="s">Foo::Foo</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-10-26"><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">_cmake_import_check_files_for_Foo::Foo</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/lib/Foo.lib&quot;</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/bin/Foo.dll&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-26"><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">_cmake_import_check_files_for_Foo::Foo</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/lib/Foo.lib"</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/bin/Foo.dll"</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-10-27">
 </span><span id="__span-10-28"><span class="c"># Commands beyond this point should not need to know the version.</span>
 </span><span id="__span-10-29"><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_IMPORT_FILE_VERSION</span><span class="p">)</span>
@@ -16195,7 +16195,7 @@
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">cmake .. -D CMAKE_INSTALL_PREFIX=c:/local/foomixed3/
-</span><span id="__span-14-2">cmake --install . --prefix &quot;c:/local/foomixed3/&quot;
+</span><span id="__span-14-2">cmake --install . --prefix "c:/local/foomixed3/"
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -16205,8 +16205,8 @@
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1">PS D:\work\libinstall_work\Foo\02\build&gt; cmake --install . --prefix &quot;c:/local/foomixed3/&quot;
-</span><span id="__span-15-2">-- Install configuration: &quot;Release&quot;
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1">PS D:\work\libinstall_work\Foo\02\build&gt; cmake --install . --prefix "c:/local/foomixed3/"
+</span><span id="__span-15-2">-- Install configuration: "Release"
 </span><span id="__span-15-3">-- Installing: c:/local/foomixed3/include/foo.h
 </span><span id="__span-15-4">-- Installing: c:/local/foomixed3/include/foover.h
 </span><span id="__span-15-5">-- Installing: c:/local/foomixed3/lib/Foo.lib
@@ -16220,8 +16220,8 @@
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1">cmake .. -D CMAKE_INSTALL_PREFIX=c:/local/foomixed3/
 </span><span id="__span-16-2">cmake --build . --parallel 4 --config Release
-</span><span id="__span-16-3">cmake --install . --prefix &quot;c:/local/foomixed3/&quot; --config Release
-</span><span id="__span-16-4">cmake --install . --prefix &quot;c:/local/foomixed4/&quot; --config Release
+</span><span id="__span-16-3">cmake --install . --prefix "c:/local/foomixed3/" --config Release
+</span><span id="__span-16-4">cmake --install . --prefix "c:/local/foomixed4/" --config Release
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -16341,10 +16341,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

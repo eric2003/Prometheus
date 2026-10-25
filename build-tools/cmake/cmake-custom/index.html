@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -16090,8 +16090,8 @@
 </span><span id="__span-0-8">  compare_files [--ignore-eol] file1 file2
 </span><span id="__span-0-9">                              - check if file1 is same as file2
 </span><span id="__span-0-10">  copy &lt;file&gt;... destination  - copy files to destination (either file or directory)
-</span><span id="__span-0-11">  copy_directory &lt;dir&gt;... destination   - copy content of &lt;dir&gt;... directories to &#39;destination&#39; directory
-</span><span id="__span-0-12">  copy_directory_if_different &lt;dir&gt;... destination   - copy changed content of &lt;dir&gt;... directories to &#39;destination&#39; directory
+</span><span id="__span-0-11">  copy_directory &lt;dir&gt;... destination   - copy content of &lt;dir&gt;... directories to 'destination' directory
+</span><span id="__span-0-12">  copy_directory_if_different &lt;dir&gt;... destination   - copy changed content of &lt;dir&gt;... directories to 'destination' directory
 </span><span id="__span-0-13">  copy_if_different &lt;file&gt;... destination  - copy files if it has changed
 </span><span id="__span-0-14">  echo [&lt;string&gt;...]        - displays arguments as text
 </span><span id="__span-0-15">  echo_append [&lt;string&gt;...] - displays arguments as text but no new line
@@ -16147,7 +16147,7 @@
 </span><span id="__span-1-5"><span class="nb">add_executable</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="s">main.cpp</span><span class="p">)</span>
 </span><span id="__span-1-6">
 </span><span id="__span-1-7"><span class="nb">add_custom_command</span><span class="p">(</span><span class="s">OUTPUT</span><span class="w"> </span><span class="s">printout</span><span class="w"> </span>
-</span><span id="__span-1-8"><span class="w">                   </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">&quot;compile finished&quot;</span>
+</span><span id="__span-1-8"><span class="w">                   </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">"compile finished"</span>
 </span><span id="__span-1-9"><span class="w">                   </span><span class="s">VERBATIM</span>
 </span><span id="__span-1-10"><span class="w">                  </span><span class="p">)</span>
 </span><span id="__span-1-11">
@@ -16239,7 +16239,7 @@
 </span><span id="__span-4-5">add_executable(${PROJECT_NAME} main.cpp)
 </span><span id="__span-4-6">
 </span><span id="__span-4-7">add_custom_command(OUTPUT printout.txt
-</span><span id="__span-4-8">                   COMMAND ${CMAKE_COMMAND} -E echo &quot;compile finished&quot; &gt; printout.txt
+</span><span id="__span-4-8">                   COMMAND ${CMAKE_COMMAND} -E echo "compile finished" &gt; printout.txt
 </span><span id="__span-4-9">                   VERBATIM
 </span><span id="__span-4-10">                  )
 </span><span id="__span-4-11">
@@ -16702,7 +16702,7 @@
 </span><span id="__span-16-7"><span class="nb">set</span><span class="p">(</span><span class="w"> </span><span class="s">directory</span><span class="w"> </span><span class="s">mydir</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-16-8">
 </span><span id="__span-16-9"><span class="nb">add_custom_target</span><span class="p">(</span><span class="s">mkdir_target</span>
-</span><span id="__span-16-10"><span class="w">  </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">&quot;Create directories&quot;</span>
+</span><span id="__span-16-10"><span class="w">  </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">"Create directories"</span>
 </span><span id="__span-16-11"><span class="p">)</span>
 </span><span id="__span-16-12">
 </span><span id="__span-16-13"><span class="nb">add_custom_command</span><span class="p">(</span>
@@ -16874,11 +16874,11 @@
 </span><span id="__span-18-7"><span class="nb">set</span><span class="p">(</span><span class="w"> </span><span class="s">directory</span><span class="w"> </span><span class="s">mydir</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-18-8">
 </span><span id="__span-18-9"><span class="nb">add_custom_target</span><span class="p">(</span><span class="s">mkdir_target</span>
-</span><span id="__span-18-10"><span class="w">  </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">&quot;Create directories&quot;</span>
+</span><span id="__span-18-10"><span class="w">  </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">"Create directories"</span>
 </span><span id="__span-18-11"><span class="p">)</span>
 </span><span id="__span-18-12">
 </span><span id="__span-18-13"><span class="nb">add_custom_target</span><span class="p">(</span><span class="s">rmdir_target</span>
-</span><span id="__span-18-14"><span class="w">  </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">&quot;Delete directories&quot;</span>
+</span><span id="__span-18-14"><span class="w">  </span><span class="s">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_COMMAND</span><span class="o">}</span><span class="w"> </span><span class="s">-E</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s2">"Delete directories"</span>
 </span><span id="__span-18-15"><span class="p">)</span>
 </span><span id="__span-18-16">
 </span><span id="__span-18-17"><span class="nb">add_custom_command</span><span class="p">(</span>
@@ -17143,10 +17143,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

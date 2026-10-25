@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -16705,7 +16705,7 @@
 </span></code></pre></div></td></tr></table></div></p>
 <h2 id="julia_2">第一个 Julia 程序<a class="headerlink" href="#julia_2" title="Permanent link">&para;</a></h2>
 <p>接下来我们来编写第一个 Julia 程序 hello.jl（Julia 文件扩展名 .jl），代码如下：
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">println(&quot;Hello World!&quot;)
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">println("Hello World!")
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="julia-v">julia -v 命令用于查看版本号。<a class="headerlink" href="#julia-v" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16715,7 +16715,7 @@
 <h3 id="version">VERSION<a class="headerlink" href="#version" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1">julia&gt; VERSION
-</span><span id="__span-10-2">v&quot;1.10.2&quot;
+</span><span id="__span-10-2">v"1.10.2"
 </span></code></pre></div></td></tr></table></div>
 <h3 id="julia-version">julia --version<a class="headerlink" href="#julia-version" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16762,10 +16762,10 @@
 </span><span id="__span-13-2">               _
 </span><span id="__span-13-3">   _       _ _(_)_     |  Documentation: https://docs.julialang.org
 </span><span id="__span-13-4">  (_)     | (_) (_)    |
-</span><span id="__span-13-5">   _ _   _| |_  __ _   |  Type &quot;?&quot; for help, &quot;]?&quot; for Pkg help.
+</span><span id="__span-13-5">   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
 </span><span id="__span-13-6">  | | | | | | |/ _` |  |
 </span><span id="__span-13-7">  | | |_| | | | (_| |  |  Version 1.10.5 (2024-08-27)
-</span><span id="__span-13-8"> _/ |\__&#39;_|_|_|\__&#39;_|  |  Official https://julialang.org/ release
+</span><span id="__span-13-8"> _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
 </span><span id="__span-13-9">|__/                   |
 </span><span id="__span-13-10">
 </span><span id="__span-13-11">julia&gt;
@@ -16777,7 +16777,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"># 这是一行注释
 </span><span id="__span-14-2"># 这是另外一行注释
-</span><span id="__span-14-3">println(&quot;Hello World!&quot;)
+</span><span id="__span-14-3">println("Hello World!")
 </span></code></pre></div></td></tr></table></div>
 <p>多行注释用 #= 与 =# 将注释括起来，例如:</p>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16788,7 +16788,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 </span><span id="__span-15-2">1、这是一行注释
 </span><span id="__span-15-3">2、这是另外一行注释
 </span><span id="__span-15-4">=#
-</span><span id="__span-15-5">println(&quot;Hello World!&quot;)
+</span><span id="__span-15-5">println("Hello World!")
 </span></code></pre></div></td></tr></table></div>
 <h2 id="_2">创建一维数组<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>下面实例创建了一个简单的一维数组：
@@ -16814,7 +16814,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 </span><span id="__span-17-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-17-3">
 </span><span id="__span-17-4"><span class="c"># using printf macro with @ sign </span>
-</span><span id="__span-17-5"><span class="nd">@printf</span><span class="p">(</span><span class="s">&quot;pi = </span><span class="si">%0.20f</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">float</span><span class="p">(</span><span class="nb">pi</span><span class="p">))</span>
+</span><span id="__span-17-5"><span class="nd">@printf</span><span class="p">(</span><span class="s">"pi = </span><span class="si">%0.20f</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">float</span><span class="p">(</span><span class="nb">pi</span><span class="p">))</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16828,7 +16828,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><span class="c"># importing Printf</span>
 </span><span id="__span-19-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-19-3">
-</span><span id="__span-19-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">&quot;Hello </span><span class="si">%s</span><span class="s">&quot;</span><span class="w"> </span><span class="s">&quot;world&quot;</span>
+</span><span id="__span-19-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">"Hello </span><span class="si">%s</span><span class="s">"</span><span class="w"> </span><span class="s">"world"</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16842,7 +16842,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><span class="c"># importing Printf</span>
 </span><span id="__span-21-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-21-3">
-</span><span id="__span-21-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">&quot;Scientific notation </span><span class="si">%e</span><span class="s">&quot;</span><span class="w"> </span><span class="mf">1.234</span>
+</span><span id="__span-21-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">"Scientific notation </span><span class="si">%e</span><span class="s">"</span><span class="w"> </span><span class="mf">1.234</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16856,7 +16856,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><span class="c"># importing Printf</span>
 </span><span id="__span-23-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-23-3">
-</span><span id="__span-23-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">&quot;Scientific notation three digits </span><span class="si">%.3e</span><span class="s">&quot;</span><span class="w"> </span><span class="mf">1.23456</span>
+</span><span id="__span-23-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">"Scientific notation three digits </span><span class="si">%.3e</span><span class="s">"</span><span class="w"> </span><span class="mf">1.23456</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16870,7 +16870,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><span class="c"># importing Printf</span>
 </span><span id="__span-25-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-25-3">
-</span><span id="__span-25-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">&quot;Decimal two digits </span><span class="si">%.2f</span><span class="s">&quot;</span><span class="w"> </span><span class="mf">1.23456</span>
+</span><span id="__span-25-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">"Decimal two digits </span><span class="si">%.2f</span><span class="s">"</span><span class="w"> </span><span class="mf">1.23456</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16884,7 +16884,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-27-1"><span class="c"># importing Printf</span>
 </span><span id="__span-27-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-27-3">
-</span><span id="__span-27-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">&quot;Padded to length 5 </span><span class="si">%5i</span><span class="s">&quot;</span><span class="w"> </span><span class="mi">123</span>
+</span><span id="__span-27-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">"Padded to length 5 </span><span class="si">%5i</span><span class="s">"</span><span class="w"> </span><span class="mi">123</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16898,7 +16898,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><span class="c"># importing Printf</span>
 </span><span id="__span-29-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-29-3">
-</span><span id="__span-29-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">&quot;Padded with zeros to length 6 </span><span class="si">%06i</span><span class="s">&quot;</span><span class="w"> </span><span class="mi">123</span>
+</span><span id="__span-29-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">"Padded with zeros to length 6 </span><span class="si">%06i</span><span class="s">"</span><span class="w"> </span><span class="mi">123</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16912,7 +16912,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-31-1"><span class="c"># importing Printf</span>
 </span><span id="__span-31-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-31-3">
-</span><span id="__span-31-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">&quot;Use shorter of decimal or scientific </span><span class="si">%g</span><span class="s"> </span><span class="si">%g</span><span class="s">&quot;</span><span class="w"> </span><span class="mf">1.23</span><span class="w"> </span><span class="mf">12300000.0</span>
+</span><span id="__span-31-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">"Use shorter of decimal or scientific </span><span class="si">%g</span><span class="s"> </span><span class="si">%g</span><span class="s">"</span><span class="w"> </span><span class="mf">1.23</span><span class="w"> </span><span class="mf">12300000.0</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16926,7 +16926,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-33-1"><span class="c"># importing Printf</span>
 </span><span id="__span-33-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-33-3">
-</span><span id="__span-33-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">&quot;Use dynamic width and precision  </span><span class="si">%*.*f</span><span class="s">&quot;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mf">0.12345</span>
+</span><span id="__span-33-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">"Use dynamic width and precision  </span><span class="si">%*.*f</span><span class="s">"</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mf">0.12345</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16940,7 +16940,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-35-1"><span class="c"># importing Printf</span>
 </span><span id="__span-35-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-35-3">
-</span><span id="__span-35-4"><span class="nd">@printf</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%f</span><span class="s"> </span><span class="si">%F</span><span class="s"> </span><span class="si">%f</span><span class="s"> </span><span class="si">%F</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">Inf</span><span class="p">,</span><span class="w"> </span><span class="nb">Inf</span><span class="p">,</span><span class="w"> </span><span class="nb">NaN</span><span class="p">,</span><span class="w"> </span><span class="nb">NaN</span><span class="p">)</span>
+</span><span id="__span-35-4"><span class="nd">@printf</span><span class="p">(</span><span class="s">"</span><span class="si">%f</span><span class="s"> </span><span class="si">%F</span><span class="s"> </span><span class="si">%f</span><span class="s"> </span><span class="si">%F</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="nb">Inf</span><span class="p">,</span><span class="w"> </span><span class="nb">Inf</span><span class="p">,</span><span class="w"> </span><span class="nb">NaN</span><span class="p">,</span><span class="w"> </span><span class="nb">NaN</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16954,7 +16954,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-37-1"><span class="c"># importing Printf</span>
 </span><span id="__span-37-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-37-3">
-</span><span id="__span-37-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">&quot;</span><span class="si">%.0f</span><span class="s"> </span><span class="si">%.1f</span><span class="s"> </span><span class="si">%f</span><span class="s">&quot;</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.025</span><span class="w"> </span><span class="o">-</span><span class="mf">0.0078125</span>
+</span><span id="__span-37-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">"</span><span class="si">%.0f</span><span class="s"> </span><span class="si">%.1f</span><span class="s"> </span><span class="si">%f</span><span class="s">"</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.025</span><span class="w"> </span><span class="o">-</span><span class="mf">0.0078125</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16968,7 +16968,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-39-1"><span class="c"># importing Printf</span>
 </span><span id="__span-39-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-39-3">
-</span><span id="__span-39-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">&quot;this is a </span><span class="si">%s</span><span class="s"> </span><span class="si">%15.1f</span><span class="s">&quot;</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="w"> </span><span class="mf">34.567</span>
+</span><span id="__span-39-4"><span class="nd">@printf</span><span class="w"> </span><span class="s">"this is a </span><span class="si">%s</span><span class="s"> </span><span class="si">%15.1f</span><span class="s">"</span><span class="w"> </span><span class="s">"test"</span><span class="w"> </span><span class="mf">34.567</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16985,7 +16985,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 </span><span id="__span-41-2">
 </span><span id="__span-41-3"><span class="c"># printing text in different colors</span>
 </span><span id="__span-41-4"><span class="k">for</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">[</span><span class="ss">:red</span><span class="p">,</span><span class="w"> </span><span class="ss">:cyan</span><span class="p">,</span><span class="w"> </span><span class="ss">:blue</span><span class="p">,</span><span class="w"> </span><span class="ss">:magenta</span><span class="p">]</span>
-</span><span id="__span-41-5"><span class="w">    </span><span class="n">printstyled</span><span class="p">(</span><span class="s">&quot;Hello World </span><span class="si">$</span><span class="p">(</span><span class="n">color</span><span class="p">)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">)</span>
+</span><span id="__span-41-5"><span class="w">    </span><span class="n">printstyled</span><span class="p">(</span><span class="s">"Hello World </span><span class="si">$</span><span class="p">(</span><span class="n">color</span><span class="p">)</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">color</span><span class="p">)</span>
 </span><span id="__span-41-6"><span class="k">end</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
@@ -17010,7 +17010,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 </span><span id="__span-43-2"><span class="k">using</span><span class="w"> </span><span class="n">Printf</span>
 </span><span id="__span-43-3">
 </span><span id="__span-43-4"><span class="c"># using @macro with sprintf where output is a string</span>
-</span><span id="__span-43-5"><span class="n">String1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nd">@sprintf</span><span class="p">(</span><span class="s">&quot;pi = </span><span class="si">%0.20f</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">float</span><span class="p">(</span><span class="nb">pi</span><span class="p">))</span>
+</span><span id="__span-43-5"><span class="n">String1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nd">@sprintf</span><span class="p">(</span><span class="s">"pi = </span><span class="si">%0.20f</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">float</span><span class="p">(</span><span class="nb">pi</span><span class="p">))</span>
 </span><span id="__span-43-6">
 </span><span id="__span-43-7"><span class="n">println</span><span class="p">(</span><span class="n">String1</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -17023,7 +17023,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <div class="language-julia highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Julia</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-45-1"><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
-</span><span id="__span-45-2"><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Iteration: </span><span class="si">$</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">/10&quot;</span><span class="p">)</span>
+</span><span id="__span-45-2"><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"Iteration: </span><span class="si">$</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">/10"</span><span class="p">)</span>
 </span><span id="__span-45-3"><span class="k">end</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
@@ -17055,7 +17055,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-47-1"><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">10</span>
 </span><span id="__span-47-2"><span class="w">    </span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-</span><span id="__span-47-3"><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\r</span><span class="s">Iteration: </span><span class="si">$</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">/10&quot;</span><span class="p">)</span>
+</span><span id="__span-47-3"><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="s">"</span><span class="se">\r</span><span class="s">Iteration: </span><span class="si">$</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="s">/10"</span><span class="p">)</span>
 </span><span id="__span-47-4"><span class="k">end</span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
@@ -17090,22 +17090,22 @@ Julia 中单行注释以 # 开头，例如：</p>
 </span><span id="__span-49-3">
 </span><span id="__span-49-4"><span class="c"># Creating a String  </span>
 </span><span id="__span-49-5"><span class="c"># with double Quotes  </span>
-</span><span id="__span-49-6"><span class="n">String1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Welcome to the Geeks World&quot;</span>
-</span><span id="__span-49-7"><span class="n">println</span><span class="p">(</span><span class="s">&quot;String with the use of Double Quotes: &quot;</span><span class="p">)</span><span class="w">  </span>
+</span><span id="__span-49-6"><span class="n">String1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Welcome to the Geeks World"</span>
+</span><span id="__span-49-7"><span class="n">println</span><span class="p">(</span><span class="s">"String with the use of Double Quotes: "</span><span class="p">)</span><span class="w">  </span>
 </span><span id="__span-49-8"><span class="n">println</span><span class="p">(</span><span class="n">String1</span><span class="p">)</span><span class="w">  </span>
 </span><span id="__span-49-9">
 </span><span id="__span-49-10"><span class="c"># Creating a String  </span>
 </span><span id="__span-49-11"><span class="c"># with triple Quotes  </span>
-</span><span id="__span-49-12"><span class="n">String1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;&quot;I&#39;m a Geek and I live in a world of Geeks&quot;&quot;&quot;</span>
-</span><span id="__span-49-13"><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">String with the use of Triple Quotes: &quot;</span><span class="p">)</span><span class="w">  </span>
+</span><span id="__span-49-12"><span class="n">String1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"""I'm a Geek and I live in a world of Geeks"""</span>
+</span><span id="__span-49-13"><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">String with the use of Triple Quotes: "</span><span class="p">)</span><span class="w">  </span>
 </span><span id="__span-49-14"><span class="n">println</span><span class="p">(</span><span class="n">String1</span><span class="p">)</span><span class="w">  </span>
 </span><span id="__span-49-15">
 </span><span id="__span-49-16"><span class="c"># Creating String with triple  </span>
 </span><span id="__span-49-17"><span class="c"># Quotes allows multiple lines  </span>
-</span><span id="__span-49-18"><span class="n">String1</span><span class="w"> </span><span class="o">=</span><span class="s">&quot;&quot;&quot;Geeks  </span>
+</span><span id="__span-49-18"><span class="n">String1</span><span class="w"> </span><span class="o">=</span><span class="s">"""Geeks  </span>
 </span><span id="__span-49-19"><span class="s">            For  </span>
-</span><span id="__span-49-20"><span class="s">            Life&quot;&quot;&quot;</span>
-</span><span id="__span-49-21"><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Creating a multiline String: &quot;</span><span class="p">)</span><span class="w">  </span>
+</span><span id="__span-49-20"><span class="s">            Life"""</span>
+</span><span id="__span-49-21"><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Creating a multiline String: "</span><span class="p">)</span><span class="w">  </span>
 </span><span id="__span-49-22"><span class="n">println</span><span class="p">(</span><span class="n">String1</span><span class="p">)</span><span class="w">  </span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
@@ -17124,7 +17124,7 @@ Julia 中单行注释以 # 开头，例如：</p>
 </span><span id="__span-50-3"><span class="n">Welcome</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Geeks</span> <span class="n">World</span>
 </span><span id="__span-50-4">
 </span><span id="__span-50-5"><span class="n">String</span> <span class="n">with</span> <span class="n">the</span> <span class="n">use</span> <span class="n">of</span> <span class="n">Triple</span> <span class="n">Quotes</span><span class="p">:</span>
-</span><span id="__span-50-6"><span class="n">I</span><span class="err">&#39;</span><span class="n">m</span> <span class="n">a</span> <span class="n">Geek</span> <span class="n">and</span> <span class="n">I</span> <span class="n">live</span> <span class="k">in</span> <span class="n">a</span> <span class="n">world</span> <span class="n">of</span> <span class="n">Geeks</span>
+</span><span id="__span-50-6"><span class="n">I</span><span class="err">'</span><span class="n">m</span> <span class="n">a</span> <span class="n">Geek</span> <span class="n">and</span> <span class="n">I</span> <span class="n">live</span> <span class="k">in</span> <span class="n">a</span> <span class="n">world</span> <span class="n">of</span> <span class="n">Geeks</span>
 </span><span id="__span-50-7">
 </span><span id="__span-50-8"><span class="n">Creating</span> <span class="n">a</span> <span class="n">multiline</span> <span class="n">String</span><span class="p">:</span>
 </span><span id="__span-50-9"><span class="n">Geeks</span>
@@ -17148,16 +17148,16 @@ Julia 中单行注释以 # 开头，例如：</p>
 <span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-51-1"><span class="c"># Julia Program to Access  </span>
 </span><span id="__span-51-2"><span class="c"># characters of String  </span>
 </span><span id="__span-51-3">
-</span><span id="__span-51-4"><span class="n">String1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GeeksForGeeks&quot;</span>
-</span><span id="__span-51-5"><span class="n">println</span><span class="p">(</span><span class="s">&quot;Initial String: &quot;</span><span class="p">)</span><span class="w">  </span>
+</span><span id="__span-51-4"><span class="n">String1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"GeeksForGeeks"</span>
+</span><span id="__span-51-5"><span class="n">println</span><span class="p">(</span><span class="s">"Initial String: "</span><span class="p">)</span><span class="w">  </span>
 </span><span id="__span-51-6"><span class="n">println</span><span class="p">(</span><span class="n">String1</span><span class="p">)</span><span class="w">  </span>
 </span><span id="__span-51-7">
 </span><span id="__span-51-8"><span class="c"># Printing First character  </span>
-</span><span id="__span-51-9"><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">First character of String is: &quot;</span><span class="p">)</span><span class="w">  </span>
+</span><span id="__span-51-9"><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">First character of String is: "</span><span class="p">)</span><span class="w">  </span>
 </span><span id="__span-51-10"><span class="n">println</span><span class="p">(</span><span class="n">String1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w">  </span>
 </span><span id="__span-51-11">
 </span><span id="__span-51-12"><span class="c"># Printing Last character  </span>
-</span><span id="__span-51-13"><span class="n">println</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Last character of String is: &quot;</span><span class="p">)</span><span class="w">  </span>
+</span><span id="__span-51-13"><span class="n">println</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Last character of String is: "</span><span class="p">)</span><span class="w">  </span>
 </span><span id="__span-51-14"><span class="n">println</span><span class="p">(</span><span class="n">String1</span><span class="p">[</span><span class="k">end</span><span class="p">])</span><span class="w">  </span>
 </span></code></pre></div></td></tr></table></div>
 <p>output
@@ -17251,10 +17251,10 @@ Julia 中单行注释以 # 开头，例如：</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

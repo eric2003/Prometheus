@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -16274,20 +16274,20 @@
 </span><span id="__span-0-3">import QmlProject 1.1
 </span><span id="__span-0-4">
 </span><span id="__span-0-5">Project {
-</span><span id="__span-0-6">    mainFile: &quot;Simple.qml&quot;
+</span><span id="__span-0-6">    mainFile: "Simple.qml"
 </span><span id="__span-0-7">
 </span><span id="__span-0-8">    /* Include .qml, .js, and image files from current directory and subdirectories */
 </span><span id="__span-0-9">    QmlFiles {
-</span><span id="__span-0-10">        directory: &quot;.&quot;
+</span><span id="__span-0-10">        directory: "."
 </span><span id="__span-0-11">    }
 </span><span id="__span-0-12">    JavaScriptFiles {
-</span><span id="__span-0-13">        directory: &quot;.&quot;
+</span><span id="__span-0-13">        directory: "."
 </span><span id="__span-0-14">    }
 </span><span id="__span-0-15">    ImageFiles {
-</span><span id="__span-0-16">        directory: &quot;.&quot;
+</span><span id="__span-0-16">        directory: "."
 </span><span id="__span-0-17">    }
 </span><span id="__span-0-18">    /* List of plugin directories passed to QML runtime */
-</span><span id="__span-0-19">    // importPaths: [ &quot;asset_imports&quot; ]
+</span><span id="__span-0-19">    // importPaths: [ "asset_imports" ]
 </span><span id="__span-0-20">}
 </span></code></pre></div></td></tr></table></div></p>
 <p>Simple.qml
@@ -16304,7 +16304,7 @@
 </span><span id="__span-1-4">    <span class="k">width:</span> <span class="mi">640</span>
 </span><span id="__span-1-5">    <span class="k">height:</span> <span class="mi">480</span>
 </span><span id="__span-1-6">    <span class="k">visible:</span> <span class="kc">true</span>
-</span><span id="__span-1-7">    <span class="k">title:</span> <span class="nx">qsTr</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</span><span id="__span-1-7">    <span class="k">title:</span> <span class="nx">qsTr</span><span class="p">(</span><span class="s2">"Hello World"</span><span class="p">)</span>
 </span><span id="__span-1-8"><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="hello-world">Hello World<a class="headerlink" href="#hello-world" title="Permanent link">&para;</a></h3>
@@ -16315,7 +16315,7 @@
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="kr">import</span> <span class="nx">QtQuick</span>
 </span><span id="__span-2-2">
 </span><span id="__span-2-3"><span class="nx">Text</span> <span class="p">{</span>
-</span><span id="__span-2-4">    <span class="k">text:</span> <span class="s2">&quot;Hello World!&quot;</span>
+</span><span id="__span-2-4">    <span class="k">text:</span> <span class="s2">"Hello World!"</span>
 </span><span id="__span-2-5"><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="command-line-run">command line run<a class="headerlink" href="#command-line-run" title="Permanent link">&para;</a></h3>
@@ -16703,7 +16703,7 @@
 <p>run.bat
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1">set QML_XHR_ALLOW_FILE_READ=1
-</span><span id="__span-18-2">&quot;c:\local\Qt\Tools\QtCreator\bin\qtcreator.exe&quot;
+</span><span id="__span-18-2">"c:\local\Qt\Tools\QtCreator\bin\qtcreator.exe"
 </span></code></pre></div></td></tr></table></div></p>
 <h3 id="venv">venv<a class="headerlink" href="#venv" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -16734,14 +16734,14 @@
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1">flask --app server run
 </span></code></pre></div></td></tr></table></div>
 <h3 id="json-load-problem">json load problem<a class="headerlink" href="#json-load-problem" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">(</span><span class="s1">&#39;colors.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">))</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">(</span><span class="s1">'colors.json'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">))</span>
 </span></code></pre></div></td></tr></table></div>
 <p>error
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1">colors = json.load(file(&#39;colors.json&#39;, &#39;r&#39;))
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1">colors = json.load(file('colors.json', 'r'))
 </span><span id="__span-26-2">                       ^^^^
-</span><span id="__span-26-3">NameError: name &#39;file&#39; is not defined. Did you mean: &#39;filter&#39;?
+</span><span id="__span-26-3">NameError: name 'file' is not defined. Did you mean: 'filter'?
 </span></code></pre></div></td></tr></table></div></p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -16749,14 +16749,14 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-27-1"><span class="c1"># Opening JSON file</span>
-</span><span id="__span-27-2"><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">)</span>
+</span><span id="__span-27-2"><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'data.json'</span><span class="p">)</span>
 </span><span id="__span-27-3">
 </span><span id="__span-27-4"><span class="c1"># returns JSON object as </span>
 </span><span id="__span-27-5"><span class="c1"># a dictionary</span>
 </span><span id="__span-27-6"><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="offlinestorage">OfflineStorage<a class="headerlink" href="#offlinestorage" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-28-1">&quot;C:\\Users\\eric\\AppData\\Roaming\\applocalstorage\\QML\\OfflineStorage\\Databases\\d41d8cd98f00b204e9800998ecf8427e&quot;
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-28-1">"C:\\Users\\eric\\AppData\\Roaming\\applocalstorage\\QML\\OfflineStorage\\Databases\\d41d8cd98f00b204e9800998ecf8427e"
 </span></code></pre></div></td></tr></table></div>
 <h3 id="plugin">plugin<a class="headerlink" href="#plugin" title="Permanent link">&para;</a></h3>
 <p>default
@@ -16844,10 +16844,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

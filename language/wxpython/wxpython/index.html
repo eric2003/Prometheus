@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -15981,7 +15981,7 @@
 </span><span id="__span-1-3">
 </span><span id="__span-1-4"><span class="k">class</span><span class="w"> </span><span class="nc">PathConverterApp</span><span class="p">(</span><span class="n">wx</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
 </span><span id="__span-1-5">    <span class="k">def</span><span class="w"> </span><span class="nf">OnInit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-1-6">        <span class="bp">self</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">PathConverterFrame</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;路径转换器&quot;</span><span class="p">)</span>
+</span><span id="__span-1-6">        <span class="bp">self</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">PathConverterFrame</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"路径转换器"</span><span class="p">)</span>
 </span><span id="__span-1-7">        <span class="bp">self</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">Show</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 </span><span id="__span-1-8">        <span class="k">return</span> <span class="kc">True</span>
 </span><span id="__span-1-9">
@@ -15995,12 +15995,12 @@
 </span><span id="__span-1-17">
 </span><span id="__span-1-18">        <span class="c1"># 创建输入路径的文本控件</span>
 </span><span id="__span-1-19">        <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">TextCtrl</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
-</span><span id="__span-1-20">        <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="s2">&quot;请输入路径&quot;</span><span class="p">)</span>
+</span><span id="__span-1-20">        <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="s2">"请输入路径"</span><span class="p">)</span>
 </span><span id="__span-1-21">        <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">Bind</span><span class="p">(</span><span class="n">wx</span><span class="o">.</span><span class="n">EVT_TEXT</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">OnText</span><span class="p">)</span>
 </span><span id="__span-1-22">        <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">Bind</span><span class="p">(</span><span class="n">wx</span><span class="o">.</span><span class="n">EVT_KILL_FOCUS</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">OnLostFocus</span><span class="p">)</span>
 </span><span id="__span-1-23">
 </span><span id="__span-1-24">        <span class="c1"># 创建转换按钮</span>
-</span><span id="__span-1-25">        <span class="bp">self</span><span class="o">.</span><span class="n">convert_button</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;转换路径&quot;</span><span class="p">)</span>
+</span><span id="__span-1-25">        <span class="bp">self</span><span class="o">.</span><span class="n">convert_button</span> <span class="o">=</span> <span class="n">wx</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">panel</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"转换路径"</span><span class="p">)</span>
 </span><span id="__span-1-26">        <span class="bp">self</span><span class="o">.</span><span class="n">convert_button</span><span class="o">.</span><span class="n">Bind</span><span class="p">(</span><span class="n">wx</span><span class="o">.</span><span class="n">EVT_BUTTON</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">OnConvertPath</span><span class="p">)</span>
 </span><span id="__span-1-27">
 </span><span id="__span-1-28">        <span class="c1"># 创建显示转换后路径的文本控件（只读）</span>
@@ -16015,21 +16015,21 @@
 </span><span id="__span-1-37">        <span class="n">panel</span><span class="o">.</span><span class="n">SetSizer</span><span class="p">(</span><span class="n">sizer</span><span class="p">)</span>
 </span><span id="__span-1-38">
 </span><span id="__span-1-39">    <span class="k">def</span><span class="w"> </span><span class="nf">OnText</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-</span><span id="__span-1-40">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;请输入路径&quot;</span><span class="p">:</span>
-</span><span id="__span-1-41">            <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="__span-1-40">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span> <span class="o">==</span> <span class="s2">"请输入路径"</span><span class="p">:</span>
+</span><span id="__span-1-41">            <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
 </span><span id="__span-1-42">
 </span><span id="__span-1-43">    <span class="k">def</span><span class="w"> </span><span class="nf">OnLostFocus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 </span><span id="__span-1-44">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">GetValue</span><span class="p">():</span>
-</span><span id="__span-1-45">            <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="s2">&quot;请输入路径&quot;</span><span class="p">)</span>
+</span><span id="__span-1-45">            <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="s2">"请输入路径"</span><span class="p">)</span>
 </span><span id="__span-1-46">
 </span><span id="__span-1-47">    <span class="k">def</span><span class="w"> </span><span class="nf">OnConvertPath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
 </span><span id="__span-1-48">        <span class="c1"># 获取输入框中的路径并转换</span>
 </span><span id="__span-1-49">        <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_path</span><span class="o">.</span><span class="n">GetValue</span><span class="p">()</span>
-</span><span id="__span-1-50">        <span class="n">converted_path</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+</span><span id="__span-1-50">        <span class="n">converted_path</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'</span><span class="se">\\</span><span class="s1">'</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
 </span><span id="__span-1-51">        <span class="c1"># 显示转换后的路径</span>
 </span><span id="__span-1-52">        <span class="bp">self</span><span class="o">.</span><span class="n">output_path</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">converted_path</span><span class="p">)</span>
 </span><span id="__span-1-53">
-</span><span id="__span-1-54"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span id="__span-1-54"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
 </span><span id="__span-1-55">    <span class="n">app</span> <span class="o">=</span> <span class="n">PathConverterApp</span><span class="p">()</span>
 </span><span id="__span-1-56">    <span class="n">app</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
@@ -16105,10 +16105,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

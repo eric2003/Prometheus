@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -15974,8 +15974,8 @@
 </span><span id="__span-1-2"><span class="nb">add_library</span><span class="p">(</span><span class="s">glfw</span><span class="w"> </span><span class="s">SHARED</span><span class="w"> </span><span class="s">IMPORTED</span><span class="p">)</span>
 </span><span id="__span-1-3">
 </span><span id="__span-1-4"><span class="nb">set_target_properties</span><span class="p">(</span><span class="s">glfw</span><span class="w"> </span><span class="s">PROPERTIES</span>
-</span><span id="__span-1-5"><span class="w">  </span><span class="s">INTERFACE_COMPILE_DEFINITIONS</span><span class="w"> </span><span class="s2">&quot;GLFW_DLL&quot;</span>
-</span><span id="__span-1-6"><span class="w">  </span><span class="s">INTERFACE_INCLUDE_DIRECTORIES</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/include&quot;</span>
+</span><span id="__span-1-5"><span class="w">  </span><span class="s">INTERFACE_COMPILE_DEFINITIONS</span><span class="w"> </span><span class="s2">"GLFW_DLL"</span>
+</span><span id="__span-1-6"><span class="w">  </span><span class="s">INTERFACE_INCLUDE_DIRECTORIES</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/include"</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="glfw3targets-releasecmake-code-segment">glfw3Targets-release.cmake code segment<a class="headerlink" href="#glfw3targets-releasecmake-code-segment" title="Permanent link">&para;</a></h2>
 <div class="language-cmake highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CMake</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -15986,15 +15986,15 @@
 <span class="normal">6</span>
 <span class="normal">7</span>
 <span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="c"># Import target &quot;glfw&quot; for configuration &quot;Release&quot;</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="c"># Import target "glfw" for configuration "Release"</span>
 </span><span id="__span-2-2"><span class="nb">set_property</span><span class="p">(</span><span class="s">TARGET</span><span class="w"> </span><span class="s">glfw</span><span class="w"> </span><span class="s">APPEND</span><span class="w"> </span><span class="s">PROPERTY</span><span class="w"> </span><span class="s">IMPORTED_CONFIGURATIONS</span><span class="w"> </span><span class="s">RELEASE</span><span class="p">)</span>
 </span><span id="__span-2-3"><span class="nb">set_target_properties</span><span class="p">(</span><span class="s">glfw</span><span class="w"> </span><span class="s">PROPERTIES</span>
-</span><span id="__span-2-4"><span class="w">  </span><span class="s">IMPORTED_IMPLIB_RELEASE</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/lib/glfw3dll.lib&quot;</span>
-</span><span id="__span-2-5"><span class="w">  </span><span class="s">IMPORTED_LOCATION_RELEASE</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/bin/glfw3.dll&quot;</span>
+</span><span id="__span-2-4"><span class="w">  </span><span class="s">IMPORTED_IMPLIB_RELEASE</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/lib/glfw3dll.lib"</span>
+</span><span id="__span-2-5"><span class="w">  </span><span class="s">IMPORTED_LOCATION_RELEASE</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/bin/glfw3.dll"</span>
 </span><span id="__span-2-6"><span class="w">  </span><span class="p">)</span>
 </span><span id="__span-2-7">
 </span><span id="__span-2-8"><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">_cmake_import_check_targets</span><span class="w"> </span><span class="s">glfw</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-2-9"><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">_cmake_import_check_files_for_glfw</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/lib/glfw3dll.lib&quot;</span><span class="w"> </span><span class="s2">&quot;${_IMPORT_PREFIX}/bin/glfw3.dll&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-2-9"><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">_cmake_import_check_files_for_glfw</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/lib/glfw3dll.lib"</span><span class="w"> </span><span class="s2">"${_IMPORT_PREFIX}/bin/glfw3.dll"</span><span class="w"> </span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -16015,7 +16015,7 @@
 </span><span id="__span-4-3"><span class="nb">project</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">testprj</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-4-4"><span class="nb">find_package</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">GLFW3</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-4-5"><span class="nb">get_directory_property</span><span class="p">(</span><span class="w"> </span><span class="s">my_import_targets</span><span class="w"> </span><span class="s">DIRECTORY</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="o">}</span><span class="w"> </span><span class="s">IMPORTED_TARGETS</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-4-6"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;my_import_targets=${my_import_targets}&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-4-6"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"my_import_targets=${my_import_targets}"</span><span class="w"> </span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>results:
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -16102,7 +16102,7 @@
 </span><span id="__span-6-2">
 </span><span id="__span-6-3"><span class="nb">function</span><span class="p">(</span><span class="s">print_target_properties</span><span class="w"> </span><span class="s">targetname</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-6-4"><span class="w">    </span><span class="nb">include</span><span class="p">(</span><span class="s">CMakePrintHelpers</span><span class="p">)</span>
-</span><span id="__span-6-5"><span class="w">    </span><span class="nb">message</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;targetname = ${targetname}&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-6-5"><span class="w">    </span><span class="nb">message</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"targetname = ${targetname}"</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-6-6"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="w"> </span><span class="s">props</span><span class="w"> </span><span class="o">${</span><span class="nv">ARGN</span><span class="o">}</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-6-7"><span class="w">    </span><span class="nb">foreach</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">prop</span><span class="w"> </span><span class="s">IN</span><span class="w"> </span><span class="s">LISTS</span><span class="w"> </span><span class="s">props</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-6-8"><span class="w">        </span><span class="nb">cmake_print_properties</span><span class="p">(</span>
@@ -16117,7 +16117,7 @@
 </span><span id="__span-6-17"><span class="nb">find_package</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">GLFW3</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-6-18">
 </span><span id="__span-6-19"><span class="nb">get_directory_property</span><span class="p">(</span><span class="w"> </span><span class="s">my_import_targets</span><span class="w"> </span><span class="s">DIRECTORY</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_CURRENT_SOURCE_DIR</span><span class="o">}</span><span class="w"> </span><span class="s">IMPORTED_TARGETS</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-6-20"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;my_import_targets=${my_import_targets}&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-6-20"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"my_import_targets=${my_import_targets}"</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-6-21">
 </span><span id="__span-6-22"><span class="nb">set</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">props</span>
 </span><span id="__span-6-23"><span class="w">  </span><span class="s">INTERFACE_COMPILE_DEFINITIONS</span>
@@ -16196,19 +16196,19 @@
 </span><span id="__span-7-24">-- targetname = glfw
 </span><span id="__span-7-25">--
 </span><span id="__span-7-26"> Properties for TARGET glfw:
-</span><span id="__span-7-27">   glfw.INTERFACE_COMPILE_DEFINITIONS = &quot;GLFW_DLL&quot;
+</span><span id="__span-7-27">   glfw.INTERFACE_COMPILE_DEFINITIONS = "GLFW_DLL"
 </span><span id="__span-7-28">
 </span><span id="__span-7-29">--
 </span><span id="__span-7-30"> Properties for TARGET glfw:
-</span><span id="__span-7-31">   glfw.INTERFACE_INCLUDE_DIRECTORIES = &quot;C:/dev/GLFW/include&quot;
+</span><span id="__span-7-31">   glfw.INTERFACE_INCLUDE_DIRECTORIES = "C:/dev/GLFW/include"
 </span><span id="__span-7-32">
 </span><span id="__span-7-33">--
 </span><span id="__span-7-34"> Properties for TARGET glfw:
-</span><span id="__span-7-35">   glfw.IMPORTED_IMPLIB_RELEASE = &quot;C:/dev/GLFW/lib/glfw3dll.lib&quot;
+</span><span id="__span-7-35">   glfw.IMPORTED_IMPLIB_RELEASE = "C:/dev/GLFW/lib/glfw3dll.lib"
 </span><span id="__span-7-36">
 </span><span id="__span-7-37">--
 </span><span id="__span-7-38"> Properties for TARGET glfw:
-</span><span id="__span-7-39">   glfw.IMPORTED_LOCATION_RELEASE = &quot;C:/dev/GLFW/bin/glfw3.dll&quot;
+</span><span id="__span-7-39">   glfw.IMPORTED_LOCATION_RELEASE = "C:/dev/GLFW/bin/glfw3.dll"
 </span><span id="__span-7-40">
 </span><span id="__span-7-41">-- Configuring done (6.5s)
 </span><span id="__span-7-42">-- Generating done (0.0s)
@@ -16286,10 +16286,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../../javascripts/mathjax.js"></script>
       

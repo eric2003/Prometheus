@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -16077,7 +16077,7 @@
 <span class="normal">4</span>
 <span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">Oh no! On the way to add_comm, a wild succ_add appears. 
 </span><span id="__span-11-2">succ_add a b is the proof that (succ a) + b = succ (a + b) for a and b numbers. 
-</span><span id="__span-11-3">This result is what&#39;s standing in the way of x + y = y + x. 
+</span><span id="__span-11-3">This result is what's standing in the way of x + y = y + x. 
 </span><span id="__span-11-4">Again we have the problem that we are adding b to things, 
 </span><span id="__span-11-5">so we need to use induction to split into the cases where b = 0 and b is a successor.
 </span></code></pre></div></td></tr></table></div>
@@ -16133,7 +16133,7 @@
 <p>You can make your own tactics in Lean. This code here
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">macro &quot;simp_add&quot; : tactic =&gt; `(tactic|(
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1">macro "simp_add" : tactic =&gt; `(tactic|(
 </span><span id="__span-14-2">  simp only [add_assoc, add_left_comm, add_comm]))
 </span><span id="__span-14-3">was used to create a new tactic simp_add, which runs simp only [add_assoc, add_left_comm, add_comm]. Try running simp_add to solve this level!
 </span></code></pre></div></td></tr></table></div></p>
@@ -16952,7 +16952,7 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-54-1">That&#39;s better, but you&#39;d better send out those invites so you can get some responses!
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-54-1">That's better, but you'd better send out those invites so you can get some responses!
 </span><span id="__span-54-2">
 </span><span id="__span-54-3">have a := h1.left
 </span><span id="__span-54-4">have u := h2.right
@@ -18111,7 +18111,7 @@
 </span><span id="__span-139-4">为了使用这个假设，最好总是应用 rw [prime_def] at hp。
 </span><span id="__span-139-5">你（Du）：啊哈。那么一个素数就是一个大于等于 2 的自然数，只被 1 和它本身整除。这听起来很熟悉。
 </span><span id="__span-139-6">你（Du）：我现在肯定要将 hp 应用到 a 上，对吧？
-</span><span id="__span-139-7">罗博（Robo）：那就说 have hp&#39; := hp a 吧。或者更优雅一点：specialize hp a。
+</span><span id="__span-139-7">罗博（Robo）：那就说 have hp' := hp a 吧。或者更优雅一点：specialize hp a。
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -18262,7 +18262,7 @@
 <span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-149-1">罗博（Robo）：不过这也没那么难。来，看看这个任务。
 </span><span id="__span-149-2">你（Du）：我看出来了 – ∃! m, P(m) 就是“存在唯一一个 m，使得 P(m) 成立”的记法。
 </span><span id="__span-149-3">罗博（Robo）：没错。而且它简单定义为“存在一个 m，使得 (1) P(m) 成立，并且 
-</span><span id="__span-149-4">(2) 任何其他满足 P(m&#39;) 成立的元素 m&#39; 都等于 m”。
+</span><span id="__span-149-4">(2) 任何其他满足 P(m') 成立的元素 m' 都等于 m”。
 </span><span id="__span-149-5">所以第一步是找到一个合适的 m，然后用 use _。
 </span><span id="__span-149-6">罗博（Robo）：实际上，对 ∃! 应用 use 总是会产生一点混乱。最好马上跟一个 simp，这样它就会变得可读了。
 </span><span id="__span-149-7">罗博（Robo）：现在如我所说，你有两个陈述要证明：(1) w 满足 a * w = b，(2) w 是唯一具有这个性质的元素。
@@ -18961,7 +18961,7 @@
 </span><span id="__span-183-17">linarith
 </span><span id="__span-183-18">have h_no_prime_divides : ∀ p : ℕ, Prime p → ¬ p ∣ new_prime
 </span><span id="__span-183-19">intro p hp
-</span><span id="__span-183-20">let q := ∏ p&#39; ∈ (all_primes.erase p), (p&#39; : ℕ)
+</span><span id="__span-183-20">let q := ∏ p' ∈ (all_primes.erase p), (p' : ℕ)
 </span><span id="__span-183-21">have h : prod = p * q
 </span><span id="__span-183-22">simp[prod]
 </span><span id="__span-183-23">have : p ∈ all_primes
@@ -19582,10 +19582,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../../javascripts/mathjax.js"></script>
       

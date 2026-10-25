@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -15903,7 +15903,7 @@
 <span class="normal">77</span>
 <span class="normal">78</span>
 <span class="normal">79</span>
-<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cgnslib.h&quot;</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="cp">#include</span><span class="w"> </span><span class="cpf">"cgnslib.h"</span>
 </span><span id="__span-0-2"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </span><span id="__span-0-3"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 </span><span id="__span-0-4">
@@ -15926,7 +15926,7 @@
 </span><span id="__span-0-21"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">index_zone</span><span class="p">,</span><span class="n">index_coord</span><span class="p">;</span>
 </span><span id="__span-0-22"><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">basename</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span><span class="n">zonename</span><span class="p">[</span><span class="mi">33</span><span class="p">];</span>
 </span><span id="__span-0-23">
-</span><span id="__span-0-24"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Program write_grid_str</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-24"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Program write_grid_str</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
 </span><span id="__span-0-25">
 </span><span id="__span-0-26"><span class="w">    </span><span class="cm">/* create gridpoints for simple example: */</span>
 </span><span id="__span-0-27"><span class="w">    </span><span class="n">ni</span><span class="o">=</span><span class="mi">21</span><span class="p">;</span>
@@ -15944,19 +15944,19 @@
 </span><span id="__span-0-39"><span class="w">            </span><span class="p">}</span>
 </span><span id="__span-0-40"><span class="w">        </span><span class="p">}</span>
 </span><span id="__span-0-41"><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-42"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">created simple 3-D grid points&quot;</span><span class="p">);</span>
+</span><span id="__span-0-42"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">created simple 3-D grid points"</span><span class="p">);</span>
 </span><span id="__span-0-43">
 </span><span id="__span-0-44"><span class="w">    </span><span class="cm">/* WRITE X, Y, Z GRID POINTS TO CGNS FILE */</span>
 </span><span id="__span-0-45"><span class="w">    </span><span class="cm">/* open CGNS file for write */</span>
 </span><span id="__span-0-46">
-</span><span id="__span-0-47"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cg_open</span><span class="p">(</span><span class="s">&quot;grid_c.cgns&quot;</span><span class="p">,</span><span class="n">CG_MODE_WRITE</span><span class="p">,</span><span class="o">&amp;</span><span class="n">index_file</span><span class="p">))</span><span class="w"> </span><span class="n">cg_error_exit</span><span class="p">();</span>
+</span><span id="__span-0-47"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cg_open</span><span class="p">(</span><span class="s">"grid_c.cgns"</span><span class="p">,</span><span class="n">CG_MODE_WRITE</span><span class="p">,</span><span class="o">&amp;</span><span class="n">index_file</span><span class="p">))</span><span class="w"> </span><span class="n">cg_error_exit</span><span class="p">();</span>
 </span><span id="__span-0-48"><span class="w">    </span><span class="cm">/* create base (user can give any name) */</span>
-</span><span id="__span-0-49"><span class="w">    </span><span class="n">strcpy</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span><span class="s">&quot;Base&quot;</span><span class="p">);</span>
+</span><span id="__span-0-49"><span class="w">    </span><span class="n">strcpy</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span><span class="s">"Base"</span><span class="p">);</span>
 </span><span id="__span-0-50"><span class="w">    </span><span class="n">icelldim</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
 </span><span id="__span-0-51"><span class="w">    </span><span class="n">iphysdim</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span>
 </span><span id="__span-0-52"><span class="w">    </span><span class="n">cg_base_write</span><span class="p">(</span><span class="n">index_file</span><span class="p">,</span><span class="n">basename</span><span class="p">,</span><span class="n">icelldim</span><span class="p">,</span><span class="n">iphysdim</span><span class="p">,</span><span class="o">&amp;</span><span class="n">index_base</span><span class="p">);</span>
 </span><span id="__span-0-53"><span class="w">    </span><span class="cm">/* define zone name (user can give any name) */</span>
-</span><span id="__span-0-54"><span class="w">    </span><span class="n">strcpy</span><span class="p">(</span><span class="n">zonename</span><span class="p">,</span><span class="s">&quot;Zone  1&quot;</span><span class="p">);</span>
+</span><span id="__span-0-54"><span class="w">    </span><span class="n">strcpy</span><span class="p">(</span><span class="n">zonename</span><span class="p">,</span><span class="s">"Zone  1"</span><span class="p">);</span>
 </span><span id="__span-0-55"><span class="w">    </span><span class="cm">/* vertex size */</span>
 </span><span id="__span-0-56"><span class="w">    </span><span class="n">isize</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">21</span><span class="p">;</span>
 </span><span id="__span-0-57"><span class="w">    </span><span class="n">isize</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">17</span><span class="p">;</span>
@@ -15972,15 +15972,15 @@
 </span><span id="__span-0-67"><span class="w">    </span><span class="cm">/* create zone */</span>
 </span><span id="__span-0-68"><span class="w">    </span><span class="n">cg_zone_write</span><span class="p">(</span><span class="n">index_file</span><span class="p">,</span><span class="n">index_base</span><span class="p">,</span><span class="n">zonename</span><span class="p">,</span><span class="o">*</span><span class="n">isize</span><span class="p">,</span><span class="n">CGNS_ENUMV</span><span class="p">(</span><span class="n">Structured</span><span class="p">),</span><span class="o">&amp;</span><span class="n">index_zone</span><span class="p">);</span>
 </span><span id="__span-0-69"><span class="w">    </span><span class="cm">/* write grid coordinates (user must use SIDS-standard names here) */</span>
-</span><span id="__span-0-70"><span class="w">    </span><span class="n">cg_coord_write</span><span class="p">(</span><span class="n">index_file</span><span class="p">,</span><span class="n">index_base</span><span class="p">,</span><span class="n">index_zone</span><span class="p">,</span><span class="n">CGNS_ENUMV</span><span class="p">(</span><span class="n">RealDouble</span><span class="p">),</span><span class="s">&quot;CoordinateX&quot;</span><span class="p">,</span>
+</span><span id="__span-0-70"><span class="w">    </span><span class="n">cg_coord_write</span><span class="p">(</span><span class="n">index_file</span><span class="p">,</span><span class="n">index_base</span><span class="p">,</span><span class="n">index_zone</span><span class="p">,</span><span class="n">CGNS_ENUMV</span><span class="p">(</span><span class="n">RealDouble</span><span class="p">),</span><span class="s">"CoordinateX"</span><span class="p">,</span>
 </span><span id="__span-0-71"><span class="w">        </span><span class="n">x</span><span class="p">,</span><span class="o">&amp;</span><span class="n">index_coord</span><span class="p">);</span>
-</span><span id="__span-0-72"><span class="w">    </span><span class="n">cg_coord_write</span><span class="p">(</span><span class="n">index_file</span><span class="p">,</span><span class="n">index_base</span><span class="p">,</span><span class="n">index_zone</span><span class="p">,</span><span class="n">CGNS_ENUMV</span><span class="p">(</span><span class="n">RealDouble</span><span class="p">),</span><span class="s">&quot;CoordinateY&quot;</span><span class="p">,</span>
+</span><span id="__span-0-72"><span class="w">    </span><span class="n">cg_coord_write</span><span class="p">(</span><span class="n">index_file</span><span class="p">,</span><span class="n">index_base</span><span class="p">,</span><span class="n">index_zone</span><span class="p">,</span><span class="n">CGNS_ENUMV</span><span class="p">(</span><span class="n">RealDouble</span><span class="p">),</span><span class="s">"CoordinateY"</span><span class="p">,</span>
 </span><span id="__span-0-73"><span class="w">        </span><span class="n">y</span><span class="p">,</span><span class="o">&amp;</span><span class="n">index_coord</span><span class="p">);</span>
-</span><span id="__span-0-74"><span class="w">    </span><span class="n">cg_coord_write</span><span class="p">(</span><span class="n">index_file</span><span class="p">,</span><span class="n">index_base</span><span class="p">,</span><span class="n">index_zone</span><span class="p">,</span><span class="n">CGNS_ENUMV</span><span class="p">(</span><span class="n">RealDouble</span><span class="p">),</span><span class="s">&quot;CoordinateZ&quot;</span><span class="p">,</span>
+</span><span id="__span-0-74"><span class="w">    </span><span class="n">cg_coord_write</span><span class="p">(</span><span class="n">index_file</span><span class="p">,</span><span class="n">index_base</span><span class="p">,</span><span class="n">index_zone</span><span class="p">,</span><span class="n">CGNS_ENUMV</span><span class="p">(</span><span class="n">RealDouble</span><span class="p">),</span><span class="s">"CoordinateZ"</span><span class="p">,</span>
 </span><span id="__span-0-75"><span class="w">        </span><span class="n">z</span><span class="p">,</span><span class="o">&amp;</span><span class="n">index_coord</span><span class="p">);</span>
 </span><span id="__span-0-76"><span class="w">    </span><span class="cm">/* close CGNS file */</span>
 </span><span id="__span-0-77"><span class="w">    </span><span class="n">cg_close</span><span class="p">(</span><span class="n">index_file</span><span class="p">);</span>
-</span><span id="__span-0-78"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Successfully wrote grid to file grid_c.cgns</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-78"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Successfully wrote grid to file grid_c.cgns</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
 </span><span id="__span-0-79"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-0-80"><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div></p>
@@ -16056,10 +16056,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -15834,7 +15834,7 @@
 <span class="normal">7</span>
 <span class="normal">8</span>
 <span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">PS D:\work\sqlite3_work&gt; git clone https://github.com/sqlite/sqlite.git
-</span><span id="__span-0-2">Cloning into &#39;sqlite&#39;...
+</span><span id="__span-0-2">Cloning into 'sqlite'...
 </span><span id="__span-0-3">remote: Enumerating objects: 272034, done.
 </span><span id="__span-0-4">remote: Counting objects: 100% (1256/1256), done.
 </span><span id="__span-0-5">remote: Compressing objects: 100% (561/561), done.
@@ -15853,12 +15853,12 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">PS D:\work\sqlite3_work\sqlite&gt; cmd.exe &quot;/K&quot; &#39;&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat&quot; x64 &amp;&amp; powershell&#39;
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">PS D:\work\sqlite3_work\sqlite&gt; cmd.exe "/K" '"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64 &amp;&amp; powershell'
 </span><span id="__span-1-2">**********************************************************************
 </span><span id="__span-1-3">** Visual Studio 2022 Developer Command Prompt v17.13.7
 </span><span id="__span-1-4">** Copyright (c) 2022 Microsoft Corporation
 </span><span id="__span-1-5">**********************************************************************
-</span><span id="__span-1-6">[vcvarsall.bat] Environment initialized for: &#39;x64&#39;
+</span><span id="__span-1-6">[vcvarsall.bat] Environment initialized for: 'x64'
 </span><span id="__span-1-7">Windows PowerShell
 </span><span id="__span-1-8">Copyright (C) Microsoft Corporation. All rights reserved.
 </span><span id="__span-1-9">
@@ -15976,9 +15976,9 @@
 </span><span id="__span-2-16">        jimsh0.exe .\tool\mkshellc.tcl shell.c
 </span><span id="__span-2-17">        cl -nologo -W4 -Fdmksourceid.pdb   -MT -DNDEBUG -D_CRT_SECURE_NO_DEPRECATE -D_CRT_SECURE_NO_WARNINGS -D_CRT_NONSTDC_NO_DEPRECATE -D_CRT_NONSTDC_NO_WARNINGS -O2 -Zi -wd4054 -wd4055 -wd4100 -wd4127 -wd4130 -wd4152 -wd4189 -wd4206 -wd4210 -wd4232 -wd4244 -wd4305 -wd4306 -wd4702 -wd4706 -Femksourceid.exe .\tool\mksourceid.c /link /DEBUG
 </span><span id="__span-2-18">mksourceid.c
-</span><span id="__span-2-19">        jimsh0.exe .\tool\mksqlite3h.tcl &quot;.&quot; -o sqlite3.h
+</span><span id="__span-2-19">        jimsh0.exe .\tool\mksqlite3h.tcl "." -o sqlite3.h
 </span><span id="__span-2-20">        echo #ifndef SQLITE_RESOURCE_VERSION &gt; sqlite3rc.h
-</span><span id="__span-2-21">        for /F %V in (&#39;type &quot;.\VERSION&quot;&#39;) do (  echo #define SQLITE_RESOURCE_VERSION %V  | jimsh0.exe .\tool\replace.tcl exact . ^, &gt;&gt; sqlite3rc.h  )
+</span><span id="__span-2-21">        for /F %V in ('type ".\VERSION"') do (  echo #define SQLITE_RESOURCE_VERSION %V  | jimsh0.exe .\tool\replace.tcl exact . ^, &gt;&gt; sqlite3rc.h  )
 </span><span id="__span-2-22">
 </span><span id="__span-2-23">D:\work\sqlite3_work\sqlite&gt;(echo #define SQLITE_RESOURCE_VERSION 3.50.0   | jimsh0.exe .\tool\replace.tcl exact . ,   1&gt;&gt;sqlite3rc.h )
 </span><span id="__span-2-24">        echo #endif &gt;&gt; sqlite3rc.h
@@ -16075,7 +16075,7 @@
 </span><span id="__span-3-7">sqlite3.c
 </span><span id="__span-3-8">        lib.exe /NOLOGO /MACHINE:x64 /OUT:libsqlite3.lib sqlite3.lo
 </span><span id="__span-3-9">        echo EXPORTS &gt; sqlite3.def
-</span><span id="__span-3-10">        dumpbin /all libsqlite3.lib  | jimsh0.exe .\tool\replace.tcl include &quot;^\s+1 _?(sqlite3(?:session|changeset|changegroup|rebaser|rbu)?_[^@]*)(?:@\d+)?$&quot; \1  | sort &gt;&gt; sqlite3.def
+</span><span id="__span-3-10">        dumpbin /all libsqlite3.lib  | jimsh0.exe .\tool\replace.tcl include "^\s+1 _?(sqlite3(?:session|changeset|changegroup|rebaser|rbu)?_[^@]*)(?:@\d+)?$" \1  | sort &gt;&gt; sqlite3.def
 </span><span id="__span-3-11">        link.exe /DEBUG  /NOLOGO /MACHINE:x64  /DLL /DEF:sqlite3.def /OUT:sqlite3.dll sqlite3.lo sqlite3res.lo
 </span><span id="__span-3-12">LINK : sqlite3.dll not found or not built by the last incremental link; performing full link
 </span><span id="__span-3-13">   Creating library sqlite3.lib and object sqlite3.exp
@@ -16152,10 +16152,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

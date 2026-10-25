@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -15891,14 +15891,14 @@
 <li><a href="https://www.youtube.com/watch?v=z4w0OYi5L4M">How to Upgrade and Install Powershell 7 on Windows 11</a>.</li>
 </ul>
 <h2 id="cmake-install">cmake --install<a class="headerlink" href="#cmake-install" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">cmake --install . --prefix &quot;c:/dev/myprj/&quot;
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1">cmake --install . --prefix "c:/dev/myprj/"
 </span></code></pre></div></td></tr></table></div>
 <h2 id="cmake_prefix_path">CMAKE_PREFIX_PATH<a class="headerlink" href="#cmake_prefix_path" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">cmake .. -DCMAKE_PREFIX_PATH=C:/dev/libpng;C:/dev/zlib
-</span><span id="__span-1-2">cmake .. -DCMAKE_PREFIX_PATH=&quot;C:/dev/libpng;C:/dev/zlib&quot;
-</span><span id="__span-1-3">$env:PATH = &quot;c:/dev/libpng/bin;&quot; + $env:PATH
+</span><span id="__span-1-2">cmake .. -DCMAKE_PREFIX_PATH="C:/dev/libpng;C:/dev/zlib"
+</span><span id="__span-1-3">$env:PATH = "c:/dev/libpng/bin;" + $env:PATH
 </span></code></pre></div></td></tr></table></div>
 <h2 id="try_compile">try_compile<a class="headerlink" href="#try_compile" title="Permanent link">&para;</a></h2>
 <div class="language-cmake highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">CMake</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -15909,17 +15909,17 @@
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="nb">try_compile</span><span class="p">(</span>
 </span><span id="__span-2-2"><span class="w">    </span><span class="s">OpenMP_SPECTEST_</span><span class="o">${</span><span class="nv">LANG</span><span class="o">}</span><span class="s">_</span><span class="o">${</span><span class="nv">OPENMP_PLAIN_FLAG</span><span class="o">}</span><span class="w">  </span><span class="c"># 输出变量名</span>
-</span><span id="__span-2-3"><span class="w">    </span><span class="s">SOURCE_FROM_VAR</span><span class="w"> </span><span class="s2">&quot;${_OPENMP_TEST_SRC_NAME}&quot;</span><span class="w"> </span><span class="s">_OPENMP_TEST_SRC_CONTENT</span><span class="w">  </span><span class="c"># 源代码来源</span>
-</span><span id="__span-2-4"><span class="w">    </span><span class="s">LOG_DESCRIPTION</span><span class="w"> </span><span class="s2">&quot;Detecting ${LANG} OpenMP version&quot;</span><span class="w">  </span><span class="c"># 日志描述</span>
-</span><span id="__span-2-5"><span class="w">    </span><span class="s">CMAKE_FLAGS</span><span class="w"> </span><span class="s2">&quot;-DCOMPILE_DEFINITIONS:STRING=${OpenMP_${LANG}_FLAGS}&quot;</span><span class="w"> </span><span class="o">${</span><span class="nv">_includeDirFlags</span><span class="o">}</span><span class="w">  </span><span class="c"># 传递给 CMake 的额外标志</span>
-</span><span id="__span-2-6"><span class="w">    </span><span class="s">COPY_FILE</span><span class="w"> </span><span class="s2">&quot;${BIN_FILE}&quot;</span><span class="w">  </span><span class="c"># 编译后的可执行文件路径</span>
+</span><span id="__span-2-3"><span class="w">    </span><span class="s">SOURCE_FROM_VAR</span><span class="w"> </span><span class="s2">"${_OPENMP_TEST_SRC_NAME}"</span><span class="w"> </span><span class="s">_OPENMP_TEST_SRC_CONTENT</span><span class="w">  </span><span class="c"># 源代码来源</span>
+</span><span id="__span-2-4"><span class="w">    </span><span class="s">LOG_DESCRIPTION</span><span class="w"> </span><span class="s2">"Detecting ${LANG} OpenMP version"</span><span class="w">  </span><span class="c"># 日志描述</span>
+</span><span id="__span-2-5"><span class="w">    </span><span class="s">CMAKE_FLAGS</span><span class="w"> </span><span class="s2">"-DCOMPILE_DEFINITIONS:STRING=${OpenMP_${LANG}_FLAGS}"</span><span class="w"> </span><span class="o">${</span><span class="nv">_includeDirFlags</span><span class="o">}</span><span class="w">  </span><span class="c"># 传递给 CMake 的额外标志</span>
+</span><span id="__span-2-6"><span class="w">    </span><span class="s">COPY_FILE</span><span class="w"> </span><span class="s2">"${BIN_FILE}"</span><span class="w">  </span><span class="c"># 编译后的可执行文件路径</span>
 </span><span id="__span-2-7"><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat&quot; -arch=x64 &amp;&amp; powershell&#39;</span>
-</span><span id="__span-3-2"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat&quot; &amp;&amp; powershell&#39;</span>
-</span><span id="__span-3-3"><span class="p">&amp;</span><span class="s2">&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat&quot;</span> <span class="n">-arch</span><span class="p">=</span><span class="n">x64</span> <span class="p">&amp;&amp;</span> <span class="n">powershell</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=x64 &amp;&amp; powershell'</span>
+</span><span id="__span-3-2"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" &amp;&amp; powershell'</span>
+</span><span id="__span-3-3"><span class="p">&amp;</span><span class="s2">"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat"</span> <span class="n">-arch</span><span class="p">=</span><span class="n">x64</span> <span class="p">&amp;&amp;</span> <span class="n">powershell</span>
 </span></code></pre></div></td></tr></table></div>
 <div class="language-powershell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">PowerShell</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="n">cmake</span> <span class="p">..</span> <span class="n">-G</span> <span class="n">Ninja</span> <span class="n">-DCMAKE_C_COMPILER</span><span class="p">=</span><span class="n">clang</span> <span class="n">-DCMAKE_CXX_COMPILER</span><span class="p">=</span><span class="n">clang</span><span class="p">++</span>
 </span></code></pre></div></td></tr></table></div>
@@ -15992,7 +15992,7 @@
 <span class="normal">47</span>
 <span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="n">PowerShell</span> <span class="n">7</span><span class="p">.</span><span class="n">5</span><span class="p">.</span><span class="n">1</span>
 </span><span id="__span-8-2"><span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">Users</span><span class="p">\</span><span class="n">eric</span><span class="p">&gt;</span> <span class="nb">cd </span><span class="n">d</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">llvm_work</span><span class="p">\</span><span class="n">ModernLLVM</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">simplecode</span><span class="p">\</span><span class="n">03h</span><span class="p">\</span><span class="n">build</span><span class="p">\</span>
-</span><span id="__span-8-3"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">llvm_work</span><span class="p">\</span><span class="n">ModernLLVM</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">simplecode</span><span class="p">\</span><span class="n">03h</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">&quot;/K&quot;</span> <span class="s1">&#39;&quot;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat&quot; -arch=x64 &amp;&amp; powershell&#39;</span>
+</span><span id="__span-8-3"><span class="nb">PS </span><span class="n">D</span><span class="p">:\</span><span class="n">work</span><span class="p">\</span><span class="n">llvm_work</span><span class="p">\</span><span class="n">ModernLLVM</span><span class="p">\</span><span class="n">codes</span><span class="p">\</span><span class="n">simplecode</span><span class="p">\</span><span class="n">03h</span><span class="p">\</span><span class="n">build</span><span class="p">&gt;</span> <span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="s2">"/K"</span> <span class="s1">'"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat" -arch=x64 &amp;&amp; powershell'</span>
 </span><span id="__span-8-4"><span class="p">**********************************************************************</span>
 </span><span id="__span-8-5"><span class="p">**</span> <span class="n">Visual</span> <span class="n">Studio</span> <span class="n">2022</span> <span class="n">Developer</span> <span class="n">Command</span> <span class="n">Prompt</span> <span class="n">v17</span><span class="p">.</span><span class="n">14</span><span class="p">.</span><span class="n">5</span>
 </span><span id="__span-8-6"><span class="p">**</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">2025</span> <span class="n">Microsoft</span> <span class="n">Corporation</span>
@@ -16011,8 +16011,8 @@
 </span><span id="__span-8-19"><span class="p">--</span> <span class="n">Detecting</span> <span class="n">CXX</span> <span class="n">compile</span> <span class="n">features</span> <span class="p">-</span> <span class="n">done</span>
 </span><span id="__span-8-20"><span class="p">--</span> <span class="n">CMAKE_C_COMPILER</span><span class="p">=</span><span class="n">clang</span>
 </span><span id="__span-8-21"><span class="p">--</span> <span class="n">CMAKE_CXX_COMPILER</span><span class="p">=</span><span class="n">C</span><span class="p">:/</span><span class="n">Program</span> <span class="n">Files</span><span class="p">/</span><span class="n">Microsoft</span> <span class="n">Visual</span> <span class="n">Studio</span><span class="p">/</span><span class="n">2022</span><span class="p">/</span><span class="n">Community</span><span class="p">/</span><span class="n">VC</span><span class="p">/</span><span class="n">Tools</span><span class="p">/</span><span class="n">Llvm</span><span class="p">/</span><span class="n">x64</span><span class="p">/</span><span class="n">bin</span><span class="p">/</span><span class="n">clang</span><span class="p">++.</span><span class="n">exe</span>
-</span><span id="__span-8-22"><span class="p">--</span> <span class="n">Found</span> <span class="n">OpenMP_CXX</span><span class="p">:</span> <span class="n">-fopenmp</span><span class="p">=</span><span class="n">libomp</span> <span class="p">(</span><span class="n">found</span> <span class="n">version</span> <span class="s2">&quot;5.1&quot;</span><span class="p">)</span>
-</span><span id="__span-8-23"><span class="p">--</span> <span class="n">Found</span> <span class="n">OpenMP</span><span class="p">:</span> <span class="n">TRUE</span> <span class="p">(</span><span class="n">found</span> <span class="n">version</span> <span class="s2">&quot;5.1&quot;</span><span class="p">)</span>
+</span><span id="__span-8-22"><span class="p">--</span> <span class="n">Found</span> <span class="n">OpenMP_CXX</span><span class="p">:</span> <span class="n">-fopenmp</span><span class="p">=</span><span class="n">libomp</span> <span class="p">(</span><span class="n">found</span> <span class="n">version</span> <span class="s2">"5.1"</span><span class="p">)</span>
+</span><span id="__span-8-23"><span class="p">--</span> <span class="n">Found</span> <span class="n">OpenMP</span><span class="p">:</span> <span class="n">TRUE</span> <span class="p">(</span><span class="n">found</span> <span class="n">version</span> <span class="s2">"5.1"</span><span class="p">)</span>
 </span><span id="__span-8-24"><span class="p">--</span> <span class="n">my_import_targets</span><span class="p">=</span><span class="n">OpenMP</span><span class="p">::</span><span class="n">OpenMP_CXX</span>
 </span><span id="__span-8-25"><span class="p">--</span> <span class="n">OpenMP_CXX_LIBRARIES</span><span class="p">=</span><span class="n">C</span><span class="p">:/</span><span class="n">Program</span> <span class="n">Files</span><span class="p">/</span><span class="n">Microsoft</span> <span class="n">Visual</span> <span class="n">Studio</span><span class="p">/</span><span class="n">2022</span><span class="p">/</span><span class="n">Community</span><span class="p">/</span><span class="n">VC</span><span class="p">/</span><span class="n">Tools</span><span class="p">/</span><span class="n">MSVC</span><span class="p">/</span><span class="n">14</span><span class="p">.</span><span class="n">44</span><span class="p">.</span><span class="n">35207</span><span class="p">/</span><span class="n">lib</span><span class="p">/</span><span class="n">x64</span><span class="p">/</span><span class="n">libomp</span><span class="p">.</span><span class="n">lib</span>
 </span><span id="__span-8-26"><span class="p">--</span> <span class="n">OpenMP_FOUND</span><span class="p">=</span><span class="n">TRUE</span>
@@ -16061,14 +16061,14 @@
 </span><span id="__span-9-3">
 </span><span id="__span-9-4"><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-9-5"><span class="w">    </span><span class="n">omp_set_num_threads</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-</span><span id="__span-9-6"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Max threads = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">omp_get_max_threads</span><span class="p">());</span><span class="w"> </span><span class="c1">// 检查最大线程数</span>
-</span><span id="__span-9-7"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Available processors = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">omp_get_num_procs</span><span class="p">());</span><span class="w"> </span><span class="c1">// 检查可用处理器核心数</span>
+</span><span id="__span-9-6"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Max threads = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">omp_get_max_threads</span><span class="p">());</span><span class="w"> </span><span class="c1">// 检查最大线程数</span>
+</span><span id="__span-9-7"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Available processors = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">omp_get_num_procs</span><span class="p">());</span><span class="w"> </span><span class="c1">// 检查可用处理器核心数</span>
 </span><span id="__span-9-8">
 </span><span id="__span-9-9"><span class="w">    </span><span class="cp">#pragma omp parallel</span>
 </span><span id="__span-9-10"><span class="w">    </span><span class="p">{</span>
 </span><span id="__span-9-11"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">my_num_threads</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_num_threads</span><span class="p">();</span>
 </span><span id="__span-9-12"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">thread_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">omp_get_thread_num</span><span class="p">();</span>
-</span><span id="__span-9-13"><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Thread %d: my_num_threads = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">thread_id</span><span class="p">,</span><span class="w"> </span><span class="n">my_num_threads</span><span class="p">);</span>
+</span><span id="__span-9-13"><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"Thread %d: my_num_threads = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">thread_id</span><span class="p">,</span><span class="w"> </span><span class="n">my_num_threads</span><span class="p">);</span>
 </span><span id="__span-9-14"><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-9-15">
 </span><span id="__span-9-16"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -16091,10 +16091,10 @@
 </span><span id="__span-10-3">
 </span><span id="__span-10-4"><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-10-5"><span class="w">    </span><span class="cp">#ifdef _OPENMP</span>
-</span><span id="__span-10-6"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;OpenMP is supported by the compiler.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-10-7"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;OpenMP version: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">_OPENMP</span><span class="p">);</span>
+</span><span id="__span-10-6"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"OpenMP is supported by the compiler.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+</span><span id="__span-10-7"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"OpenMP version: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">_OPENMP</span><span class="p">);</span>
 </span><span id="__span-10-8"><span class="w">    </span><span class="cp">#else</span>
-</span><span id="__span-10-9"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;OpenMP is NOT supported by the compiler.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-10-9"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"OpenMP is NOT supported by the compiler.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
 </span><span id="__span-10-10"><span class="w">    </span><span class="cp">#endif</span>
 </span><span id="__span-10-11"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-10-12"><span class="p">}</span>
@@ -16105,15 +16105,15 @@
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1">PS D:\work\llvm_work\ModernLLVM\codes\simplecode\03j\build&gt; cmake --build . --verbose
-</span><span id="__span-11-2">Change Dir: &#39;D:/work/llvm_work/ModernLLVM/codes/simplecode/03j/build&#39;
+</span><span id="__span-11-2">Change Dir: 'D:/work/llvm_work/ModernLLVM/codes/simplecode/03j/build'
 </span><span id="__span-11-3">
 </span><span id="__span-11-4">Run Build Command(s): C:/PROGRA~1/MICROS~2/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v
 </span><span id="__span-11-5">[1/2] C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\Llvm\x64\bin\CLANG_~1.EXE   -O0 -std=gnu++14 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -openmp:llvm -MD -MT CMakeFiles/openmp_test.dir/main.cpp.obj -MF CMakeFiles\openmp_test.dir\main.cpp.obj.d -o CMakeFiles/openmp_test.dir/main.cpp.obj -c D:/work/llvm_work/ModernLLVM/codes/simplecode/03j/main.cpp
-</span><span id="__span-11-6">[2/2] C:\WINDOWS\system32\cmd.exe /C &quot;cd . &amp;&amp; C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\Llvm\x64\bin\CLANG_~1.EXE -nostartfiles -nostdlib -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -Xlinker /subsystem:console -fuse-ld=lld-link CMakeFiles/openmp_test.dir/main.cpp.obj -o openmp_test.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:openmp_test.lib -Xlinker /pdb:openmp_test.pdb -Xlinker /version:0.0   &quot;C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/lib/x64/libomp.lib&quot;  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames  &amp;&amp; cd .&quot;
+</span><span id="__span-11-6">[2/2] C:\WINDOWS\system32\cmd.exe /C "cd . &amp;&amp; C:\PROGRA~1\MICROS~2\2022\COMMUN~1\VC\Tools\Llvm\x64\bin\CLANG_~1.EXE -nostartfiles -nostdlib -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -g -Xclang -gcodeview -Xlinker /subsystem:console -fuse-ld=lld-link CMakeFiles/openmp_test.dir/main.cpp.obj -o openmp_test.exe -Xlinker /MANIFEST:EMBED -Xlinker /implib:openmp_test.lib -Xlinker /pdb:openmp_test.pdb -Xlinker /version:0.0   "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/lib/x64/libomp.lib"  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 -loldnames  &amp;&amp; cd ."
 </span></code></pre></div></td></tr></table></div>
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1">clang++ -openmp:llvm -c ../main.cpp -o main.o
-</span><span id="__span-12-2">clang++ main.o -o openmp_test.exe -L&quot;C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/lib/x64&quot; -llibomp
+</span><span id="__span-12-2">clang++ main.o -o openmp_test.exe -L"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/lib/x64" -llibomp
 </span></code></pre></div></td></tr></table></div>
 
 
@@ -16187,10 +16187,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       

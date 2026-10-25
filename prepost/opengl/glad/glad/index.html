@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -15941,8 +15941,8 @@
 </span><span id="__span-0-3">
 </span><span id="__span-0-4"><span class="nb">find_package</span><span class="p">(</span><span class="s">glfw3</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
 </span><span id="__span-0-5">
-</span><span id="__span-0-6"><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_SOURCES_DIR</span><span class="w"> </span><span class="s2">&quot;${PROJECT_SOURCE_DIR}/../../..&quot;</span><span class="p">)</span>
-</span><span id="__span-0-7"><span class="nb">add_subdirectory</span><span class="p">(</span><span class="s2">&quot;${GLAD_SOURCES_DIR}/cmake&quot;</span><span class="w"> </span><span class="s">glad_cmake</span><span class="p">)</span>
+</span><span id="__span-0-6"><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_SOURCES_DIR</span><span class="w"> </span><span class="s2">"${PROJECT_SOURCE_DIR}/../../.."</span><span class="p">)</span>
+</span><span id="__span-0-7"><span class="nb">add_subdirectory</span><span class="p">(</span><span class="s2">"${GLAD_SOURCES_DIR}/cmake"</span><span class="w"> </span><span class="s">glad_cmake</span><span class="p">)</span>
 </span><span id="__span-0-8">
 </span><span id="__span-0-9"><span class="nb">glad_add_library</span><span class="p">(</span><span class="s">glad_gl_core_mx_33</span><span class="w"> </span><span class="s">REPRODUCIBLE</span><span class="w"> </span><span class="s">MX</span><span class="w"> </span><span class="s">API</span><span class="w"> </span><span class="s">gl:core=3.3</span><span class="p">)</span>
 </span><span id="__span-0-10">
@@ -16071,41 +16071,41 @@
 <span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
-<span class="normal">116</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="c"># Create a glad library named &quot;${TARGET}&quot;</span>
+<span class="normal">116</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="c"># Create a glad library named "${TARGET}"</span>
 </span><span id="__span-1-2"><span class="nb">function</span><span class="p">(</span><span class="s">glad_add_library</span><span class="w"> </span><span class="s">TARGET</span><span class="p">)</span>
-</span><span id="__span-1-3"><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;Glad Library \&#39;${TARGET}\&#39;&quot;</span><span class="p">)</span>
+</span><span id="__span-1-3"><span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"Glad Library \'${TARGET}\'"</span><span class="p">)</span>
 </span><span id="__span-1-4">
 </span><span id="__span-1-5"><span class="w">    </span><span class="nb">find_package</span><span class="p">(</span><span class="s">Python</span><span class="w"> </span><span class="s">COMPONENTS</span><span class="w"> </span><span class="s">Interpreter</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
 </span><span id="__span-1-6">
-</span><span id="__span-1-7"><span class="w">    </span><span class="nb">cmake_parse_arguments</span><span class="p">(</span><span class="s">GG</span><span class="w"> </span><span class="s2">&quot;MERGE;QUIET;REPRODUCIBLE;STATIC;SHARED;MODULE;INTERFACE;EXCLUDE_FROM_ALL&quot;</span><span class="w"> </span><span class="s2">&quot;LOCATION;LANGUAGE&quot;</span><span class="w"> </span><span class="s2">&quot;API;EXTENSIONS&quot;</span><span class="w"> </span><span class="o">${</span><span class="nv">ARGN</span><span class="o">}</span><span class="p">)</span>
+</span><span id="__span-1-7"><span class="w">    </span><span class="nb">cmake_parse_arguments</span><span class="p">(</span><span class="s">GG</span><span class="w"> </span><span class="s2">"MERGE;QUIET;REPRODUCIBLE;STATIC;SHARED;MODULE;INTERFACE;EXCLUDE_FROM_ALL"</span><span class="w"> </span><span class="s2">"LOCATION;LANGUAGE"</span><span class="w"> </span><span class="s2">"API;EXTENSIONS"</span><span class="w"> </span><span class="o">${</span><span class="nv">ARGN</span><span class="o">}</span><span class="p">)</span>
 </span><span id="__span-1-8">
 </span><span id="__span-1-9"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">NOT</span><span class="w"> </span><span class="s">GG_LOCATION</span><span class="p">)</span>
-</span><span id="__span-1-10"><span class="w">        </span><span class="nb">set</span><span class="p">(</span><span class="s">GG_LOCATION</span><span class="w"> </span><span class="s2">&quot;${CMAKE_CURRENT_BINARY_DIR}/gladsources/${TARGET}&quot;</span><span class="p">)</span>
+</span><span id="__span-1-10"><span class="w">        </span><span class="nb">set</span><span class="p">(</span><span class="s">GG_LOCATION</span><span class="w"> </span><span class="s2">"${CMAKE_CURRENT_BINARY_DIR}/gladsources/${TARGET}"</span><span class="p">)</span>
 </span><span id="__span-1-11"><span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
 </span><span id="__span-1-12"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">BUILD_SHARED_LIBS</span><span class="p">)</span>
 </span><span id="__span-1-13"><span class="w">        </span><span class="nb">set</span><span class="p">(</span><span class="s">GG_SHARED</span><span class="w"> </span><span class="s">TRUE</span><span class="p">)</span>
 </span><span id="__span-1-14"><span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
-</span><span id="__span-1-15"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_DIR</span><span class="w"> </span><span class="s2">&quot;${GG_LOCATION}&quot;</span><span class="p">)</span>
-</span><span id="__span-1-16"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">NOT</span><span class="w"> </span><span class="s">IS_DIRECTORY</span><span class="w"> </span><span class="s2">&quot;${GLAD_DIR}&quot;</span><span class="p">)</span>
-</span><span id="__span-1-17"><span class="w">        </span><span class="nb">file</span><span class="p">(</span><span class="s">MAKE_DIRECTORY</span><span class="w"> </span><span class="s2">&quot;${GLAD_DIR}&quot;</span><span class="p">)</span>
+</span><span id="__span-1-15"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_DIR</span><span class="w"> </span><span class="s2">"${GG_LOCATION}"</span><span class="p">)</span>
+</span><span id="__span-1-16"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">NOT</span><span class="w"> </span><span class="s">IS_DIRECTORY</span><span class="w"> </span><span class="s2">"${GLAD_DIR}"</span><span class="p">)</span>
+</span><span id="__span-1-17"><span class="w">        </span><span class="nb">file</span><span class="p">(</span><span class="s">MAKE_DIRECTORY</span><span class="w"> </span><span class="s2">"${GLAD_DIR}"</span><span class="p">)</span>
 </span><span id="__span-1-18"><span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
-</span><span id="__span-1-19"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_ARGS</span><span class="w"> </span><span class="s">--out-path</span><span class="w"> </span><span class="s2">&quot;${GLAD_DIR}&quot;</span><span class="p">)</span>
+</span><span id="__span-1-19"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_ARGS</span><span class="w"> </span><span class="s">--out-path</span><span class="w"> </span><span class="s2">"${GLAD_DIR}"</span><span class="p">)</span>
 </span><span id="__span-1-20">
 </span><span id="__span-1-21"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">NOT</span><span class="w"> </span><span class="s">GG_API</span><span class="p">)</span>
-</span><span id="__span-1-22"><span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="s">FATAL_ERROR</span><span class="w"> </span><span class="s2">&quot;Need API&quot;</span><span class="p">)</span>
+</span><span id="__span-1-22"><span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="s">FATAL_ERROR</span><span class="w"> </span><span class="s2">"Need API"</span><span class="p">)</span>
 </span><span id="__span-1-23"><span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
-</span><span id="__span-1-24"><span class="w">    </span><span class="nb">string</span><span class="p">(</span><span class="s">REPLACE</span><span class="w"> </span><span class="s2">&quot;;&quot;</span><span class="w"> </span><span class="s2">&quot;,&quot;</span><span class="w"> </span><span class="s">GLAD_API</span><span class="w"> </span><span class="s2">&quot;${GG_API}&quot;</span><span class="p">)</span>
-</span><span id="__span-1-25"><span class="w">    </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">GLAD_ARGS</span><span class="w">  </span><span class="s">--api</span><span class="w"> </span><span class="s2">&quot;${GLAD_API}&quot;</span><span class="p">)</span>
+</span><span id="__span-1-24"><span class="w">    </span><span class="nb">string</span><span class="p">(</span><span class="s">REPLACE</span><span class="w"> </span><span class="s2">";"</span><span class="w"> </span><span class="s2">","</span><span class="w"> </span><span class="s">GLAD_API</span><span class="w"> </span><span class="s2">"${GG_API}"</span><span class="p">)</span>
+</span><span id="__span-1-25"><span class="w">    </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">GLAD_ARGS</span><span class="w">  </span><span class="s">--api</span><span class="w"> </span><span class="s2">"${GLAD_API}"</span><span class="p">)</span>
 </span><span id="__span-1-26">
 </span><span id="__span-1-27"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">GG_EXTENSIONS</span><span class="p">)</span>
 </span><span id="__span-1-28"><span class="w">        </span><span class="nb">list</span><span class="p">(</span><span class="s">FIND</span><span class="w"> </span><span class="s">GG_EXTENSIONS</span><span class="w"> </span><span class="s">NONE</span><span class="w"> </span><span class="s">GG_EXT_NONE</span><span class="p">)</span>
 </span><span id="__span-1-29"><span class="w">        </span><span class="nb">if</span><span class="p">(</span><span class="s">GG_EXT_NONE</span><span class="w"> </span><span class="s">GREATER</span><span class="w"> </span><span class="s">-1</span><span class="p">)</span>
-</span><span id="__span-1-30"><span class="w">            </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_EXTENSIONS</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</span><span id="__span-1-30"><span class="w">            </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_EXTENSIONS</span><span class="w"> </span><span class="s2">" "</span><span class="p">)</span>
 </span><span id="__span-1-31"><span class="w">        </span><span class="nb">else</span><span class="p">()</span>
 </span><span id="__span-1-32"><span class="w">            </span><span class="nb">list</span><span class="p">(</span><span class="s">REMOVE_DUPLICATES</span><span class="w"> </span><span class="s">GG_EXTENSIONS</span><span class="p">)</span>
-</span><span id="__span-1-33"><span class="w">            </span><span class="nb">list</span><span class="p">(</span><span class="s">JOIN</span><span class="w"> </span><span class="s">GG_EXTENSIONS</span><span class="w"> </span><span class="s2">&quot;,&quot;</span><span class="w"> </span><span class="s">GLAD_EXTENSIONS</span><span class="p">)</span>
+</span><span id="__span-1-33"><span class="w">            </span><span class="nb">list</span><span class="p">(</span><span class="s">JOIN</span><span class="w"> </span><span class="s">GG_EXTENSIONS</span><span class="w"> </span><span class="s2">","</span><span class="w"> </span><span class="s">GLAD_EXTENSIONS</span><span class="p">)</span>
 </span><span id="__span-1-34"><span class="w">        </span><span class="nb">endif</span><span class="p">()</span>
-</span><span id="__span-1-35"><span class="w">        </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">GLAD_ARGS</span><span class="w"> </span><span class="s">--extensions</span><span class="w"> </span><span class="s2">&quot;${GLAD_EXTENSIONS}&quot;</span><span class="p">)</span>
+</span><span id="__span-1-35"><span class="w">        </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">GLAD_ARGS</span><span class="w"> </span><span class="s">--extensions</span><span class="w"> </span><span class="s2">"${GLAD_EXTENSIONS}"</span><span class="p">)</span>
 </span><span id="__span-1-36"><span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
 </span><span id="__span-1-37">
 </span><span id="__span-1-38"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">GG_QUIET</span><span class="p">)</span>
@@ -16120,20 +16120,20 @@
 </span><span id="__span-1-47"><span class="w">        </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">GLAD_ARGS</span><span class="w"> </span><span class="s">--reproducible</span><span class="p">)</span>
 </span><span id="__span-1-48"><span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
 </span><span id="__span-1-49">
-</span><span id="__span-1-50"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_LANGUAGE</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+</span><span id="__span-1-50"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_LANGUAGE</span><span class="w"> </span><span class="s2">"c"</span><span class="p">)</span>
 </span><span id="__span-1-51"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">GG_LANGUAGE</span><span class="p">)</span>
-</span><span id="__span-1-52"><span class="w">        </span><span class="nb">string</span><span class="p">(</span><span class="s">TOLOWER</span><span class="w"> </span><span class="s2">&quot;${GG_LANGUAGE}&quot;</span><span class="w"> </span><span class="s2">&quot;${GLAD_LANGUAGE}&quot;</span><span class="p">)</span>
+</span><span id="__span-1-52"><span class="w">        </span><span class="nb">string</span><span class="p">(</span><span class="s">TOLOWER</span><span class="w"> </span><span class="s2">"${GG_LANGUAGE}"</span><span class="w"> </span><span class="s2">"${GLAD_LANGUAGE}"</span><span class="p">)</span>
 </span><span id="__span-1-53"><span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
 </span><span id="__span-1-54">
-</span><span id="__span-1-55"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">GLAD_LANGUAGE</span><span class="w"> </span><span class="s">STREQUAL</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+</span><span id="__span-1-55"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">GLAD_LANGUAGE</span><span class="w"> </span><span class="s">STREQUAL</span><span class="w"> </span><span class="s2">"c"</span><span class="p">)</span>
 </span><span id="__span-1-56"><span class="w">        </span><span class="nb">__glad_c_library</span><span class="p">(</span><span class="s">LANG_ARGS</span><span class="w"> </span><span class="s">GLAD_FILES</span><span class="w"> </span><span class="o">${</span><span class="nv">GG_UNPARSED_ARGUMENTS</span><span class="o">}</span><span class="w"> </span><span class="s">API</span><span class="w"> </span><span class="o">${</span><span class="nv">GG_API</span><span class="o">}</span><span class="p">)</span>
 </span><span id="__span-1-57"><span class="w">    </span><span class="nb">else</span><span class="p">()</span>
-</span><span id="__span-1-58"><span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="s">FATAL_ERROR</span><span class="w"> </span><span class="s2">&quot;Unknown LANGUAGE&quot;</span><span class="p">)</span>
+</span><span id="__span-1-58"><span class="w">        </span><span class="nb">message</span><span class="p">(</span><span class="s">FATAL_ERROR</span><span class="w"> </span><span class="s2">"Unknown LANGUAGE"</span><span class="p">)</span>
 </span><span id="__span-1-59"><span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
 </span><span id="__span-1-60"><span class="w">    </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">GLAD_ARGS</span><span class="w"> </span><span class="o">${</span><span class="nv">GLAD_LANGUAGE</span><span class="o">}</span><span class="w"> </span><span class="o">${</span><span class="nv">LANG_ARGS</span><span class="o">}</span><span class="p">)</span>
 </span><span id="__span-1-61">
-</span><span id="__span-1-62"><span class="w">    </span><span class="nb">string</span><span class="p">(</span><span class="s">REPLACE</span><span class="w"> </span><span class="s2">&quot;${GLAD_DIR}&quot;</span><span class="w"> </span><span class="s">GLAD_DIRECTORY</span><span class="w"> </span><span class="s">GLAD_ARGS_UNIVERSAL</span><span class="w"> </span><span class="s2">&quot;${GLAD_ARGS}&quot;</span><span class="p">)</span>
-</span><span id="__span-1-63"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_ARGS_PATH</span><span class="w"> </span><span class="s2">&quot;${GLAD_DIR}/args.txt&quot;</span><span class="p">)</span>
+</span><span id="__span-1-62"><span class="w">    </span><span class="nb">string</span><span class="p">(</span><span class="s">REPLACE</span><span class="w"> </span><span class="s2">"${GLAD_DIR}"</span><span class="w"> </span><span class="s">GLAD_DIRECTORY</span><span class="w"> </span><span class="s">GLAD_ARGS_UNIVERSAL</span><span class="w"> </span><span class="s2">"${GLAD_ARGS}"</span><span class="p">)</span>
+</span><span id="__span-1-63"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_ARGS_PATH</span><span class="w"> </span><span class="s2">"${GLAD_DIR}/args.txt"</span><span class="p">)</span>
 </span><span id="__span-1-64">
 </span><span id="__span-1-65"><span class="w">    </span><span class="c"># add make custom target</span>
 </span><span id="__span-1-66"><span class="w">    </span><span class="nb">add_custom_command</span><span class="p">(</span>
@@ -16146,11 +16146,11 @@
 </span><span id="__span-1-73"><span class="w">        </span><span class="s">COMMAND</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="s">Writing</span><span class="w"> </span><span class="o">${</span><span class="nv">GLAD_ARGS_PATH</span><span class="o">}</span>
 </span><span id="__span-1-74"><span class="w">        </span><span class="s">COMMAND</span><span class="w"> </span><span class="s">echo</span><span class="w"> </span><span class="o">${</span><span class="nv">GLAD_ARGS</span><span class="o">}</span><span class="w"> </span><span class="s">&gt;</span><span class="w"> </span><span class="o">${</span><span class="nv">GLAD_ARGS_PATH</span><span class="o">}</span>
 </span><span id="__span-1-75"><span class="w">        </span><span class="s">WORKING_DIRECTORY</span><span class="w"> </span><span class="o">$&lt;</span><span class="nv">$&lt;BOOL:${GLAD_SOURCES_DIR}</span><span class="o">&gt;</span><span class="s">:</span><span class="o">${</span><span class="nv">GLAD_SOURCES_DIR</span><span class="o">}</span><span class="s">&gt;</span>
-</span><span id="__span-1-76"><span class="w">        </span><span class="s">COMMENT</span><span class="w"> </span><span class="s2">&quot;${TARGET}-generate&quot;</span>
+</span><span id="__span-1-76"><span class="w">        </span><span class="s">COMMENT</span><span class="w"> </span><span class="s2">"${TARGET}-generate"</span>
 </span><span id="__span-1-77"><span class="w">        </span><span class="s">USES_TERMINAL</span>
 </span><span id="__span-1-78"><span class="w">        </span><span class="p">)</span>
 </span><span id="__span-1-79">
-</span><span id="__span-1-80"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_ADD_LIBRARY_ARGS</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="__span-1-80"><span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">GLAD_ADD_LIBRARY_ARGS</span><span class="w"> </span><span class="s2">""</span><span class="p">)</span>
 </span><span id="__span-1-81"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">GG_SHARED</span><span class="p">)</span>
 </span><span id="__span-1-82"><span class="w">        </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">GLAD_ADD_LIBRARY_ARGS</span><span class="w"> </span><span class="s">SHARED</span><span class="p">)</span>
 </span><span id="__span-1-83"><span class="w">    </span><span class="nb">elseif</span><span class="p">(</span><span class="s">GG_STATIC</span><span class="p">)</span>
@@ -16165,25 +16165,25 @@
 </span><span id="__span-1-92"><span class="w">        </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">GLAD_ADD_LIBRARY_ARGS</span><span class="w"> </span><span class="s">EXCLUDE_FROM_ALL</span><span class="p">)</span>
 </span><span id="__span-1-93"><span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
 </span><span id="__span-1-94">
-</span><span id="__span-1-95"><span class="w">    </span><span class="nb">add_library</span><span class="p">(</span><span class="s2">&quot;${TARGET}&quot;</span><span class="w"> </span><span class="o">${</span><span class="nv">GLAD_ADD_LIBRARY_ARGS</span><span class="o">}</span>
+</span><span id="__span-1-95"><span class="w">    </span><span class="nb">add_library</span><span class="p">(</span><span class="s2">"${TARGET}"</span><span class="w"> </span><span class="o">${</span><span class="nv">GLAD_ADD_LIBRARY_ARGS</span><span class="o">}</span>
 </span><span id="__span-1-96"><span class="w">        </span><span class="o">${</span><span class="nv">GLAD_FILES</span><span class="o">}</span>
 </span><span id="__span-1-97"><span class="w">        </span><span class="p">)</span>
 </span><span id="__span-1-98">
-</span><span id="__span-1-99"><span class="w">    </span><span class="nb">target_include_directories</span><span class="p">(</span><span class="s2">&quot;${TARGET}&quot;</span>
+</span><span id="__span-1-99"><span class="w">    </span><span class="nb">target_include_directories</span><span class="p">(</span><span class="s2">"${TARGET}"</span>
 </span><span id="__span-1-100"><span class="w">        </span><span class="s">PUBLIC</span>
-</span><span id="__span-1-101"><span class="w">            </span><span class="s2">&quot;${GLAD_DIR}/include&quot;</span>
+</span><span id="__span-1-101"><span class="w">            </span><span class="s2">"${GLAD_DIR}/include"</span>
 </span><span id="__span-1-102"><span class="w">        </span><span class="p">)</span>
 </span><span id="__span-1-103">
-</span><span id="__span-1-104"><span class="w">    </span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s2">&quot;${TARGET}&quot;</span>
+</span><span id="__span-1-104"><span class="w">    </span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s2">"${TARGET}"</span>
 </span><span id="__span-1-105"><span class="w">        </span><span class="s">PUBLIC</span>
 </span><span id="__span-1-106"><span class="w">            </span><span class="o">${</span><span class="nv">CMAKE_DL_LIBS</span><span class="o">}</span>
 </span><span id="__span-1-107"><span class="w">        </span><span class="p">)</span>
 </span><span id="__span-1-108">
 </span><span id="__span-1-109"><span class="w">    </span><span class="nb">if</span><span class="p">(</span><span class="s">GG_SHARED</span><span class="p">)</span>
-</span><span id="__span-1-110"><span class="w">        </span><span class="nb">target_compile_definitions</span><span class="p">(</span><span class="s2">&quot;${TARGET}&quot;</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="s">GLAD_API_CALL_EXPORT</span><span class="p">)</span>
-</span><span id="__span-1-111"><span class="w">        </span><span class="nb">set_target_properties</span><span class="p">(</span><span class="s2">&quot;${TARGET}&quot;</span>
+</span><span id="__span-1-110"><span class="w">        </span><span class="nb">target_compile_definitions</span><span class="p">(</span><span class="s2">"${TARGET}"</span><span class="w"> </span><span class="s">PUBLIC</span><span class="w"> </span><span class="s">GLAD_API_CALL_EXPORT</span><span class="p">)</span>
+</span><span id="__span-1-111"><span class="w">        </span><span class="nb">set_target_properties</span><span class="p">(</span><span class="s2">"${TARGET}"</span>
 </span><span id="__span-1-112"><span class="w">            </span><span class="s">PROPERTIES</span>
-</span><span id="__span-1-113"><span class="w">            </span><span class="s">DEFINE_SYMBOL</span><span class="w"> </span><span class="s2">&quot;GLAD_API_CALL_EXPORT_BUILD&quot;</span>
+</span><span id="__span-1-113"><span class="w">            </span><span class="s">DEFINE_SYMBOL</span><span class="w"> </span><span class="s2">"GLAD_API_CALL_EXPORT_BUILD"</span>
 </span><span id="__span-1-114"><span class="w">            </span><span class="p">)</span>
 </span><span id="__span-1-115"><span class="w">    </span><span class="nb">endif</span><span class="p">()</span>
 </span><span id="__span-1-116"><span class="nb">endfunction</span><span class="p">()</span>
@@ -16212,9 +16212,9 @@
 </span><span id="__span-2-6">-- 1 GLAD_CMAKE_DIR=D:/work/glad_work/ModernGlad/codes/examples/01a/cmake
 </span><span id="__span-2-7">-- 1 CMAKE_CURRENT_LIST_DIR=D:/work/glad_work/ModernGlad/codes/examples/01a/cmake
 </span><span id="__span-2-8">-- 1 GLAD_SOURCES_DIR=D:/work/glad_work/ModernGlad/codes/examples/01a/cmake/../
-</span><span id="__span-2-9">-- Glad Library &#39;glad_gl_core_mx_33&#39;
+</span><span id="__span-2-9">-- Glad Library 'glad_gl_core_mx_33'
 </span><span id="__span-2-10">-- glad_add_library GLAD_SOURCES_DIR=D:/work/glad_work/ModernGlad/codes/examples/01a/c++/multiwin_mx_dir/../../
-</span><span id="__span-2-11">-- Found Python: C:/Users/eric/AppData/Local/Programs/Python/Python312/python.exe (found version &quot;3.12.1&quot;) found components: Interpreter
+</span><span id="__span-2-11">-- Found Python: C:/Users/eric/AppData/Local/Programs/Python/Python312/python.exe (found version "3.12.1") found components: Interpreter
 </span><span id="__span-2-12">-- glad_add_library GG_LOCATION 0=
 </span><span id="__span-2-13">-- glad_add_library CMAKE_CURRENT_BINARY_DIR=D:/work/glad_work/ModernGlad/codes/examples/01a/c++/multiwin_mx_dir/build
 </span><span id="__span-2-14">-- glad_add_library GG_LOCATION 1=D:/work/glad_work/ModernGlad/codes/examples/01a/c++/multiwin_mx_dir/build/gladsources/glad_gl_core_mx_33
@@ -16268,7 +16268,7 @@ python.exe -m glad -h
 </span><span id="__span-4-8">
 </span><span id="__span-4-9">options:
 </span><span id="__span-4-10">  -h, --help            show this help message and exit
-</span><span id="__span-4-11">  --version             show program&#39;s version number and exit
+</span><span id="__span-4-11">  --version             show program's version number and exit
 </span><span id="__span-4-12">  --api API             Comma separated list of APIs in `name:profile=version` pairs optionally including a
 </span><span id="__span-4-13">                        specification `name:profile/spec=version`. No version means latest, a profile is only required
 </span><span id="__span-4-14">                        if the API requires a profile. E.g. `gl:core=3.3,gles1/gl=2,gles2
@@ -16315,12 +16315,12 @@ python.exe -m glad -h
 <p>sys.argv
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">sys.argv= [&#39;D:\\work\\glad_work\\ModernGlad\\codes\\examples\\01c\\glad\\__main__.py&#39;, &#39;--out-path&#39;, &#39;D:/work/glad_wo
-</span><span id="__span-7-2">rk/ModernGlad/codes/examples/01c/c++/multiwin_mx_dir/build/gladsources/glad_gl_core_mx_33&#39;, &#39;--api&#39;, &#39;gl:core=3.3&#39;, &#39;
-</span><span id="__span-7-3">--reproducible&#39;, &#39;c&#39;, &#39;--mx&#39;]
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1">sys.argv= ['D:\\work\\glad_work\\ModernGlad\\codes\\examples\\01c\\glad\\__main__.py', '--out-path', 'D:/work/glad_wo
+</span><span id="__span-7-2">rk/ModernGlad/codes/examples/01c/c++/multiwin_mx_dir/build/gladsources/glad_gl_core_mx_33', '--api', 'gl:core=3.3', '
+</span><span id="__span-7-3">--reproducible', 'c', '--mx']
 </span></code></pre></div></td></tr></table></div></p>
 <p>sys.version_info
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">sys.version_info= sys.version_info(major=3, minor=12, micro=1, releaselevel=&#39;final&#39;, serial=0)
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1">sys.version_info= sys.version_info(major=3, minor=12, micro=1, releaselevel='final', serial=0)
 </span></code></pre></div></td></tr></table></div></p>
 <p>JinjaGenerator
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -16352,19 +16352,19 @@ python.exe -m glad -h
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1">  JinjaGenerator generate feature_set= FeatureSet(name=gl, info=[gl:core=3.3], extensions=619)
-</span><span id="__span-9-2">  JinjaGenerator generate type(feature_set)= &lt;class &#39;glad.parse.FeatureSet&#39;&gt;
+</span><span id="__span-9-2">  JinjaGenerator generate type(feature_set)= &lt;class 'glad.parse.FeatureSet'&gt;
 </span><span id="__span-9-3">  generate template= gl.h
 </span><span id="__span-9-4">  generate output_path= include/glad/gl.h
-</span><span id="__span-9-5">  generate template now = &lt;Template &#39;gl.h&#39;&gt;
-</span><span id="__span-9-6">  generate type(template) now = &lt;class &#39;jinja2.environment.Template&#39;&gt;
-</span><span id="__span-9-7">  generate type(result) = &lt;class &#39;str&#39;&gt;
+</span><span id="__span-9-5">  generate template now = &lt;Template 'gl.h'&gt;
+</span><span id="__span-9-6">  generate type(template) now = &lt;class 'jinja2.environment.Template'&gt;
+</span><span id="__span-9-7">  generate type(result) = &lt;class 'str'&gt;
 </span><span id="__span-9-8">  generate output_path now = D:\work\glad_work\ModernGlad\codes\examples\01c\c++\multiwin_mx_dir\build\gladsources\glad
 </span><span id="__span-9-9">  _gl_core_mx_33\include/glad/gl.h
 </span><span id="__span-9-10">  generate template= gl.c
 </span><span id="__span-9-11">  generate output_path= src/gl.c
-</span><span id="__span-9-12">  generate template now = &lt;Template &#39;gl.c&#39;&gt;
-</span><span id="__span-9-13">  generate type(template) now = &lt;class &#39;jinja2.environment.Template&#39;&gt;
-</span><span id="__span-9-14">  generate type(result) = &lt;class &#39;str&#39;&gt;
+</span><span id="__span-9-12">  generate template now = &lt;Template 'gl.c'&gt;
+</span><span id="__span-9-13">  generate type(template) now = &lt;class 'jinja2.environment.Template'&gt;
+</span><span id="__span-9-14">  generate type(result) = &lt;class 'str'&gt;
 </span><span id="__span-9-15">  generate output_path now = D:\work\glad_work\ModernGlad\codes\examples\01c\c++\multiwin_mx_dir\build\gladsources\glad
 </span><span id="__span-9-16">  _gl_core_mx_33\src/gl.c
 </span><span id="__span-9-17">  CGenerator post_generate spec= &lt;glad.specification.GL object at 0x00000297246B7E90&gt;
@@ -16372,9 +16372,9 @@ python.exe -m glad -h
 </span><span id="__span-9-19">  CGenerator post_generate feature_set= FeatureSet(name=gl, info=[gl:core=3.3], extensions=619)
 </span><span id="__span-9-20">  CGenerator post_generate type(feature_set)= FeatureSet(name=gl, info=[gl:core=3.3], extensions=619)
 </span><span id="__span-9-21">  CGenerator post_generate config= &lt;glad.generator.c.CConfig object at 0x0000029723C402F0&gt;
-</span><span id="__span-9-22">  CGenerator post_generate type(config)= &lt;class &#39;glad.generator.c.CConfig&#39;&gt;
+</span><span id="__span-9-22">  CGenerator post_generate type(config)= &lt;class 'glad.generator.c.CConfig'&gt;
 </span><span id="__span-9-23">  CGenerator _add_additional_headers config= &lt;glad.generator.c.CConfig object at 0x0000029723C402F0&gt;
-</span><span id="__span-9-24">  CGenerator _add_additional_headers config[&#39;HEADER_ONLY&#39;]= False
+</span><span id="__span-9-24">  CGenerator _add_additional_headers config['HEADER_ONLY']= False
 </span><span id="__span-9-25">  CGenerator _add_additional_headers header.name= khrplatform
 </span><span id="__span-9-26">  CGenerator _add_additional_headers path= D:\work\glad_work\ModernGlad\codes\examples\01c\c++\multiwin_mx_dir\build\gl
 </span><span id="__span-9-27">  adsources\glad_gl_core_mx_33\include/KHR/khrplatform.h
@@ -16534,11 +16534,11 @@ python.exe -m glad -h
 </span><span id="__span-10-12"><span class="nb">set</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">PRJ_COMPILE_DEFINITIONS</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-10-13"><span class="nb">set</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">PRJ_TARGET_LIST</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-10-14">
-</span><span id="__span-10-15"><span class="nb">set</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">GLAD_INCLUDE_DIRS</span><span class="w"> </span><span class="s2">&quot;${CMAKE_CURRENT_SOURCE_DIR}/include&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-15"><span class="nb">set</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">GLAD_INCLUDE_DIRS</span><span class="w"> </span><span class="s2">"${CMAKE_CURRENT_SOURCE_DIR}/include"</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-10-16">
 </span><span id="__span-10-17"><span class="nb">set</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">CMAKE_INSTALL_PREFIX</span><span class="w"> </span><span class="s">C:/dev/gladtest</span><span class="p">)</span>
 </span><span id="__span-10-18">
-</span><span id="__span-10-19"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}&quot;</span><span class="p">)</span>
+</span><span id="__span-10-19"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}"</span><span class="p">)</span>
 </span><span id="__span-10-20">
 </span><span id="__span-10-21"><span class="nb">set</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">GLAD_INCLUDE_HEADERS</span><span class="w"> </span>
 </span><span id="__span-10-22"><span class="w">    </span><span class="c">#include/glad/glad.h</span>
@@ -16594,21 +16594,21 @@ python.exe -m glad -h
 </span><span id="__span-10-72"><span class="w">    </span><span class="o">${</span><span class="nv">PRJ_COMPILE_FEATURES</span><span class="o">}</span>
 </span><span id="__span-10-73"><span class="p">)</span>
 </span><span id="__span-10-74">
-</span><span id="__span-10-75"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;CMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_LIBDIR}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-10-76"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;CMAKE_INSTALL_BINDIR=${CMAKE_INSTALL_BINDIR}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-10-77"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;CMAKE_INSTALL_INCLUDEDIR=${CMAKE_INSTALL_INCLUDEDIR}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-10-78"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;CMAKE_CURRENT_LIST_DIR=${CMAKE_CURRENT_LIST_DIR}&quot;</span><span class="w"> </span><span class="p">)</span>
-</span><span id="__span-10-79"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;PROJECT_VERSION=${PROJECT_VERSION}&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-75"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"CMAKE_INSTALL_LIBDIR=${CMAKE_INSTALL_LIBDIR}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-76"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"CMAKE_INSTALL_BINDIR=${CMAKE_INSTALL_BINDIR}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-77"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"CMAKE_INSTALL_INCLUDEDIR=${CMAKE_INSTALL_INCLUDEDIR}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-78"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"CMAKE_CURRENT_LIST_DIR=${CMAKE_CURRENT_LIST_DIR}"</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-79"><span class="nb">message</span><span class="p">(</span><span class="w"> </span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"PROJECT_VERSION=${PROJECT_VERSION}"</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-10-80">
 </span><span id="__span-10-81"><span class="c">#--------------------------------------------------------------------</span>
 </span><span id="__span-10-82"><span class="c"># Create generated files</span>
 </span><span id="__span-10-83"><span class="c">#--------------------------------------------------------------------</span>
 </span><span id="__span-10-84"><span class="nb">include</span><span class="p">(</span><span class="s">CMakePackageConfigHelpers</span><span class="p">)</span>
 </span><span id="__span-10-85">
-</span><span id="__span-10-86"><span class="nb">set</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">PackageName</span><span class="w"> </span><span class="s2">&quot;glad&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-86"><span class="nb">set</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">PackageName</span><span class="w"> </span><span class="s2">"glad"</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-10-87"><span class="c">#set ( dest ${CMAKE_INSTALL_LIBDIR}/cmake/${PackageName} )</span>
 </span><span id="__span-10-88">
-</span><span id="__span-10-89"><span class="nb">set</span><span class="p">(</span><span class="s">PACKAGE_CONFIG_PATH</span><span class="w"> </span><span class="s2">&quot;${CMAKE_INSTALL_LIBDIR}/cmake/${PackageName}&quot;</span><span class="p">)</span>
+</span><span id="__span-10-89"><span class="nb">set</span><span class="p">(</span><span class="s">PACKAGE_CONFIG_PATH</span><span class="w"> </span><span class="s2">"${CMAKE_INSTALL_LIBDIR}/cmake/${PackageName}"</span><span class="p">)</span>
 </span><span id="__span-10-90">
 </span><span id="__span-10-91"><span class="nb">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">TARGET</span><span class="w"> </span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-10-92"><span class="w">  </span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">PRJ_TARGET_LIST</span><span class="w"> </span><span class="o">${</span><span class="nv">PROJECT_NAME</span><span class="o">}</span><span class="p">)</span>
@@ -16622,7 +16622,7 @@ python.exe -m glad -h
 </span><span id="__span-10-100"><span class="w">    </span><span class="s">ARCHIVE</span><span class="w"> </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s">lib</span>
 </span><span id="__span-10-101"><span class="p">)</span>
 </span><span id="__span-10-102">
-</span><span id="__span-10-103"><span class="nb">install</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">DIRECTORY</span><span class="w"> </span><span class="s2">&quot;${CMAKE_CURRENT_SOURCE_DIR}/include&quot;</span><span class="w"> </span><span class="s">DESTINATION</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">}</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-10-103"><span class="nb">install</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s">DIRECTORY</span><span class="w"> </span><span class="s2">"${CMAKE_CURRENT_SOURCE_DIR}/include"</span><span class="w"> </span><span class="s">DESTINATION</span><span class="w"> </span><span class="o">${</span><span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">}</span><span class="w"> </span><span class="p">)</span>
 </span><span id="__span-10-104">
 </span><span id="__span-10-105"><span class="c"># generate and install export file</span>
 </span><span id="__span-10-106"><span class="nb">install</span><span class="p">(</span><span class="w"> </span><span class="s">EXPORT</span><span class="w"> </span><span class="s">HelloTargets</span>
@@ -16633,31 +16633,31 @@ python.exe -m glad -h
 </span><span id="__span-10-111">
 </span><span id="__span-10-112"><span class="c"># generate the config file that includes the exports</span>
 </span><span id="__span-10-113"><span class="nb">configure_package_config_file</span><span class="p">(</span>
-</span><span id="__span-10-114"><span class="w">  </span><span class="s2">&quot;${CMAKE_CURRENT_SOURCE_DIR}/${PackageName}Config.cmake.in&quot;</span>
-</span><span id="__span-10-115"><span class="w">  </span><span class="s2">&quot;${CMAKE_CURRENT_BINARY_DIR}/${PackageName}Config.cmake&quot;</span>
-</span><span id="__span-10-116"><span class="w">  </span><span class="s">INSTALL_DESTINATION</span><span class="w"> </span><span class="s2">&quot;${PACKAGE_CONFIG_PATH}&quot;</span>
+</span><span id="__span-10-114"><span class="w">  </span><span class="s2">"${CMAKE_CURRENT_SOURCE_DIR}/${PackageName}Config.cmake.in"</span>
+</span><span id="__span-10-115"><span class="w">  </span><span class="s2">"${CMAKE_CURRENT_BINARY_DIR}/${PackageName}Config.cmake"</span>
+</span><span id="__span-10-116"><span class="w">  </span><span class="s">INSTALL_DESTINATION</span><span class="w"> </span><span class="s2">"${PACKAGE_CONFIG_PATH}"</span>
 </span><span id="__span-10-117"><span class="w">  </span><span class="s">NO_SET_AND_CHECK_MACRO</span>
 </span><span id="__span-10-118"><span class="w">  </span><span class="s">NO_CHECK_REQUIRED_COMPONENTS_MACRO</span>
 </span><span id="__span-10-119"><span class="p">)</span>
 </span><span id="__span-10-120">
 </span><span id="__span-10-121"><span class="c"># generate the version file for the config file</span>
 </span><span id="__span-10-122"><span class="nb">write_basic_package_version_file</span><span class="p">(</span>
-</span><span id="__span-10-123"><span class="w">  </span><span class="s2">&quot;${CMAKE_CURRENT_BINARY_DIR}/${PackageName}ConfigVersion.cmake&quot;</span>
-</span><span id="__span-10-124"><span class="w">  </span><span class="s">VERSION</span><span class="w"> </span><span class="s2">&quot;${Foo_VERSION_MAJOR}.${Foo_VERSION_MINOR}&quot;</span>
+</span><span id="__span-10-123"><span class="w">  </span><span class="s2">"${CMAKE_CURRENT_BINARY_DIR}/${PackageName}ConfigVersion.cmake"</span>
+</span><span id="__span-10-124"><span class="w">  </span><span class="s">VERSION</span><span class="w"> </span><span class="s2">"${Foo_VERSION_MAJOR}.${Foo_VERSION_MINOR}"</span>
 </span><span id="__span-10-125"><span class="w">  </span><span class="s">COMPATIBILITY</span><span class="w"> </span><span class="s">AnyNewerVersion</span>
 </span><span id="__span-10-126"><span class="p">)</span>
 </span><span id="__span-10-127">
 </span><span id="__span-10-128"><span class="nb">write_basic_package_version_file</span><span class="p">(</span>
-</span><span id="__span-10-129"><span class="w">  </span><span class="s2">&quot;${CMAKE_CURRENT_BINARY_DIR}/${PackageName}ConfigVersion.cmake&quot;</span>
-</span><span id="__span-10-130"><span class="w">  </span><span class="s">VERSION</span><span class="w"> </span><span class="s2">&quot;${PROJECT_VERSION}&quot;</span>
+</span><span id="__span-10-129"><span class="w">  </span><span class="s2">"${CMAKE_CURRENT_BINARY_DIR}/${PackageName}ConfigVersion.cmake"</span>
+</span><span id="__span-10-130"><span class="w">  </span><span class="s">VERSION</span><span class="w"> </span><span class="s2">"${PROJECT_VERSION}"</span>
 </span><span id="__span-10-131"><span class="w">  </span><span class="s">COMPATIBILITY</span><span class="w"> </span><span class="s">AnyNewerVersion</span>
 </span><span id="__span-10-132"><span class="p">)</span>
 </span><span id="__span-10-133">
 </span><span id="__span-10-134"><span class="c"># install config files</span>
 </span><span id="__span-10-135"><span class="nb">install</span><span class="p">(</span><span class="s">FILES</span>
-</span><span id="__span-10-136"><span class="w">  </span><span class="s2">&quot;${CMAKE_CURRENT_BINARY_DIR}/${PackageName}Config.cmake&quot;</span>
-</span><span id="__span-10-137"><span class="w">  </span><span class="s2">&quot;${CMAKE_CURRENT_BINARY_DIR}/${PackageName}ConfigVersion.cmake&quot;</span>
-</span><span id="__span-10-138"><span class="w">  </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s2">&quot;${PACKAGE_CONFIG_PATH}&quot;</span>
+</span><span id="__span-10-136"><span class="w">  </span><span class="s2">"${CMAKE_CURRENT_BINARY_DIR}/${PackageName}Config.cmake"</span>
+</span><span id="__span-10-137"><span class="w">  </span><span class="s2">"${CMAKE_CURRENT_BINARY_DIR}/${PackageName}ConfigVersion.cmake"</span>
+</span><span id="__span-10-138"><span class="w">  </span><span class="s">DESTINATION</span><span class="w"> </span><span class="s2">"${PACKAGE_CONFIG_PATH}"</span>
 </span><span id="__span-10-139"><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 
@@ -16732,10 +16732,10 @@ python.exe -m glad -h
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../../javascripts/mathjax.js"></script>
       

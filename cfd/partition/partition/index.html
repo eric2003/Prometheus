@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -33,10 +33,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -16213,7 +16213,7 @@
 </span><span id="__span-0-5">ZoneDonorName must be equated to a 32 character maximum zone identifier within the current CGNS database 
 </span><span id="__span-0-6">(i.e., it must be equal to one of the Zone_t identifiers contained in the current CGNSBase_t entity) 
 </span><span id="__span-0-7">or to a 65 character maximum zone identifier in another base of the same CGNS tree; 
-</span><span id="__span-0-8">in that case the ZoneDonorName string has the pattern base/zone, only one single &quot;/&quot; character is allowed, 
+</span><span id="__span-0-8">in that case the ZoneDonorName string has the pattern base/zone, only one single "/" character is allowed, 
 </span><span id="__span-0-9">and neither basename nor zonename should be empty. ZoneDonorName should also not be empty.
 </span><span id="__span-0-10">Beginning indices of PointRange and PointRangeDonor must coincide (i.e., must be the same physical point); 
 </span><span id="__span-0-11">ending indices of PointRange and PointRangeDonor must also coincide.
@@ -16242,7 +16242,7 @@
 </span><span id="__span-1-8">        Index2 = T.(Index1 - Begin1) + Begin2 
 </span><span id="__span-1-9">
 </span><span id="__span-1-10">        Index1 = Transpose[T].(Index2 - Begin2) + Begin1 
-</span><span id="__span-1-11">where the &quot;.&quot; notation indicates matrix-vector multiply. 
+</span><span id="__span-1-11">where the "." notation indicates matrix-vector multiply. 
 </span><span id="__span-1-12">Begin1 and End1 are the subrange indices contained in PointRange, 
 </span><span id="__span-1-13">and Begin2 and End2 are the subrange indices contained in PointRangeDonor.  
 </span></code></pre></div></td></tr></table></div>
@@ -16255,10 +16255,10 @@
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">The short-hand notation used in Transform is as follows: 
-</span><span id="__span-2-2">Each element shows the image in the adjacent zone&#39;s face of a positive index increment in the current zone&#39;s face. 
+</span><span id="__span-2-2">Each element shows the image in the adjacent zone's face of a positive index increment in the current zone's face. 
 </span><span id="__span-2-3">The first element is the image of a positive increment in i; 
 </span><span id="__span-2-4">the second element is the image of an increment in j; 
-</span><span id="__span-2-5">and the third (in 3-D) is the image of an increment in k on the current zone&#39;s face. 
+</span><span id="__span-2-5">and the third (in 3-D) is the image of an increment in k on the current zone's face. 
 </span><span id="__span-2-6">For 3-D, the transformation matrix T is constructed from 
 </span><span id="__span-2-7">Transform = [±a, ±b, ±c] as follows:
 </span></code></pre></div></td></tr></table></div>
@@ -16308,15 +16308,15 @@
 </span><span id="__span-4-7">it can be easily regenerated from PointRange and PointRangeDonor and the grid sizes of the two zones. 
 </span><span id="__span-4-8">This is done by determining the faces represented by PointRange and PointRangeDonor (i.e., i-min, i-max, j-min, etc.). 
 </span><span id="__span-4-9">If one is a minimum face and the other a maximum face, 
-</span><span id="__span-4-10">then the sign of the missing element in Transform is &quot;+&quot;, 
+</span><span id="__span-4-10">then the sign of the missing element in Transform is "+", 
 </span><span id="__span-4-11">and the value of the missing element in the transformation matrix (T) is +1. 
-</span><span id="__span-4-12">If the faces are both minimums or are both maximums, the sign is &quot;−&quot;. 
+</span><span id="__span-4-12">If the faces are both minimums or are both maximums, the sign is "−". 
 </span><span id="__span-4-13">Next, the position and magnitude of the element in Transform, 
 </span><span id="__span-4-14">and hence the row and column in the transformation matrix, 
 </span><span id="__span-4-15">is given by the combinations of i, j and k faces for the two. 
 </span><span id="__span-4-16">For example, if PointRange represents a j-min or j-max face 
 </span><span id="__span-4-17">and PointRangeDonor represents an i-min or i-max face, 
-</span><span id="__span-4-18">then the missing element&#39;s position in Transform is 2 
+</span><span id="__span-4-18">then the missing element's position in Transform is 2 
 </span><span id="__span-4-19">and its magnitude is 1 (i.e., Transform = [*, ±1, *]).
 </span><span id="__span-4-20">
 </span><span id="__span-4-21">Note also that the transform matrix and the two index pairs overspecify the interface patch. 
@@ -16771,7 +16771,7 @@ nk &amp;=&amp; 9
 </span><span id="__span-18-17">    return zoneL;
 </span><span id="__span-18-18">}
 </span></code></pre></div></td></tr></table></div></p>
-<p>void SplitZone::Split( SplitZone <em>&amp; zoneL, SplitZone </em>&amp; zoneR, double nCell )
+<p>void SplitZone::Split( SplitZone *&amp; zoneL, SplitZone *&amp; zoneR, double nCell )
 <div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -17244,8 +17244,8 @@ nk &amp;=&amp; 9
 </span><span id="__span-23-29">    subDonorRegion: start (3,3) end (3,5)
 </span><span id="__span-23-30">
 </span><span id="__span-23-31">    SplitZone * parent_donor_zone = parentInterfaceSplitBc-&gt;donor_zone;
-</span><span id="__span-23-32">    std::cout &lt;&lt; &quot; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &quot; &lt;&lt; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &lt;&lt; &quot;\n&quot;;
-</span><span id="__span-23-33">    std::cout &lt;&lt; &quot; parentInterfaceSplitBc-&gt;donor_zone-&gt;zoneIndex &quot; &lt;&lt; parent_donor_zone-&gt;zoneIndex &lt;&lt; &quot;\n&quot;;
+</span><span id="__span-23-32">    std::cout &lt;&lt; " parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex " &lt;&lt; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &lt;&lt; "\n";
+</span><span id="__span-23-33">    std::cout &lt;&lt; " parentInterfaceSplitBc-&gt;donor_zone-&gt;zoneIndex " &lt;&lt; parent_donor_zone-&gt;zoneIndex &lt;&lt; "\n";
 </span><span id="__span-23-34">
 </span><span id="__span-23-35">    parentInterfaceSplitBc-&gt;donor_zone : zoneIndex = 0;
 </span><span id="__span-23-36">    donor_zone-&gt;zoneIndex = 0 -&gt;child : zoneIndex = 2; zoneIndex = 3;   
@@ -18226,8 +18226,8 @@ nk &amp;=&amp; 9
 </span><span id="__span-26-158">    interfaceSplitBc-&gt;ChangeRegionToLocalCoordinate();
 </span><span id="__span-26-159">    interfaceSplitBc-&gt;donor_region = subDonorRegion;
 </span><span id="__span-26-160">    SplitZone * parent_donor_zone = parentInterfaceSplitBc-&gt;donor_zone;
-</span><span id="__span-26-161">    std::cout &lt;&lt; &quot; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &quot; &lt;&lt; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &lt;&lt; &quot;\n&quot;;
-</span><span id="__span-26-162">    std::cout &lt;&lt; &quot; parentInterfaceSplitBc-&gt;donor_zone-&gt;zoneIndex &quot; &lt;&lt; parent_donor_zone-&gt;zoneIndex &lt;&lt; &quot;\n&quot;;
+</span><span id="__span-26-161">    std::cout &lt;&lt; " parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex " &lt;&lt; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &lt;&lt; "\n";
+</span><span id="__span-26-162">    std::cout &lt;&lt; " parentInterfaceSplitBc-&gt;donor_zone-&gt;zoneIndex " &lt;&lt; parent_donor_zone-&gt;zoneIndex &lt;&lt; "\n";
 </span><span id="__span-26-163">
 </span><span id="__span-26-164">    parent_donor_zone: zoneIndex=0
 </span><span id="__span-26-165">
@@ -18315,8 +18315,8 @@ nk &amp;=&amp; 9
 </span><span id="__span-26-247">    interfaceSplitBc-&gt;ChangeRegionToLocalCoordinate();
 </span><span id="__span-26-248">    interfaceSplitBc-&gt;donor_region = subDonorRegion;
 </span><span id="__span-26-249">    SplitZone * parent_donor_zone = parentInterfaceSplitBc-&gt;donor_zone;
-</span><span id="__span-26-250">    std::cout &lt;&lt; &quot; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &quot; &lt;&lt; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &lt;&lt; &quot;\n&quot;;
-</span><span id="__span-26-251">    std::cout &lt;&lt; &quot; parentInterfaceSplitBc-&gt;donor_zone-&gt;zoneIndex &quot; &lt;&lt; parent_donor_zone-&gt;zoneIndex &lt;&lt; &quot;\n&quot;;
+</span><span id="__span-26-250">    std::cout &lt;&lt; " parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex " &lt;&lt; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &lt;&lt; "\n";
+</span><span id="__span-26-251">    std::cout &lt;&lt; " parentInterfaceSplitBc-&gt;donor_zone-&gt;zoneIndex " &lt;&lt; parent_donor_zone-&gt;zoneIndex &lt;&lt; "\n";
 </span><span id="__span-26-252">
 </span><span id="__span-26-253">    parent_donor_zone: zoneIndex=0
 </span><span id="__span-26-254">
@@ -19334,8 +19334,8 @@ nk &amp;=&amp; 9
 </span><span id="__span-28-230">
 </span><span id="__span-28-231">
 </span><span id="__span-28-232">    SplitZone * parent_donor_zone = parentInterfaceSplitBc-&gt;donor_zone;
-</span><span id="__span-28-233">    std::cout &lt;&lt; &quot; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &quot; &lt;&lt; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &lt;&lt; &quot;\n&quot;;
-</span><span id="__span-28-234">    std::cout &lt;&lt; &quot; parentInterfaceSplitBc-&gt;donor_zone-&gt;zoneIndex &quot; &lt;&lt; parent_donor_zone-&gt;zoneIndex &lt;&lt; &quot;\n&quot;;
+</span><span id="__span-28-233">    std::cout &lt;&lt; " parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex " &lt;&lt; parentInterfaceSplitBc-&gt;zone-&gt;zoneIndex &lt;&lt; "\n";
+</span><span id="__span-28-234">    std::cout &lt;&lt; " parentInterfaceSplitBc-&gt;donor_zone-&gt;zoneIndex " &lt;&lt; parent_donor_zone-&gt;zoneIndex &lt;&lt; "\n";
 </span><span id="__span-28-235">    if ( parent_donor_zone-&gt;child.size() &gt; 0 )
 </span><span id="__span-28-236">    {
 </span><span id="__span-28-237">        InterfaceInfo interfaceInfo;
@@ -20643,10 +20643,10 @@ nk &amp;=&amp; 9
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       
